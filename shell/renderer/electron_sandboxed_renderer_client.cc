@@ -7,7 +7,6 @@
 #include <iterator>
 #include <vector>
 
-#include "base/base_paths.h"
 #include "base/command_line.h"
 #include "base/process/process_metrics.h"
 #include "content/public/renderer/render_frame.h"

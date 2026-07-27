@@ -8,7 +8,6 @@
 
 #include "base/containers/span.h"
 #include "base/logging.h"
-#include "base/strings/string_util_win.h"
 #include "base/strings/utf_string_conversions.h"
 #include "shell/browser/ui/win/notify_icon_host.h"
 #include "ui/base/mojom/menu_source_type.mojom.h"
