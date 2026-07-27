@@ -8,7 +8,6 @@
 #include <memory>
 #include <string>
 
-#include "base/functional/bind.h"
 #include "base/values.h"
 #include "shell/browser/event_emitter_mixin.h"
 #include "shell/common/gin_helper/wrappable.h"
