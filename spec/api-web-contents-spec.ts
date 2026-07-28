@@ -96,6 +96,27 @@ describe('webContents module', () => {
     });
   });
 
+  describe('classic webview detach', () => {
+    afterEach(closeAllWindows);
+
+    it('removes the outer delegate frame', async () => {
+      const w = new BrowserWindow({
+        show: false,
+        webPreferences: { webviewTag: true }
+      });
+      const attached = once(w.webContents, 'did-attach-webview') as Promise<
+        [unknown, WebContents]
+      >;
+      await w.loadURL('data:text/html,<webview src="about:blank"></webview>');
+      const [, guest] = await attached;
+      const destroyed = once(guest, 'destroyed');
+
+      (guest as ElectronInternal.WebContents).detachFromOuterFrame();
+
+      await destroyed;
+    });
+  });
+
   describe('fromDevToolsTargetId()', () => {
     afterEach(closeAllWindows);
     it('returns WebContents for attached DevTools target', async () => {
