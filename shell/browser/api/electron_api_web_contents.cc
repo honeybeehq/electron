@@ -20,6 +20,7 @@
 #include "base/containers/flat_set.h"
 #include "base/containers/id_map.h"
 #include "base/containers/map_util.h"
+#include "base/feature_list.h"
 #include "base/files/file_util.h"
 #include "base/json/json_reader.h"
 #include "base/no_destructor.h"
@@ -37,6 +38,7 @@
 #include "chrome/browser/ui/views/eye_dropper/eye_dropper.h"
 #include "chrome/common/pref_names.h"
 #include "components/embedder_support/user_agent_utils.h"
+#include "components/guest_contents/browser/guest_contents_handle.h"
 #include "components/input/native_web_keyboard_event.h"
 #include "components/prefs/pref_service.h"
 #include "components/prefs/scoped_user_pref_update.h"
@@ -75,6 +77,7 @@
 #include "content/public/browser/visibility.h"
 #include "content/public/browser/web_contents.h"
 #include "content/public/common/child_process_id.h"
+#include "content/public/common/content_features.h"
 #include "content/public/common/referrer_type_converters.h"
 #include "content/public/common/result_codes.h"
 #include "content/public/common/webplugininfo.h"
@@ -124,8 +127,8 @@
 #include "shell/browser/web_contents_permission_helper.h"
 #include "shell/browser/web_contents_preferences.h"
 #include "shell/browser/web_contents_zoom_controller.h"
+#include "shell/browser/web_contents_zoom_observer.h"
 #include "shell/browser/web_view_guest_delegate.h"
-#include "shell/browser/web_view_manager.h"
 #include "shell/common/api/api.mojom.h"
 #include "shell/common/api/electron_api_native_image.h"
 #include "shell/common/api/electron_bindings.h"
@@ -160,6 +163,7 @@
 #include "shell/common/v8_util.h"
 #include "storage/browser/file_system/isolated_context.h"
 #include "third_party/blink/public/common/associated_interfaces/associated_interface_provider.h"
+#include "third_party/blink/public/common/frame/frame_owner_element_type.h"
 #include "third_party/blink/public/common/input/web_input_event.h"
 #include "third_party/blink/public/common/messaging/transferable_message_mojom_traits.h"
 #include "third_party/blink/public/common/page/page_zoom.h"
@@ -438,6 +442,145 @@ struct Converter<content::NavigationEntry*> {
 }  // namespace gin
 
 namespace electron::api {
+
+class FrameAttachmentObserver final : public content::WebContentsObserver,
+                                      private WebContentsZoomObserver {
+ public:
+  FrameAttachmentObserver(WebContents* target,
+                          content::WebContents* outer,
+                          content::FrameTreeNodeId outer_frame_tree_node_id)
+      : content::WebContentsObserver(outer),
+        target_(target),
+        outer_frame_tree_node_id_(outer_frame_tree_node_id),
+        previous_owner_window_(target->owner_window()
+                                   ? target->owner_window()->GetWeakPtr()
+                                   : nullptr) {
+    outer_zoom_controller_ =
+        WebContentsZoomController::FromWebContents(outer);
+    if (outer_zoom_controller_) {
+      outer_zoom_controller_->AddObserver(this);
+      auto* target_zoom_controller = target_->GetZoomController();
+      target_zoom_controller->SetEmbedderZoomController(
+          outer_zoom_controller_);
+      ApplyZoom(outer_zoom_controller_->GetZoomLevel(),
+                outer_zoom_controller_->UsesTemporaryZoomLevel());
+    }
+
+    NativeWindow* owner_window = nullptr;
+    if (auto* outer_api_web_contents = WebContents::From(outer)) {
+      owner_window = outer_api_web_contents->owner_window();
+    } else if (auto* relay = NativeWindowRelay::FromWebContents(outer)) {
+      owner_window = relay->GetNativeWindow();
+    }
+    target_->SetOwnerWindow(owner_window);
+  }
+
+  ~FrameAttachmentObserver() override { ResetZoomController(); }
+
+  void Disconnect(bool restore_owner = true) {
+    weak_ptr_factory_.InvalidateWeakPtrs();
+    Observe(nullptr);
+    ResetZoomController();
+    if (restore_owner && target_)
+      target_->SetOwnerWindow(previous_owner_window_.get());
+    target_ = nullptr;
+  }
+
+ private:
+  void ApplyZoom(double zoom_level, bool temporary) {
+    if (!target_)
+      return;
+    auto* target_zoom_controller = target_->GetZoomController();
+    if (temporary) {
+      target_zoom_controller->SetTemporaryZoomLevel(zoom_level);
+    } else if (!blink::ZoomValuesEqual(
+                   zoom_level, target_zoom_controller->GetZoomLevel())) {
+      target_zoom_controller->SetZoomLevel(zoom_level);
+    }
+    target_zoom_controller->SetDefaultZoomFactor(
+        blink::ZoomLevelToZoomFactor(zoom_level));
+  }
+
+  void ResetZoomController() {
+    if (target_ && target_->GetWebContents()) {
+      if (auto* target_zoom_controller =
+              WebContentsZoomController::FromWebContents(
+                  target_->GetWebContents())) {
+        target_zoom_controller->SetEmbedderZoomController(nullptr);
+      }
+    }
+    if (outer_zoom_controller_) {
+      outer_zoom_controller_->RemoveObserver(this);
+      outer_zoom_controller_ = nullptr;
+    }
+  }
+
+  void ScheduleDetachCheck(std::string_view reason) {
+    if (reason == "embedder-destroyed" || pending_reason_.empty())
+      pending_reason_ = std::string(reason);
+    if (detach_check_posted_)
+      return;
+    detach_check_posted_ = true;
+    content::GetUIThreadTaskRunner({})->PostTask(
+        FROM_HERE,
+        base::BindOnce(&FrameAttachmentObserver::CheckForDetach,
+                       weak_ptr_factory_.GetWeakPtr()));
+  }
+
+  void CheckForDetach() {
+    detach_check_posted_ = false;
+    if (!target_ || !target_->GetWebContents())
+      return;
+    if (target_->GetWebContents()->GetOuterWebContents()) {
+      pending_reason_.clear();
+      return;
+    }
+    target_->DidDetachFromFrame(pending_reason_.empty()
+                                    ? "frame-destroyed"
+                                    : pending_reason_);
+  }
+
+  // content::WebContentsObserver:
+  void FrameDeleted(content::FrameTreeNodeId frame_tree_node_id) override {
+    if (frame_tree_node_id == outer_frame_tree_node_id_)
+      ScheduleDetachCheck("frame-destroyed");
+  }
+
+  void RenderFrameDeleted(content::RenderFrameHost* frame) override {
+    if (frame->GetFrameTreeNodeId() == outer_frame_tree_node_id_)
+      ScheduleDetachCheck("frame-destroyed");
+  }
+
+  void PrimaryMainFrameRenderProcessGone(base::TerminationStatus) override {
+    ScheduleDetachCheck("frame-destroyed");
+  }
+
+  void WebContentsDestroyed() override {
+    // APIARY-VERIFY: Confirm outer teardown callback ordering reports
+    // embedder-destroyed rather than frame-destroyed on all platforms.
+    Observe(nullptr);
+    ScheduleDetachCheck("embedder-destroyed");
+  }
+
+  // WebContentsZoomObserver:
+  void OnZoomChanged(
+      const WebContentsZoomController::ZoomChangedEventData& data) override {
+    if (data.web_contents == web_contents())
+      ApplyZoom(data.new_zoom_level, data.temporary);
+  }
+
+  void OnZoomControllerDestroyed(WebContentsZoomController*) override {
+    ResetZoomController();
+  }
+
+  raw_ptr<WebContents> target_;
+  content::FrameTreeNodeId outer_frame_tree_node_id_;
+  base::WeakPtr<NativeWindow> previous_owner_window_;
+  raw_ptr<WebContentsZoomController> outer_zoom_controller_ = nullptr;
+  bool detach_check_posted_ = false;
+  std::string pending_reason_;
+  base::WeakPtrFactory<FrameAttachmentObserver> weak_ptr_factory_{this};
+};
 
 namespace {
 
@@ -1531,12 +1674,18 @@ void WebContents::UpdateTargetURL(content::WebContents* source,
 bool WebContents::HandleKeyboardEvent(
     content::WebContents* source,
     const input::NativeWebKeyboardEvent& event) {
+  if (auto* outer = web_contents()->GetOuterWebContents()) {
+    if (auto* outer_api_web_contents = WebContents::From(outer)) {
+      // Send unhandled keyboard events through the actual outer tree so menu
+      // accelerators keep working for app-owned frame attachments.
+      return outer_api_web_contents->HandleKeyboardEvent(source, event);
+    }
+  }
   if (type_ == Type::kWebView && embedder_) {
     // Send the unhandled keyboard events back to the embedder.
     return embedder_->HandleKeyboardEvent(source, event);
-  } else {
-    return PlatformHandleKeyboardEvent(source, event);
   }
+  return PlatformHandleKeyboardEvent(source, event);
 }
 
 #if !BUILDFLAG(IS_MAC)
@@ -2549,6 +2698,14 @@ content::WebContents* WebContents::GetDevToolsWebContents() const {
 }
 
 void WebContents::WebContentsDestroyed() {
+  frame_attachment_target_destroyed_ = true;
+  frame_attach_pending_ = false;
+  ++frame_attachment_generation_;
+  if (frame_attachment_observer_) {
+    auto observer = std::move(frame_attachment_observer_);
+    observer->Disconnect(/*restore_owner=*/false);
+  }
+
   // Clear the pointer stored in wrapper.
   if (GetAllWebContents().Lookup(id_))
     GetAllWebContents().Remove(id_);
@@ -3104,6 +3261,8 @@ void WebContents::OpenDevTools(gin::Arguments* args) {
       options.Get("title", &title);
     }
   }
+  if (web_contents()->GetOuterWebContents())
+    state = "detach";
 
   DCHECK(inspectable_web_contents_);
   inspectable_web_contents_->SetDockState(state);
@@ -3757,9 +3916,9 @@ void WebContents::Focus() {
     owner_window()->Focus(true);
 #endif
 
-  // WebView uses WebContentsViewChildFrame, which doesn't have a Focus impl
-  // and triggers a fatal NOTREACHED.
-  if (is_guest())
+  // Inner WebContents use WebContentsViewChildFrame, which does not implement
+  // top-level focus and triggers a fatal NOTREACHED.
+  if (web_contents()->GetOuterWebContents())
     return;
 
   web_contents()->Focus();
@@ -3968,6 +4127,239 @@ void WebContents::OnCursorChanged(const ui::Cursor& cursor) {
   }
 }
 
+v8::Local<v8::Promise> WebContents::AttachToFrame(v8::Isolate* isolate,
+                                                  WebFrameMain* frame) {
+  gin_helper::Promise<void> promise(isolate);
+  auto handle = promise.GetHandle();
+
+  content::WebContents* target = GetWebContents();
+  if (!target || frame_attachment_target_destroyed_) {
+    promise.RejectWithErrorMessage(
+        "ERR_WEB_CONTENTS_DESTROYED: target WebContents was destroyed");
+    return handle;
+  }
+  if (!base::FeatureList::IsEnabled(
+          features::kAttachUnownedInnerWebContents)) {
+    promise.RejectWithErrorMessage(
+        "ERR_FRAME_NOT_ATTACHABLE: unowned inner WebContents are disabled");
+    return handle;
+  }
+  if (type_ != Type::kBrowserWindow && type_ != Type::kBrowserView) {
+    promise.RejectWithErrorMessage(
+        "ERR_FRAME_NOT_ATTACHABLE: target must be an app-owned WebContents");
+    return handle;
+  }
+  if (frame_attach_pending_ || target->GetOuterWebContents()) {
+    promise.RejectWithErrorMessage(
+        "ERR_WEB_CONTENTS_ALREADY_ATTACHED: detach before attaching again");
+    return handle;
+  }
+  if (inspectable_web_contents_->IsDevToolsDocked()) {
+    promise.RejectWithErrorMessage(
+        "ERR_DEVTOOLS_DOCKED: close docked DevTools before attaching");
+    return handle;
+  }
+
+  content::RenderFrameHost* render_frame_host =
+      frame ? frame->render_frame_host() : nullptr;
+  if (!render_frame_host) {
+    promise.RejectWithErrorMessage(
+        "ERR_FRAME_NOT_FOUND: WebFrameMain was destroyed");
+    return handle;
+  }
+  if (!render_frame_host->GetParent()) {
+    promise.RejectWithErrorMessage(
+        "ERR_FRAME_IS_MAIN_FRAME: attach target must be a child frame");
+    return handle;
+  }
+  if (!render_frame_host->IsActive() ||
+      !render_frame_host->IsRenderFrameLive()) {
+    promise.RejectWithErrorMessage(
+        "ERR_FRAME_NOT_ATTACHABLE: frame is not active and live");
+    return handle;
+  }
+
+  content::WebContents* outer =
+      content::WebContents::FromRenderFrameHost(render_frame_host);
+  auto* outer_main_frame = outer ? outer->GetPrimaryMainFrame() : nullptr;
+  auto* render_frame_host_impl =
+      static_cast<content::RenderFrameHostImpl*>(render_frame_host);
+  if (!outer || outer == target || !outer_main_frame ||
+      render_frame_host->GetFrameOwnerElementType() !=
+          blink::FrameOwnerElementType::kIframe ||
+      render_frame_host->GetLastCommittedURL() != GURL("about:blank") ||
+      render_frame_host->GetProcess() != outer_main_frame->GetProcess() ||
+      render_frame_host_impl->inner_tree_main_frame_tree_node_id()) {
+    promise.RejectWithErrorMessage(
+        "ERR_FRAME_NOT_ATTACHABLE: frame must be a fresh same-process "
+        "about:blank iframe");
+    return handle;
+  }
+
+  frame_attach_pending_ = true;
+  const uint64_t generation = ++frame_attachment_generation_;
+  const content::FrameTreeNodeId frame_tree_node_id =
+      render_frame_host->GetFrameTreeNodeId();
+  render_frame_host->PrepareForInnerWebContentsAttach(base::BindOnce(
+      [](base::WeakPtr<WebContents> target_api,
+         base::WeakPtr<content::WebContents> expected_outer,
+         content::FrameTreeNodeId expected_frame_tree_node_id,
+         uint64_t expected_generation,
+         gin_helper::Promise<void> promise,
+         content::RenderFrameHost* prepared_frame) {
+        if (!target_api) {
+          promise.RejectWithErrorMessage(
+              "ERR_WEB_CONTENTS_DESTROYED: target WebContents was destroyed");
+          return;
+        }
+        if (target_api->frame_attachment_target_destroyed_ ||
+            !target_api->GetWebContents()) {
+          promise.RejectWithErrorMessage(
+              "ERR_WEB_CONTENTS_DESTROYED: target WebContents was destroyed");
+          return;
+        }
+        if (target_api->frame_attachment_generation_ != expected_generation) {
+          promise.RejectWithErrorMessage(
+              "ERR_FRAME_ATTACH_ABORTED: attachment was canceled");
+          return;
+        }
+
+        target_api->frame_attach_pending_ = false;
+        content::WebContents* target = target_api->GetWebContents();
+        if (!target || !expected_outer) {
+          promise.RejectWithErrorMessage(
+              "ERR_WEB_CONTENTS_DESTROYED: target or embedder was destroyed");
+          return;
+        }
+        if (target->GetOuterWebContents()) {
+          promise.RejectWithErrorMessage(
+              "ERR_WEB_CONTENTS_ALREADY_ATTACHED: target was attached while "
+              "preparing the frame");
+          return;
+        }
+        if (target_api->inspectable_web_contents_->IsDevToolsDocked()) {
+          promise.RejectWithErrorMessage(
+              "ERR_DEVTOOLS_DOCKED: close docked DevTools before attaching");
+          return;
+        }
+        if (!prepared_frame ||
+            prepared_frame->GetFrameTreeNodeId() !=
+                expected_frame_tree_node_id ||
+            !prepared_frame->GetParent() || !prepared_frame->IsActive() ||
+            !prepared_frame->IsRenderFrameLive() ||
+            content::WebContents::FromRenderFrameHost(prepared_frame) !=
+                expected_outer.get()) {
+          promise.RejectWithErrorMessage(
+              "ERR_FRAME_ATTACH_ABORTED: frame preparation did not complete");
+          return;
+        }
+
+        auto* expected_outer_main_frame =
+            expected_outer->GetPrimaryMainFrame();
+        auto* prepared_frame_impl =
+            static_cast<content::RenderFrameHostImpl*>(prepared_frame);
+        if (!expected_outer_main_frame ||
+            prepared_frame->GetFrameOwnerElementType() !=
+                blink::FrameOwnerElementType::kIframe ||
+            prepared_frame->GetLastCommittedURL() != GURL("about:blank") ||
+            prepared_frame->GetProcess() !=
+                expected_outer_main_frame->GetProcess() ||
+            prepared_frame_impl->inner_tree_main_frame_tree_node_id()) {
+          promise.RejectWithErrorMessage(
+              "ERR_FRAME_NOT_ATTACHABLE: prepared frame is no longer a fresh "
+              "same-process about:blank iframe");
+          return;
+        }
+
+        auto* guest_handle =
+            guest_contents::GuestContentsHandle::CreateForWebContents(target);
+        guest_handle->AttachToOuterWebContents(prepared_frame);
+
+        auto* outer_frame = target->GetOuterWebContentsFrame();
+        if (!outer_frame) {
+          guest_handle->DetachFromOuterWebContents();
+          promise.RejectWithErrorMessage(
+              "ERR_FRAME_ATTACH_ABORTED: Chromium did not retain the outer "
+              "frame relationship");
+          return;
+        }
+        target_api->frame_attachment_observer_ =
+            std::make_unique<FrameAttachmentObserver>(
+                target_api.get(), expected_outer.get(),
+                outer_frame->GetFrameTreeNodeId());
+
+        v8::Isolate* isolate = promise.isolate();
+        v8::HandleScope handle_scope(isolate);
+        // APIARY-VERIFY: Confirm the post-swap outer delegate frame remains
+        // representable as a live WebFrameMain in the full Chromium tree.
+        auto attached_frame = WebFrameMain::From(isolate, outer_frame);
+        if (attached_frame.IsEmpty()) {
+          guest_handle->DetachFromOuterWebContents();
+          auto observer = std::move(target_api->frame_attachment_observer_);
+          observer->Disconnect();
+          ++target_api->frame_attachment_generation_;
+          promise.RejectWithErrorMessage(
+              "ERR_FRAME_ATTACH_ABORTED: attached frame is not available");
+          return;
+        }
+        target_api->Emit("did-attach-to-frame", attached_frame);
+        promise.Resolve();
+      },
+      GetWeakPtr(), outer->GetWeakPtr(), frame_tree_node_id, generation,
+      std::move(promise)));
+  return handle;
+}
+
+v8::Local<v8::Promise> WebContents::DetachFromFrame(v8::Isolate* isolate) {
+  gin_helper::Promise<void> promise(isolate);
+  auto handle = promise.GetHandle();
+  content::WebContents* target = GetWebContents();
+  if (!target) {
+    promise.RejectWithErrorMessage(
+        "ERR_WEB_CONTENTS_DESTROYED: target WebContents was destroyed");
+    return handle;
+  }
+
+  if (frame_attach_pending_) {
+    frame_attach_pending_ = false;
+    ++frame_attachment_generation_;
+  }
+
+  if (target->GetOuterWebContents()) {
+    auto* guest_handle =
+        guest_contents::GuestContentsHandle::FromWebContents(target);
+    if (!guest_handle) {
+      promise.RejectWithErrorMessage(
+          "ERR_FRAME_NOT_ATTACHABLE: target is not an app-owned frame "
+          "attachment");
+      return handle;
+    }
+    guest_handle->DetachFromOuterWebContents();
+    if (target->GetOuterWebContents()) {
+      promise.RejectWithErrorMessage(
+          "ERR_FRAME_ATTACH_ABORTED: frame detach did not complete");
+      return handle;
+    }
+    DidDetachFromFrame("explicit");
+  }
+
+  promise.Resolve();
+  return handle;
+}
+
+bool WebContents::IsAttachedToFrame() const {
+  return GetWebContents() && GetWebContents()->GetOuterWebContents();
+}
+
+void WebContents::DidDetachFromFrame(std::string_view reason) {
+  if (!frame_attachment_observer_)
+    return;
+  auto observer = std::move(frame_attachment_observer_);
+  observer->Disconnect();
+  ++frame_attachment_generation_;
+  Emit("did-detach-from-frame", reason);
+}
+
 void WebContents::AttachToIframe(content::WebContents* embedder_web_contents,
                                  std::string embedder_frame_token) {
   auto token = base::Token::FromString(embedder_frame_token);
@@ -4129,9 +4521,9 @@ v8::Local<v8::Value> WebContents::Session(v8::Isolate* isolate) {
 }
 
 content::WebContents* WebContents::HostWebContents() const {
-  if (!embedder_)
-    return nullptr;
-  return embedder_->web_contents();
+  if (auto* outer = web_contents()->GetOuterWebContents())
+    return outer;
+  return embedder_ ? embedder_->web_contents() : nullptr;
 }
 
 void WebContents::SetEmbedder(const WebContents* embedder) {
@@ -4429,9 +4821,8 @@ void WebContents::ExitPictureInPicture() {
 }
 
 bool WebContents::ShouldFocusPageAfterCrash(content::WebContents* source) {
-  // WebView uses WebContentsViewChildFrame, which doesn't have a Focus impl
-  // and triggers a fatal NOTREACHED.
-  if (is_guest())
+  // Inner WebContents use WebContentsViewChildFrame, which has no Focus impl.
+  if (source && source->GetOuterWebContents())
     return false;
   return true;
 }
@@ -4737,10 +5128,15 @@ void WebContents::UpdateHtmlApiFullscreen(bool fullscreen) {
       ->GetWidget()
       ->SynchronizeVisualProperties();
 
-  // The embedder WebContents is separated from the frame tree of webview, so
-  // we must manually sync their fullscreen states.
-  if (embedder_)
+  // Keep Electron's fullscreen bookkeeping aligned with the actual content
+  // tree. Classic webviews fall back to their construction-time embedder.
+  auto* outer = web_contents()->GetOuterWebContents();
+  auto* outer_api_web_contents = outer ? WebContents::From(outer) : nullptr;
+  if (outer_api_web_contents) {
+    outer_api_web_contents->SetHtmlApiFullscreen(fullscreen);
+  } else if (embedder_) {
     embedder_->SetHtmlApiFullscreen(fullscreen);
+  }
 
   if (fullscreen) {
     Emit("enter-html-full-screen");
@@ -4750,14 +5146,13 @@ void WebContents::UpdateHtmlApiFullscreen(bool fullscreen) {
     owner_window_->NotifyWindowLeaveHtmlFullScreen();
   }
 
-  // Make sure all child webviews quit html fullscreen.
-  if (!fullscreen && !is_guest()) {
-    auto* manager = WebViewManager::GetWebViewManager(web_contents());
-    manager->ForEachGuest(web_contents(), [&](content::WebContents* guest) {
-      WebContents* api_web_contents = WebContents::From(guest);
-      api_web_contents->SetHtmlApiFullscreen(false);
-      return false;
-    });
+  // Make sure all content-tree children, including unowned inner
+  // WebContents, leave HTML fullscreen.
+  if (!fullscreen) {
+    for (auto* inner : web_contents()->GetInnerWebContents()) {
+      if (auto* inner_api_web_contents = WebContents::From(inner))
+        inner_api_web_contents->SetHtmlApiFullscreen(false);
+    }
   }
 }
 
@@ -4855,6 +5250,9 @@ void WebContents::FillObjectTemplate(v8::Isolate* isolate,
       .SetMethod("beginFrameSubscription", &WebContents::BeginFrameSubscription)
       .SetMethod("endFrameSubscription", &WebContents::EndFrameSubscription)
       .SetMethod("startDrag", &WebContents::StartDrag)
+      .SetMethod("attachToFrame", &WebContents::AttachToFrame)
+      .SetMethod("detachFromFrame", &WebContents::DetachFromFrame)
+      .SetMethod("isAttachedToFrame", &WebContents::IsAttachedToFrame)
       .SetMethod("attachToIframe", &WebContents::AttachToIframe)
       .SetMethod("detachFromOuterFrame", &WebContents::DetachFromOuterFrame)
       .SetMethod("isOffscreen", &WebContents::IsOffScreen)

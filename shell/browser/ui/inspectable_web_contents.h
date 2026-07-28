@@ -66,6 +66,7 @@ class InspectableWebContents
   void ShowDevTools(bool activate);
   void CloseDevTools();
   bool IsDevToolsViewShowing();
+  bool IsDevToolsDocked();
   std::u16string GetDevToolsTitle();
   void AttachTo(scoped_refptr<content::DevToolsAgentHost>);
   void Detach();
@@ -268,6 +269,8 @@ class InspectableWebContents
 
   gfx::Rect devtools_bounds_;
   bool can_dock_ = true;
+  bool has_reported_devtools_dock_state_ = false;
+  bool is_devtools_docked_ = false;
   std::string dock_state_;
   std::u16string devtools_title_;
   bool activate_ = true;

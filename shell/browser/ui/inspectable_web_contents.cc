@@ -400,6 +400,7 @@ void InspectableWebContents::ReleaseWebContents() {
 }
 
 void InspectableWebContents::SetDockState(const std::string& state) {
+  has_reported_devtools_dock_state_ = false;
   if (state == "detach") {
     can_dock_ = false;
   } else {
@@ -470,6 +471,14 @@ void InspectableWebContents::CloseDevTools() {
 
 bool InspectableWebContents::IsDevToolsViewShowing() {
   return managed_devtools_web_contents_ && view_->IsDevToolsViewShowing();
+}
+
+bool InspectableWebContents::IsDevToolsDocked() {
+  if (!managed_devtools_web_contents_)
+    return false;
+  if (has_reported_devtools_dock_state_)
+    return is_devtools_docked_;
+  return can_dock_ && dock_state_ != "undocked";
 }
 
 std::u16string InspectableWebContents::GetDevToolsTitle() {
@@ -757,6 +766,8 @@ void InspectableWebContents::LoadNetworkResource(DispatchCallback callback,
 
 void InspectableWebContents::SetIsDocked(DispatchCallback callback,
                                          bool docked) {
+  has_reported_devtools_dock_state_ = true;
+  is_devtools_docked_ = docked;
   if (managed_devtools_web_contents_)
     view_->SetIsDocked(docked, activate_);
   if (!callback.is_null())
