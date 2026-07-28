@@ -997,6 +997,26 @@ Returns:
 
 Emitted when a `<webview>` has been attached to this web contents.
 
+#### Event: 'did-attach-to-frame'
+
+Returns:
+
+* `event` Event
+* `frame` WebFrameMain - The child frame hosting this web contents.
+
+Emitted after this web contents has been attached to `frame`.
+
+#### Event: 'did-detach-from-frame'
+
+Returns:
+
+* `event` Event
+* `reason` string - The reason for detaching. Can be `explicit`,
+  `frame-destroyed`, or `embedder-destroyed`.
+
+Emitted after an app-owned frame attachment ends. This event is not emitted
+when this web contents itself is destroyed.
+
 #### Event: 'console-message'
 
 Returns:
@@ -1176,6 +1196,43 @@ If the page is successfully closed (i.e. the unload is not prevented by the
 page, or `waitForBeforeUnload` is false or unspecified), the WebContents will
 be destroyed and no longer usable. The [`destroyed`](#event-destroyed) event
 will be emitted.
+
+#### `contents.attachToFrame(frame)`
+
+* `frame` WebFrameMain
+
+Returns `Promise<void>` - Resolves after this web contents is attached to
+`frame`.
+
+> [!WARNING]
+> This API is experimental. The supported target is a fresh, live,
+> same-process `about:blank` child `<iframe>`. Remove any `WebContentsView`
+> containing `contents` from its native view hierarchy before attaching it.
+
+This method embeds an app-owned `WebContents` without changing it into a
+`<webview>` guest. The application retains ownership, and the web contents can
+be detached and attached to a replacement frame without losing its navigation
+state. `frame` is consumed by the attachment and must not be reused as a
+durable attachment identifier.
+
+The promise rejects if the frame is the main frame, destroyed, navigated,
+inactive, cross-process, already hosting an inner web contents, or if this web
+contents is already attached or preparing an attachment. Docked DevTools must
+be closed first.
+
+#### `contents.detachFromFrame()`
+
+Returns `Promise<void>` - Resolves after this web contents is detached from its
+outer frame without being destroyed. This is a no-op if it is already
+detached.
+
+The original native `WebContentsView` wrapper is not reusable after final
+detach in this experimental version.
+
+#### `contents.isAttachedToFrame()`
+
+Returns `boolean` - Whether Chromium currently reports an outer web contents
+relationship for this web contents.
 
 #### `contents.focus()`
 
@@ -1947,6 +2004,8 @@ Opens the DevTools.
 
 When `contents` is a `<webview>` tag, the `mode` would be `detach` by default,
 explicitly passing an empty `mode` can force using last used dock state.
+When `contents` is attached to a frame with `attachToFrame`, DevTools is always
+opened in `detach` mode.
 
 On Windows, if Window Control Overlay is enabled, DevTools will be opened with `mode: 'detach'`.
 
