@@ -94,6 +94,12 @@ void WebViewGuestDelegate::OnZoomControllerDestroyed(
 }
 
 void WebViewGuestDelegate::ResetZoomController() {
+  if (api_web_contents_ && api_web_contents_->GetWebContents()) {
+    if (auto* zoom_controller = WebContentsZoomController::FromWebContents(
+            api_web_contents_->GetWebContents())) {
+      zoom_controller->SetEmbedderZoomController(nullptr);
+    }
+  }
   if (embedder_zoom_controller_) {
     embedder_zoom_controller_->RemoveObserver(this);
     embedder_zoom_controller_ = nullptr;

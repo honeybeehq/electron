@@ -77,6 +77,12 @@ void InitializeFeatureList() {
       std::string(",") + sandbox::policy::features::kNetworkServiceSandbox.name;
 #endif
 
+  // WebContents::attachToFrame uses Chromium's unowned inner WebContents
+  // attachment so the application retains ownership across detach/reattach.
+  // This remains overridable with --disable-features.
+  enable_features +=
+      std::string(",") + features::kAttachUnownedInnerWebContents.name;
+
 #if BUILDFLAG(ENABLE_PDF_VIEWER)
   // Enable window.showSaveFilePicker api for saving pdf files.
   // Refs https://issues.chromium.org/issues/373852607

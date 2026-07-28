@@ -5,10 +5,12 @@
 #ifndef ELECTRON_SHELL_BROWSER_API_ELECTRON_API_WEB_CONTENTS_H_
 #define ELECTRON_SHELL_BROWSER_API_ELECTRON_API_WEB_CONTENTS_H_
 
+#include <cstdint>
 #include <map>
 #include <memory>
 #include <optional>
 #include <string>
+#include <string_view>
 #include <vector>
 
 #include "base/containers/flat_set.h"
@@ -116,8 +118,10 @@ namespace api {
 
 class BaseWindow;
 class Debugger;
+class FrameAttachmentObserver;
 class FrameSubscriber;
 class Session;
+class WebFrameMain;
 
 // Wrapper around the content::WebContents.
 class WebContents final : public ExclusiveAccessContext,
@@ -322,6 +326,10 @@ class WebContents final : public ExclusiveAccessContext,
 
   // Methods for creating <webview>.
   [[nodiscard]] bool is_guest() const { return type_ == Type::kWebView; }
+  v8::Local<v8::Promise> AttachToFrame(v8::Isolate* isolate,
+                                       WebFrameMain* frame);
+  v8::Local<v8::Promise> DetachFromFrame(v8::Isolate* isolate);
+  bool IsAttachedToFrame() const;
   void AttachToIframe(content::WebContents* embedder_web_contents,
                       std::string embedder_frame_token);
   void DetachFromOuterFrame();
@@ -476,6 +484,8 @@ class WebContents final : public ExclusiveAccessContext,
   WebContents& operator=(const WebContents&) = delete;
 
  private:
+  friend class FrameAttachmentObserver;
+
   // Store last emitted favicon URLs to avoid duplicate page-favicon-updated
   // events
   base::flat_set<GURL> last_favicon_urls_;
@@ -491,6 +501,8 @@ class WebContents final : public ExclusiveAccessContext,
 
   // Delete this if garbage collection has not started.
   void DeleteThisIfAlive();
+
+  void DidDetachFromFrame(std::string_view reason);
 
   // Creates a InspectableWebContents object and takes ownership of
   // |web_contents|.
@@ -841,7 +853,13 @@ class WebContents final : public ExclusiveAccessContext,
   cppgc::Persistent<api::Debugger> debugger_;
 
   std::unique_ptr<WebViewGuestDelegate> guest_delegate_;
+  std::unique_ptr<FrameAttachmentObserver> frame_attachment_observer_;
   std::unique_ptr<FrameSubscriber> frame_subscriber_;
+
+  // Serializes and invalidates asynchronous frame preparation callbacks.
+  bool frame_attach_pending_ = false;
+  bool frame_attachment_target_destroyed_ = false;
+  uint64_t frame_attachment_generation_ = 0;
 
 #if BUILDFLAG(ENABLE_ELECTRON_EXTENSIONS)
   std::unique_ptr<extensions::ScriptExecutor> script_executor_;

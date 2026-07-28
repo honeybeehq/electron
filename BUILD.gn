@@ -518,6 +518,7 @@ source_set("electron_lib") {
     "//components/autofill/core/common:features",
     "//components/certificate_transparency",
     "//components/compose:buildflags",
+    "//components/guest_contents/browser",
     "//components/embedder_support:user_agent",
     "//components/heap_profiling/multi_process",
     "//components/input",
