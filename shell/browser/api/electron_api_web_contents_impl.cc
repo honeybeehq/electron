@@ -21,10 +21,10 @@ void WebContents::DetachFromOuterFrame() {
   content::FrameTreeNodeId frame_tree_node_id =
       static_cast<content::WebContentsImpl*>(web_contents())
           ->GetOuterDelegateFrameTreeNodeId();
-  if (!frame_tree_node_id) {
+  if (frame_tree_node_id) {
     auto* node = content::FrameTreeNode::GloballyFindByID(frame_tree_node_id);
-    DCHECK(node->parent());
-    node->frame_tree().RemoveFrame(node);
+    if (node && node->parent())
+      node->frame_tree().RemoveFrame(node);
   }
 }
 
