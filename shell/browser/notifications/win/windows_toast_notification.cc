@@ -13,6 +13,7 @@
 #include <shlobj.h>
 #include <wrl\wrappers\corewrappers.h>
 
+#include "base/containers/fixed_flat_map.h"
 #include "base/logging.h"
 #include "base/no_destructor.h"
 #include "base/strings/strcat.h"
