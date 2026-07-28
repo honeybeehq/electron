@@ -455,13 +455,11 @@ class FrameAttachmentObserver final : public content::WebContentsObserver,
         previous_owner_window_(target->owner_window()
                                    ? target->owner_window()->GetWeakPtr()
                                    : nullptr) {
-    outer_zoom_controller_ =
-        WebContentsZoomController::FromWebContents(outer);
+    outer_zoom_controller_ = WebContentsZoomController::FromWebContents(outer);
     if (outer_zoom_controller_) {
       outer_zoom_controller_->AddObserver(this);
       auto* target_zoom_controller = target_->GetZoomController();
-      target_zoom_controller->SetEmbedderZoomController(
-          outer_zoom_controller_);
+      target_zoom_controller->SetEmbedderZoomController(outer_zoom_controller_);
       ApplyZoom(outer_zoom_controller_->GetZoomLevel(),
                 outer_zoom_controller_->UsesTemporaryZoomLevel());
     }
@@ -522,9 +520,8 @@ class FrameAttachmentObserver final : public content::WebContentsObserver,
       return;
     detach_check_posted_ = true;
     content::GetUIThreadTaskRunner({})->PostTask(
-        FROM_HERE,
-        base::BindOnce(&FrameAttachmentObserver::CheckForDetach,
-                       weak_ptr_factory_.GetWeakPtr()));
+        FROM_HERE, base::BindOnce(&FrameAttachmentObserver::CheckForDetach,
+                                  weak_ptr_factory_.GetWeakPtr()));
   }
 
   void CheckForDetach() {
@@ -535,9 +532,8 @@ class FrameAttachmentObserver final : public content::WebContentsObserver,
       pending_reason_.clear();
       return;
     }
-    target_->DidDetachFromFrame(pending_reason_.empty()
-                                    ? "frame-destroyed"
-                                    : pending_reason_);
+    target_->DidDetachFromFrame(pending_reason_.empty() ? "frame-destroyed"
+                                                        : pending_reason_);
   }
 
   // content::WebContentsObserver:
@@ -4138,8 +4134,7 @@ v8::Local<v8::Promise> WebContents::AttachToFrame(v8::Isolate* isolate,
         "ERR_WEB_CONTENTS_DESTROYED: target WebContents was destroyed");
     return handle;
   }
-  if (!base::FeatureList::IsEnabled(
-          features::kAttachUnownedInnerWebContents)) {
+  if (!base::FeatureList::IsEnabled(features::kAttachUnownedInnerWebContents)) {
     promise.RejectWithErrorMessage(
         "ERR_FRAME_NOT_ATTACHABLE: unowned inner WebContents are disabled");
     return handle;
@@ -4204,8 +4199,7 @@ v8::Local<v8::Promise> WebContents::AttachToFrame(v8::Isolate* isolate,
       [](base::WeakPtr<WebContents> target_api,
          base::WeakPtr<content::WebContents> expected_outer,
          content::FrameTreeNodeId expected_frame_tree_node_id,
-         uint64_t expected_generation,
-         gin_helper::Promise<void> promise,
+         uint64_t expected_generation, gin_helper::Promise<void> promise,
          content::RenderFrameHost* prepared_frame) {
         if (!target_api) {
           promise.RejectWithErrorMessage(
@@ -4254,8 +4248,7 @@ v8::Local<v8::Promise> WebContents::AttachToFrame(v8::Isolate* isolate,
           return;
         }
 
-        auto* expected_outer_main_frame =
-            expected_outer->GetPrimaryMainFrame();
+        auto* expected_outer_main_frame = expected_outer->GetPrimaryMainFrame();
         auto* prepared_frame_impl =
             static_cast<content::RenderFrameHostImpl*>(prepared_frame);
         if (!expected_outer_main_frame ||
@@ -4275,8 +4268,11 @@ v8::Local<v8::Promise> WebContents::AttachToFrame(v8::Isolate* isolate,
             guest_contents::GuestContentsHandle::CreateForWebContents(target);
         guest_handle->AttachToOuterWebContents(prepared_frame);
 
-        auto* outer_frame = target->GetOuterWebContentsFrame();
-        if (!outer_frame) {
+        auto* outer_frame_node = content::FrameTreeNode::GloballyFindByID(
+            expected_frame_tree_node_id);
+        auto* outer_frame =
+            outer_frame_node ? outer_frame_node->current_frame_host() : nullptr;
+        if (!outer_frame || !outer_frame->GetParent()) {
           guest_handle->DetachFromOuterWebContents();
           promise.RejectWithErrorMessage(
               "ERR_FRAME_ATTACH_ABORTED: Chromium did not retain the outer "
@@ -4286,7 +4282,7 @@ v8::Local<v8::Promise> WebContents::AttachToFrame(v8::Isolate* isolate,
         target_api->frame_attachment_observer_ =
             std::make_unique<FrameAttachmentObserver>(
                 target_api.get(), expected_outer.get(),
-                outer_frame->GetFrameTreeNodeId());
+                expected_frame_tree_node_id);
 
         v8::Isolate* isolate = promise.isolate();
         v8::HandleScope handle_scope(isolate);

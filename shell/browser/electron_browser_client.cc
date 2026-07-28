@@ -1877,7 +1877,8 @@ void ElectronBrowserClient::GetAdditionalMappedFilesForChildProcess(
 bool ElectronBrowserClient::IsFullscreenAllowedForUnfocusedWebContents(
     content::WebContents* unfocused_web_contents) {
   return static_cast<content::WebContentsImpl*>(unfocused_web_contents)
-      ->IsGuest();
+             ->IsGuest() ||
+         unfocused_web_contents->GetOuterWebContents();
 }
 
 std::unique_ptr<content::LoginDelegate>
