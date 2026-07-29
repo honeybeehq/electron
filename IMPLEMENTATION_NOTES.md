@@ -70,6 +70,67 @@ The binding PM decisions override the reconnaissance sketch as follows:
 | Crash behavior | Inner renderer loss does not change attachment state and remains reloadable. Outer loss is handled as automatic detach. |
 | Native view | Documentation requires removal from the native hierarchy before attach and declares the old wrapper non-reusable after final detach. |
 
+## Focus-detach investigation and root-cause correction
+
+The first Apiary runtime test appeared to show a focus-driven
+`RenderFrameHost` swap being misclassified as placeholder destruction: one
+CDP-routed click into the embedded page was followed by
+`did-detach-from-frame` with reason `frame-destroyed`, while an observer on the
+iframe's immediate parent reported no mutation. Browser-side instrumentation
+disproved that interpretation.
+
+The observer saw the expected post-attach `RenderFrameDeleted` notification for
+the original outer delegate host while its `FrameTreeNode` remained globally
+resolvable and `GetOuterWebContents()` still named the embedder. The delayed
+relationship check correctly ignored that host swap. On the click, however,
+Chromium delivered `FrameDeleted` for the tracked outer frame-tree-node ID.
+After that callback:
+
+- `target->GetOuterWebContents()` was null;
+- `FrameTreeNode::GloballyFindByID(tracked_id)` was null; and
+- there was no current `RenderFrameHost` to which tracking could be rebound.
+
+A document-wide `MutationObserver` then exposed the missing application-side
+event: Dockview activation removed and reinserted the pane beneath
+`DIV#dv-tabpanel-2.dv-content-container`. The JavaScript iframe object retained
+its identity, but removal destroyed its browsing context. Reinsertion created a
+new local `about:blank` context, emitted a new load, and produced a new frame
+token. The earlier observer was scoped one ancestor too narrowly and therefore
+missed both child-list mutations.
+
+The Electron classifier is intentionally unchanged. Rebinding after this event
+would preserve stale attachment bookkeeping for a frame-tree node that no
+longer exists. `frame-destroyed` is the correct safety contract; an application
+that reparents a placeholder must use the new placeholder generation/frame
+token to attach the same surviving target again. The removal regression spec
+now models that recovery using the same iframe DOM element: remove, observe
+genuine detach, reinsert, verify a new frame token, and reattach the same
+stateful `WebContents`.
+
+### Exonerated-factor matrix
+
+The exact production ingredients were reduced in a retained-wrapper standalone
+harness. Each case survived a correctly targeted CDP click without detaching:
+
+| Factor | Standalone result |
+| --- | --- |
+| Guest navigated to a real HTTPS origin before attach | Attachment survived |
+| Persistent `session.fromPartition('persist:browser')` session | Attachment survived |
+| Sandboxed, context-isolated guest with Node integration disabled | Attachment survived |
+| Guest `before-mouse-event` listener | Listener fired; attachment survived |
+| HTTP embedder with preload and context isolation | Attachment survived |
+| Embedder focus transfer and ancestor focus changes | Attachment survived |
+| Different outer zoom factors | Attachment survived |
+| Attach/navigation timing overlap | Attachment survived |
+| Exact CDP `Input.dispatchMouseEvent` coordinates on the embedder target | Click landed in the guest; attachment survived |
+
+The original standalone `"Object has been destroyed"` failure was also
+exonerated: the script retained only `new WebContentsView().webContents`, so
+garbage collection destroyed the owning `WebContentsView`. Retaining the view
+made the failure disappear. The native attachment implementation did not hold
+an unsafe raw `RenderFrameHost` or `WebFrameMain` reference in this path, and
+the temporary diagnostic logging used for the audit was removed.
+
 ## APIARY-VERIFY
 
 Two true runtime-ordering questions are marked in source:
@@ -92,7 +153,7 @@ Fifteen specs were added:
 
 - classic owned-webview outer-frame detach regression;
 - explicit attach/detach/reattach and state preservation;
-- iframe removal, automatic detach, and replacement-frame reattach;
+- iframe removal, automatic detach, and same-element/new-frame-token reattach;
 - main, disposed, navigated, self-owned, pending, already-attached, and
   occupied-host rejection paths;
 - embedder destruction while the target remains usable;
