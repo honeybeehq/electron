@@ -104,9 +104,7 @@ describe('webContents module', () => {
         show: false,
         webPreferences: { webviewTag: true }
       });
-      const attached = once(w.webContents, 'did-attach-webview') as Promise<
-        [unknown, WebContents]
-      >;
+      const attached = once(w.webContents, 'did-attach-webview') as Promise<[unknown, WebContents]>;
       await w.loadURL('data:text/html,<webview src="about:blank"></webview>');
       const [, guest] = await attached;
       const destroyed = once(guest, 'destroyed');
@@ -118,11 +116,7 @@ describe('webContents module', () => {
   });
 
   describe('app-owned frame attachments', () => {
-    const attachmentFixture = path.join(
-      fixturesPath,
-      'pages',
-      'web-contents-frame-attachment.html'
-    );
+    const attachmentFixture = path.join(fixturesPath, 'pages', 'web-contents-frame-attachment.html');
 
     const createEmbedder = async (show = false) => {
       const w = new BrowserWindow({
@@ -142,9 +136,7 @@ describe('webContents module', () => {
     };
 
     const frameNamed = (w: BrowserWindow, name: string) => {
-      const frame = w.webContents.mainFrame.frames.find(
-        (candidate) => candidate.name === name
-      );
+      const frame = w.webContents.mainFrame.frames.find((candidate) => candidate.name === name);
       expect(frame, `missing frame ${name}`).to.not.be.undefined();
       return frame!;
     };
@@ -157,9 +149,7 @@ describe('webContents module', () => {
     it('attaches, explicitly detaches, and reattaches the same target', async () => {
       const w = await createEmbedder();
       const target = await createTarget('<p id="state">preserved</p>');
-      const attached = once(target, 'did-attach-to-frame') as Promise<
-        [Electron.Event, Electron.WebFrameMain]
-      >;
+      const attached = once(target, 'did-attach-to-frame') as Promise<[Electron.Event, Electron.WebFrameMain]>;
 
       await target.attachToFrame(frameNamed(w, 'first'));
 
@@ -168,80 +158,76 @@ describe('webContents module', () => {
       expect(target.isAttachedToFrame()).to.be.true();
       expect(target.hostWebContents).to.equal(w.webContents);
 
-      const detached = once(target, 'did-detach-from-frame') as Promise<
-        [Electron.Event, string]
-      >;
+      const detached = once(target, 'did-detach-from-frame') as Promise<[Electron.Event, string]>;
       await target.detachFromFrame();
       const [, reason] = await detached;
       expect(reason).to.equal('explicit');
       expect(target.isAttachedToFrame()).to.be.false();
-      expect(
-        await target.executeJavaScript(
-          'document.getElementById("state").textContent'
-        )
-      ).to.equal('preserved');
+      expect(await target.executeJavaScript('document.getElementById("state").textContent')).to.equal('preserved');
 
       await target.attachToFrame(frameNamed(w, 'second'));
       expect(target.isAttachedToFrame()).to.be.true();
       await target.detachFromFrame();
     });
 
-    it('auto-detaches when its iframe is removed and attaches to a replacement', async () => {
+    it('auto-detaches when its iframe is removed and reattaches to its recreated browsing context', async () => {
       const w = await createEmbedder();
       const target = await createTarget('<p>survivor</p>');
-      await target.attachToFrame(frameNamed(w, 'first'));
-      const detached = once(target, 'did-detach-from-frame') as Promise<
-        [Electron.Event, string]
-      >;
+      const originalFrame = frameNamed(w, 'first');
+      const originalFrameToken = originalFrame.frameToken;
+      await target.attachToFrame(originalFrame);
+      const detached = once(target, 'did-detach-from-frame') as Promise<[Electron.Event, string]>;
 
-      await w.webContents.executeJavaScript(
-        'document.querySelector(\'iframe[name="first"]\').remove()'
-      );
+      await w.webContents.executeJavaScript(`
+        window.reinsertedAttachmentFrame =
+          document.querySelector('iframe[name="first"]')
+        window.reinsertedAttachmentFrame.remove()
+      `);
 
       const [, reason] = await detached;
       expect(reason).to.equal('frame-destroyed');
       expect(target.isDestroyed()).to.be.false();
       expect(target.isAttachedToFrame()).to.be.false();
+      await waitUntil(() => originalFrame.isDestroyed());
 
       await w.webContents.executeJavaScript(`
         new Promise(resolve => {
-          const iframe = document.createElement('iframe')
-          iframe.name = 'replacement'
-          iframe.src = 'about:blank'
+          const iframe = window.reinsertedAttachmentFrame
           iframe.addEventListener('load', () => resolve(), { once: true })
           document.body.appendChild(iframe)
         })
       `);
-      await target.attachToFrame(frameNamed(w, 'replacement'));
-      expect(await target.executeJavaScript('document.body.textContent')).to.equal(
-        'survivor'
-      );
+      const recreatedFrame = frameNamed(w, 'first');
+      expect(recreatedFrame.frameToken).to.not.equal(originalFrameToken);
+
+      await target.attachToFrame(recreatedFrame);
+      expect(target.isAttachedToFrame()).to.be.true();
+      expect(await target.executeJavaScript('document.body.textContent')).to.equal('survivor');
     });
 
     it('rejects main, destroyed, navigated, and self-owned frames', async () => {
       const w = await createEmbedder();
       const target = await createTarget();
 
-      await expect(target.attachToFrame(w.webContents.mainFrame))
-        .to.eventually.be.rejectedWith(Error, /^ERR_FRAME_IS_MAIN_FRAME:/);
-      await expect(target.attachToFrame(frameNamed(w, 'navigated')))
-        .to.eventually.be.rejectedWith(Error, /^ERR_FRAME_NOT_ATTACHABLE:/);
+      await expect(target.attachToFrame(w.webContents.mainFrame)).to.eventually.be.rejectedWith(
+        Error,
+        /^ERR_FRAME_IS_MAIN_FRAME:/
+      );
+      await expect(target.attachToFrame(frameNamed(w, 'navigated'))).to.eventually.be.rejectedWith(
+        Error,
+        /^ERR_FRAME_NOT_ATTACHABLE:/
+      );
 
       const destroyedFrame = frameNamed(w, 'first');
-      await w.webContents.executeJavaScript(
-        'document.querySelector(\'iframe[name="first"]\').remove()'
-      );
+      await w.webContents.executeJavaScript('document.querySelector(\'iframe[name="first"]\').remove()');
       await waitUntil(() => destroyedFrame.isDestroyed());
-      await expect(target.attachToFrame(destroyedFrame))
-        .to.eventually.be.rejectedWith(Error, /^ERR_FRAME_NOT_FOUND:/);
+      await expect(target.attachToFrame(destroyedFrame)).to.eventually.be.rejectedWith(Error, /^ERR_FRAME_NOT_FOUND:/);
 
-      await target.loadURL(
-        `data:text/html,${encodeURIComponent(
-          '<iframe name="self" src="about:blank"></iframe>'
-        )}`
+      await target.loadURL(`data:text/html,${encodeURIComponent('<iframe name="self" src="about:blank"></iframe>')}`);
+      await expect(target.attachToFrame(target.mainFrame.frames[0]!)).to.eventually.be.rejectedWith(
+        Error,
+        /^ERR_FRAME_NOT_ATTACHABLE:/
       );
-      await expect(target.attachToFrame(target.mainFrame.frames[0]!))
-        .to.eventually.be.rejectedWith(Error, /^ERR_FRAME_NOT_ATTACHABLE:/);
     });
 
     it('rejects pending, attached, and occupied-host double attaches', async () => {
@@ -249,34 +235,30 @@ describe('webContents module', () => {
       const target = await createTarget();
       const secondTarget = await createTarget();
       const firstFrame = frameNamed(w, 'first');
-      const attached = once(target, 'did-attach-to-frame') as Promise<
-        [Electron.Event, Electron.WebFrameMain]
-      >;
+      const attached = once(target, 'did-attach-to-frame') as Promise<[Electron.Event, Electron.WebFrameMain]>;
       const firstAttach = target.attachToFrame(firstFrame);
 
-      await expect(target.attachToFrame(frameNamed(w, 'second')))
-        .to.eventually.be.rejectedWith(
-          Error,
-          /^ERR_WEB_CONTENTS_ALREADY_ATTACHED:/
-        );
+      await expect(target.attachToFrame(frameNamed(w, 'second'))).to.eventually.be.rejectedWith(
+        Error,
+        /^ERR_WEB_CONTENTS_ALREADY_ATTACHED:/
+      );
       await firstAttach;
       const [, occupiedFrame] = await attached;
-      await expect(target.attachToFrame(frameNamed(w, 'second')))
-        .to.eventually.be.rejectedWith(
-          Error,
-          /^ERR_WEB_CONTENTS_ALREADY_ATTACHED:/
-        );
-      await expect(secondTarget.attachToFrame(occupiedFrame))
-        .to.eventually.be.rejectedWith(Error, /^ERR_FRAME_NOT_ATTACHABLE:/);
+      await expect(target.attachToFrame(frameNamed(w, 'second'))).to.eventually.be.rejectedWith(
+        Error,
+        /^ERR_WEB_CONTENTS_ALREADY_ATTACHED:/
+      );
+      await expect(secondTarget.attachToFrame(occupiedFrame)).to.eventually.be.rejectedWith(
+        Error,
+        /^ERR_FRAME_NOT_ATTACHABLE:/
+      );
     });
 
     it('survives embedder destruction and reports the detach reason', async () => {
       const w = await createEmbedder();
       const target = await createTarget('<p>still-alive</p>');
       await target.attachToFrame(frameNamed(w, 'first'));
-      const detached = once(target, 'did-detach-from-frame') as Promise<
-        [Electron.Event, string]
-      >;
+      const detached = once(target, 'did-detach-from-frame') as Promise<[Electron.Event, string]>;
 
       w.destroy();
 
@@ -284,9 +266,7 @@ describe('webContents module', () => {
       expect(reason).to.equal('embedder-destroyed');
       expect(target.isDestroyed()).to.be.false();
       expect(target.isAttachedToFrame()).to.be.false();
-      expect(await target.executeJavaScript('document.body.textContent')).to.equal(
-        'still-alive'
-      );
+      expect(await target.executeJavaScript('document.body.textContent')).to.equal('still-alive');
     });
 
     it('detaches safely when the target is destroyed', async () => {
@@ -299,8 +279,7 @@ describe('webContents module', () => {
       await destroyed;
 
       expect(w.isDestroyed()).to.be.false();
-      expect(await w.webContents.executeJavaScript('document.body.childElementCount'))
-        .to.be.greaterThan(0);
+      expect(await w.webContents.executeJavaScript('document.body.childElementCount')).to.be.greaterThan(0);
     });
 
     it('keeps the attachment across an inner renderer crash and reload', async () => {
@@ -334,15 +313,11 @@ describe('webContents module', () => {
       await target.attachToFrame(frameNamed(w, 'first'));
 
       target.focus();
-      await target.executeJavaScript(
-        'document.getElementById("editor").focus()'
-      );
+      await target.executeJavaScript('document.getElementById("editor").focus()');
       target.sendInputEvent({ type: 'keyDown', keyCode: 'A' });
       target.sendInputEvent({ type: 'keyUp', keyCode: 'A' });
 
-      await waitUntil(
-        async () => (await target.executeJavaScript('window.keyCount')) === 1
-      );
+      await waitUntil(async () => (await target.executeJavaScript('window.keyCount')) === 1);
     });
 
     it('keeps normal setWindowOpenHandler behavior while attached', async () => {
@@ -356,9 +331,7 @@ describe('webContents module', () => {
         });
       });
 
-      await target.executeJavaScript(
-        'window.open("https://example.test/frame-popup"); true'
-      );
+      await target.executeJavaScript('window.open("https://example.test/frame-popup"); true');
 
       expect(await handled).to.equal('https://example.test/frame-popup');
     });
@@ -384,8 +357,10 @@ describe('webContents module', () => {
       target.openDevTools({ mode: 'right', activate: false });
       await dockedOpened;
 
-      await expect(target.attachToFrame(frameNamed(w, 'first')))
-        .to.eventually.be.rejectedWith(Error, /^ERR_DEVTOOLS_DOCKED:/);
+      await expect(target.attachToFrame(frameNamed(w, 'first'))).to.eventually.be.rejectedWith(
+        Error,
+        /^ERR_DEVTOOLS_DOCKED:/
+      );
 
       const closed = once(target, 'devtools-closed');
       target.closeDevTools();
@@ -395,74 +370,46 @@ describe('webContents module', () => {
       const detachedOpened = once(target, 'devtools-opened');
       target.openDevTools({ mode: 'bottom', activate: false });
       await detachedOpened;
-      expect(target.devToolsWebContents?.getURL()).not.to.contain(
-        'can_dock=true'
-      );
+      expect(target.devToolsWebContents?.getURL()).not.to.contain('can_dock=true');
     });
 
-    ifit(process.platform !== 'linux')(
-      'propagates visibility through the Chromium inner tree',
-      async () => {
-        const w = await createEmbedder(true);
-        const target = await createTarget();
-        await target.attachToFrame(frameNamed(w, 'first'));
-        await waitUntil(
-          async () =>
-            (await target.executeJavaScript('document.visibilityState')) ===
-            'visible'
-        );
+    ifit(process.platform !== 'linux')('propagates visibility through the Chromium inner tree', async () => {
+      const w = await createEmbedder(true);
+      const target = await createTarget();
+      await target.attachToFrame(frameNamed(w, 'first'));
+      await waitUntil(async () => (await target.executeJavaScript('document.visibilityState')) === 'visible');
 
-        w.hide();
-        await waitUntil(
-          async () =>
-            (await target.executeJavaScript('document.visibilityState')) ===
-            'hidden'
-        );
-        w.show();
-        await waitUntil(
-          async () =>
-            (await target.executeJavaScript('document.visibilityState')) ===
-            'visible'
-        );
-      }
-    );
+      w.hide();
+      await waitUntil(async () => (await target.executeJavaScript('document.visibilityState')) === 'hidden');
+      w.show();
+      await waitUntil(async () => (await target.executeJavaScript('document.visibilityState')) === 'visible');
+    });
 
-    ifit(process.platform !== 'linux')(
-      'respects disabled outer background throttling while hidden',
-      async () => {
-        const w = await createEmbedder(true);
-        w.webContents.setBackgroundThrottling(false);
-        const target = await createTarget();
-        await target.attachToFrame(frameNamed(w, 'first'));
-        w.hide();
-        await setTimeout(100);
+    ifit(process.platform !== 'linux')('respects disabled outer background throttling while hidden', async () => {
+      const w = await createEmbedder(true);
+      w.webContents.setBackgroundThrottling(false);
+      const target = await createTarget();
+      await target.attachToFrame(frameNamed(w, 'first'));
+      w.hide();
+      await setTimeout(100);
 
-        expect(
-          await target.executeJavaScript('document.visibilityState')
-        ).to.equal('visible');
-      }
-    );
+      expect(await target.executeJavaScript('document.visibilityState')).to.equal('visible');
+    });
 
-    ifit(process.platform !== 'darwin')(
-      'propagates HTML fullscreen state to the outer WebContents',
-      async () => {
-        const w = await createEmbedder(true);
-        const target = await createTarget('<div id="fullscreen">content</div>');
-        await target.attachToFrame(frameNamed(w, 'first'));
-        const entered = once(w.webContents, 'enter-html-full-screen');
+    ifit(process.platform !== 'darwin')('propagates HTML fullscreen state to the outer WebContents', async () => {
+      const w = await createEmbedder(true);
+      const target = await createTarget('<div id="fullscreen">content</div>');
+      await target.attachToFrame(frameNamed(w, 'first'));
+      const entered = once(w.webContents, 'enter-html-full-screen');
 
-        await target.executeJavaScript(
-          'document.getElementById("fullscreen").requestFullscreen()',
-          true
-        );
-        await entered;
+      await target.executeJavaScript('document.getElementById("fullscreen").requestFullscreen()', true);
+      await entered;
 
-        const left = once(w.webContents, 'leave-html-full-screen');
-        await target.executeJavaScript('document.exitFullscreen()', true);
-        await left;
-        await setTimeout(1000);
-      }
-    );
+      const left = once(w.webContents, 'leave-html-full-screen');
+      await target.executeJavaScript('document.exitFullscreen()', true);
+      await left;
+      await setTimeout(1000);
+    });
   });
 
   describe('fromDevToolsTargetId()', () => {
