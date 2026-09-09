@@ -1,0 +1,96 @@
+{
+  "scope": [
+    "148a462376c079e2ca0b9a61e29a14f718bf73b2",
+    "5f46fcf9a9612670f60e9cd92e4016efea8a3384"
+  ],
+  "sourceInspectionComplete": true,
+  "nativeVerificationComplete": false,
+  "pendingSourceInspection": [],
+  "identityProof": "Per-path before/after Git blob IDs and exact candidate matches are in merge-path-identity.json. Matching final blobs alone are not before/after equivalence.",
+  "callerFindings": [
+    {
+      "area": "js2c and Node entrypoints",
+      "paths": [
+        "shell/common/node_bindings.cc",
+        "shell/common/node_util.cc",
+        "shell/common/js2c_bundle_ids.h",
+        "shell/common/electron_natives_codecache_main.cc",
+        "lib/browser/init.ts",
+        "lib/renderer/init.ts",
+        "lib/worker/init.ts",
+        "lib/utility/init.ts",
+        "lib/node/asar-fs-wrapper.ts",
+        "spec/api-js2c-code-cache-spec.ts"
+      ],
+      "evidence": "Pinned Node LoadEnvironment calls StartExecution; embedder startup executes internal/main/embedding before callback. realm loaderExports includes internalBinding. CompileBundle deliberately leaves entrypoint errors for uncaughtException, whereas CompileAndCall catches/logs. Build cache and runtime use process/require parameter ordering. Browser/renderer/worker argv splices removed with synthetic entrypoint; utility inserts its entryScript. Linked-binding lookup and registration use matching process-gated static module lists. Preserve distinct paths."
+    },
+    {
+      "area": "FSA and requesting origins",
+      "paths": [
+        "shell/browser/file_system_access/file_system_access_permission_context.cc",
+        "shell/browser/file_system_access/file_system_access_permission_context_factory.cc",
+        "shell/browser/file_system_access/file_system_access_web_contents_helper.cc",
+        "shell/browser/electron_permission_manager.cc",
+        "shell/browser/web_contents_permission_helper.cc",
+        "shell/browser/net/proxying_url_loader_factory.cc",
+        "shell/browser/network_hints_handler_impl.cc",
+        "shell/browser/hid/electron_hid_delegate.cc",
+        "shell/browser/usb/electron_usb_delegate.cc",
+        "spec/api-session-spec.ts",
+        "spec/api-protocol-spec.ts",
+        "spec/api-web-request-spec.ts",
+        "spec/api-web-contents-spec.ts"
+      ],
+      "evidence": "Pinned FSA handle passes context frame_id to grant RequestPermission and weak callback. Electron confirmations remain request-identified; last-origin cleanup scans live contents in same browser context. Factory retains in-memory contexts. Network proxy preserves original_initiator_ when constructing redirected WebRequestInfo. openExternal supplies captured origin/main-frame metadata and WeakDocument lifetime checks. HID/USB use requesting frame origin. Clipboard validates request frame token and activation. Keep these separate security boundaries. FrameForLockWidget nearest-ancestor ambiguity remains a native test target."
+    },
+    {
+      "area": "Native ownership and platform adapters",
+      "paths": [
+        "shell/browser/ui/file_dialog_win.cc",
+        "shell/browser/ui/drag_util.cc",
+        "shell/browser/ui/draggable_region_debugger.cc",
+        "shell/browser/native_window.cc",
+        "shell/common/api/electron_api_testing.cc",
+        "shell/renderer/preload_utils.cc",
+        "shell/browser/api/gpuinfo_manager.cc",
+        "shell/browser/feature_list_mac.mm"
+      ],
+      "evidence": "Windows parent handle captured on UI before worker dispatch; GetParentWindowHandle is remaining parent_window dereference. Drag partition computes ordered overlay semantics; cached regions feed debugger diagnostics/recreation. Testing flush fires only running timers before prefs commit. Preload predicate shared by renderer clients excludes webviews; WorkerSettings propagates creator policy to child workers/worklets. Chromium ThrottleResizeIpc exists at pinned revision and controls NotifyScreenInfoChanged ignore_ack. GPU request excludes Dawn information unused by returned GPUInfo. Native timing and UI behavior remain unexecuted."
+    },
+    {
+      "area": "Imported patch changes and removals",
+      "paths": [
+        "patches/chromium/desktop_media_list.patch",
+        "patches/chromium/feat_add_support_for_missing_dialog_features_to_shell_dialogs.patch",
+        "patches/chromium/fix_register_status_icon_with_unique_d-bus_name_when_owning_one.patch",
+        "patches/nan",
+        "patches/reclient-configs",
+        "patches/webrtc"
+      ],
+      "evidence": "Pinned DesktopMediaListBase Update takes callback only and Refresh(false); no phantom bool overload claimed. Hidden-file hooks are removed, not upstreamed: merged Linux caller has no SetHiddenShown, docs/api/dialog.md restricts showHiddenFiles to macOS/Windows. AX dynamic menu event exists upstream. Windows resource allowlist support exists in gcc_toolchain.gni. nan revision carries HolderV2, tagged External and WriteUtf8V2 replacements; remaining patch guards newer V8 compatibility. reclient configure generates python configs and clang wrapper; executable chmod adapter retained. D-Bus known sandbox path uses private connection, destructor shuts private bus; ownership bool prevents releasing unique name. Fallback on unexpected ownership denial with shared bus still needs watcher teardown testing. Removed LLVM/crashpad/boringssl/webrtc workarounds inspected as changes, not certified safe by patch size or source presence; compiler/runtime/platform characterization remains required."
+    },
+    {
+      "area": "Specs, docs, build and simplification second pass",
+      "paths": [
+        "spec/api-autoupdater-darwin-spec.ts",
+        "spec/api-autoupdater-darwin-policy-spec.ts",
+        "spec/lib/autoupdater-darwin-helpers.ts",
+        "spec/api-media-handler-spec.ts",
+        "spec/asar-spec.ts",
+        "BUILD.gn",
+        "DEPS",
+        "filenames.gni",
+        ".github/workflows"
+      ],
+      "evidence": "Residual merge spec edits read for requesting origin, download item, FSA, paste, OOPIF pointer lock, stale/redirected external navigation, media frame destruction, cache strings, updater cleanup/budgets and window-state flush. Updater test-title conservation and exact patch-payload checks remain narrow evidence only. Config workflow pins/build sources and public types/docs inspected. Second source pass retains callbacks, per-request grants, distinct error boundaries and cleanup identities; does not convert absent runtime proof into preservation proof."
+    }
+  ],
+  "nativeTargets": [
+    "Build and patch-apply both exact merged trees against DEPS, including removed LLVM/crashpad/boringssl/webrtc workarounds, nan addons and generated js2c cache.",
+    "Run imported download-origin spec: preventDefault removal may invalidate item before awaited getter.",
+    "Run same-process cross-origin pointer/keyboard-lock attribution test, alongside existing OOPIF coverage.",
+    "Run Linux crashpad child propagation with pre-existing CRASHDUMP_SIGNAL_FD/CRASHPAD_HANDLER_PID env entries; normalized envPairs currently appends duplicate names.",
+    "Run overlay same-bounds detach/reattach, clipboard raw-format boundary, macOS updater/signing/resize, Windows dialog/MSIX and Linux tray/portal/worker tests."
+  ],
+  "whyNotLocallyVerified": "Matching native executable, configured Chromium checkout, generated outputs and GN/Ninja toolchain are absent. Downloaded individual exact source files enable inspection but cannot execute Electron native specs. macOS host cannot execute Windows/Linux platform suites. No native pass is inferred."
+}

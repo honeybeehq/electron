@@ -1,0 +1,396 @@
+[
+  {
+    "sha": "993fe372e60b412214463893dcc9419804245d97",
+    "files": [
+      {
+        "path": "patches/chromium/add_contentgpuclient_precreatemessageloop_callback.patch",
+        "oldEditPayloadSha256": "f682bb438b69678a9936331708663212d34150c3e014e24b1630f3c3f30de421",
+        "newEditPayloadSha256": "f682bb438b69678a9936331708663212d34150c3e014e24b1630f3c3f30de421",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/add_didinstallconditionalfeatures.patch",
+        "oldEditPayloadSha256": "ed29927223ef2c1a4d122953dec03e1177592d2a0771ed9328d0316223ed88d6",
+        "newEditPayloadSha256": "ed29927223ef2c1a4d122953dec03e1177592d2a0771ed9328d0316223ed88d6",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/allow_disabling_blink_scheduler_throttling_per_renderview.patch",
+        "oldEditPayloadSha256": "a845947b588cdd961566981afbb6754c2bbe76cae62693d0a1b49bab4845ea3c",
+        "newEditPayloadSha256": "a845947b588cdd961566981afbb6754c2bbe76cae62693d0a1b49bab4845ea3c",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/allow_new_privileges_in_unsandboxed_child_processes.patch",
+        "oldEditPayloadSha256": "d050ab487726ed08f993e08cdb61bcedb9c7af69878b5f3c094cefcd049d3d78",
+        "newEditPayloadSha256": "d050ab487726ed08f993e08cdb61bcedb9c7af69878b5f3c094cefcd049d3d78",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/blink_local_frame.patch",
+        "oldEditPayloadSha256": "4c4cddb8a3c670e9bcd408a8cf6ca6165e566776c549db2da3ac2ad94bf1ab05",
+        "newEditPayloadSha256": "4c4cddb8a3c670e9bcd408a8cf6ca6165e566776c549db2da3ac2ad94bf1ab05",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/build_gn.patch",
+        "oldEditPayloadSha256": "de460801c14d2cb9943422644fe5c90adafb22558ffb133b837e2f9f197f79f9",
+        "newEditPayloadSha256": "de460801c14d2cb9943422644fe5c90adafb22558ffb133b837e2f9f197f79f9",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/can_create_window.patch",
+        "oldEditPayloadSha256": "04d47d7d2a9fc510901a08aee758b2b3f1e1982cf0729e699c37b8a9dee61a41",
+        "newEditPayloadSha256": "04d47d7d2a9fc510901a08aee758b2b3f1e1982cf0729e699c37b8a9dee61a41",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/chore_expose_isolate_parameter_in_script_lifecycle_observers.patch",
+        "oldEditPayloadSha256": "d497cda6b3ad9b1d410f93377b1f4dbf9e7fc8fb4d5637d6483fdd2f8cac1429",
+        "newEditPayloadSha256": "d497cda6b3ad9b1d410f93377b1f4dbf9e7fc8fb4d5637d6483fdd2f8cac1429",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/chore_grandfather_in_electron_views_and_delegates.patch",
+        "oldEditPayloadSha256": "a5615b1e632b99c10cff4558160668c720e5b1e82dce6022a4e36b116f5fd555",
+        "newEditPayloadSha256": "a5615b1e632b99c10cff4558160668c720e5b1e82dce6022a4e36b116f5fd555",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/chore_partial_revert_of.patch",
+        "oldEditPayloadSha256": "832d4ca32c69b283f1964b66cad82d5c5d71d7aa54a0b521699232bc12c6f5a0",
+        "newEditPayloadSha256": "832d4ca32c69b283f1964b66cad82d5c5d71d7aa54a0b521699232bc12c6f5a0",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/chore_patch_out_profile_methods.patch",
+        "oldEditPayloadSha256": "dd4a6a0b12f4a8bed0407c370bb53d2aa178ecaed9b3370735827c8cfee7b6d4",
+        "newEditPayloadSha256": "dd4a6a0b12f4a8bed0407c370bb53d2aa178ecaed9b3370735827c8cfee7b6d4",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/chore_provide_iswebcontentscreationoverridden_with_full_params.patch",
+        "oldEditPayloadSha256": "4fea626f03dad582007dd7308a46c5232458acfce89683817388b379040831b5",
+        "newEditPayloadSha256": "4fea626f03dad582007dd7308a46c5232458acfce89683817388b379040831b5",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/chore_remove_reference_to_chrome_browser_themes.patch",
+        "oldEditPayloadSha256": "85a6eb0fcbee61c4d3aa2e8fdc231c421162544af56274c287121474cdb45076",
+        "newEditPayloadSha256": "85a6eb0fcbee61c4d3aa2e8fdc231c421162544af56274c287121474cdb45076",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/chore_restore_some_deprecated_wrapper_utility_in_gin.patch",
+        "oldEditPayloadSha256": "123ff7fdffa6f6d9434c8cd83f25eaa774d89f9a106a371426e68cf92a46eb7d",
+        "newEditPayloadSha256": "123ff7fdffa6f6d9434c8cd83f25eaa774d89f9a106a371426e68cf92a46eb7d",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/crash_allow_setting_more_options.patch",
+        "oldEditPayloadSha256": "7b8a5b3058d0e5de510f18722755cbbf78b3c81cd5cde3a2183c52d0c8e15b8f",
+        "newEditPayloadSha256": "7b8a5b3058d0e5de510f18722755cbbf78b3c81cd5cde3a2183c52d0c8e15b8f",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/create_browser_v8_snapshot_file_name_fuse.patch",
+        "oldEditPayloadSha256": "8db7daf6519a01d6121c7d4f0774dda14e370d47eeab3dcec1abdc10fc6f6aea",
+        "newEditPayloadSha256": "8db7daf6519a01d6121c7d4f0774dda14e370d47eeab3dcec1abdc10fc6f6aea",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/disable_hidden.patch",
+        "oldEditPayloadSha256": "1ee165b2b229d7dadd3bbf8e2aa6d25a1e90cf620270c016de9f52df93123002",
+        "newEditPayloadSha256": "1ee165b2b229d7dadd3bbf8e2aa6d25a1e90cf620270c016de9f52df93123002",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/expose_gtk_ui_platform_field.patch",
+        "oldEditPayloadSha256": "c57e84a79bbbb7f780e88e8e4eaee9f835835a0d614b1fd34662529a0f1c7454",
+        "newEditPayloadSha256": "c57e84a79bbbb7f780e88e8e4eaee9f835835a0d614b1fd34662529a0f1c7454",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/extend_apply_webpreferences.patch",
+        "oldEditPayloadSha256": "b12d102075326d5914fd1343d84e96bd32ca0e849e85454f2d9f90d258de16d2",
+        "newEditPayloadSha256": "b12d102075326d5914fd1343d84e96bd32ca0e849e85454f2d9f90d258de16d2",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/feat_allow_embedders_to_add_observers_on_created_hunspell.patch",
+        "oldEditPayloadSha256": "0557edf8e054b654a6be6b8a5b1a233ad07359f3a0d728d0af058313872ef0bc",
+        "newEditPayloadSha256": "0557edf8e054b654a6be6b8a5b1a233ad07359f3a0d728d0af058313872ef0bc",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/feat_allow_usage_of_sccontentsharingpicker_on_supported_platforms.patch",
+        "oldEditPayloadSha256": "18492a58c8c3770b6c01a5bf3d05af7e54d9661129ef7879cccc0fa5e7e9f0ff",
+        "newEditPayloadSha256": "18492a58c8c3770b6c01a5bf3d05af7e54d9661129ef7879cccc0fa5e7e9f0ff",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/feat_carry_embedder_startup_data_in_createnewwindowreply.patch",
+        "oldEditPayloadSha256": "7c36450b91523427b925848ead6435b8449d9d852eee47cdcb28086eca6dbb9f",
+        "newEditPayloadSha256": "7c36450b91523427b925848ead6435b8449d9d852eee47cdcb28086eca6dbb9f",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/feat_configure_launch_options_for_service_process.patch",
+        "oldEditPayloadSha256": "3e8934d10df889d1a769c14cb394e55a0ee571e4fd10365d1d7074cfaf80d85d",
+        "newEditPayloadSha256": "3e8934d10df889d1a769c14cb394e55a0ee571e4fd10365d1d7074cfaf80d85d",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/feat_corner_smoothing_css_rule_and_blink_painting.patch",
+        "oldEditPayloadSha256": "1759aaabc1052de296196a8ae310e850ce8e436a79246cbd62b2b84900d9bcce",
+        "newEditPayloadSha256": "1759aaabc1052de296196a8ae310e850ce8e436a79246cbd62b2b84900d9bcce",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/feat_deliver_service_worker_preload_data_via_embeddedworkerstartparams.patch",
+        "oldEditPayloadSha256": "321e7d66d3ed8885f3b92a63732630ac600ac654455e194a74c9a6a3afa60d9f",
+        "newEditPayloadSha256": "321e7d66d3ed8885f3b92a63732630ac600ac654455e194a74c9a6a3afa60d9f",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/feat_enable_passing_exit_code_on_service_process_crash.patch",
+        "oldEditPayloadSha256": "c05b709f11d66ee9b1f0ecb10e014e71f133b3a00cb86f57c19ef5973e17a7b7",
+        "newEditPayloadSha256": "c05b709f11d66ee9b1f0ecb10e014e71f133b3a00cb86f57c19ef5973e17a7b7",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/feat_expose_documentloader_setdefersloading_on_webdocumentloader.patch",
+        "oldEditPayloadSha256": "b90c63a94da5cd777c1a936757d5076924b3ff87c717bc1b9abc3c5c4d31a028",
+        "newEditPayloadSha256": "b90c63a94da5cd777c1a936757d5076924b3ff87c717bc1b9abc3c5c4d31a028",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/feat_plumb_node_integration_in_worker_through_workersettings.patch",
+        "oldEditPayloadSha256": "2d162edb91e04334bcd758969122839624e68bf4a1bb1260ca312c1e985b58a9",
+        "newEditPayloadSha256": "2d162edb91e04334bcd758969122839624e68bf4a1bb1260ca312c1e985b58a9",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/feat_separate_content_settings_callback_for_sync_and_async_clipboard.patch",
+        "oldEditPayloadSha256": "464d7d10d986daf7fdf0551aed48305c3bd035e7b41be599d828ecba05895a46",
+        "newEditPayloadSha256": "464d7d10d986daf7fdf0551aed48305c3bd035e7b41be599d828ecba05895a46",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/fix_adapt_exclusive_access_for_electron_needs.patch",
+        "oldEditPayloadSha256": "c5a8a5923a5ff4ddc4883a0f71da3b5820b0013ebd45ec58dd891b637c1ba800",
+        "newEditPayloadSha256": "c5a8a5923a5ff4ddc4883a0f71da3b5820b0013ebd45ec58dd891b637c1ba800",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/fix_add_reinitializegeneratedcodecachecontext_to.patch",
+        "oldEditPayloadSha256": "232f5c46ae5432bd1d7f217cd333563fc5d581297813ee807fbfa314d5172013",
+        "newEditPayloadSha256": "232f5c46ae5432bd1d7f217cd333563fc5d581297813ee807fbfa314d5172013",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/fix_constrain_allowuniversalaccessfromfileurls_to_file_origins_in.patch",
+        "oldEditPayloadSha256": "04dfd09db3ccba1b2cf6c617cdfd33eb897c00774cca2c9405aac8f502419aa4",
+        "newEditPayloadSha256": "04dfd09db3ccba1b2cf6c617cdfd33eb897c00774cca2c9405aac8f502419aa4",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/fix_crash_loading_non-standard_schemes_in_iframes.patch",
+        "oldEditPayloadSha256": "d0d3553ddfe728746cad89c455046f02138cac7617a13caaab82f8bba67ea1ad",
+        "newEditPayloadSha256": "d0d3553ddfe728746cad89c455046f02138cac7617a13caaab82f8bba67ea1ad",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/fix_make_macos_text_replacement_work_on_contenteditable.patch",
+        "oldEditPayloadSha256": "8268798648ef2a3fba9d9d946156e510539d81a7690e6e5c11d28105d2758307",
+        "newEditPayloadSha256": "8268798648ef2a3fba9d9d946156e510539d81a7690e6e5c11d28105d2758307",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/fix_move_autopipsettingshelper_behind_branding_buildflag.patch",
+        "oldEditPayloadSha256": "3268e4f9758fbbc5f2aae6611dde33961ccdfc29e76a8ac02f2ef79a73fdd905",
+        "newEditPayloadSha256": "3268e4f9758fbbc5f2aae6611dde33961ccdfc29e76a8ac02f2ef79a73fdd905",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/fix_on-screen-keyboard_hides_on_input_blur_in_webview.patch",
+        "oldEditPayloadSha256": "f5d38fb4c71e0bfb9d869d06d886c5bf9a51e0f04198b7b3eba6b4e3018702de",
+        "newEditPayloadSha256": "f5d38fb4c71e0bfb9d869d06d886c5bf9a51e0f04198b7b3eba6b4e3018702de",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/fix_pulseaudio_stream_and_icon_names.patch",
+        "oldEditPayloadSha256": "d5de4f125ae1418517365b3f403785bf49cc29cdb9e3969fc03485295a1c2df3",
+        "newEditPayloadSha256": "d5de4f125ae1418517365b3f403785bf49cc29cdb9e3969fc03485295a1c2df3",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/fix_use_bundled_devtools_frontend_url_for_remote_debugging.patch",
+        "oldEditPayloadSha256": "5e03c3c37a721977b3d5a4e8a479bcc945951726c2b523cd3bc77bc2b15df437",
+        "newEditPayloadSha256": "5e03c3c37a721977b3d5a4e8a479bcc945951726c2b523cd3bc77bc2b15df437",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/frame_host_manager.patch",
+        "oldEditPayloadSha256": "5fe90bee9301c44c4c514c3bb532fbe71de348d1864a6b2dd4db9ea705aeba39",
+        "newEditPayloadSha256": "5fe90bee9301c44c4c514c3bb532fbe71de348d1864a6b2dd4db9ea705aeba39",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/gritsettings_resource_ids.patch",
+        "oldEditPayloadSha256": "010743de3bd9fb3187f1736ceabb56853cc0f177f0a27cd439dac4cd15c50fd7",
+        "newEditPayloadSha256": "010743de3bd9fb3187f1736ceabb56853cc0f177f0a27cd439dac4cd15c50fd7",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/mas_avoid_private_macos_api_usage.patch.patch",
+        "oldEditPayloadSha256": "622a1da9434dcf4f0dc73e8926c997c1e5fe24fcc5e275b173b895e782a45cdd",
+        "newEditPayloadSha256": "622a1da9434dcf4f0dc73e8926c997c1e5fe24fcc5e275b173b895e782a45cdd",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/notification_provenance.patch",
+        "oldEditPayloadSha256": "dc3d5cce9a28de7f4e039ecfaf8cdf87edf89c4b0115c16214274482ce0b1d14",
+        "newEditPayloadSha256": "dc3d5cce9a28de7f4e039ecfaf8cdf87edf89c4b0115c16214274482ce0b1d14",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/printing.patch",
+        "oldEditPayloadSha256": "53365b34658b443f61c0c1cb6474a20e8647d4187d818710f0a37f808e83580c",
+        "newEditPayloadSha256": "53365b34658b443f61c0c1cb6474a20e8647d4187d818710f0a37f808e83580c",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/proxy_config_monitor.patch",
+        "oldEditPayloadSha256": "d797909c2d0c0d7f134621f957d45386a61ddcdddf917e82c1ca9ca781c0eaa5",
+        "newEditPayloadSha256": "d797909c2d0c0d7f134621f957d45386a61ddcdddf917e82c1ca9ca781c0eaa5",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/refactor_expose_cursor_changes_to_the_webcontentsobserver.patch",
+        "oldEditPayloadSha256": "caff5d237cce597987b07ff016fc8d8a2632d0f5e69a9bac9474e5b6d328509e",
+        "newEditPayloadSha256": "caff5d237cce597987b07ff016fc8d8a2632d0f5e69a9bac9474e5b6d328509e",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/refactor_expose_file_system_access_blocklist.patch",
+        "oldEditPayloadSha256": "1c51319084b5ac76dcaa7f40dcbe384ed6a7a2c1dd86aeefe1fe60b9d8a1934c",
+        "newEditPayloadSha256": "1c51319084b5ac76dcaa7f40dcbe384ed6a7a2c1dd86aeefe1fe60b9d8a1934c",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/refactor_patch_electron_permissiontypes_into_blink.patch",
+        "oldEditPayloadSha256": "4817e1251e742558a4f2a1a2ac113239e9306f68a73cdec60941b1b81f72f84e",
+        "newEditPayloadSha256": "4817e1251e742558a4f2a1a2ac113239e9306f68a73cdec60941b1b81f72f84e",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/refactor_unfilter_unresponsive_events.patch",
+        "oldEditPayloadSha256": "f72562fc516225db0680957c42579d81ef0ec12bdef5b8cd20d48dfed005ba53",
+        "newEditPayloadSha256": "f72562fc516225db0680957c42579d81ef0ec12bdef5b8cd20d48dfed005ba53",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/render_widget_host_view_mac.patch",
+        "oldEditPayloadSha256": "53d74cc659bedfcb3373c64f8b5c5f74ac48b9c9bf3076afd86fef7efd4c2ecf",
+        "newEditPayloadSha256": "53d74cc659bedfcb3373c64f8b5c5f74ac48b9c9bf3076afd86fef7efd4c2ecf",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/resource_file_conflict.patch",
+        "oldEditPayloadSha256": "c4068cb2436f2947709300fc2643716e70966f1e994c8fb52c2b06a2dd6a1f15",
+        "newEditPayloadSha256": "c4068cb2436f2947709300fc2643716e70966f1e994c8fb52c2b06a2dd6a1f15",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/revert_partial_remove_unused_prehandlemouseevent.patch",
+        "oldEditPayloadSha256": "8a9de60080c424392afa749c2b3f988be7f4e6c60184e07a2951c6343c805032",
+        "newEditPayloadSha256": "8a9de60080c424392afa749c2b3f988be7f4e6c60184e07a2951c6343c805032",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/revert_remove_the_allowaggressivethrottlingwithwebsocket_feature.patch",
+        "oldEditPayloadSha256": "f655d278f2995e6ba8a32c579dc9fe9dcf1e71c1b6e6b5daaa8c1bd681467b72",
+        "newEditPayloadSha256": "f655d278f2995e6ba8a32c579dc9fe9dcf1e71c1b6e6b5daaa8c1bd681467b72",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/revert_remove_the_feature_flag_kdropinputeventswhilepaintholding.patch",
+        "oldEditPayloadSha256": "a0a58bab0dbfc0445ffea11f171e22e711565cf51d1a9fdb52a94c1a138ca189",
+        "newEditPayloadSha256": "a0a58bab0dbfc0445ffea11f171e22e711565cf51d1a9fdb52a94c1a138ca189",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/support_mixed_sandbox_with_zygote.patch",
+        "oldEditPayloadSha256": "77aec8ac90039d343f627ddd5236830a72654d407fecb2c1c3b339982968affa",
+        "newEditPayloadSha256": "77aec8ac90039d343f627ddd5236830a72654d407fecb2c1c3b339982968affa",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/web_contents.patch",
+        "oldEditPayloadSha256": "a8261518122c98bc2c0065b57472cd7a320ebb0f948c1cfb71971bb89d44893b",
+        "newEditPayloadSha256": "a8261518122c98bc2c0065b57472cd7a320ebb0f948c1cfb71971bb89d44893b",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/webview_fullscreen.patch",
+        "oldEditPayloadSha256": "2b22716c108c1c34af65be7d39cd7e2b139156c3b84c9f8f4e85434f2f541741",
+        "newEditPayloadSha256": "2b22716c108c1c34af65be7d39cd7e2b139156c3b84c9f8f4e85434f2f541741",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/worker_feat_add_hook_to_notify_script_ready.patch",
+        "oldEditPayloadSha256": "7970beacc71671e22d1b1bf7e809dbb30770a2fd64e77ae49d769734cc17a6ec",
+        "newEditPayloadSha256": "7970beacc71671e22d1b1bf7e809dbb30770a2fd64e77ae49d769734cc17a6ec",
+        "equal": true
+      },
+      {
+        "path": "patches/devtools_frontend/chore_expose_ui_to_allow_electron_to_set_dock_side.patch",
+        "oldEditPayloadSha256": "33223629600ee2c40ec749e67bb07528fcf4328fdea3cbd14db133b4deee944b",
+        "newEditPayloadSha256": "33223629600ee2c40ec749e67bb07528fcf4328fdea3cbd14db133b4deee944b",
+        "equal": true
+      },
+      {
+        "path": "patches/v8/build_warn_instead_of_abort_on_builtin_pgo_profile_mismatch.patch",
+        "oldEditPayloadSha256": "1ffe0f1b94ac8926ef0223c392cf34a6fbc97bab0c8de494bd68e68a966f61f8",
+        "newEditPayloadSha256": "1ffe0f1b94ac8926ef0223c392cf34a6fbc97bab0c8de494bd68e68a966f61f8",
+        "equal": true
+      },
+      {
+        "path": "patches/v8/chore_allow_customizing_microtask_policy_per_context.patch",
+        "oldEditPayloadSha256": "3e080eb92fc3af14b5e2c20db10d536cfc89870e767489b901b5d4944c2cd1e0",
+        "newEditPayloadSha256": "3e080eb92fc3af14b5e2c20db10d536cfc89870e767489b901b5d4944c2cd1e0",
+        "equal": true
+      }
+    ]
+  },
+  {
+    "sha": "0420db4ffb7e9251a288593e857da8c8c34759f7",
+    "files": [
+      {
+        "path": "patches/chromium/chore_partial_revert_of.patch",
+        "oldEditPayloadSha256": "832d4ca32c69b283f1964b66cad82d5c5d71d7aa54a0b521699232bc12c6f5a0",
+        "newEditPayloadSha256": "832d4ca32c69b283f1964b66cad82d5c5d71d7aa54a0b521699232bc12c6f5a0",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/fix_on-screen-keyboard_hides_on_input_blur_in_webview.patch",
+        "oldEditPayloadSha256": "f5d38fb4c71e0bfb9d869d06d886c5bf9a51e0f04198b7b3eba6b4e3018702de",
+        "newEditPayloadSha256": "f5d38fb4c71e0bfb9d869d06d886c5bf9a51e0f04198b7b3eba6b4e3018702de",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/refactor_unfilter_unresponsive_events.patch",
+        "oldEditPayloadSha256": "f72562fc516225db0680957c42579d81ef0ec12bdef5b8cd20d48dfed005ba53",
+        "newEditPayloadSha256": "f72562fc516225db0680957c42579d81ef0ec12bdef5b8cd20d48dfed005ba53",
+        "equal": true
+      },
+      {
+        "path": "patches/chromium/revert_partial_remove_unused_prehandlemouseevent.patch",
+        "oldEditPayloadSha256": "8a9de60080c424392afa749c2b3f988be7f4e6c60184e07a2951c6343c805032",
+        "newEditPayloadSha256": "8a9de60080c424392afa749c2b3f988be7f4e6c60184e07a2951c6343c805032",
+        "equal": true
+      }
+    ]
+  }
+]

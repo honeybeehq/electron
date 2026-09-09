@@ -1,0 +1,130 @@
+[
+  {
+    "ref": "refs/remotes/origin/HEAD",
+    "sha": "572508b35dc048e63beae87d34076e18d2f57044"
+  },
+  {
+    "ref": "refs/remotes/origin/main",
+    "sha": "572508b35dc048e63beae87d34076e18d2f57044"
+  },
+  {
+    "ref": "refs/remotes/upstream/42-x-y",
+    "sha": "22de0a3a06cfd3174fc6c59c3810ab5e1c91bf1a"
+  },
+  {
+    "ref": "refs/remotes/upstream/43-x-y",
+    "sha": "9f1fa686e3db88ced2ed9acbb3a30a8fc003f982"
+  },
+  {
+    "ref": "refs/remotes/upstream/44-x-y",
+    "sha": "07e460719c75b2ec5ee4893f7d2192ef31c7b8c2"
+  },
+  {
+    "ref": "refs/remotes/upstream/45-x-y",
+    "sha": "c3a3117c82af1e31375c30d40e79a29cef4e0f83"
+  },
+  {
+    "ref": "refs/remotes/upstream/HEAD",
+    "sha": "5c577105a068492d54c5c21bf4d3910039a1607d"
+  },
+  {
+    "ref": "refs/remotes/upstream/cherry-pick-cull-rect-recursion",
+    "sha": "67e823cd10dd4d17da43125486d75a35eabb4512"
+  },
+  {
+    "ref": "refs/remotes/upstream/claude/devtools-skills-bundle-dep",
+    "sha": "b43f3042bba03c8cecaa9b85debfe740f4954b19"
+  },
+  {
+    "ref": "refs/remotes/upstream/dependabot/npm_and_yarn/npm_and_yarn-f151770808",
+    "sha": "0216074fd29d02c486245699df1ec3ba688c94c8"
+  },
+  {
+    "ref": "refs/remotes/upstream/fix/cppgc-lifetime-sweep",
+    "sha": "b365b454b33dec7fb00d1f496ee8aa293cac4bcc"
+  },
+  {
+    "ref": "refs/remotes/upstream/fix/disable-webstore-private-api",
+    "sha": "7bf9fc579e765e4ebe3b4b84f251c33ae4f38636"
+  },
+  {
+    "ref": "refs/remotes/upstream/fix/hang-monitor-power-resume",
+    "sha": "b58085cb16a9643c404035992c365afb75908a99"
+  },
+  {
+    "ref": "refs/remotes/upstream/fix/wco-web-contents-view",
+    "sha": "aa2c68aac31d2769467fe0a34ffc408a6b309d93"
+  },
+  {
+    "ref": "refs/remotes/upstream/fix/webview-guest-zoom-mode",
+    "sha": "13a17ac7fe90e64b7ab2ed0b553b9d62abd3961f"
+  },
+  {
+    "ref": "refs/remotes/upstream/main",
+    "sha": "5c577105a068492d54c5c21bf4d3910039a1607d"
+  },
+  {
+    "ref": "refs/remotes/upstream/refactor/electron-side-small-patches",
+    "sha": "5f46fcf9a9612670f60e9cd92e4016efea8a3384"
+  },
+  {
+    "ref": "refs/remotes/upstream/refactor/safe-storage-os-crypt-async",
+    "sha": "1bad1d77814a2ea5d114d053a7973c444c0ca37f"
+  },
+  {
+    "ref": "refs/remotes/upstream/robo/refactor_cppgc_callback_holder",
+    "sha": "5dcd3922b2d1e536f40b5fe9d132ee99a1f1e47f"
+  },
+  {
+    "ref": "refs/remotes/upstream/roller/chromium/main",
+    "sha": "1bc914825705dd719fdecfba9ca3634bdf9bd803"
+  },
+  {
+    "ref": "refs/remotes/upstream/sam/bp-53663-42-x-y",
+    "sha": "a1f47e1dd6296d6de0d0725fee1abe4954c97d8a"
+  },
+  {
+    "ref": "refs/remotes/upstream/sam/bp-53663-43-x-y",
+    "sha": "eda10823e7e5c1bbc084b1725c33489b89a10fe3"
+  },
+  {
+    "ref": "refs/remotes/upstream/sam/bp-53663-44-x-y",
+    "sha": "147aaef3bb5fd76aaf3089928faa78caaf0780b4"
+  },
+  {
+    "ref": "refs/remotes/upstream/sam/bp-53663-45-x-y",
+    "sha": "0f6e4fc6e42efab4f8a4858b15bd83a100401f88"
+  },
+  {
+    "ref": "refs/remotes/upstream/sam/spec-weights-per-job",
+    "sha": "98f519e55205c3ebed6220611d04e108874f8d8d"
+  },
+  {
+    "ref": "refs/remotes/upstream/trop/43-x-y-bp-fix-only-relax-the-drag-target-check-across-webcontents-1788895296847",
+    "sha": "d5628b74be07e0f9ebcf49bc98c6325924e6acba"
+  },
+  {
+    "ref": "refs/remotes/upstream/trop/44-x-y-bp-chore-rebase-the-custom-scheme-code-cache-patch-onto-upstream-s-checks-1788891077351",
+    "sha": "cff04e71e901bce336abd20b4333bd17487e5a1c"
+  },
+  {
+    "ref": "refs/remotes/upstream/trop/44-x-y-bp-fix-only-relax-the-drag-target-check-across-webcontents-1788895294727",
+    "sha": "aeb41e18451fa73e3e39a93514f7773c3f604a58"
+  },
+  {
+    "ref": "refs/remotes/upstream/trop/44-x-y-bp-fix-validate-protocol-scheme-names-in-registerschemesasprivileged-1788882310126",
+    "sha": "3ca3e759b6bb4662fc299c92646d24b89cdd65cb"
+  },
+  {
+    "ref": "refs/remotes/upstream/trop/45-x-y-bp-fix-only-relax-the-drag-target-check-across-webcontents-1788895294740",
+    "sha": "2f425b30c37eb68081ffb07195bcb65bcb7f9421"
+  },
+  {
+    "ref": "refs/remotes/upstream/trop/45-x-y-bp-fix-validate-protocol-scheme-names-in-registerschemesasprivileged-1788882308837",
+    "sha": "49305a9db0310ca4689bedc060b5a65da5f4e867"
+  },
+  {
+    "ref": "refs/remotes/upstream/trop/45-x-y-bp-fix-walk-out-of-nested-fullscreen-webcontents-once-when-handling-esc--1788890820362",
+    "sha": "0420db4ffb7e9251a288593e857da8c8c34759f7"
+  }
+]

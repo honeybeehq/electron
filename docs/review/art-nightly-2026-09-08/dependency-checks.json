@@ -1,0 +1,14 @@
+[
+  {
+    "command": "NODE_PATH=<isolated v3 install> node --test script/run-clang-tidy-dependencies.test.cjs",
+    "cwd": "/Users/trmd/.hive/crew/art/reviews/worktrees/electron-fork-dependency-2026-09-08",
+    "exitCode": 1,
+    "evidence": "dependency-v3.log"
+  },
+  {
+    "command": "NODE_PATH=<isolated v1 install> node --test script/run-clang-tidy-dependencies.test.cjs",
+    "cwd": "/Users/trmd/.hive/crew/art/reviews/worktrees/electron-fork-dependency-2026-09-08",
+    "exitCode": 0,
+    "evidence": "dependency-v1.log"
+  }
+]

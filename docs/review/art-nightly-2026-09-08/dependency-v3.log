@@ -1,0 +1,38 @@
+✖ clang-tidy streaming imports resolve with installed dependencies (81.537583ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 650.06875
+
+✖ failing tests:
+
+test at script/run-clang-tidy-dependencies.test.cjs:6:1
+✖ clang-tidy streaming imports resolve with installed dependencies (81.537583ms)
+  AssertionError [ERR_ASSERTION]: Got unwanted exception: stream-json/filters/Ignore
+  Actual message: "Cannot find module '/Users/trmd/.hive/crew/art/reviews/2026-09-08/electron-fork-evidence/deps-v3/node_modules/stream-json/src/filters/Ignore'"
+      at TestContext.<anonymous> (/Users/trmd/.hive/crew/art/reviews/worktrees/electron-fork-dependency-2026-09-08/script/run-clang-tidy-dependencies.test.cjs:11:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: Error: Cannot find module '/Users/trmd/.hive/crew/art/reviews/2026-09-08/electron-fork-evidence/deps-v3/node_modules/stream-json/src/filters/Ignore'
+        at createEsmNotFoundErr (node:internal/modules/cjs/loader:1512:15)
+        at finalizeEsmResolution (node:internal/modules/cjs/loader:1501:9)
+        at resolveExports (node:internal/modules/cjs/loader:684:14)
+        at Module._findPath (node:internal/modules/cjs/loader:751:31)
+        at Module._resolveFilename (node:internal/modules/cjs/loader:1460:27)
+        at wrapResolveFilename (node:internal/modules/cjs/loader:1048:27)
+        at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1072:10)
+        at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1093:12)
+        at Module._load (node:internal/modules/cjs/loader:1261:25)
+        at wrapModuleLoad (node:internal/modules/cjs/loader:255:19),
+    expected: undefined,
+    operator: 'doesNotThrow',
+    diff: 'simple'
+  }

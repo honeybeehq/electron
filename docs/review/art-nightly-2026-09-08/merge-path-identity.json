@@ -1,0 +1,2365 @@
+[
+  {
+    "sha": "148a462376c079e2ca0b9a61e29a14f718bf73b2",
+    "paths": [
+      {
+        "path": ".github/dependabot.yml",
+        "beforeBlob": "61602e65e5ef36875ee6e927df81d944bfc2f0cd",
+        "afterBlob": "29824827b1280fb683d043860cb787c0aa0312f0",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Build/configuration/pin delta inspected against consumers and manifest; no generated/native build proof."
+      },
+      {
+        "path": ".github/workflows/issue-template-check.yml",
+        "beforeBlob": "b65efe55d71cdbde3d284d5ded8b320f80810d62",
+        "afterBlob": "179cc8b4374847b6c9d846a28135613c88d947d6",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Build/configuration/pin delta inspected against consumers and manifest; no generated/native build proof."
+      },
+      {
+        "path": ".github/workflows/pgo-generation.yml",
+        "beforeBlob": "bca92719cc2d59e431fbb5733f741fe2ac83c0d6",
+        "afterBlob": "a4c56718a814347a6f879b674c1d76e97a506863",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Build/configuration/pin delta inspected against consumers and manifest; no generated/native build proof."
+      },
+      {
+        "path": ".github/workflows/pipeline-segment-electron-clang-tidy.yml",
+        "beforeBlob": "05e41b1411a011fd433a480ca96f46bccfb5ff80",
+        "afterBlob": "6ca64f3a7a10f80202553ef8d95a3079298fe67f",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Build/configuration/pin delta inspected against consumers and manifest; no generated/native build proof."
+      },
+      {
+        "path": ".github/workflows/pipeline-segment-electron-gn-check.yml",
+        "beforeBlob": "4e774738871c0bb92d77e3ea51aed9e6edbaf9ec",
+        "afterBlob": "47b4b3551f5407f2193e94063435384270753238",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Build/configuration/pin delta inspected against consumers and manifest; no generated/native build proof."
+      },
+      {
+        "path": ".github/workflows/scorecards.yml",
+        "beforeBlob": "15e2f5ebeee1ad25118702f9185b6e29102a62fa",
+        "afterBlob": "5a54d9c6b90d0816cd75fc13941a1810023ba75f",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Build/configuration/pin delta inspected against consumers and manifest; no generated/native build proof."
+      },
+      {
+        "path": "BUILD.gn",
+        "beforeBlob": "795004441692aeef96b0dc8bf245a1d81ffaf3ea",
+        "afterBlob": "d48026e2a7fa1de8b8d2b45781e9634e16b944fb",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [
+          "b1be0e0d8ce8b109be4bdd768ffb5c5e2fd06753"
+        ],
+        "reviewDisposition": "Build/configuration/pin delta inspected against consumers and manifest; no generated/native build proof."
+      },
+      {
+        "path": "DEPS",
+        "beforeBlob": "5e9d6305be8dddbe05de3ef690d801330090182c",
+        "afterBlob": "0c27f465bfe1414347f643006350b08f82d9a5e4",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Build/configuration/pin delta inspected against consumers and manifest; no generated/native build proof."
+      },
+      {
+        "path": "build/args/all.gn",
+        "beforeBlob": "8e044e7dcb27483bdac7944cce7ab7489d93d069",
+        "afterBlob": "3ce312d292730583738af2a3abed3b75e5d2089f",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Build/configuration/pin delta inspected against consumers and manifest; no generated/native build proof."
+      },
+      {
+        "path": "build/pgo_profiles/linux-arm64.pgo.txt",
+        "beforeBlob": "81cc3c2cddb0b76771288ebfba49828de7204486",
+        "afterBlob": "c1236f833d833238cbe822da287c14ed817ba8b1",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Build/configuration/pin delta inspected against consumers and manifest; no generated/native build proof."
+      },
+      {
+        "path": "build/pgo_profiles/linux-x64.pgo.txt",
+        "beforeBlob": "73cc3a70eb72c9bb84d62773ff7bb6338daf0c59",
+        "afterBlob": "2e23c9114eafe029141ba24ee1086e663ddcdd06",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Build/configuration/pin delta inspected against consumers and manifest; no generated/native build proof."
+      },
+      {
+        "path": "build/pgo_profiles/macos-arm64.pgo.txt",
+        "beforeBlob": "e909e7889519b4f768163c85772244623b0c15ed",
+        "afterBlob": "ac88a7da781d6336da2867e63cdab20fa5a8ce7d",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Build/configuration/pin delta inspected against consumers and manifest; no generated/native build proof."
+      },
+      {
+        "path": "build/pgo_profiles/macos-x64.pgo.txt",
+        "beforeBlob": "83c06d5e7fe5314afff32fd86f6504a00c170b95",
+        "afterBlob": "061efb64dbdde48fb316db9b65524fa286efa251",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Build/configuration/pin delta inspected against consumers and manifest; no generated/native build proof."
+      },
+      {
+        "path": "build/pgo_profiles/v8-builtins.pgo.txt",
+        "beforeBlob": "5be8fe2b6bfe18d41361bdaf825bda0eef66d490",
+        "afterBlob": "ad6cea8bf49ff5fbe04fe478a510ff3e5b2973fb",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Build/configuration/pin delta inspected against consumers and manifest; no generated/native build proof."
+      },
+      {
+        "path": "build/pgo_profiles/win-arm64.pgo.txt",
+        "beforeBlob": "3217e9b77987db055d5d00f47cec225cc4180972",
+        "afterBlob": "04a3db45288fcb2101ee82c363330d22269cc665",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Build/configuration/pin delta inspected against consumers and manifest; no generated/native build proof."
+      },
+      {
+        "path": "build/pgo_profiles/win-x64.pgo.txt",
+        "beforeBlob": "f9f30db40eab85c359329f4a362b33cc1fe05fc2",
+        "afterBlob": "b2eaaa7343362f16615e26a063227fadb88f5c9b",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Build/configuration/pin delta inspected against consumers and manifest; no generated/native build proof."
+      },
+      {
+        "path": "docs/api/debugger.md",
+        "beforeBlob": "c29673f3d48409a5eb520d5388081cd53d694ebd",
+        "afterBlob": "a404134b293b5ed6dc3c63482a529564eec1405f",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Public/internal contract compared with merged implementation; retain supported APIs and platform qualifications."
+      },
+      {
+        "path": "docs/api/desktop-capturer.md",
+        "beforeBlob": "fb1bfb1eb4d27c5b67830d1ae38f2f4cfc46c27e",
+        "afterBlob": "2f952331cd4bc1c28122e6eac0f3afd583319172",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Public/internal contract compared with merged implementation; retain supported APIs and platform qualifications."
+      },
+      {
+        "path": "docs/api/download-item.md",
+        "beforeBlob": "253c722f090f40be4cc1cec48884ff482c05be78",
+        "afterBlob": "0c18c99ad7b664f36fb3dec3635a1f210057d540",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Public/internal contract compared with merged implementation; retain supported APIs and platform qualifications."
+      },
+      {
+        "path": "docs/api/environment-variables.md",
+        "beforeBlob": "069e42a113fbd31ec62c486369dc53a3ca3500ad",
+        "afterBlob": "ac728ae2a87014cecf2659616fe80ce6242c42d4",
+        "sameBeforeAfterCandidates": [
+          "f517bf1583cbbaea2907a0016ac952c09530aa74",
+          "fb5f8e20490298416f6702382ef578c00aebd384",
+          "9f32d2c85cee614b2bd4965aa98128cca796dc75"
+        ],
+        "sameAfterCandidates": [
+          "f517bf1583cbbaea2907a0016ac952c09530aa74",
+          "fb5f8e20490298416f6702382ef578c00aebd384",
+          "9f32d2c85cee614b2bd4965aa98128cca796dc75"
+        ],
+        "reviewDisposition": "Public/internal contract compared with merged implementation; retain supported APIs and platform qualifications."
+      },
+      {
+        "path": "docs/api/protocol.md",
+        "beforeBlob": "c1ee54e511c07b86efe951d0771b1c4b5acb5e64",
+        "afterBlob": "e1a5ae48e9baf08fe04712e0dbadcc91bd504baf",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Public/internal contract compared with merged implementation; retain supported APIs and platform qualifications."
+      },
+      {
+        "path": "docs/api/session.md",
+        "beforeBlob": "b29ad93ce5f7f542bde7b89b60b8c0b98c1b3e2b",
+        "afterBlob": "9a98e0a584a5766444149f80b92c922c8aa9c164",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Public/internal contract compared with merged implementation; retain supported APIs and platform qualifications."
+      },
+      {
+        "path": "docs/api/structures/protocol-request.md",
+        "beforeBlob": "586a64bba9dfe38082e58475d157501106c76f40",
+        "afterBlob": "8317bc52899f3cecd459e38d95aa95bdea8fbbf2",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Public/internal contract compared with merged implementation; retain supported APIs and platform qualifications."
+      },
+      {
+        "path": "docs/api/structures/web-preferences.md",
+        "beforeBlob": "86903333d5bf1da3b2570362d8a6277a6e3e26df",
+        "afterBlob": "5fd40e642e12a5d90adea9817ca917b0bcd2bb42",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Public/internal contract compared with merged implementation; retain supported APIs and platform qualifications."
+      },
+      {
+        "path": "docs/api/web-contents.md",
+        "beforeBlob": "460ccf1fc95702e0285219afeaddeb431ffd7b24",
+        "afterBlob": "8b84facdb4a7eccf374d093d8473942c702f916e",
+        "sameBeforeAfterCandidates": [
+          "d024d25650efb9d4867683bb578767363d40ef6a",
+          "7ca6e15e85b06a3cd4d3346b5b03912f8557d1f8"
+        ],
+        "sameAfterCandidates": [
+          "d024d25650efb9d4867683bb578767363d40ef6a",
+          "7ca6e15e85b06a3cd4d3346b5b03912f8557d1f8"
+        ],
+        "reviewDisposition": "Public/internal contract compared with merged implementation; retain supported APIs and platform qualifications."
+      },
+      {
+        "path": "docs/api/web-request.md",
+        "beforeBlob": "c8ee3cd1e4bf811b0eb1c98585ab58e1b3806f5f",
+        "afterBlob": "f15f821b34e703864581ac983737a82aab29bc72",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Public/internal contract compared with merged implementation; retain supported APIs and platform qualifications."
+      },
+      {
+        "path": "docs/api/webview-tag.md",
+        "beforeBlob": "f90341962ffadd1aa4950d5b27f9077454a4fcc3",
+        "afterBlob": "2e21a0d78feb6520da2ca3936e9591dda4c426c8",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "79ceb1eb02ca0038cb55935a77611c3fb6b1464d",
+          "1484b37bc0fc4aceee096d84dbb650a6d3990e9c",
+          "65d777e71ffa88cbea1cba6abcf2642be866de4c",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "reviewDisposition": "Public/internal contract compared with merged implementation; retain supported APIs and platform qualifications."
+      },
+      {
+        "path": "docs/breaking-changes.md",
+        "beforeBlob": "0dead1a186dcc3d4d34c1b8c20c5478053e8bdda",
+        "afterBlob": "3244087d1e50185c007c7dfcc67d944065225ce1",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Public/internal contract compared with merged implementation; retain supported APIs and platform qualifications."
+      },
+      {
+        "path": "docs/tutorial/custom-window-interactions.md",
+        "beforeBlob": "2d9a656e58f79c3b424818f1f0d28cd5ee021221",
+        "afterBlob": "2acfd854baf30bb23d0ed4a3292b08a1423e6f45",
+        "sameBeforeAfterCandidates": [
+          "f517bf1583cbbaea2907a0016ac952c09530aa74",
+          "fb5f8e20490298416f6702382ef578c00aebd384",
+          "9f32d2c85cee614b2bd4965aa98128cca796dc75"
+        ],
+        "sameAfterCandidates": [
+          "f517bf1583cbbaea2907a0016ac952c09530aa74",
+          "fb5f8e20490298416f6702382ef578c00aebd384",
+          "9f32d2c85cee614b2bd4965aa98128cca796dc75"
+        ],
+        "reviewDisposition": "Public/internal contract compared with merged implementation; retain supported APIs and platform qualifications."
+      },
+      {
+        "path": "docs/tutorial/multithreading.md",
+        "beforeBlob": "fd0a52205f48b084dd3af1562738105c693fa719",
+        "afterBlob": "5cad2926e7f379fa7c74a28207a64d90c820e7b9",
+        "sameBeforeAfterCandidates": [
+          "b6a4d492fa1f7b75f4d8dce18ebdfdb902da135d"
+        ],
+        "sameAfterCandidates": [
+          "b6a4d492fa1f7b75f4d8dce18ebdfdb902da135d"
+        ],
+        "reviewDisposition": "Public/internal contract compared with merged implementation; retain supported APIs and platform qualifications."
+      },
+      {
+        "path": "docs/tutorial/security.md",
+        "beforeBlob": "80ca501e942203bfc2912be29e4eb4898b1a17a5",
+        "afterBlob": "71b1e96021761feb94923eea7b93982c836c12d6",
+        "sameBeforeAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "79ceb1eb02ca0038cb55935a77611c3fb6b1464d",
+          "1484b37bc0fc4aceee096d84dbb650a6d3990e9c",
+          "65d777e71ffa88cbea1cba6abcf2642be866de4c",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "sameAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "79ceb1eb02ca0038cb55935a77611c3fb6b1464d",
+          "1484b37bc0fc4aceee096d84dbb650a6d3990e9c",
+          "65d777e71ffa88cbea1cba6abcf2642be866de4c",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "reviewDisposition": "Public/internal contract compared with merged implementation; retain supported APIs and platform qualifications."
+      },
+      {
+        "path": "filenames.gni",
+        "beforeBlob": "3c98d1dc5f07ba353618e7bdfb5177364bf11939",
+        "afterBlob": "c5f9b11aa1a2c0de1a65c8a9b25807512def26a4",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Build/configuration/pin delta inspected against consumers and manifest; no generated/native build proof."
+      },
+      {
+        "path": "lib/browser/api/protocol.ts",
+        "beforeBlob": "b6f8c183d1c42093dcbc26471488b2e9b88238c8",
+        "afterBlob": "c191468ae9e0e3c8c059412ad172b0eff78f6769",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "lib/browser/api/web-contents.ts",
+        "beforeBlob": "9045026e01c8aa5f9e9e584611a0b65f7d55ef65",
+        "afterBlob": "59ad080a258e5cd8ccace1f22f3c4ba4b92fca23",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "79ceb1eb02ca0038cb55935a77611c3fb6b1464d",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "lib/browser/guest-view-manager.ts",
+        "beforeBlob": "a1d557c310a10409304e1fe60a39f07a2972b9e2",
+        "afterBlob": "d488b2041593d46ba8bc7113646cd09a912bb9c1",
+        "sameBeforeAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "79ceb1eb02ca0038cb55935a77611c3fb6b1464d",
+          "1484b37bc0fc4aceee096d84dbb650a6d3990e9c",
+          "65d777e71ffa88cbea1cba6abcf2642be866de4c",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "sameAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "79ceb1eb02ca0038cb55935a77611c3fb6b1464d",
+          "1484b37bc0fc4aceee096d84dbb650a6d3990e9c",
+          "65d777e71ffa88cbea1cba6abcf2642be866de4c",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "lib/browser/guest-window-manager.ts",
+        "beforeBlob": "57320c884f8d94f1b57accdd8782aa5cb1a799eb",
+        "afterBlob": "ca5abd24b21185785b0021674d45689bfd70e8d3",
+        "sameBeforeAfterCandidates": [
+          "079b9b1594ee62c336adc3aa430d4c1cf62bd51e",
+          "0e6aca0618eeae50a18cfd50548b8688820629ed",
+          "652ef79ac79c6767b31e59b2f28d0d46114645e5",
+          "a86ae4205ba2ba7ae60a6caa9d5d3a44321f2f9b"
+        ],
+        "sameAfterCandidates": [
+          "079b9b1594ee62c336adc3aa430d4c1cf62bd51e",
+          "0e6aca0618eeae50a18cfd50548b8688820629ed",
+          "652ef79ac79c6767b31e59b2f28d0d46114645e5",
+          "a86ae4205ba2ba7ae60a6caa9d5d3a44321f2f9b"
+        ],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "lib/browser/init.ts",
+        "beforeBlob": "0926efa70bbb3cc8aaf8180c149271de4572039a",
+        "afterBlob": "b1529a549f8c99b43ea0a70e195f2e6c70b53dcd",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "lib/browser/ipc-main-internal-utils.ts",
+        "beforeBlob": "1689de902ff3216e470b09d233f8c4f843c8ef8e",
+        "afterBlob": "fa0b64c0843c855ca83a1d64c726f31ade92e5c1",
+        "sameBeforeAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "79ceb1eb02ca0038cb55935a77611c3fb6b1464d",
+          "1484b37bc0fc4aceee096d84dbb650a6d3990e9c",
+          "65d777e71ffa88cbea1cba6abcf2642be866de4c",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "sameAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "79ceb1eb02ca0038cb55935a77611c3fb6b1464d",
+          "1484b37bc0fc4aceee096d84dbb650a6d3990e9c",
+          "65d777e71ffa88cbea1cba6abcf2642be866de4c",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "lib/browser/rpc-server.ts",
+        "beforeBlob": "1c723c5f9e1b358839618ed2d458daab171d0125",
+        "afterBlob": "07000b344b26a107717b8ef6d1a343e8bdd9e210",
+        "sameBeforeAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "79ceb1eb02ca0038cb55935a77611c3fb6b1464d",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "sameAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "79ceb1eb02ca0038cb55935a77611c3fb6b1464d",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "lib/node/asar-fs-wrapper.ts",
+        "beforeBlob": "677d8f6370078ba504cfc3351bdba472e66e9f7c",
+        "afterBlob": "c489a74536633bf8be3843f04604827ef7a1ec61",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "lib/node/init.ts",
+        "beforeBlob": "285e95f5b5c60f796b80bb74b9fe441948f8cc5f",
+        "afterBlob": "a8a29f1b5da8aa2a727926cd77cab10cb08fe2b5",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "lib/renderer/init.ts",
+        "beforeBlob": "a374c9bef63ca1b0008ffc3b8577e4b37fd83499",
+        "afterBlob": "eb369062281d5c1174bc1f98ee16b4857d466127",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "lib/renderer/window-setup.ts",
+        "beforeBlob": "2ec0b7adba7952e28b9efc04203c3820d5b1c4f7",
+        "afterBlob": "6abf595da5a26ca9fc1cd06f8aaf061610a31bc2",
+        "sameBeforeAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "79ceb1eb02ca0038cb55935a77611c3fb6b1464d",
+          "1484b37bc0fc4aceee096d84dbb650a6d3990e9c",
+          "65d777e71ffa88cbea1cba6abcf2642be866de4c",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "sameAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "79ceb1eb02ca0038cb55935a77611c3fb6b1464d",
+          "1484b37bc0fc4aceee096d84dbb650a6d3990e9c",
+          "65d777e71ffa88cbea1cba6abcf2642be866de4c",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "lib/utility/init.ts",
+        "beforeBlob": "b673299677d6488d1b61156ba1ff3dcd5123162c",
+        "afterBlob": "1c67e34d33c0f4fd9db28e8a63605d01cb775a30",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "lib/worker/init.ts",
+        "beforeBlob": "30b796b0bbeb3e3e90e76b5789b9683737c638f9",
+        "afterBlob": "973d548e1a65d0635ca66a20a10a6c12f977fab5",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "patches/boringssl/feat_expose_several_extra_cipher_functions.patch",
+        "beforeBlob": "f2086abf4e3493569b158abb32582a63a787bb3d",
+        "afterBlob": "6a26e54cb2cabf15d6bc70c1e290d479d9a3b3bd",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/.patches",
+        "beforeBlob": "1e5b11626afcbcdd9751d5475101d115af50d0f8",
+        "afterBlob": "f947ae3a805fc1f8cc19a7fee856aa172cdda3b0",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [
+          "b1be0e0d8ce8b109be4bdd768ffb5c5e2fd06753"
+        ],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/allow_in-process_windows_to_have_different_web_prefs.patch",
+        "beforeBlob": "4afa5140ea35ba654464d853ff38a4070b8ad504",
+        "afterBlob": "53e2a27cb57f0b5d398553f0981a1d7e3f11f4eb",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/build_disable_llvm_unroll-add-parallel-reductions_on_apple_targets.patch",
+        "beforeBlob": "2742fc4e635842050cf0c90cd3aad21d1d9ddc2d",
+        "afterBlob": null,
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/chore_grandfather_in_electron_views_and_delegates.patch",
+        "beforeBlob": "a4573221a949ed9544b83577b038e58858338346",
+        "afterBlob": "9c64613990b62ed9629ca1031f376e5d844c2fda",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/chore_partial_revert_of.patch",
+        "beforeBlob": "447a8820ab5e81a4e435fed2a1e0409ddea1f0f0",
+        "afterBlob": "e5f059bb552f194281cb18a36d5d658df0403ffb",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/chore_provide_iswebcontentscreationoverridden_with_full_params.patch",
+        "beforeBlob": "9f1d5ce6b689ac404a6fa8932b58aed649a8cc7d",
+        "afterBlob": null,
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/chore_restore_some_deprecated_wrapper_utility_in_gin.patch",
+        "beforeBlob": "2a58553ade57019462130194258a2119ad12e7b0",
+        "afterBlob": "906bbf578a14bbb8e8400f4924f5cecc6ac03485",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/crashpad_pid_check.patch",
+        "beforeBlob": "d84903bc070ea20c8e8491e0e0e90af0fcadad51",
+        "afterBlob": null,
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/desktop_media_list.patch",
+        "beforeBlob": "50b063c755813634f784b93946e0bbd461706649",
+        "afterBlob": "2a3c1448b32d8ef21ec9ff67a218648e158dc6fe",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/dump_syms.patch",
+        "beforeBlob": "34c3bf7a185a38f7918b74332aa8e540adec9711",
+        "afterBlob": null,
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/extend_apply_webpreferences.patch",
+        "beforeBlob": "5bc87b01769e377e465b60be440d6715d3bd32cf",
+        "afterBlob": null,
+        "sameBeforeAfterCandidates": [
+          "753da960931b1e74f79a5ef6494a3864c1260d0a"
+        ],
+        "sameAfterCandidates": [
+          "753da960931b1e74f79a5ef6494a3864c1260d0a"
+        ],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/feat_add_support_for_missing_dialog_features_to_shell_dialogs.patch",
+        "beforeBlob": "274ba523b721ca5768a7d5c360caf5412cda74c5",
+        "afterBlob": "a7c130aafa69898650a64f211513f4aa4b7b9563",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/feat_plumb_node_integration_in_worker_through_workersettings.patch",
+        "beforeBlob": "474f4bb5b04d4bb2dfbfd2b2103b8bb5a361f9cd",
+        "afterBlob": "ca9a3533b12362d42f841ebd8efe107f36de8f67",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/fix_constrain_allowuniversalaccessfromfileurls_to_file_origins_in.patch",
+        "beforeBlob": "ceb42a3daec844a052e1dbdc691d53145bc5bdb6",
+        "afterBlob": "f9ab7e2f0af26c251b4e72f3e5843887ee1af8eb",
+        "sameBeforeAfterCandidates": [
+          "1af388cfd7e48e8a963c45d576ce312bc8b0cc07"
+        ],
+        "sameAfterCandidates": [
+          "1af388cfd7e48e8a963c45d576ce312bc8b0cc07"
+        ],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/fix_crash_loading_non-standard_schemes_in_iframes.patch",
+        "beforeBlob": "eb264502e5d25359a0173650540178828b1c0216",
+        "afterBlob": "00358f23907309a3ab58c785a7ea25af15b7bb69",
+        "sameBeforeAfterCandidates": [
+          "1af388cfd7e48e8a963c45d576ce312bc8b0cc07"
+        ],
+        "sameAfterCandidates": [
+          "1af388cfd7e48e8a963c45d576ce312bc8b0cc07"
+        ],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/fix_disable_enable_resource_allowlist_generation_on_windows.patch",
+        "beforeBlob": "7a9ca66ecab141a856132b229d64ae73af52e8d9",
+        "afterBlob": null,
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/fix_fire_menu_popup_start_for_dynamically_created_aria_menus.patch",
+        "beforeBlob": "41fb46d1a6fed22df7fcda1b9ec6d758ea18d61f",
+        "afterBlob": null,
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/fix_make_macos_text_replacement_work_on_contenteditable.patch",
+        "beforeBlob": "cc21e3af401d022ec52d8dd5a4acdb54603f0720",
+        "afterBlob": "2755d602b4cbbbdbf3717bfd7d3f69468bd4ca83",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/fix_on-screen-keyboard_hides_on_input_blur_in_webview.patch",
+        "beforeBlob": "63fb1ebad850221e7b8ffa778a88647fecf42612",
+        "afterBlob": "922929457bf7413ce483d51ea8c899ab023b8c5b",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/fix_register_status_icon_with_unique_d-bus_name_when_owning_one.patch",
+        "beforeBlob": null,
+        "afterBlob": "c58f495186034cb4743bb83da8b7934e4043b4f7",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/fix_restore_original_resize_performance_on_macos.patch",
+        "beforeBlob": "3162cb1ea8524c8b5bd20bc42e438f6abb81bce2",
+        "afterBlob": null,
+        "sameBeforeAfterCandidates": [
+          "119da8d9746fc7efa9d1b3beff3e6977f6ea80b2",
+          "b1be0e0d8ce8b109be4bdd768ffb5c5e2fd06753"
+        ],
+        "sameAfterCandidates": [
+          "119da8d9746fc7efa9d1b3beff3e6977f6ea80b2",
+          "b1be0e0d8ce8b109be4bdd768ffb5c5e2fd06753"
+        ],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/fix_select_the_first_menu_item_when_opened_via_keyboard.patch",
+        "beforeBlob": "5ca7b76cb2bebeb1fc36e01fff932288b1883d59",
+        "afterBlob": "424614d07b7b5f08baea3d94d9a4c86d09263c63",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/mas_avoid_private_macos_api_usage.patch.patch",
+        "beforeBlob": "4f5547bd1afc6924e8f5ef3adb84510c28151d00",
+        "afterBlob": "9cdf655062abde9894d719e66678c5f4b1d75fe6",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/refactor_expose_file_system_access_blocklist.patch",
+        "beforeBlob": "ec41943bf29c3e08a32ca65a7d8c69e298f24a70",
+        "afterBlob": "d75603aca86141491b91e1b357ed521538596751",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/refactor_unfilter_unresponsive_events.patch",
+        "beforeBlob": "0e89c473aa283ab4dd58b08c362543c0d9a6e07d",
+        "afterBlob": "988c100ff127186da145b94f7943f17987096bf8",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/render_widget_host_view_mac.patch",
+        "beforeBlob": "e052b0ef274ad6ce5e915538a8c7cb3ec3721670",
+        "afterBlob": "be89ee4a2510c3776dd23379318b60f71709530b",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/revert_partial_remove_unused_prehandlemouseevent.patch",
+        "beforeBlob": "8579b7ff51bf329f9cbeeae194ab74cab49e7495",
+        "afterBlob": "11528aa1cb0880111956719c86fd311940b14fa9",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/support_mixed_sandbox_with_zygote.patch",
+        "beforeBlob": "4bb41059afd5fca5841180d1367eb1f5563f4861",
+        "afterBlob": "92d8a56b70db5c06158f58fc8cdc98cd9a2d8b0e",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/web_contents.patch",
+        "beforeBlob": "e773db2defe1148651b724685ca5271876c216fd",
+        "afterBlob": "e6493338f7c0718a17ddfb9a29c095c08d0e588a",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/webhid_webusb_key_document_services_on_the_requesting_frame_s_origin.patch",
+        "beforeBlob": null,
+        "afterBlob": "aed935f0dca93d32d4ab22c28dae016935c1db9e",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/webhid_webusb_pass_the_frame_to_canrequestdevicepermission.patch",
+        "beforeBlob": null,
+        "afterBlob": "41d433e2ffbeb97b821dba30684855104250d6c5",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/webview_fullscreen.patch",
+        "beforeBlob": "08f3b21f9d6c3e10bf7d45fa6d92d6efcfa8e971",
+        "afterBlob": "302d337e6bec98c14c1c842223cf55c624b3dd01",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/nan/.patches",
+        "beforeBlob": "9df195d34d238dddf937cf6e21901c2b67643be7",
+        "afterBlob": "60a6b2b6e5221196a2164898700798976da5c094",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/nan/8236212_api_remove_deprecated_methods_pt_2.patch",
+        "beforeBlob": "3c9fb91d1ecaea369b2ffa50ede37f07743f3f2a",
+        "afterBlob": "4702f16b50396923f5ef0dff5833dc0fdc5df87d",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/nan/chore_add_yarnrc_yml_and_yarn_lock_file_to_use_yarn_v4.patch",
+        "beforeBlob": "d969f21e149531666e232d802cacaf7aec6ee5b7",
+        "afterBlob": "74192b96b7304fb9b32fdb9a9af2ad48c7bfcb7b",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/nan/chore_handle_deprecation_of_v8_returnvalue_void_set_local_s.patch",
+        "beforeBlob": "946a7dcaea3a1cd330c43008c4895643f3f1f1ba",
+        "afterBlob": null,
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/nan/chore_handle_removal_of_v8_propertycallbackinfo_t_this.patch",
+        "beforeBlob": "f19ed5a0a60f38bf14fba3cf8a1e6163b1daf815",
+        "afterBlob": null,
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/nan/fix_add_externalpointertypetag_to_v8_external_api_calls.patch",
+        "beforeBlob": "0cbfc7200459f840777eaf5be3d84c8c04241ef1",
+        "afterBlob": null,
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/nan/fix_correct_usages_of_v8_returnvalue_void_set_nonempty_for_new.patch",
+        "beforeBlob": "26cb0e8e3473efa54b66865af9b29f16108db63f",
+        "afterBlob": null,
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/nan/fix_deprecation_of_v8_context_and_v8_object_api_methods.patch",
+        "beforeBlob": "e866bbf3f4d6de6b9d5ea2b9a927bb854dcf49ef",
+        "afterBlob": null,
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/nan/fix_remove_deprecated_propertycallbackinfo_holder.patch",
+        "beforeBlob": "62aa6922dc4cfa5410fd7ed85bae6b6a92e110a9",
+        "afterBlob": null,
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/nan/fix_replace_usage_of_removed_writeutf8_with_writeutf8v2.patch",
+        "beforeBlob": "ff87e083bc9e8672f6ee780482460a79047252e2",
+        "afterBlob": null,
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/nan/fix_support_v8_15_3_and_later.patch",
+        "beforeBlob": null,
+        "afterBlob": "7971d207512568110fcfc797eb13e827998381f8",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/nan/remove_accesscontrol_enum_for_v8_14_4_59.patch",
+        "beforeBlob": "b03769225cceaf5480c47385df6ef82a2efde47d",
+        "afterBlob": null,
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/nan/test_use_v8_version_check_instead_of_node_version_check.patch",
+        "beforeBlob": "63eea29e2a52a3825a4bc4206e47ea4aac543ab8",
+        "afterBlob": null,
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/node/.patches",
+        "beforeBlob": "853bbcce0b32e8bb211885fe368bb7c02051ee6a",
+        "afterBlob": "d2be9e9869b713e6a95be6007734e6376e6bc0be",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/node/chore_allow_the_node_entrypoint_to_be_a_builtin_module.patch",
+        "beforeBlob": "da2d53315973297efb8cc9a7bca1562279813dd7",
+        "afterBlob": null,
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/node/enable_crashpad_linux_node_processes.patch",
+        "beforeBlob": "b67b10662df4fdba9df5bd118757c3aae82854d8",
+        "afterBlob": null,
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/node/expose_get_builtin_module_function.patch",
+        "beforeBlob": "14190747814de2d818af0b98d0b996808ed858fc",
+        "afterBlob": null,
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/node/fix_do_not_resolve_electron_entrypoints.patch",
+        "beforeBlob": "b713276be8b76a859cbd0105f4c29102489d1818",
+        "afterBlob": "92efed83bc0c70f958a31bf8fec59f6c00660b65",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/node/refactor_allow_embedder_overriding_of_internal_fs_calls.patch",
+        "beforeBlob": "5859ff3b876e8e13ccd9d607e06c1e17cf829d31",
+        "afterBlob": null,
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/reclient-configs/.patches",
+        "beforeBlob": "ce3b27026a19adf4f4d99d2d0ad3ce024fa5eefe",
+        "afterBlob": "2681ba0fb61f02b6e8d12bdeeb5a459fca60cbad",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/reclient-configs/build_on_windows_provide_clang_wrapper_as_toolchain_input.patch",
+        "beforeBlob": "a4195cc7279596177bbdbfff3eed5561c56dc969",
+        "afterBlob": null,
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/reclient-configs/fix_add_python_remote_wrapper.patch",
+        "beforeBlob": "b0c737f55b06aaca1b837dc9dc3c253d69f0fed5",
+        "afterBlob": null,
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/reclient-configs/fix_disable_compression_threshold.patch",
+        "beforeBlob": "0be4eac477771d97e650c52a6082162b017fe0a0",
+        "afterBlob": null,
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/reclient-configs/fix_mark_the_generated_clang_remote_wrapper_executable.patch",
+        "beforeBlob": null,
+        "afterBlob": "c2dc63fedc555f4c4912382061b95829ab3a29df",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/reclient-configs/fix_temporarily_use_toolchain_inputs_exclusively_instead_of_inputs.patch",
+        "beforeBlob": "e048266493508d233a34c90cc598c48bdf1ece93",
+        "afterBlob": null,
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/reclient-configs/reland_mojo_use_large_worker_for_mojom_parser_action.patch",
+        "beforeBlob": "608e02c13ec4ba61397156e6436dcbcff8a89005",
+        "afterBlob": null,
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/webrtc/.patches",
+        "beforeBlob": "1dd0c816a6743bcaa45f9296ae4170cdf657bcda",
+        "afterBlob": "7ebfe3f869f61b882285ef0e5e0b9c499acf9f46",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/webrtc/fix_fall_back_to_the_x11_capturer_when_pipewire_fails_to_start.patch",
+        "beforeBlob": null,
+        "afterBlob": "197c5d4fc0dd9c9ece7e7d44e39e9f335a70ab70",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/webrtc/fix_handle_pipewire_capturer_initialization_and_management.patch",
+        "beforeBlob": "0f5cc9c0609045b8c440e49b509fa8e97c4071cb",
+        "afterBlob": null,
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "script/nan-spec-runner.js",
+        "beforeBlob": "1f00edc8603f2a5cb136e0621d998d4421a936dd",
+        "afterBlob": "3e6a37e4b119742d5a6bf3f0e04b0c3928528761",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "script/node-disabled-tests.json",
+        "beforeBlob": "e67a89effb8da42d63effa35b5bc7a75162e0283",
+        "afterBlob": "7e46063dc7daa3b02ffab00ed5ef2d0e84f00938",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "script/spec-weights.json",
+        "beforeBlob": "f2a25dec645b35dbb3c7ae8884c50bf42def0e00",
+        "afterBlob": "1e46fc7e849cda606d8644f406c8aadbb0406a0a",
+        "sameBeforeAfterCandidates": [
+          "57ab2fc74d2c3e87902349a792ab46869e833aec"
+        ],
+        "sameAfterCandidates": [
+          "57ab2fc74d2c3e87902349a792ab46869e833aec"
+        ],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "shell/browser/api/electron_api_download_item.cc",
+        "beforeBlob": "570ffdcc1fcdc16addb48efee3954d49806a35d2",
+        "afterBlob": "7b405c4f80612394dbbdbd7ca7bcd9d6c2610816",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/api/electron_api_download_item.h",
+        "beforeBlob": "a4d6857d9b1d647cada4d813673434fc60357ba2",
+        "afterBlob": "27b59607542453657b398f14ddd11e0377e0b1fb",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/api/electron_api_session.cc",
+        "beforeBlob": "6a723f9326c4890b0e793ebc6982d9f61a0f0633",
+        "afterBlob": "ff4760114d8132ac10657373660d88a79214c8bf",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/api/electron_api_web_contents.cc",
+        "beforeBlob": "ef85d77ce71001503fba3c3193dc16d5d9cdd935",
+        "afterBlob": "318453c4cbfc9b528023411583621971788d2dcf",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/api/electron_api_web_contents.h",
+        "beforeBlob": "3e1cd78dfe976da71fae024ec06eae61ae74a68e",
+        "afterBlob": "aa1c79dda117ce96b7cee1277b346ccb1288060f",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/api/electron_api_web_contents_view.cc",
+        "beforeBlob": "457e1cfa7e15eadcfe4f299702847a1e5a3c1efd",
+        "afterBlob": "ace148cf626957274664bf436fa648c8d60b0e98",
+        "sameBeforeAfterCandidates": [
+          "9f32d2c85cee614b2bd4965aa98128cca796dc75"
+        ],
+        "sameAfterCandidates": [
+          "9f32d2c85cee614b2bd4965aa98128cca796dc75"
+        ],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/api/electron_api_web_request.cc",
+        "beforeBlob": "22985c092df5fb5088a19b4f9ffe280784172498",
+        "afterBlob": "b2274f53df56b6f64b2056d7feef6eb3a8cb802a",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/api/gpuinfo_manager.cc",
+        "beforeBlob": "efa6980d965d42f443c7e87220c6ad81322a79f1",
+        "afterBlob": "a436d3308b25b2260500bd0c4f62bd9ae6f137fb",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/electron_browser_client.cc",
+        "beforeBlob": "b59192b1cc7b3067cccf7fb6b6f1fa95f40241a7",
+        "afterBlob": "bbea066f88ce08bdbc20b86c5991b9a37cb28220",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/electron_browser_context.cc",
+        "beforeBlob": "11e4489a3ff12fd4d98125a001d76512e2534d61",
+        "afterBlob": "cf8d7103a94058bf7284c24c84ac0de4dadf6dbf",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/electron_permission_manager.cc",
+        "beforeBlob": "a13c444ceffc71ed805a70f1814da1840a877b62",
+        "afterBlob": "e40eb01245c9f25d9a2c7ce8ccf6526f89aadc1a",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/electron_web_contents_utility_handler_impl.cc",
+        "beforeBlob": "7288f79971be5c3991d3872e4189c6c9a0ab1377",
+        "afterBlob": "6dca7bc1934bc3db4f85927ee4be0a32b7cfae62",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/feature_list_mac.mm",
+        "beforeBlob": "6c5720939973352d54c0476bb6b8546dcbc44266",
+        "afterBlob": "e2eafc04bfe9dceea1d0dda0ce0624d069fbea77",
+        "sameBeforeAfterCandidates": [
+          "119da8d9746fc7efa9d1b3beff3e6977f6ea80b2",
+          "b1be0e0d8ce8b109be4bdd768ffb5c5e2fd06753"
+        ],
+        "sameAfterCandidates": [
+          "119da8d9746fc7efa9d1b3beff3e6977f6ea80b2",
+          "b1be0e0d8ce8b109be4bdd768ffb5c5e2fd06753"
+        ],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/file_system_access/file_system_access_permission_context.cc",
+        "beforeBlob": "5e2d23522c8e5b96d78d2ef7ed375c7ce0890879",
+        "afterBlob": "ee9c9adbafbd5277dd07e03154b469b936825827",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/file_system_access/file_system_access_permission_context.h",
+        "beforeBlob": "a433f49398829673daf1447223329aae79d36360",
+        "afterBlob": "bd80fcbd41c3058a4cd93387ea5183b68781cad6",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/file_system_access/file_system_access_permission_context_factory.cc",
+        "beforeBlob": "61dfdc885efeedbb6fde3e96fbf99fa646d3ff00",
+        "afterBlob": "25055678ea1127bbabf9e36a486e195c6305bbca",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/file_system_access/file_system_access_permission_context_factory.h",
+        "beforeBlob": "62256aa742ede4a45fead5ee4eb563b254e126d9",
+        "afterBlob": "a98dda21f081423d0ec6420a60fd66b43e9e5548",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/hid/electron_hid_delegate.cc",
+        "beforeBlob": "20c5f6bd2123685380e0deb9bb8c326d31f436dd",
+        "afterBlob": "aae7caa8d6ffb74d41f2742424207e747964cb84",
+        "sameBeforeAfterCandidates": [
+          "22de0a3a06cfd3174fc6c59c3810ab5e1c91bf1a"
+        ],
+        "sameAfterCandidates": [
+          "22de0a3a06cfd3174fc6c59c3810ab5e1c91bf1a"
+        ],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/hid/electron_hid_delegate.h",
+        "beforeBlob": "e16208cf03ac8d1e8fbf502a9fcfe00ab1f70960",
+        "afterBlob": "afd0086d04abe09fa4489a81f3e60e16ebfa1404",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/native_window.cc",
+        "beforeBlob": "7737685eb5e5360d2b248f8b61d05d3e7defeee2",
+        "afterBlob": "d68d9efc189a36debd7de4933c3024db8befc575",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/native_window.h",
+        "beforeBlob": "079f688a904fa1bf9c71c23e3a45be42380015d3",
+        "afterBlob": "aff25af529df38ee6958137a56a6fc008f68dcf3",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/network_hints_handler_impl.cc",
+        "beforeBlob": "1fb458c0a26af6ce78c9c47abe02e5f3d3a1da0d",
+        "afterBlob": "bc6a6bb4d29a3bd3c60f0ff1b5a5070bc55aadd3",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/network_hints_handler_impl.h",
+        "beforeBlob": "3abf6192594185184449140fd8a57d31214d6a6e",
+        "afterBlob": "75b9d97198906650e5eb98c3840cdba7a108188d",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/ui/drag_util.cc",
+        "beforeBlob": "6e8ece335f78adfa30f547a5eeffed11af983313",
+        "afterBlob": "64b485a6926d4c344a56fdb09f61fdf5b069f801",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/ui/draggable_region_debugger.cc",
+        "beforeBlob": null,
+        "afterBlob": "b3d521d821235fc4444dc0b3c01a0082158090c9",
+        "sameBeforeAfterCandidates": [
+          "f517bf1583cbbaea2907a0016ac952c09530aa74",
+          "fb5f8e20490298416f6702382ef578c00aebd384",
+          "9f32d2c85cee614b2bd4965aa98128cca796dc75"
+        ],
+        "sameAfterCandidates": [
+          "f517bf1583cbbaea2907a0016ac952c09530aa74",
+          "fb5f8e20490298416f6702382ef578c00aebd384",
+          "9f32d2c85cee614b2bd4965aa98128cca796dc75"
+        ],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/ui/draggable_region_debugger.h",
+        "beforeBlob": null,
+        "afterBlob": "1ccc9ca814fa33583014c962410a07df8a82212e",
+        "sameBeforeAfterCandidates": [
+          "f517bf1583cbbaea2907a0016ac952c09530aa74",
+          "fb5f8e20490298416f6702382ef578c00aebd384",
+          "9f32d2c85cee614b2bd4965aa98128cca796dc75"
+        ],
+        "sameAfterCandidates": [
+          "f517bf1583cbbaea2907a0016ac952c09530aa74",
+          "fb5f8e20490298416f6702382ef578c00aebd384",
+          "9f32d2c85cee614b2bd4965aa98128cca796dc75"
+        ],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/ui/file_dialog_win.cc",
+        "beforeBlob": "7458b55091de7f171b2a599b88c4fe60eada0c6f",
+        "afterBlob": "d926b866161522063b1de35076da6c9cbe9f4b0b",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/usb/electron_usb_delegate.cc",
+        "beforeBlob": "c1610c798e880a09e8a25df40ddfa85872b1bf3a",
+        "afterBlob": "ed606950971acfbf0724c5d85897da3cdad83136",
+        "sameBeforeAfterCandidates": [
+          "22de0a3a06cfd3174fc6c59c3810ab5e1c91bf1a"
+        ],
+        "sameAfterCandidates": [
+          "22de0a3a06cfd3174fc6c59c3810ab5e1c91bf1a"
+        ],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/usb/electron_usb_delegate.h",
+        "beforeBlob": "2e6535e554adb4e9887b904a2afc9dc2ab1527b1",
+        "afterBlob": "47f08fd6b207e875f0a85af26387f5488886c497",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/web_contents_permission_helper.cc",
+        "beforeBlob": "f2db6a8b907192412428bda5f8b68de5025004bb",
+        "afterBlob": "17430b5012fd4f4c28db75abe5327f0331ae4e60",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [
+          "7ca6e15e85b06a3cd4d3346b5b03912f8557d1f8"
+        ],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/web_contents_permission_helper.h",
+        "beforeBlob": "e9893adf7d2ff71eccb1ed937848e9317372412b",
+        "afterBlob": "716325d177041956c5302f4cf3ce4d7cc1032d5a",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/web_contents_preferences.cc",
+        "beforeBlob": "cbde9d1de06d957856e721db8015fd0ca09385af",
+        "afterBlob": "94af2ce5036fedaa663537187c064ef90fc0c988",
+        "sameBeforeAfterCandidates": [
+          "753da960931b1e74f79a5ef6494a3864c1260d0a"
+        ],
+        "sameAfterCandidates": [
+          "753da960931b1e74f79a5ef6494a3864c1260d0a"
+        ],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/common/api/electron_api_testing.cc",
+        "beforeBlob": "6934dfd3b76304d09746bf93297f7dcfac9e164a",
+        "afterBlob": "0d3e5f382570af75d5bd72499e6f46eda19cb8ba",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/common/api/electron_api_v8_util.cc",
+        "beforeBlob": "acc5cdd9967ee9439d7f6bfc0a7ef7049a12b750",
+        "afterBlob": "e20a8cbbc98e065d923bc9a5f84a067a536f83d7",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/common/electron_natives_codecache_main.cc",
+        "beforeBlob": "a3e99a13e88f68b110af4f8c14f8be6d1981ed53",
+        "afterBlob": "a7f18f2cd0a689987d8c30e946715da5a1dd877d",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/common/gin_converters/net_converter.cc",
+        "beforeBlob": "43dc9acd6400230da500a1c617d27b31855ed8b9",
+        "afterBlob": "092af5ec625e7ad7746f9ed4b07fb8abcf2a2f00",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/common/js2c_bundle_ids.h",
+        "beforeBlob": "1f17563c4e800264537db99412fd54c12e6fdf7d",
+        "afterBlob": "83351d3a32fcce4acbed48c030e6f8de5d303672",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/common/node_bindings.cc",
+        "beforeBlob": "28c714940d238f54b7528151d86650f023223eea",
+        "afterBlob": "87b34a071a9a0acb666c379c0a0a9e22df33b080",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/common/node_bindings.h",
+        "beforeBlob": "d4f3bbd4ab3be8cd951a569bf6c03e260d048a2f",
+        "afterBlob": "71e90e026e9b2e8650784bbf0d73c060411486b7",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/common/node_includes.h",
+        "beforeBlob": "73ddec90c4e361c69859173600c7ed33b8b38d02",
+        "afterBlob": "c0e89c1da33376dd66fed0f266c3a5f467db518d",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/common/node_natives_code_cache.h",
+        "beforeBlob": "cb522deaf0b5d16bee5e8b2d12efae1526756225",
+        "afterBlob": "c79e908b02927886c86f015a98a9cb4e766b3412",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/common/node_util.cc",
+        "beforeBlob": "615696dd28cf7ffec1d3c6f932c70c5696c7714b",
+        "afterBlob": "3467c859177f8691d74ca8e3a37bc3fb7b1af624",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/common/node_util.h",
+        "beforeBlob": "3ae75a968d7e88b19eb8113caf2254d39548d29f",
+        "afterBlob": "fb0cb21de8228c14e34ff3549ec1ff69cbe56b0b",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/renderer/preload_utils.cc",
+        "beforeBlob": "fc4b5221ad07d5f86ad099383727c92ce7aac322",
+        "afterBlob": "f60d57463622bf18397dce7290fb38497f8eeb88",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/renderer/renderer_client_base.cc",
+        "beforeBlob": "64d159adac136f7815e2382cfb915a60f1e5b58e",
+        "afterBlob": "4d130b2a8dc2b129fb06371f9b51f1d4f7390557",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "spec/api-autoupdater-darwin-policy-spec.ts",
+        "beforeBlob": null,
+        "afterBlob": "749ec6220ee7a1b32aa466f3de2e264622a8bbfc",
+        "sameBeforeAfterCandidates": [
+          "559c2095f24df7b3a0b0e3ee5f49c610bb0a9770",
+          "07e460719c75b2ec5ee4893f7d2192ef31c7b8c2",
+          "9f1fa686e3db88ced2ed9acbb3a30a8fc003f982",
+          "16c4536db4500a94dc05faa7775e35ea60b840bb",
+          "a1f47e1dd6296d6de0d0725fee1abe4954c97d8a",
+          "eda10823e7e5c1bbc084b1725c33489b89a10fe3",
+          "147aaef3bb5fd76aaf3089928faa78caaf0780b4",
+          "0f6e4fc6e42efab4f8a4858b15bd83a100401f88",
+          "57ab2fc74d2c3e87902349a792ab46869e833aec"
+        ],
+        "sameAfterCandidates": [
+          "559c2095f24df7b3a0b0e3ee5f49c610bb0a9770",
+          "07e460719c75b2ec5ee4893f7d2192ef31c7b8c2",
+          "9f1fa686e3db88ced2ed9acbb3a30a8fc003f982",
+          "16c4536db4500a94dc05faa7775e35ea60b840bb",
+          "a1f47e1dd6296d6de0d0725fee1abe4954c97d8a",
+          "eda10823e7e5c1bbc084b1725c33489b89a10fe3",
+          "147aaef3bb5fd76aaf3089928faa78caaf0780b4",
+          "0f6e4fc6e42efab4f8a4858b15bd83a100401f88",
+          "57ab2fc74d2c3e87902349a792ab46869e833aec"
+        ],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "spec/api-autoupdater-darwin-spec.ts",
+        "beforeBlob": "8c3a0fb2251cc1f9d509c45a1f7b06e337b83828",
+        "afterBlob": "69874d0c19b6a6f1f546ae89eb47dc44184425c2",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [
+          "57ab2fc74d2c3e87902349a792ab46869e833aec"
+        ],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "spec/api-browser-window-spec.ts",
+        "beforeBlob": "afc365447b826eb1c3a600fc4c820d47dffad6c9",
+        "afterBlob": "578b6e4f16e2a6fbc6bcfdb03bac41ea511a0f35",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "spec/api-js2c-code-cache-spec.ts",
+        "beforeBlob": "3f1a20804d5ca4c640e7295c4bcf57fe30e5b27e",
+        "afterBlob": "b575e8fdcc30e103a38d260689a0a84ead88ed79",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "spec/api-media-handler-spec.ts",
+        "beforeBlob": "9beacc46bb92d375286875351e5349951acf0a67",
+        "afterBlob": "6504b40e52fcba5f254e92bd31496dc4e7f46f48",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [
+          "d024d25650efb9d4867683bb578767363d40ef6a",
+          "4e7ae3ae5dd43ded4f7ea0c1b83397a1a6c94728",
+          "7ca6e15e85b06a3cd4d3346b5b03912f8557d1f8"
+        ],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "spec/api-protocol-spec.ts",
+        "beforeBlob": "a191aacb5fc88ce741dbb141ca75fdbcf870a5ee",
+        "afterBlob": "6c8b7860bb33359211016fdc53ca929ae389238a",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "spec/api-session-spec.ts",
+        "beforeBlob": "38c0e33f20c66ee9938e6ce880c7b2544e97153d",
+        "afterBlob": "adad721192d98b06a7d8c248e808fc42b2caccd1",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "spec/api-web-contents-spec.ts",
+        "beforeBlob": "fdb802e6294e68b36fb637028c67bd12705d80da",
+        "afterBlob": "dc0d7aeca8814028658cb41d78b69c5abc557948",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "spec/api-web-request-spec.ts",
+        "beforeBlob": "8640938fe23234039fda9c9318df29882f5344a6",
+        "afterBlob": "9f1ffbd34fc392222d7270f2b1ac635c4ee8316e",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "spec/asar-spec.ts",
+        "beforeBlob": "81f0415d190e62918b818ffa662342c208dd04e9",
+        "afterBlob": "a6473e3ef077020793b6a8f81ec669c4f405d4dc",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "spec/chromium-spec.ts",
+        "beforeBlob": "a23621bba4f3c13cf32fa05c024ba73b02234b73",
+        "afterBlob": "e271e37e03126e260a1e2167f33aa964c2f3137c",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [
+          "ead108451134448740431bb3b32b4f5b7058cc48"
+        ],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "spec/fixtures/api/js2c-code-cache/util-child.js",
+        "beforeBlob": "ca75326bf1b44f1a05d0b109f1c95f0865be9b00",
+        "afterBlob": "f30724871f128b2e00f37935439ff7e90c57025c",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "spec/fixtures/module/preload-ipc-ping-pong.js",
+        "beforeBlob": null,
+        "afterBlob": "4c1f82efcf99312d2335feec2b446512724cf6f5",
+        "sameBeforeAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "79ceb1eb02ca0038cb55935a77611c3fb6b1464d",
+          "1484b37bc0fc4aceee096d84dbb650a6d3990e9c",
+          "65d777e71ffa88cbea1cba6abcf2642be866de4c",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "sameAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "79ceb1eb02ca0038cb55935a77611c3fb6b1464d",
+          "1484b37bc0fc4aceee096d84dbb650a6d3990e9c",
+          "65d777e71ffa88cbea1cba6abcf2642be866de4c",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "spec/lib/autoupdater-darwin-helpers.ts",
+        "beforeBlob": null,
+        "afterBlob": "380bcaaab50752d4a4b79096a11abe9d54cf5d11",
+        "sameBeforeAfterCandidates": [
+          "57ab2fc74d2c3e87902349a792ab46869e833aec"
+        ],
+        "sameAfterCandidates": [
+          "57ab2fc74d2c3e87902349a792ab46869e833aec"
+        ],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "spec/webview-spec.ts",
+        "beforeBlob": "5f76f45f15b0498941a6e5d718846d4fccf0cfa5",
+        "afterBlob": "fba0553097ed26a2bd11836782f4cc6dcffec63c",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "typings/internal-ambient.d.ts",
+        "beforeBlob": "986e7c236833abdc3ab849401c775ae9f1009bec",
+        "afterBlob": "0c8667cf730441a1735c106fdd7ce873394dee02",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Public/internal contract compared with merged implementation; retain supported APIs and platform qualifications."
+      },
+      {
+        "path": "typings/internal-electron.d.ts",
+        "beforeBlob": "9f0dda4c7e52d443bf78a6d5f8bf8826cdccbd5a",
+        "afterBlob": "2e2f88fbe7447c01185111fb36f12c175c19e540",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "reviewDisposition": "Public/internal contract compared with merged implementation; retain supported APIs and platform qualifications."
+      }
+    ],
+    "inspection": "First-parent delta, remerge resolution, imported callers/specs and second source simplification pass completed. No native execution claim."
+  },
+  {
+    "sha": "5f46fcf9a9612670f60e9cd92e4016efea8a3384",
+    "paths": [
+      {
+        "path": ".github/workflows/issue-template-check.yml",
+        "beforeBlob": "b65efe55d71cdbde3d284d5ded8b320f80810d62",
+        "afterBlob": "179cc8b4374847b6c9d846a28135613c88d947d6",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Build/configuration/pin delta inspected against consumers and manifest; no generated/native build proof."
+      },
+      {
+        "path": "BUILD.gn",
+        "beforeBlob": "1dee13473532c9337c9a6c1726700a256fe7ba62",
+        "afterBlob": "d48026e2a7fa1de8b8d2b45781e9634e16b944fb",
+        "sameBeforeAfterCandidates": [
+          "b1be0e0d8ce8b109be4bdd768ffb5c5e2fd06753"
+        ],
+        "sameAfterCandidates": [
+          "b1be0e0d8ce8b109be4bdd768ffb5c5e2fd06753"
+        ],
+        "reviewDisposition": "Build/configuration/pin delta inspected against consumers and manifest; no generated/native build proof."
+      },
+      {
+        "path": "docs/api/download-item.md",
+        "beforeBlob": "253c722f090f40be4cc1cec48884ff482c05be78",
+        "afterBlob": "0c18c99ad7b664f36fb3dec3635a1f210057d540",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Public/internal contract compared with merged implementation; retain supported APIs and platform qualifications."
+      },
+      {
+        "path": "docs/api/protocol.md",
+        "beforeBlob": "c1ee54e511c07b86efe951d0771b1c4b5acb5e64",
+        "afterBlob": "e1a5ae48e9baf08fe04712e0dbadcc91bd504baf",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Public/internal contract compared with merged implementation; retain supported APIs and platform qualifications."
+      },
+      {
+        "path": "docs/api/session.md",
+        "beforeBlob": "dd4c7bb2c5128bcbdde2ebb0fad7baedd4e411d0",
+        "afterBlob": "9a98e0a584a5766444149f80b92c922c8aa9c164",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Public/internal contract compared with merged implementation; retain supported APIs and platform qualifications."
+      },
+      {
+        "path": "docs/api/structures/protocol-request.md",
+        "beforeBlob": "586a64bba9dfe38082e58475d157501106c76f40",
+        "afterBlob": "8317bc52899f3cecd459e38d95aa95bdea8fbbf2",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Public/internal contract compared with merged implementation; retain supported APIs and platform qualifications."
+      },
+      {
+        "path": "docs/api/structures/web-preferences.md",
+        "beforeBlob": "86903333d5bf1da3b2570362d8a6277a6e3e26df",
+        "afterBlob": "5fd40e642e12a5d90adea9817ca917b0bcd2bb42",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Public/internal contract compared with merged implementation; retain supported APIs and platform qualifications."
+      },
+      {
+        "path": "docs/api/web-contents.md",
+        "beforeBlob": "460ccf1fc95702e0285219afeaddeb431ffd7b24",
+        "afterBlob": "8b84facdb4a7eccf374d093d8473942c702f916e",
+        "sameBeforeAfterCandidates": [
+          "d024d25650efb9d4867683bb578767363d40ef6a",
+          "7ca6e15e85b06a3cd4d3346b5b03912f8557d1f8"
+        ],
+        "sameAfterCandidates": [
+          "d024d25650efb9d4867683bb578767363d40ef6a",
+          "7ca6e15e85b06a3cd4d3346b5b03912f8557d1f8"
+        ],
+        "reviewDisposition": "Public/internal contract compared with merged implementation; retain supported APIs and platform qualifications."
+      },
+      {
+        "path": "docs/api/web-request.md",
+        "beforeBlob": "c8ee3cd1e4bf811b0eb1c98585ab58e1b3806f5f",
+        "afterBlob": "f15f821b34e703864581ac983737a82aab29bc72",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Public/internal contract compared with merged implementation; retain supported APIs and platform qualifications."
+      },
+      {
+        "path": "docs/api/webview-tag.md",
+        "beforeBlob": "f90341962ffadd1aa4950d5b27f9077454a4fcc3",
+        "afterBlob": "2e21a0d78feb6520da2ca3936e9591dda4c426c8",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "79ceb1eb02ca0038cb55935a77611c3fb6b1464d",
+          "1484b37bc0fc4aceee096d84dbb650a6d3990e9c",
+          "65d777e71ffa88cbea1cba6abcf2642be866de4c",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "reviewDisposition": "Public/internal contract compared with merged implementation; retain supported APIs and platform qualifications."
+      },
+      {
+        "path": "docs/breaking-changes.md",
+        "beforeBlob": "832226b2ab2b985ff5590b129065b95e4180f280",
+        "afterBlob": "3244087d1e50185c007c7dfcc67d944065225ce1",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Public/internal contract compared with merged implementation; retain supported APIs and platform qualifications."
+      },
+      {
+        "path": "docs/tutorial/multithreading.md",
+        "beforeBlob": "fd0a52205f48b084dd3af1562738105c693fa719",
+        "afterBlob": "5cad2926e7f379fa7c74a28207a64d90c820e7b9",
+        "sameBeforeAfterCandidates": [
+          "b6a4d492fa1f7b75f4d8dce18ebdfdb902da135d"
+        ],
+        "sameAfterCandidates": [
+          "b6a4d492fa1f7b75f4d8dce18ebdfdb902da135d"
+        ],
+        "reviewDisposition": "Public/internal contract compared with merged implementation; retain supported APIs and platform qualifications."
+      },
+      {
+        "path": "docs/tutorial/security.md",
+        "beforeBlob": "80ca501e942203bfc2912be29e4eb4898b1a17a5",
+        "afterBlob": "71b1e96021761feb94923eea7b93982c836c12d6",
+        "sameBeforeAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "79ceb1eb02ca0038cb55935a77611c3fb6b1464d",
+          "1484b37bc0fc4aceee096d84dbb650a6d3990e9c",
+          "65d777e71ffa88cbea1cba6abcf2642be866de4c",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "sameAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "79ceb1eb02ca0038cb55935a77611c3fb6b1464d",
+          "1484b37bc0fc4aceee096d84dbb650a6d3990e9c",
+          "65d777e71ffa88cbea1cba6abcf2642be866de4c",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "reviewDisposition": "Public/internal contract compared with merged implementation; retain supported APIs and platform qualifications."
+      },
+      {
+        "path": "lib/browser/api/protocol.ts",
+        "beforeBlob": "b6f8c183d1c42093dcbc26471488b2e9b88238c8",
+        "afterBlob": "c191468ae9e0e3c8c059412ad172b0eff78f6769",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "lib/browser/api/web-contents.ts",
+        "beforeBlob": "9045026e01c8aa5f9e9e584611a0b65f7d55ef65",
+        "afterBlob": "59ad080a258e5cd8ccace1f22f3c4ba4b92fca23",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "79ceb1eb02ca0038cb55935a77611c3fb6b1464d",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "lib/browser/guest-view-manager.ts",
+        "beforeBlob": "a1d557c310a10409304e1fe60a39f07a2972b9e2",
+        "afterBlob": "d488b2041593d46ba8bc7113646cd09a912bb9c1",
+        "sameBeforeAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "79ceb1eb02ca0038cb55935a77611c3fb6b1464d",
+          "1484b37bc0fc4aceee096d84dbb650a6d3990e9c",
+          "65d777e71ffa88cbea1cba6abcf2642be866de4c",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "sameAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "79ceb1eb02ca0038cb55935a77611c3fb6b1464d",
+          "1484b37bc0fc4aceee096d84dbb650a6d3990e9c",
+          "65d777e71ffa88cbea1cba6abcf2642be866de4c",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "lib/browser/guest-window-manager.ts",
+        "beforeBlob": "57320c884f8d94f1b57accdd8782aa5cb1a799eb",
+        "afterBlob": "ca5abd24b21185785b0021674d45689bfd70e8d3",
+        "sameBeforeAfterCandidates": [
+          "079b9b1594ee62c336adc3aa430d4c1cf62bd51e",
+          "0e6aca0618eeae50a18cfd50548b8688820629ed",
+          "652ef79ac79c6767b31e59b2f28d0d46114645e5",
+          "a86ae4205ba2ba7ae60a6caa9d5d3a44321f2f9b"
+        ],
+        "sameAfterCandidates": [
+          "079b9b1594ee62c336adc3aa430d4c1cf62bd51e",
+          "0e6aca0618eeae50a18cfd50548b8688820629ed",
+          "652ef79ac79c6767b31e59b2f28d0d46114645e5",
+          "a86ae4205ba2ba7ae60a6caa9d5d3a44321f2f9b"
+        ],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "lib/browser/ipc-main-internal-utils.ts",
+        "beforeBlob": "1689de902ff3216e470b09d233f8c4f843c8ef8e",
+        "afterBlob": "fa0b64c0843c855ca83a1d64c726f31ade92e5c1",
+        "sameBeforeAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "79ceb1eb02ca0038cb55935a77611c3fb6b1464d",
+          "1484b37bc0fc4aceee096d84dbb650a6d3990e9c",
+          "65d777e71ffa88cbea1cba6abcf2642be866de4c",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "sameAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "79ceb1eb02ca0038cb55935a77611c3fb6b1464d",
+          "1484b37bc0fc4aceee096d84dbb650a6d3990e9c",
+          "65d777e71ffa88cbea1cba6abcf2642be866de4c",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "lib/browser/rpc-server.ts",
+        "beforeBlob": "1c723c5f9e1b358839618ed2d458daab171d0125",
+        "afterBlob": "07000b344b26a107717b8ef6d1a343e8bdd9e210",
+        "sameBeforeAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "79ceb1eb02ca0038cb55935a77611c3fb6b1464d",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "sameAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "79ceb1eb02ca0038cb55935a77611c3fb6b1464d",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "lib/renderer/window-setup.ts",
+        "beforeBlob": "2ec0b7adba7952e28b9efc04203c3820d5b1c4f7",
+        "afterBlob": "6abf595da5a26ca9fc1cd06f8aaf061610a31bc2",
+        "sameBeforeAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "79ceb1eb02ca0038cb55935a77611c3fb6b1464d",
+          "1484b37bc0fc4aceee096d84dbb650a6d3990e9c",
+          "65d777e71ffa88cbea1cba6abcf2642be866de4c",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "sameAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "79ceb1eb02ca0038cb55935a77611c3fb6b1464d",
+          "1484b37bc0fc4aceee096d84dbb650a6d3990e9c",
+          "65d777e71ffa88cbea1cba6abcf2642be866de4c",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "patches/chromium/.patches",
+        "beforeBlob": "6750b51dc96f17c2d9516195745240c05530bd81",
+        "afterBlob": "46e9e94edf44f79b2e29ff5e442e4c01ff342964",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [
+          "5c577105a068492d54c5c21bf4d3910039a1607d"
+        ],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/allow_in-process_windows_to_have_different_web_prefs.patch",
+        "beforeBlob": "28a4de7d43ecdc5a57827094f066493abb95e6d2",
+        "afterBlob": "53e2a27cb57f0b5d398553f0981a1d7e3f11f4eb",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/extend_apply_webpreferences.patch",
+        "beforeBlob": "5bc87b01769e377e465b60be440d6715d3bd32cf",
+        "afterBlob": null,
+        "sameBeforeAfterCandidates": [
+          "753da960931b1e74f79a5ef6494a3864c1260d0a"
+        ],
+        "sameAfterCandidates": [
+          "753da960931b1e74f79a5ef6494a3864c1260d0a"
+        ],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/feat_plumb_node_integration_in_worker_through_workersettings.patch",
+        "beforeBlob": "474f4bb5b04d4bb2dfbfd2b2103b8bb5a361f9cd",
+        "afterBlob": "ca9a3533b12362d42f841ebd8efe107f36de8f67",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/fix_constrain_allowuniversalaccessfromfileurls_to_file_origins_in.patch",
+        "beforeBlob": "ceb42a3daec844a052e1dbdc691d53145bc5bdb6",
+        "afterBlob": "f9ab7e2f0af26c251b4e72f3e5843887ee1af8eb",
+        "sameBeforeAfterCandidates": [
+          "1af388cfd7e48e8a963c45d576ce312bc8b0cc07"
+        ],
+        "sameAfterCandidates": [
+          "1af388cfd7e48e8a963c45d576ce312bc8b0cc07"
+        ],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/fix_crash_loading_non-standard_schemes_in_iframes.patch",
+        "beforeBlob": "eb264502e5d25359a0173650540178828b1c0216",
+        "afterBlob": "00358f23907309a3ab58c785a7ea25af15b7bb69",
+        "sameBeforeAfterCandidates": [
+          "1af388cfd7e48e8a963c45d576ce312bc8b0cc07"
+        ],
+        "sameAfterCandidates": [
+          "1af388cfd7e48e8a963c45d576ce312bc8b0cc07"
+        ],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/fix_restore_original_resize_performance_on_macos.patch",
+        "beforeBlob": "3162cb1ea8524c8b5bd20bc42e438f6abb81bce2",
+        "afterBlob": null,
+        "sameBeforeAfterCandidates": [
+          "119da8d9746fc7efa9d1b3beff3e6977f6ea80b2",
+          "b1be0e0d8ce8b109be4bdd768ffb5c5e2fd06753"
+        ],
+        "sameAfterCandidates": [
+          "119da8d9746fc7efa9d1b3beff3e6977f6ea80b2",
+          "b1be0e0d8ce8b109be4bdd768ffb5c5e2fd06753"
+        ],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/mas_avoid_private_macos_api_usage.patch.patch",
+        "beforeBlob": "fbf05c27e0936ce173bd6ab3e614785286b5db35",
+        "afterBlob": "9cdf655062abde9894d719e66678c5f4b1d75fe6",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/webhid_webusb_key_document_services_on_the_requesting_frame_s_origin.patch",
+        "beforeBlob": null,
+        "afterBlob": "aed935f0dca93d32d4ab22c28dae016935c1db9e",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "patches/chromium/webhid_webusb_pass_the_frame_to_canrequestdevicepermission.patch",
+        "beforeBlob": null,
+        "afterBlob": "41d433e2ffbeb97b821dba30684855104250d6c5",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Native patch payload/context and removal review; exact dependency contract notes in merge-inspection.json; application/build/runtime unverified."
+      },
+      {
+        "path": "script/spec-weights.json",
+        "beforeBlob": "f2a25dec645b35dbb3c7ae8884c50bf42def0e00",
+        "afterBlob": "1e46fc7e849cda606d8644f406c8aadbb0406a0a",
+        "sameBeforeAfterCandidates": [
+          "57ab2fc74d2c3e87902349a792ab46869e833aec"
+        ],
+        "sameAfterCandidates": [
+          "57ab2fc74d2c3e87902349a792ab46869e833aec"
+        ],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "shell/browser/api/electron_api_download_item.cc",
+        "beforeBlob": "570ffdcc1fcdc16addb48efee3954d49806a35d2",
+        "afterBlob": "7b405c4f80612394dbbdbd7ca7bcd9d6c2610816",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/api/electron_api_download_item.h",
+        "beforeBlob": "a4d6857d9b1d647cada4d813673434fc60357ba2",
+        "afterBlob": "27b59607542453657b398f14ddd11e0377e0b1fb",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/api/electron_api_session.cc",
+        "beforeBlob": "6a723f9326c4890b0e793ebc6982d9f61a0f0633",
+        "afterBlob": "ff4760114d8132ac10657373660d88a79214c8bf",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/api/electron_api_web_contents.cc",
+        "beforeBlob": "133ab8922371c08af315c738d21f7137774c09ad",
+        "afterBlob": "87cb803c8628817bebf7e2c8a2fbd5c504410f49",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [
+          "5c577105a068492d54c5c21bf4d3910039a1607d"
+        ],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/api/electron_api_web_contents.h",
+        "beforeBlob": "20eaadfef80ef35801450bfe63a6b4a4d899fa4c",
+        "afterBlob": "a6dd316cbd0637c4a488c25b7b8649d7473f2121",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [
+          "5c577105a068492d54c5c21bf4d3910039a1607d"
+        ],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/api/electron_api_web_request.cc",
+        "beforeBlob": "22985c092df5fb5088a19b4f9ffe280784172498",
+        "afterBlob": "b2274f53df56b6f64b2056d7feef6eb3a8cb802a",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/electron_browser_client.cc",
+        "beforeBlob": "b59192b1cc7b3067cccf7fb6b6f1fa95f40241a7",
+        "afterBlob": "bbea066f88ce08bdbc20b86c5991b9a37cb28220",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/electron_permission_manager.cc",
+        "beforeBlob": "a13c444ceffc71ed805a70f1814da1840a877b62",
+        "afterBlob": "e40eb01245c9f25d9a2c7ce8ccf6526f89aadc1a",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/electron_web_contents_utility_handler_impl.cc",
+        "beforeBlob": "7288f79971be5c3991d3872e4189c6c9a0ab1377",
+        "afterBlob": "6dca7bc1934bc3db4f85927ee4be0a32b7cfae62",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/feature_list_mac.mm",
+        "beforeBlob": "6c5720939973352d54c0476bb6b8546dcbc44266",
+        "afterBlob": "e2eafc04bfe9dceea1d0dda0ce0624d069fbea77",
+        "sameBeforeAfterCandidates": [
+          "119da8d9746fc7efa9d1b3beff3e6977f6ea80b2",
+          "b1be0e0d8ce8b109be4bdd768ffb5c5e2fd06753"
+        ],
+        "sameAfterCandidates": [
+          "119da8d9746fc7efa9d1b3beff3e6977f6ea80b2",
+          "b1be0e0d8ce8b109be4bdd768ffb5c5e2fd06753"
+        ],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/file_system_access/file_system_access_permission_context.cc",
+        "beforeBlob": "5e2d23522c8e5b96d78d2ef7ed375c7ce0890879",
+        "afterBlob": "ee9c9adbafbd5277dd07e03154b469b936825827",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/file_system_access/file_system_access_permission_context.h",
+        "beforeBlob": "a433f49398829673daf1447223329aae79d36360",
+        "afterBlob": "bd80fcbd41c3058a4cd93387ea5183b68781cad6",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/file_system_access/file_system_access_permission_context_factory.cc",
+        "beforeBlob": "61dfdc885efeedbb6fde3e96fbf99fa646d3ff00",
+        "afterBlob": "25055678ea1127bbabf9e36a486e195c6305bbca",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/file_system_access/file_system_access_permission_context_factory.h",
+        "beforeBlob": "62256aa742ede4a45fead5ee4eb563b254e126d9",
+        "afterBlob": "a98dda21f081423d0ec6420a60fd66b43e9e5548",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/hid/electron_hid_delegate.cc",
+        "beforeBlob": "20c5f6bd2123685380e0deb9bb8c326d31f436dd",
+        "afterBlob": "aae7caa8d6ffb74d41f2742424207e747964cb84",
+        "sameBeforeAfterCandidates": [
+          "22de0a3a06cfd3174fc6c59c3810ab5e1c91bf1a"
+        ],
+        "sameAfterCandidates": [
+          "22de0a3a06cfd3174fc6c59c3810ab5e1c91bf1a"
+        ],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/hid/electron_hid_delegate.h",
+        "beforeBlob": "e16208cf03ac8d1e8fbf502a9fcfe00ab1f70960",
+        "afterBlob": "afd0086d04abe09fa4489a81f3e60e16ebfa1404",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/network_hints_handler_impl.cc",
+        "beforeBlob": "1fb458c0a26af6ce78c9c47abe02e5f3d3a1da0d",
+        "afterBlob": "bc6a6bb4d29a3bd3c60f0ff1b5a5070bc55aadd3",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/network_hints_handler_impl.h",
+        "beforeBlob": "3abf6192594185184449140fd8a57d31214d6a6e",
+        "afterBlob": "75b9d97198906650e5eb98c3840cdba7a108188d",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/usb/electron_usb_delegate.cc",
+        "beforeBlob": "c1610c798e880a09e8a25df40ddfa85872b1bf3a",
+        "afterBlob": "ed606950971acfbf0724c5d85897da3cdad83136",
+        "sameBeforeAfterCandidates": [
+          "22de0a3a06cfd3174fc6c59c3810ab5e1c91bf1a"
+        ],
+        "sameAfterCandidates": [
+          "22de0a3a06cfd3174fc6c59c3810ab5e1c91bf1a"
+        ],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/usb/electron_usb_delegate.h",
+        "beforeBlob": "2e6535e554adb4e9887b904a2afc9dc2ab1527b1",
+        "afterBlob": "47f08fd6b207e875f0a85af26387f5488886c497",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/web_contents_permission_helper.cc",
+        "beforeBlob": "f2db6a8b907192412428bda5f8b68de5025004bb",
+        "afterBlob": "17430b5012fd4f4c28db75abe5327f0331ae4e60",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [
+          "7ca6e15e85b06a3cd4d3346b5b03912f8557d1f8"
+        ],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/web_contents_permission_helper.h",
+        "beforeBlob": "e9893adf7d2ff71eccb1ed937848e9317372412b",
+        "afterBlob": "716325d177041956c5302f4cf3ce4d7cc1032d5a",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/browser/web_contents_preferences.cc",
+        "beforeBlob": "cbde9d1de06d957856e721db8015fd0ca09385af",
+        "afterBlob": "94af2ce5036fedaa663537187c064ef90fc0c988",
+        "sameBeforeAfterCandidates": [
+          "753da960931b1e74f79a5ef6494a3864c1260d0a"
+        ],
+        "sameAfterCandidates": [
+          "753da960931b1e74f79a5ef6494a3864c1260d0a"
+        ],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/common/gin_converters/net_converter.cc",
+        "beforeBlob": "43dc9acd6400230da500a1c617d27b31855ed8b9",
+        "afterBlob": "092af5ec625e7ad7746f9ed4b07fb8abcf2a2f00",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "shell/renderer/renderer_client_base.cc",
+        "beforeBlob": "64d159adac136f7815e2382cfb915a60f1e5b58e",
+        "afterBlob": "4d130b2a8dc2b129fb06371f9b51f1d4f7390557",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Implementation and related initialization, ownership, origin or event caller inspected; retain distinct error/security/lifetime boundaries."
+      },
+      {
+        "path": "spec/api-autoupdater-darwin-policy-spec.ts",
+        "beforeBlob": null,
+        "afterBlob": "749ec6220ee7a1b32aa466f3de2e264622a8bbfc",
+        "sameBeforeAfterCandidates": [
+          "559c2095f24df7b3a0b0e3ee5f49c610bb0a9770",
+          "07e460719c75b2ec5ee4893f7d2192ef31c7b8c2",
+          "9f1fa686e3db88ced2ed9acbb3a30a8fc003f982",
+          "16c4536db4500a94dc05faa7775e35ea60b840bb",
+          "a1f47e1dd6296d6de0d0725fee1abe4954c97d8a",
+          "eda10823e7e5c1bbc084b1725c33489b89a10fe3",
+          "147aaef3bb5fd76aaf3089928faa78caaf0780b4",
+          "0f6e4fc6e42efab4f8a4858b15bd83a100401f88",
+          "57ab2fc74d2c3e87902349a792ab46869e833aec"
+        ],
+        "sameAfterCandidates": [
+          "559c2095f24df7b3a0b0e3ee5f49c610bb0a9770",
+          "07e460719c75b2ec5ee4893f7d2192ef31c7b8c2",
+          "9f1fa686e3db88ced2ed9acbb3a30a8fc003f982",
+          "16c4536db4500a94dc05faa7775e35ea60b840bb",
+          "a1f47e1dd6296d6de0d0725fee1abe4954c97d8a",
+          "eda10823e7e5c1bbc084b1725c33489b89a10fe3",
+          "147aaef3bb5fd76aaf3089928faa78caaf0780b4",
+          "0f6e4fc6e42efab4f8a4858b15bd83a100401f88",
+          "57ab2fc74d2c3e87902349a792ab46869e833aec"
+        ],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "spec/api-autoupdater-darwin-spec.ts",
+        "beforeBlob": "8a711e6933495525236db14167e8e50b4b01f1d1",
+        "afterBlob": "69874d0c19b6a6f1f546ae89eb47dc44184425c2",
+        "sameBeforeAfterCandidates": [
+          "57ab2fc74d2c3e87902349a792ab46869e833aec"
+        ],
+        "sameAfterCandidates": [
+          "57ab2fc74d2c3e87902349a792ab46869e833aec"
+        ],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "spec/api-browser-window-spec.ts",
+        "beforeBlob": "fb21868ae2320572c09e5c3db63c9e8a30db7de5",
+        "afterBlob": "578b6e4f16e2a6fbc6bcfdb03bac41ea511a0f35",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "spec/api-media-handler-spec.ts",
+        "beforeBlob": "6123c16e4e0f8394d2efb8d53f4735f4601d8e36",
+        "afterBlob": "6504b40e52fcba5f254e92bd31496dc4e7f46f48",
+        "sameBeforeAfterCandidates": [
+          "d024d25650efb9d4867683bb578767363d40ef6a",
+          "4e7ae3ae5dd43ded4f7ea0c1b83397a1a6c94728",
+          "7ca6e15e85b06a3cd4d3346b5b03912f8557d1f8"
+        ],
+        "sameAfterCandidates": [
+          "d024d25650efb9d4867683bb578767363d40ef6a",
+          "4e7ae3ae5dd43ded4f7ea0c1b83397a1a6c94728",
+          "7ca6e15e85b06a3cd4d3346b5b03912f8557d1f8"
+        ],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "spec/api-protocol-spec.ts",
+        "beforeBlob": "a191aacb5fc88ce741dbb141ca75fdbcf870a5ee",
+        "afterBlob": "6c8b7860bb33359211016fdc53ca929ae389238a",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "spec/api-session-spec.ts",
+        "beforeBlob": "38c0e33f20c66ee9938e6ce880c7b2544e97153d",
+        "afterBlob": "adad721192d98b06a7d8c248e808fc42b2caccd1",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "spec/api-web-contents-spec.ts",
+        "beforeBlob": "fae3c2fc3d7f6a2d72dcb278f089cbc89495f8d8",
+        "afterBlob": "1194e345b24e0203dc875cc543862352a9a5450b",
+        "sameBeforeAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "sameAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "spec/api-web-request-spec.ts",
+        "beforeBlob": "8640938fe23234039fda9c9318df29882f5344a6",
+        "afterBlob": "9f1ffbd34fc392222d7270f2b1ac635c4ee8316e",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "spec/chromium-spec.ts",
+        "beforeBlob": "a23621bba4f3c13cf32fa05c024ba73b02234b73",
+        "afterBlob": "e271e37e03126e260a1e2167f33aa964c2f3137c",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [
+          "ead108451134448740431bb3b32b4f5b7058cc48"
+        ],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "spec/fixtures/module/preload-ipc-ping-pong.js",
+        "beforeBlob": null,
+        "afterBlob": "4c1f82efcf99312d2335feec2b446512724cf6f5",
+        "sameBeforeAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "79ceb1eb02ca0038cb55935a77611c3fb6b1464d",
+          "1484b37bc0fc4aceee096d84dbb650a6d3990e9c",
+          "65d777e71ffa88cbea1cba6abcf2642be866de4c",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "sameAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "79ceb1eb02ca0038cb55935a77611c3fb6b1464d",
+          "1484b37bc0fc4aceee096d84dbb650a6d3990e9c",
+          "65d777e71ffa88cbea1cba6abcf2642be866de4c",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "spec/lib/autoupdater-darwin-helpers.ts",
+        "beforeBlob": null,
+        "afterBlob": "380bcaaab50752d4a4b79096a11abe9d54cf5d11",
+        "sameBeforeAfterCandidates": [
+          "57ab2fc74d2c3e87902349a792ab46869e833aec"
+        ],
+        "sameAfterCandidates": [
+          "57ab2fc74d2c3e87902349a792ab46869e833aec"
+        ],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "spec/webview-spec.ts",
+        "beforeBlob": "5f76f45f15b0498941a6e5d718846d4fccf0cfa5",
+        "afterBlob": "fba0553097ed26a2bd11836782f4cc6dcffec63c",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "reviewDisposition": "Test/helper or script delta inspected against callers; imported native specs not executed; preserve cleanup and fixture lifecycle."
+      },
+      {
+        "path": "typings/internal-electron.d.ts",
+        "beforeBlob": "9f0dda4c7e52d443bf78a6d5f8bf8826cdccbd5a",
+        "afterBlob": "2e2f88fbe7447c01185111fb36f12c175c19e540",
+        "sameBeforeAfterCandidates": [],
+        "sameAfterCandidates": [
+          "70c40ca7d930971612f4dd4561a27901ccd41d26",
+          "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21"
+        ],
+        "reviewDisposition": "Public/internal contract compared with merged implementation; retain supported APIs and platform qualifications."
+      }
+    ],
+    "inspection": "First-parent delta, remerge resolution, imported callers/specs and second source simplification pass completed. No native execution claim."
+  }
+]

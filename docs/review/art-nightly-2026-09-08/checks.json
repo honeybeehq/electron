@@ -1,0 +1,67 @@
+[
+  {
+    "command": "NODE_PATH=<isolated v3 install> node --test script/run-clang-tidy-dependencies.test.cjs",
+    "cwd": "/Users/trmd/.hive/crew/art/reviews/worktrees/electron-fork-dependency-2026-09-08",
+    "exitCode": 1,
+    "evidence": "dependency-v3.log"
+  },
+  {
+    "command": "NODE_PATH=<isolated v1 install> node --test script/run-clang-tidy-dependencies.test.cjs",
+    "cwd": "/Users/trmd/.hive/crew/art/reviews/worktrees/electron-fork-dependency-2026-09-08",
+    "exitCode": 0,
+    "evidence": "dependency-v1.log"
+  },
+  {
+    "command": "node check-sharding.cjs (NODE_PATH points to isolated glob@11.0.3)",
+    "cwd": "repository checkout",
+    "exitCode": 0,
+    "evidence": "Actual 42260ac scripts passed exact/fallback/median/partition and generator fixtures; source fixture committed."
+  },
+  {
+    "command": "oxfmt --check script/run-clang-tidy-dependencies.test.cjs; oxlint script/run-clang-tidy-dependencies.test.cjs; node --check script/run-clang-tidy-dependencies.test.cjs",
+    "cwd": "isolated dependency repair worktree",
+    "exitCode": 0,
+    "evidence": "Repair formatting, lint and syntax passed; zero lint warnings/errors."
+  },
+  {
+    "command": "npm run lint:markdown -- --only -- docs/review/art-nightly-2026-09-08.md",
+    "cwd": "/Users/trmd/.hive/crew/art/reviews/worktrees/electron-fork-2026-09-08",
+    "exitCode": 1,
+    "evidence": "Cannot find module minimist; repository dependencies absent. Failed before linting."
+  },
+  {
+    "command": "node electron-fork-evidence/lint-tools/lint-report.mjs",
+    "cwd": "/Users/trmd/.hive/crew/art/reviews/worktrees/electron-fork-2026-09-08",
+    "exitCode": 0,
+    "evidence": "Standalone markdownlint 0.38.0, lint-roller 3.2.0, markdown-it factory; merged repository config and Electron custom rules; report passed."
+  },
+  {
+    "command": "oxlint docs/review/art-nightly-2026-09-08/check-sharding.cjs; oxfmt --check docs/review/art-nightly-2026-09-08/check-sharding.cjs; node --check docs/review/art-nightly-2026-09-08/check-sharding.cjs",
+    "cwd": "/Users/trmd/.hive/crew/art/reviews/worktrees/electron-fork-2026-09-08",
+    "exitCode": 0,
+    "evidence": "Zero lint warnings/errors; formatting and syntax passed."
+  },
+  {
+    "command": "python3 JSON coverage reconciliation",
+    "cwd": "/Users/trmd/.hive/crew/art/reviews/worktrees/electron-fork-2026-09-08",
+    "exitCode": 0,
+    "evidence": "99 unique candidate outcomes; reviewed/remaining sets partition scope; all simplification candidates cover exact SHA set; incomplete gates preserved."
+  },
+  {
+    "command": "gh run list --repo trmdy/electron --commit 572508b35dc048e63beae87d34076e18d2f57044 --limit 10 --json databaseId,headSha,status,conclusion",
+    "cwd": "/Users/trmd/.hive/crew/art/reviews/worktrees/electron-fork-2026-09-08",
+    "exitCode": 0,
+    "evidence": "Returned []; no CI pass established."
+  },
+  {
+    "command": "git diff --check",
+    "cwd": "/Users/trmd/.hive/crew/art/reviews/worktrees/electron-fork-2026-09-08",
+    "exitCode": 0,
+    "evidence": "Passed before report commit."
+  },
+  {
+    "command": "Supplemental report markdownlint using repository config/Electron custom rules; git diff --check; JSON coverage and referenced Git path validation",
+    "exitCode": 0,
+    "evidence": "All 99 unique candidate rows source-inspected; merge caller paths exist at exact merge; report lint passed. No native tests run."
+  }
+]

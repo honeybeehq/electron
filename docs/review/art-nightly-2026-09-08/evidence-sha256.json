@@ -1,0 +1,18 @@
+{
+  "candidate-ledger.json": "a2921e557370b66fe89bbc75042126f5b0ac55d0c02c7a83398c6331fe40d4d4",
+  "canonical-identity.json": "653cb93d3cdbf088d7917191200c78f669f69cd49a846eb213a165cf05e4380e",
+  "check-sharding.cjs": "c79f0c3efe14b277033b20359089068a37a5357f347be86cbfc44b190120f788",
+  "checks.json": "c50f83b5bae8c1c5b744f5c4e8587f28be9cd7185fe5d6f3560e6bc3f6403243",
+  "dependency-checks.json": "ea921a6240ebbcababa2987d51a8a31f3645da7e86ea69e2e013c17b26801b78",
+  "dependency-v1.log": "dcc39f0dd5d4929980ba5ac3b7d2a4ecb88abce1987564a8f1b1acfac88bf1b8",
+  "dependency-v3.log": "9b04bcae9b0e121447ed6c115325dcc89b923d57015d2a50ba2eb260822861df",
+  "diff-manifest.json": "62c1b28119dd1ef3e26b70ffea22461c42b2a58c6fec55a614d3b983b95b8a68",
+  "frozen-ref-scope.json": "f688cc57fbbfadf011aee08f791aa7a1be2ae17230818b056a326e80a2972693",
+  "merge-inspection.json": "31d104854b58499849a1aa0c650e5da05d3dbc6cd5a24ef14474a3f20c48d4d6",
+  "merge-path-identity.json": "8379cc4ba858b24631c26fdbc7d90ca7cea8316714d81bac4c1b68b5e1dd9a03",
+  "merge-source-access.json": "f4718cdc91d1875b0f68f09ed810c3eb76f23cbe52aa2247caf9d1a0d16b2e2c",
+  "nan-lock-structure.json": "f60a982ebf904304771d568ebdbcb7bc4b3027438fe9ed528598edc9157e31ff",
+  "patch-rebase-payloads.json": "66964d7ac81ee6665db54695f6e6c51bec584f5cae16ec089d563bb9bda92ead",
+  "simplification.json": "2e35e43c727d140149bd8653331906732d8e14f80b1a2e12c84b8cd79458edee",
+  "updater-test-conservation.json": "badffb7bdefa183911c0d6fde8cdcd99bbab51e06b19b0114692b7c1405f8d1d"
+}
