@@ -1238,6 +1238,46 @@ detach in this experimental version.
 Returns `boolean` - Whether Chromium currently reports an outer web contents
 relationship for this web contents.
 
+#### `contents.setVisibility(state)`
+
+* `state` string - Can be `hidden` or `visible`.
+
+Explicitly sets this web contents' page visibility, independent of any owning
+window or frame attachment. Hiding engages Chromium's normal hidden-page
+behavior (`document.visibilityState` becomes `hidden`, rendering stops, and
+background timer throttling applies).
+
+> [!WARNING]
+> This API is experimental. Visibility set here is a last-write-wins value:
+> `attachToFrame`/`detachFromFrame` never change it, while showing or hiding
+> the owning `BrowserWindow` of an **attached** web contents overwrites it
+> through Chromium's inner-tree propagation. A detached web contents keeps
+> the explicit value until the next `setVisibility` call.
+
+#### `contents.setPageFrozen(frozen)`
+
+* `frozen` boolean
+
+Freezes or resumes the page using Chromium's page lifecycle freezing (the
+same mechanism as `Page.setWebLifecycleState`). Freezing a visible page
+hides it first; a frozen page stops running its freezable task queues
+(timers, message delivery to page JavaScript) entirely.
+
+> [!WARNING]
+> This API is experimental. `setPageFrozen(false)` leaves the page hidden;
+> call `setVisibility('visible')` to show it again. Showing a frozen page
+> also resumes it. Due to Chromium event ordering, page JavaScript does not
+> receive the document `resume` event, although `freeze`,
+> `visibilitychange`, timers, media, and workers behave as specified.
+
+#### `contents.hasActiveMediaCapture()`
+
+Returns `boolean` - Whether any frame in this web contents currently holds an
+open media capture stream — a `getUserMedia` microphone or camera track, or a
+`getDisplayMedia` capture. This is distinct from `isBeingCaptured()`, which
+reports capturers of this page's own contents. Use it to avoid freezing a
+page with an ongoing capture.
+
 #### `contents.focus()`
 
 Focuses the web page.
