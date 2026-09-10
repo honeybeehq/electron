@@ -136,7 +136,15 @@ describe('webContents module', () => {
     };
 
     const frameNamed = (w: BrowserWindow, name: string) => {
-      const frame = w.webContents.mainFrame.frames.find((candidate) => candidate.name === name);
+      // Detach disposes the old placeholder's browsing context; enumerating
+      // frames must skip disposed WebFrameMain wrappers.
+      const frame = w.webContents.mainFrame.frames.find((candidate) => {
+        try {
+          return !candidate.isDestroyed() && candidate.name === name;
+        } catch {
+          return false;
+        }
+      });
       expect(frame, `missing frame ${name}`).to.not.be.undefined();
       return frame!;
     };
@@ -415,8 +423,26 @@ describe('webContents module', () => {
       const TICKER =
         '<script>window.ticks = 0; setInterval(() => { window.ticks++; }, 50);</script>';
 
+      // Frozen pages queue executeJavaScript until thaw; CDP Runtime.evaluate
+      // rides the inspector task queue and works in every lifecycle state.
+      const evalInPage = async (target: Electron.WebContents, expression: string) => {
+        const attached = target.debugger.isAttached();
+        if (!attached) target.debugger.attach('1.3');
+        try {
+          const { result, exceptionDetails } = await target.debugger.sendCommand(
+            'Runtime.evaluate', { expression, returnByValue: true });
+          expect(exceptionDetails).to.be.undefined();
+          return result.value;
+        } finally {
+          if (!attached) target.debugger.detach();
+        }
+      };
+
       const visibilityOf = async (target: Electron.WebContents) =>
-        await target.executeJavaScript('document.visibilityState');
+        await evalInPage(target, 'document.visibilityState');
+
+      const ticksOf = async (target: Electron.WebContents) =>
+        await evalInPage(target, 'window.ticks');
 
       it('rejects an unknown visibility state', async () => {
         const target = await createTarget();
@@ -435,19 +461,24 @@ describe('webContents module', () => {
         await waitUntil(async () => (await visibilityOf(target)) === 'visible');
       });
 
-      it('attachToFrame does not override an explicit hidden state', async () => {
-        const w = await createEmbedder(true);
+      it('attachToFrame adopts the placeholder visibility; explicit hidden persists after detach', async () => {
+        // Attach installs Chromium's frame connector, which reports the
+        // placeholder's renderer-side visibility (visible in layout terms
+        // even when the embedder window is hidden). An explicitly hidden
+        // target therefore becomes visible on attach; only a DETACHED
+        // target holds its explicit value indefinitely.
+        const w = await createEmbedder(false);
         const target = await createTarget();
         target.setVisibility('hidden');
         await waitUntil(async () => (await visibilityOf(target)) === 'hidden');
 
         await target.attachToFrame(frameNamed(w, 'first'));
+        await waitUntil(async () => (await visibilityOf(target)) === 'visible');
+
+        await target.detachFromFrame();
+        target.setVisibility('hidden');
         await setTimeout(250);
         expect(await visibilityOf(target)).to.equal('hidden');
-
-        target.setVisibility('visible');
-        await waitUntil(async () => (await visibilityOf(target)) === 'visible');
-        await target.detachFromFrame();
       });
 
       ifit(process.platform !== 'linux')('outer window hide/show does not disturb a parked detached target', async () => {
@@ -470,52 +501,65 @@ describe('webContents module', () => {
       it('setPageFrozen hides a visible page first and stops freezable timers', async () => {
         const target = await createTarget(TICKER);
         target.setVisibility('visible');
-        await waitUntil(async () => (await target.executeJavaScript('window.ticks')) > 0);
-        const timeOrigin = await target.executeJavaScript('performance.timeOrigin');
+        await waitUntil(async () => (await ticksOf(target)) > 0);
+        const timeOrigin = await evalInPage(target, 'performance.timeOrigin');
 
         target.setPageFrozen(true);
         await waitUntil(async () => (await visibilityOf(target)) === 'hidden');
         // Let in-flight tasks drain, then require a stable counter.
         await setTimeout(200);
-        const frozenTicks = await target.executeJavaScript('window.ticks');
+        const frozenTicks = await ticksOf(target);
         await setTimeout(400);
-        expect(await target.executeJavaScript('window.ticks')).to.equal(frozenTicks);
+        expect(await ticksOf(target)).to.equal(frozenTicks);
 
         target.setPageFrozen(false);
         expect(await visibilityOf(target)).to.equal('hidden');
         target.setVisibility('visible');
-        await waitUntil(async () =>
-          (await target.executeJavaScript('window.ticks')) > frozenTicks);
-        expect(await target.executeJavaScript('performance.timeOrigin')).to.equal(timeOrigin);
+        await waitUntil(async () => (await ticksOf(target)) > frozenTicks);
+        expect(await evalInPage(target, 'performance.timeOrigin')).to.equal(timeOrigin);
       });
 
       it('hasActiveMediaCapture() reflects live getUserMedia tracks', async () => {
-        const target = await createTarget('<p>media</p>');
-        expect(target.hasActiveMediaCapture()).to.be.false();
+        // data: URLs are not a secure context (no navigator.mediaDevices);
+        // serve the probe page over localhost.
+        const server = http.createServer((request, response) => {
+          response.setHeader('content-type', 'text/html');
+          response.end('<p>media</p>');
+        });
+        await new Promise<void>((resolve) => server.listen(0, '127.0.0.1', () => resolve()));
+        const { port } = server.address() as AddressInfo;
+        const target = (webContents as typeof ElectronInternal.WebContents).create({
+          sandbox: true
+        });
+        try {
+          await target.loadURL(`http://127.0.0.1:${port}/`);
+          expect(target.hasActiveMediaCapture()).to.be.false();
 
-        await target.executeJavaScript(`
-          navigator.mediaDevices.getUserMedia({ audio: true })
-            .then((stream) => { window.capturedStream = stream; return true; })
-        `, true);
-        await waitUntil(() => target.hasActiveMediaCapture());
+          await target.executeJavaScript(`
+            navigator.mediaDevices.getUserMedia({ audio: true })
+              .then((stream) => { window.capturedStream = stream; return true; })
+          `, true);
+          await waitUntil(() => target.hasActiveMediaCapture());
 
-        await target.executeJavaScript(
-          'window.capturedStream.getTracks().forEach((track) => track.stop()); true', true);
-        await waitUntil(() => !target.hasActiveMediaCapture());
+          await target.executeJavaScript(
+            'window.capturedStream.getTracks().forEach((track) => track.stop()); true', true);
+          await waitUntil(() => !target.hasActiveMediaCapture());
+        } finally {
+          server.close();
+        }
       });
 
       it('showing a frozen page resumes it', async () => {
         const target = await createTarget(TICKER);
         target.setVisibility('visible');
-        await waitUntil(async () => (await target.executeJavaScript('window.ticks')) > 0);
+        await waitUntil(async () => (await ticksOf(target)) > 0);
 
         target.setPageFrozen(true);
         await setTimeout(200);
-        const frozenTicks = await target.executeJavaScript('window.ticks');
+        const frozenTicks = await ticksOf(target);
 
         target.setVisibility('visible');
-        await waitUntil(async () =>
-          (await target.executeJavaScript('window.ticks')) > frozenTicks);
+        await waitUntil(async () => (await ticksOf(target)) > frozenTicks);
       });
 
       it('a frozen target survives detach, thaw, show, and reattach with state intact', async () => {
@@ -530,17 +574,16 @@ describe('webContents module', () => {
         await target.detachFromFrame();
         target.setPageFrozen(true);
         await setTimeout(300);
-        const frozenTicks = await target.executeJavaScript('window.ticks');
+        const frozenTicks = await ticksOf(target);
 
         target.setPageFrozen(false);
         target.setVisibility('visible');
         await target.attachToFrame(frameNamed(w, 'second'));
         await waitUntil(async () => (await visibilityOf(target)) === 'visible');
-        await waitUntil(async () =>
-          (await target.executeJavaScript('window.ticks')) > frozenTicks);
-        expect(await target.executeJavaScript('window.marker')).to.equal('kept');
+        await waitUntil(async () => (await ticksOf(target)) > frozenTicks);
+        expect(await evalInPage(target, 'window.marker')).to.equal('kept');
         expect(
-          await target.executeJavaScript('document.getElementById("editor").value')
+          await evalInPage(target, 'document.getElementById("editor").value')
         ).to.equal('unsaved');
         await target.detachFromFrame();
       });
