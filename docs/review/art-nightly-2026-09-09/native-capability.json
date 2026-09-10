@@ -1,0 +1,232 @@
+{
+  "buildClone": {
+    "path": "/Users/trmd/Code/electron-build/src/electron",
+    "commonDir": "/Users/trmd/Code/electron-build/src/electron/.git",
+    "origin": "git@github.com:electron/electron.git",
+    "head": "054651494a1feaa722d40394d58766d65c5d4e55",
+    "delta": []
+  },
+  "binaries": [
+    {
+      "configuration": "Release",
+      "command": [
+        "/Users/trmd/Code/electron-build/src/out/Release/Electron.app/Contents/MacOS/Electron",
+        "-p",
+        "JSON.stringify(process.versions)"
+      ],
+      "environment": {
+        "ELECTRON_RUN_AS_NODE": "1"
+      },
+      "exitCode": 0,
+      "versions": {
+        "node": "24.18.1",
+        "acorn": "8.16.0",
+        "ada": "3.4.4",
+        "amaro": "1.1.9",
+        "ares": "1.34.6",
+        "brotli": "1.2.0",
+        "cldr": "48.0",
+        "icu": "78.2",
+        "llhttp": "9.4.3",
+        "merve": "1.2.2",
+        "modules": "148",
+        "napi": "10",
+        "nbytes": "0.1.4",
+        "ncrypto": "0.0.1",
+        "nghttp2": "1.69.0",
+        "nghttp3": "",
+        "ngtcp2": "",
+        "openssl": "0.0.0",
+        "simdjson": "4.6.4",
+        "simdutf": "7.7.0",
+        "sqlite": "3.53.1",
+        "tz": "2025c",
+        "undici": "7.29.0",
+        "unicode": "17.0",
+        "uv": "1.52.1",
+        "uvwasi": "0.0.23",
+        "v8": "15.0.245.28-electron.0",
+        "zlib": "1.3.2.1-motley",
+        "zstd": "1.6.0",
+        "electron": "43.4.1",
+        "chrome": "150.0.7871.224"
+      },
+      "executableSha256": "cd6a3316f1969dd9f85ce233595d7f197ca647add93d118841fc4f0b8a6bba43",
+      "args": "import(\"//electron/build/args/release.gn\")\nuse_remoteexec = false\nuse_reclient = false\nuse_siso = false\nmac_sdk_path = \"//out/Release/xcode_links/electron/MacOSX26.5.sdk\""
+    },
+    {
+      "configuration": "Testing",
+      "command": [
+        "/Users/trmd/Code/electron-build/src/out/Testing/Electron.app/Contents/MacOS/Electron",
+        "-p",
+        "JSON.stringify(process.versions)"
+      ],
+      "environment": {
+        "ELECTRON_RUN_AS_NODE": "1"
+      },
+      "exitCode": 0,
+      "versions": {
+        "node": "24.18.0",
+        "acorn": "8.16.0",
+        "ada": "3.4.4",
+        "amaro": "1.1.9",
+        "ares": "1.34.6",
+        "brotli": "1.2.0",
+        "cldr": "48.0",
+        "icu": "78.2",
+        "llhttp": "9.4.2",
+        "merve": "1.2.2",
+        "modules": "148",
+        "napi": "10",
+        "nbytes": "0.1.4",
+        "ncrypto": "0.0.1",
+        "nghttp2": "1.69.0",
+        "nghttp3": "",
+        "ngtcp2": "",
+        "openssl": "0.0.0",
+        "simdjson": "4.6.4",
+        "simdutf": "7.7.0",
+        "sqlite": "3.53.1",
+        "tz": "2025c",
+        "undici": "7.28.0",
+        "unicode": "17.0",
+        "uv": "1.52.1",
+        "uvwasi": "0.0.23",
+        "v8": "15.0.1240245-electron.0",
+        "zlib": "1.3.2.1-motley",
+        "zstd": "1.6.0",
+        "electron": "43.2.0",
+        "chrome": "150.0.7871.129"
+      },
+      "executableSha256": "85eb910c6124aa2b6df4f4a1624337f146ed77771b7d8f5eff45aff74b3be5df",
+      "args": "import(\"//electron/build/args/testing.gn\")\nuse_remoteexec = false\nuse_reclient = false\nuse_siso = false\nmac_sdk_path = \"//out/Testing/xcode_links/electron/MacOSX26.5.sdk\""
+    }
+  ],
+  "tools": [
+    {
+      "label": "release-version",
+      "command": [
+        "/Users/trmd/Code/electron-build/src/out/Release/Electron.app/Contents/MacOS/Electron",
+        "--version"
+      ],
+      "exitCode": 0,
+      "stdout": "v24.18.1\n",
+      "stderr": ""
+    },
+    {
+      "label": "testing-version",
+      "command": [
+        "/Users/trmd/Code/electron-build/src/out/Testing/Electron.app/Contents/MacOS/Electron",
+        "--version"
+      ],
+      "exitCode": 0,
+      "stdout": "v24.18.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "gn",
+      "command": [
+        "/Users/trmd/Code/electron-build/src/buildtools/mac/gn",
+        "--version"
+      ],
+      "exitCode": 0,
+      "stdout": "2407 (3357c4f51b1a)\n",
+      "stderr": ""
+    },
+    {
+      "label": "ninja",
+      "command": [
+        "/Users/trmd/Code/electron-build/src/third_party/ninja/ninja",
+        "--version"
+      ],
+      "exitCode": 0,
+      "stdout": "1.12.1\n",
+      "stderr": ""
+    },
+    {
+      "label": "clang",
+      "command": [
+        "/Users/trmd/Code/electron-build/src/third_party/llvm-build/Release+Asserts/bin/clang",
+        "--version"
+      ],
+      "exitCode": 0,
+      "stdout": "clang version 23.0.0git (https://chromium.googlesource.com/a/external/github.com/llvm/llvm-project 20b6ec66967ac2a8f932863c1abf251e5b17a843)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Users/trmd/Code/electron-build/src/third_party/llvm-build/Release+Asserts/bin\n",
+      "stderr": ""
+    },
+    {
+      "label": "xcode",
+      "command": [
+        "xcodebuild",
+        "-version"
+      ],
+      "exitCode": 0,
+      "stdout": "Xcode 26.2\nBuild version 17C52\n",
+      "stderr": ""
+    }
+  ],
+  "requiredPins": [
+    {
+      "sha": "1d3b4504eb3aee600a408b6b44de49b3a92d68e6",
+      "chromium_version": "154.0.8025.0",
+      "node_version": "v24.19.0",
+      "depsBlob": "b53161dcadf88cedec41c66e983c86242278278e"
+    },
+    {
+      "sha": "148a462376c079e2ca0b9a61e29a14f718bf73b2",
+      "chromium_version": "155.0.8038.2",
+      "node_version": "v24.20.0",
+      "depsBlob": "0c27f465bfe1414347f643006350b08f82d9a5e4"
+    },
+    {
+      "sha": "5f46fcf9a9612670f60e9cd92e4016efea8a3384",
+      "chromium_version": "155.0.8038.2",
+      "node_version": "v24.20.0",
+      "depsBlob": "0c27f465bfe1414347f643006350b08f82d9a5e4"
+    },
+    {
+      "sha": "211f1ff8fe6c4d7f8f0948d04bf5192abfccdf55",
+      "chromium_version": "155.0.8038.2",
+      "node_version": "v24.20.0",
+      "depsBlob": "0c27f465bfe1414347f643006350b08f82d9a5e4"
+    },
+    {
+      "sha": "d05d1166c7cf49f27e00c2d3094618dd2d9e75e8",
+      "chromium_version": "155.0.8046.0",
+      "node_version": "v24.21.0",
+      "depsBlob": "67ef715789c58c59a2b5336ec7647439ceaf8708"
+    }
+  ],
+  "nativeCoverage": false,
+  "reason": "Available version tuples do not match scoped DEPS. Git HEAD does not prove produced binary source identity. No native target suite was run.",
+  "remoteDiscovery": [
+    {
+      "host": "trmd-metal-1",
+      "sshExit": 0,
+      "platform": "Linux x86_64",
+      "checkedAbsent": [
+        "~/Code/electron-build",
+        "~/Code/electron-fork",
+        "~/Projects/honeybee/electron"
+      ],
+      "apiaryWorkspace": "~/Projects/trmd/apiary/repos/apiary",
+      "gnNinjaAutoninjaClangOnPath": false,
+      "node": "/usr/local/bin/node",
+      "diskAvailable": "1.4T"
+    },
+    {
+      "host": "trmd-linux-workstation-1",
+      "sshExit": 255,
+      "error": "connect to host trmd-linux-workstation-1 port 22: Connection refused"
+    },
+    {
+      "host": "kontrol-build-ovh",
+      "tailscale": "offline, last seen 3d ago",
+      "checkedSSH": false
+    }
+  ],
+  "localResources": {
+    "memoryBytes": 137438953472,
+    "diskAvailable": "1.2TiB"
+  },
+  "authorizationBoundary": "No shared checkout, configuration, build or bootstrap mutation performed. No huge download begun; requirements sent to root."
+}

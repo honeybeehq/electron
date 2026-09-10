@@ -1,0 +1,1240 @@
+{
+  "mainSha": "1d3b4504eb3aee600a408b6b44de49b3a92d68e6",
+  "complete": false,
+  "sourceReviewedCount": 105,
+  "pendingSourceCount": 71,
+  "outcomes": [
+    {
+      "sha": "1d3b4504eb3aee600a408b6b44de49b3a92d68e6",
+      "subject": "docs(review): publish complete Electron source inspection and native gaps",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "2c57d4a6982f4ee16923e62079057df860794c1ffa52f00cf9e00fb8e2fd661f"
+    },
+    {
+      "sha": "c34e83b192976e8e178f0c6e578aba3c041e5d86",
+      "subject": "docs(review): record Art nightly regression and simplification review",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "ae22e52abd5ddd660de1fb136329fcaf5b35d23d1cc0fc557b843fbaaed4f1b6"
+    },
+    {
+      "sha": "572508b35dc048e63beae87d34076e18d2f57044",
+      "subject": "docs(review): record Art nightly commit inventory",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "1dba42d0c6c10e2c4dfd6adeb4ec73c73a3cb69f68d60dfb22313b1bfbc17ce2"
+    },
+    {
+      "sha": "95a9e1161e5fbc2cbec2f619792b464b92bf522b",
+      "subject": "8362702: [deps] Remove Rollup, Terser, and associated dependencies",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "dcb39ed4b6eff16c78b732ca930f843912d1d3ed74d0bde851e195b5e8cca67f"
+    },
+    {
+      "sha": "f453a23bd0eefc331ba9a60106d35b1ad44e2c7c",
+      "subject": "ci: remove Dependabot security updates for outdated release branches (#53652)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "35756eb9424dc6cdd7edd8275ed908747c0e353b8edecfce8f781ddf0dd4d848"
+    },
+    {
+      "sha": "5805c8273aeccdfe355424bb8f119aad8070bd5d",
+      "subject": "test: use mock keychain on macOS to avoid dialog timeouts (#53792)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "ff540b22704bb950a8e24e805794016ca444a231ab0f1e0043cfe17a1761a826"
+    },
+    {
+      "sha": "41e5a75f1ad14d76aaff5e168e2583805bc95767",
+      "subject": "test: use mock keychain on macOS to avoid dialog timeouts (#53793)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "30e20f53c08959f9dc04236e5174530e01e37823e6421b522d654c5c851a7037"
+    },
+    {
+      "sha": "c3194c25fd7f00888a46d2b4a22b18f6cb23350b",
+      "subject": "build: remove git add from lint-staged config (#53797)",
+      "disposition": "branch-regression-fixed",
+      "sourceInspectionComplete": true,
+      "diffSha256": "89740ef02f32fb5ea067da9b54c73f3cb522ae171d5c09b62ad859115116bb52"
+    },
+    {
+      "sha": "b74cb86b653df0d259037870d766e86fb827d6dd",
+      "subject": "build: remove git add from lint-staged config (#53796)",
+      "disposition": "branch-regression-fixed",
+      "sourceInspectionComplete": true,
+      "diffSha256": "be816b7598442139ffb10b9bf5aee75932ba9a4f4ecb18904e20639f425a1850"
+    },
+    {
+      "sha": "9678a7f0c490c60459f18228156fe86d3795f0e8",
+      "subject": "build: remove git add from lint-staged config (#53795)",
+      "disposition": "branch-regression-fixed",
+      "sourceInspectionComplete": true,
+      "diffSha256": "aa2978e768c9d54ac7d5f0a84b10e3136f84240878fb618e624aeef3ca6bc826"
+    },
+    {
+      "sha": "b633e93e40869bfbbfb788c167a42096c2a5caf6",
+      "subject": "build: remove git add from lint-staged config (#53791)",
+      "disposition": "branch-regression-fixed",
+      "sourceInspectionComplete": true,
+      "diffSha256": "b6fd9af2efc7b21662507b205efbc9f538c919b8a6a75ad56e7fc4feb6e5bfb1"
+    },
+    {
+      "sha": "3c9427317062f6cbad4d16ae9321685521ffd686",
+      "subject": "fix: report renderer hangs independently of system sleep and window visibility (#53760)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "6b4fbc8d2fe79a62eec9c2624876b97566cbb6429341858c1e99f857396f4487"
+    },
+    {
+      "sha": "a2e58a2bf08bc04f19ce7e81e4fd18a23b1aadf0",
+      "subject": "chore: cherry-pick f0d76fefb52c from chromium (#53762)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "f048484353a3e67eab1e7ce9d833c8ed24d75129e4299d8c86613fcee81e577a"
+    },
+    {
+      "sha": "525989a7804b5a16bf1f566f0a418e65e4005a95",
+      "subject": "chore: cherry-pick f0d76fefb52c from chromium (#53763)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "061aacb255758b799120f01ca721e8fab6c54929a4712c835f666cff08cd0a47"
+    },
+    {
+      "sha": "ec59430cb61e17df03e4fa24c612fd3c4b41acb5",
+      "subject": "chore: cherry-pick 159482bbcaf4 from chromium (#53773)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "dbec380de8a2a05d0555847f1a4fefdb49934d48073996754e9c78a55653bb73"
+    },
+    {
+      "sha": "f4e5742fe577e74737f075b2e674e83dfdfc35ea",
+      "subject": "test: use mock keychain on macOS to avoid dialog timeouts (#53790)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "8d0e2cef7511719fec0e4fbec3369bbf33fff77a1a44a36d1900d45be65d9f98"
+    },
+    {
+      "sha": "d05d1166c7cf49f27e00c2d3094618dd2d9e75e8",
+      "subject": "Merge branch 'main' into roller/chromium/main",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "8d6d9b081c1c1792b6f70ef95728a98e5c34493dbc1e908fc1940fb29d89e5d5"
+    },
+    {
+      "sha": "5ae27f135ade597e5d3eb46a436eb8645028fbd9",
+      "subject": "feat: add AudioServiceCodeIntegrity feature for the Windows audio utility",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "ba3cc020b6ddf137225bd3a932387747b559f589cd2a40db26db06c17ec43220"
+    },
+    {
+      "sha": "3687f12f5466412dca23cec6c1af78f63104c0cb",
+      "subject": "chore: cherry-pick a871bdb05932 from angle (#53772)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "d17f48134b935a28d784effb809e607e72011f2463ebd5dcc7226f78b6a5d837"
+    },
+    {
+      "sha": "1fbc162f19ebb4970aa737dfa59b92e288e90594",
+      "subject": "Merge branch 'main' into roller/chromium/main",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "101dc79bbd770d389d73a9e586f385b43c4aaf43ed4a5e8f25a4c3e5c9a0e111"
+    },
+    {
+      "sha": "6ba3e0a56f2814faac285a374a066248ddb8d0e5",
+      "subject": "test: use uuid.v4() for the webstore test partition",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "4e3d9485a28c06963ce1930e5427b290e6fbf324a2325c92e2a547fe9ae6edc5"
+    },
+    {
+      "sha": "730b00f321ee761d6fb5d8274c9010bfa0087805",
+      "subject": "test: use uuid.v4() for the webstore test partition",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "a64ee06185ee53512f380a17af879c9d06087d16199117671f454aee4cb16c4c"
+    },
+    {
+      "sha": "7ae6e6adb132be3f775217b3fbddb23277865b83",
+      "subject": "chore: bump node to v24.21.0 (main) (#53782)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "d1c74da83b3f52dc3e21efecb277880055ce23590b6cfc6a800b2393aaa4e989"
+    },
+    {
+      "sha": "4315b8a2dd0809b970b3296fbf31e1b72d0f01ac",
+      "subject": "chore: cherry-pick f0d76fefb52c from chromium (#53761)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "883148c33691e55cdf71daaa5ef8243d35536eb26d31859429c47cc2bd5d0475"
+    },
+    {
+      "sha": "effe58992e650627ba61d1a2f208b0e021ddfdf3",
+      "subject": "chore: bump node to v24.21.0 (44-x-y) (#53779)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "6996b9e6ed323843bb74661efc97fbc3bba76152c8de152e5f3c3b72b79e45fa"
+    },
+    {
+      "sha": "39c5ed0d034c3d97abecffdf45e8963fbbbd7930",
+      "subject": "chore: bump node to v24.21.0 (43-x-y) (#53777)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "061d2759e7ee6dc4674f8bb879507f72e649c8861edaf2bafc887f76af90ea19"
+    },
+    {
+      "sha": "d6c54a1ee13cb09074118c9321622a4f0c67ddcd",
+      "subject": "chore: bump node to v24.21.0 (45-x-y) (#53780)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "50054d89136ce18762cbd09abb718019242f882885e7897ae80eae1badadc034"
+    },
+    {
+      "sha": "211f1ff8fe6c4d7f8f0948d04bf5192abfccdf55",
+      "subject": "chore: remove deprecated wrappable support",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "f52d070ae470bf6626c8284e8c11271d1afe64101299ba3e6fad2ffce516dbff"
+    },
+    {
+      "sha": "6e990ce594c77dcb30e03a8b72fea627f8c4c312",
+      "subject": "fix: avoid leaking the EventEmitter prototype setter",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "8612d387f91ed7b3bc1cc5f22f8fb10429d0ceb6f27f2aace2628d8a4c742d9c"
+    },
+    {
+      "sha": "089b0bf535e0bebad2157330002f1cf0d1d40bd3",
+      "subject": "test: avoid retaining WebContents during cppgc collection",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "f360cbcf3785ba0a3d69360c86e09bf0c741fefed482e9832b959da8803fa63f"
+    },
+    {
+      "sha": "0c6424579158d689dc9313f6a42f71edf410deef",
+      "subject": "docs: hand-port Chrome security picks in-PR instead of dropping them (backport of #53774) (#53786)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "e764d2281148554956df5fc9d5cec5f12cf1e33d2d8fa0e7702adb3f66b027ee"
+    },
+    {
+      "sha": "f4804033eea73392293f32e5416a182760fde8e8",
+      "subject": "test: use badge fields in ts-smoke so spec type-check passes (43-x-y) (#53788)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "b1744c45e0b918c7fe89e5f5fb6a9aef8a10d7ad852028a4863aeef0bd1548fb"
+    },
+    {
+      "sha": "afe4fb787087a215c23ddbc05763e40a8ce360c1",
+      "subject": "chore: cherry-pick 159482bbcaf4 from chromium (#53771)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "223c160de431a002a4c51a77c5e9e2af6f85c20623d0890ec8de7da9141888e1"
+    },
+    {
+      "sha": "b8083a495dd02a1a071844bffb68527ce9e65639",
+      "subject": "docs: hand-port Chrome security picks in-PR instead of dropping them (backport of #53774) (#53787)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "71bf19ec3d2f3e51d18b73578aa8c2f9fe54e1d57bd4db4f73b19eb564b3bd85"
+    },
+    {
+      "sha": "c30d19498479372591adaeb1406034f7449804d1",
+      "subject": "docs: hand-port Chrome security picks in-PR instead of dropping them (#53785)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "d2b932587923424a696e79151fe6d3637f4b7da760ccfb992127023408e27d1a"
+    },
+    {
+      "sha": "bf45caebf2110fab95f94dcd35b30e17fc71368e",
+      "subject": "docs: hand-port Chrome security picks in-PR instead of dropping them (#53784)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "4f1b65c74fd3d8aa5fa0ab1962c87cfe337fe23aef2da6f85292f29820f5d9dc"
+    },
+    {
+      "sha": "8d93c43b78f42d0efd5d9c7d9c8c9211232902c9",
+      "subject": "build: keep CI test-shard weights per test job (#53737)",
+      "disposition": "source-reviewed-focused-script-checks-pass",
+      "sourceInspectionComplete": true,
+      "diffSha256": "078b0f203c55336ea05684031e0f3f2c1ec6d491745fd98c977f2fb7d01bd0c0"
+    },
+    {
+      "sha": "401a041adc0ecac796e72ac8bf8e75ba63d31398",
+      "subject": "docs: hand-port Chrome security picks in-PR instead of dropping them (#53774)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "a03ed4be5ad05190e87fb5cfc9bdeaac1728e10cb47abd4437c38dbf4e5a542f"
+    },
+    {
+      "sha": "bb905e2149216e30880612b58530b78869138c15",
+      "subject": "fix: adopt a newly committed RenderFrameHost in WebFrameMain::From()",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "6ab2a68659b11e2a9993b48b26c720ac707b7f70b6291f39975b0d2ef046dc67"
+    },
+    {
+      "sha": "0e73c27c81671e566785e0afbc9d8890a97cced7",
+      "subject": "fix: detach Debugger from its DevToolsAgentHost when it is collected",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "0685d9ed9eff5a28a1ebab67552fc6a063f0fc4ae2d5c8c7ec1e4c40749435d5"
+    },
+    {
+      "sha": "3a8f8aff93c59ae6120a1e2bd018aef155fb42cf",
+      "subject": "refactor: webContents managed by cppgc",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "c07a560486700ac577f4161eab45352c603e3834507b7316557bc470ac9c1723"
+    },
+    {
+      "sha": "a6b5cfd379b7e6d2aabe6e00a29b79bc13c40f15",
+      "subject": "chore: bump chromium in DEPS to 155.0.8048.0",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "11d2867b9a23458797c03a0ec41e43a11f6f05d5b12c01d9eda7e30a14b6aba0"
+    },
+    {
+      "sha": "b89ad6a5bee978f5db0b6f899e0c98b16190a017",
+      "subject": "chore: bump chromium in DEPS to 152.0.7977.84",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "b03ae1fdf8baa10cad326c4fe2a0ae1e26570dbb2bac21d0b216336ecda2c739"
+    },
+    {
+      "sha": "3fb567385f0b4f47dfd2a7aa4434c3afd4eb389d",
+      "subject": "fix: don't expose chrome.webstorePrivate to web pages",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "177e7a53fec51566c9b2a1efc620943478936b1a9ce61121753c51bf7a3bb032"
+    },
+    {
+      "sha": "cdef319f8077da29c7e8c41f948e40def354ef29",
+      "subject": "fix: don't expose chrome.webstorePrivate to web pages",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "f337aa6748d399acf75c9e8d121ce20c8a90b3ddf276cea5af60d67629a109db"
+    },
+    {
+      "sha": "cf80d75e2eec599e829cb024f9b2f380875ba222",
+      "subject": "fix: don't expose chrome.webstorePrivate to web pages (#53752)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "120d4af8f9598e631ac9f52599511dcf3574432dc74b8a9d2026580c400485da"
+    },
+    {
+      "sha": "cf57599a731cdecfcb6562770b923af1edc18fc4",
+      "subject": "fix: report renderer hangs independently of system sleep and window visibility (44-x-y) (#53764)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "4cb8d2a1695d22a678f7a8d69524e4b5318d07244e820690d1e5c898979f43f0"
+    },
+    {
+      "sha": "c3e39fed1b7ba3078f2b8cdc4543455aca098f34",
+      "subject": "chore: cherry-pick 9 changes from chromium and v8 (#53765)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "f9e110154791c9221cd276533a66536ccb32f2675fc6dae6a3249ba898536e3f"
+    },
+    {
+      "sha": "e0dad4a550ca9d1bfbfcd111ddccf0d239c1c399",
+      "subject": "chore: cherry-pick 31 changes from angle, chromium, libyuv, pdfium and v8 (#53766)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "1dba8e87194afb3a4ae12e517f009ceebd4d3f80c3881eb5c20f549994b2b38d"
+    },
+    {
+      "sha": "81439a545c733ad527378aae4ecbb1f62ea03e9b",
+      "subject": "chore: cherry-pick 33 changes from angle, chromium, libyuv, pdfium and v8 (#53767)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "27a083935f92a9012af26aecf43723cda6d9f160b47f39b81a2aa32dabf620dc"
+    },
+    {
+      "sha": "23fcf622889b25cb6e96b5998bbf14166ff1419b",
+      "subject": "chore: cherry-pick 32 changes from angle, chromium, libyuv, pdfium and v8 (#53769)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "2342e6557f6baadf9801348331ef037467404de38941107e3fad4f2ef78f4ef9"
+    },
+    {
+      "sha": "808ad28c7f1345b34c368da9d42e9d8006dee0ce",
+      "subject": "refactor: extract WebContents::NativeLifecycle",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "5988b2d269bca4db1bf0dfe34fb400d33b80e3765d45df1c5b5457ee9c580f34"
+    },
+    {
+      "sha": "5bdb2fb027149f63db0e3718ec65d26480a25c04",
+      "subject": "test: sample callback probe counts after heap snapshots",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "8bfed1a4a407a87e3ff3d8a2b9ae1931f5f64e3ac5c531c7a6f4f1bb1276596c"
+    },
+    {
+      "sha": "3fa68305700b1cabe0442c1d9e3cd222a1e5d5cc",
+      "subject": "fix: reject cppgc wrappers during legacy wrapper conversion",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "13f3025ce7a289c51adf6af17546917018304db8d213e6b9bd0a5fcc45904e9c"
+    },
+    {
+      "sha": "2bd7bfac0f18e2f7ba7fd2f82c944f111c08ba42",
+      "subject": "fix: handle template creation after gin context detachment",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "e07b8a9ddd90d729886b16264351d54877513dd4eabae62da0a0d57ad0e0f9e3"
+    },
+    {
+      "sha": "c43887b0c3800f0506de5ecbc9153ce9e20d132e",
+      "subject": "chore: update patch description",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "3883fccd7f5540d66ae3013026b3cb44aca017134cb481e64de933cde510d8ce"
+    },
+    {
+      "sha": "e6f895fda1417d2f5d67f5f7c98ff933a5c6d51f",
+      "subject": "fix: heap snapshot crash when reusing renderer isolate",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "ff447101b3a6ca48c48e2ccb02ab0352b09953f543c67238800796953a118997"
+    },
+    {
+      "sha": "12c36820a22a818ffe3fb341cb665629f3da4f8d",
+      "subject": "refactor: manage gin_helper callbacks with cppgc",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "57ba8e61b180f159523639b57e31b1c71dac806f9a149935b5224bded984a2ed"
+    },
+    {
+      "sha": "2d07b688c3fe7f64efbae037c4053ba18232b9fb",
+      "subject": "Merge branch 'main' into refactor/safe-storage-os-crypt-async",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "df29981e6061da4914b9a70230ccddfc249611be7cfe6d82fe6c7b9fd343ad8f"
+    },
+    {
+      "sha": "c1aad3df47dcae19bad6d12157c7f06ad72ea409",
+      "subject": "chore: cherry-pick f0d76fefb52c from chromium (#53751)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "42d55c133539ee43e0977016b52b2a35a0e48de19750cca7bc979f057f293077"
+    },
+    {
+      "sha": "a1f5e487837a30dacec06176150400ba6abcd35f",
+      "subject": "fix: report renderer hangs independently of system sleep and window visibility (#53529)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "2380f6983164e69441df625b88a6dc762cb509a44ea51535352c6aa57a857b0e"
+    },
+    {
+      "sha": "4425d7125a2f68af31f83ad399d44a812d6144bb",
+      "subject": "refactor: remove gin patch to notify microtask runner disposal",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "48573c40cea82b6cb21dde474658f70d0abd424e365af65346d2302bd40638df"
+    },
+    {
+      "sha": "1884079fc82b9e54b7d3abd531f6a980ff1ca837",
+      "subject": "chore: remove deprecated wrappable support",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "d00a9dcabac1a0e50cf11d4a896157c2aca257c79f91d5a0102776e9a7b02b26"
+    },
+    {
+      "sha": "3fb63fe5c4abcb1e234c60c97e53858bfe6da873",
+      "subject": "fix: adopt a newly committed RenderFrameHost in WebFrameMain::From()",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "b70ccc27663567c2466a32a2821c029df28135cc8ac6ac415f0cb3484b3eab9b"
+    },
+    {
+      "sha": "06ffe588df95aa42f90d984552ce52ca716808e2",
+      "subject": "fix: detach Debugger from its DevToolsAgentHost when it is collected",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "5fe5ce03ae43459c8fb560ea8609e97866bcb21a86c794e8672159923d61f733"
+    },
+    {
+      "sha": "31d5ce9afe6a09fc5f978e507091267a9e06d749",
+      "subject": "refactor: webContents managed by cppgc",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "89d49ac4804825a01c3bc28dffa8538bc9f3f2ba2eb5b038ff258539af42f8bb"
+    },
+    {
+      "sha": "637b7d1732da759c0b9da547206cc19c15e16262",
+      "subject": "refactor: extract WebContents::NativeLifecycle",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "b167e22bd751171d085dd7e5c8d519940c57e894f440a6afc1f6d6ea6fca2cc4"
+    },
+    {
+      "sha": "d73fa83cb0cacbb0b41a962e38b6bfbf9218728d",
+      "subject": "test: sample callback probe counts after heap snapshots",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "ed96d9888605ae20f62ddbaf3179346f615109e625c447afef484c36aa4de174"
+    },
+    {
+      "sha": "08cb5e1b2a45a8ced92e1087e8d1313e16696f8d",
+      "subject": "docs: complete electron nightly source inspection and canonical provenance",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "71aba82aa5efc37cf86884e37a2a7c6cd22d7624ada1931dbb02f0ded2309335"
+    },
+    {
+      "sha": "a2c3dc101688f721932aa2dd5c7809d34ae86557",
+      "subject": "docs(review): record electron fork regression and simplification evidence",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "01e7e02b10d7844131a6a4ce1bd667c8f67a5a2d93e7ecb8cd6d10ab0226b851"
+    },
+    {
+      "sha": "532c3159a1c64c71f96ed9b206f59289a1225f2d",
+      "subject": "fix: retain compatible streaming dependencies for clang-tidy",
+      "disposition": "source-reviewed-dependency-checks-pass",
+      "sourceInspectionComplete": true,
+      "diffSha256": "d01460e41b841cd30f93879ba96ca310ab61f99ec6ad96ca550aa1bcaaef5c21"
+    },
+    {
+      "sha": "54cec45e0aafe196b3ea0ece530384a04086ceb8",
+      "subject": "fix: validate protocol scheme names in RegisterSchemesAsPrivileged (#53742)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "59d952ad0631b059902f95cec6746fddbb799f72d06bfdaa7b0969acdc0490fb"
+    },
+    {
+      "sha": "627d0cde3e1ce0643b819006f5cd7d6db373756c",
+      "subject": "fix: validate protocol scheme names in RegisterSchemesAsPrivileged (#53743)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "98f088a0472d2c40c0d53a0c1c630127795079ccc6fc338d3f38645795417c82"
+    },
+    {
+      "sha": "73a9c5a13c5c82bddd28a063a6d47262ea66417b",
+      "subject": "fix: walk out of nested fullscreen WebContents once when handling <esc> (#53744)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "c57224696dd66207cb17616da722494acd438f8ea6d16e3b15e0a2863ea6eaf3"
+    },
+    {
+      "sha": "a5c8e7418adf69fda463f4fb63cd4e46652f7f20",
+      "subject": "chore: rebase the custom-scheme code cache patch onto upstream's checks (#53745)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "f37ea1c753e57709d0bb2b929924b58321e31d9085469add2fe7298a6f7c936d"
+    },
+    {
+      "sha": "dbe7087e220170cedc5e94e1ed5f0353a73d5ccd",
+      "subject": "fix: only relax the drag target check across WebContents (#53748)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "9c1b8b043abd91dde38665ea9ec0eb9a29c3ed31765f987df15f40936bd4a7e7"
+    },
+    {
+      "sha": "30882e57a54a0086a61b270c18a47e475db497f8",
+      "subject": "fix: only relax the drag target check across WebContents (#53749)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "da6c4a923843f3b970f1c555924fd2a546095324066f70d833602108d3714dde"
+    },
+    {
+      "sha": "d7f36584d79a2bed220c2d44ba5c3215a07ef1c8",
+      "subject": "fix: only relax the drag target check across WebContents (#53750)",
+      "disposition": "source-review-in-progress",
+      "sourceInspectionComplete": false,
+      "diffSha256": "483cd32cdefd431b384ea0dfe80ea20359a3f2ddba09b82f020a343599be4287"
+    },
+    {
+      "sha": "0216074fd29d02c486245699df1ec3ba688c94c8",
+      "subject": "build(deps): bump the npm_and_yarn group across 1 directory with 2 updates",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "87feb6681b3716e220eb00dcec85873dc6b432cf03c77a7da839ee766e64ec9b"
+    },
+    {
+      "sha": "b58085cb16a9643c404035992c365afb75908a99",
+      "subject": "Merge remote-tracking branch 'origin/main' into fix/hang-monitor-power-resume",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "7f4aa153d71632823978c56615a2422ea84d41032efd11aba35bf11daf084e87"
+    },
+    {
+      "sha": "1bad1d77814a2ea5d114d053a7973c444c0ca37f",
+      "subject": "Merge branch 'main' into refactor/safe-storage-os-crypt-async",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "adbc637db5a072f877449cbac7d681d57ea65ce32493082e546a84731b3552c4"
+    },
+    {
+      "sha": "5c577105a068492d54c5c21bf4d3910039a1607d",
+      "subject": "refactor: replace five small Chromium patches with content API (#53677)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "fd7bd2f1eccc32ef56cf4bf5e4ea25f15b145f7474a0e150394b4cfd4b2309d7"
+    },
+    {
+      "sha": "c3a3117c82af1e31375c30d40e79a29cef4e0f83",
+      "subject": "chore: rebase the custom-scheme code cache patch onto upstream's checks (#53746)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "df7eb53a105997543884e5289342f2e7002882e53809e01f5959264a7cc48e65"
+    },
+    {
+      "sha": "5dcd3922b2d1e536f40b5fe9d132ee99a1f1e47f",
+      "subject": "fix: reject cppgc wrappers during legacy wrapper conversion",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "795fd99a9158f48379467fc625ea954951e13e6c9e0482c99545bab258a2169b"
+    },
+    {
+      "sha": "eb15fa2634cf22e125c8f05e0ab37b80a601e21c",
+      "subject": "fix: handle template creation after gin context detachment",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "6ab59fa7c539dabfe29eb4e353967863b666793944853e91c12d9e00b880cb8d"
+    },
+    {
+      "sha": "7bf9fc579e765e4ebe3b4b84f251c33ae4f38636",
+      "subject": "fix: don't expose chrome.webstorePrivate to web pages",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "28c58b29b556d8b9a778ffd5f0a6004d62eeb8daf1ef057e7d86878a5636feff"
+    },
+    {
+      "sha": "67e823cd10dd4d17da43125486d75a35eabb4512",
+      "subject": "chore: cherry-pick f0d76fefb52c from chromium",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "0f549562e7322b868a659762f18ebdfcf45a0f50827000a3a799f4884ebd8b64"
+    },
+    {
+      "sha": "d5628b74be07e0f9ebcf49bc98c6325924e6acba",
+      "subject": "fix: only bypass the drag target check when a guest is involved",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "bf614d93ff8e3e6f2b70d98fe0ec4238033ea277d2ee0fbec901240d3382646c"
+    },
+    {
+      "sha": "aeb41e18451fa73e3e39a93514f7773c3f604a58",
+      "subject": "fix: only bypass the drag target check when a guest is involved",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "9f6656a17aa81f0ae2d214354880f06e494bb59a8d254f70e5a2387203cf36ed"
+    },
+    {
+      "sha": "2f425b30c37eb68081ffb07195bcb65bcb7f9421",
+      "subject": "fix: only bypass the drag target check when a guest is involved",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "b984388416afbc4fbdd9a62651d42d9c9a3c5eaca276c34e6246c498a4e39a32"
+    },
+    {
+      "sha": "0de36654e53946a1ed1030d7947b7612df061af1",
+      "subject": "fix: only relax the drag target check across WebContents",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "f96c269e2f99f4902b28a35e5d7bfc5e3f1ecd20fe1876a138e573ee53356ea6"
+    },
+    {
+      "sha": "5029036244589fbddbc02a8a7ed2455b4f9af22b",
+      "subject": "fix: only relax the drag target check across WebContents",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "497356a148bce99a0da702be56c6ea8208e19a592578a6809ba6eeecc5475936"
+    },
+    {
+      "sha": "edf733bbe751a63ce0c0ff464685cf7ea84a795f",
+      "subject": "fix: only relax the drag target check across WebContents",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "b82018b58dc9935051b78283c5c3a98b8ecd1bbbb466c40912f2369a2ce5c599"
+    },
+    {
+      "sha": "41bb25dd59833d561ac7fc8018424251b1efa796",
+      "subject": "fix: only relax the drag target check across WebContents (#53669)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "3dae70ca0bd13534b0a27c8e44ea4abbc39dbd474c58cdcb5565884ea14d9159"
+    },
+    {
+      "sha": "1bc914825705dd719fdecfba9ca3634bdf9bd803",
+      "subject": "8341194: Improve Reporting API crash reason attribution for hung renderers",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "3dcd96fb0a677e9bd39cacc475e65601c3b3cac113a28195b4bcd7a34ade7286"
+    },
+    {
+      "sha": "b345d30e83314fe762225336ade0275ef2db4c85",
+      "subject": "8310116: Make fontconfig global config creation synchronous",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "7480ca92760376ccd0223359cbb0932b7e6be0759c8cbe57fdcc989550c41c77"
+    },
+    {
+      "sha": "dfe72ef3a1fc878d9a18262eef5eddfefb13ff98",
+      "subject": "8354524: [Extensions] Move dynamic resource handling to ExtensionConfigProvider",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "bf80d41d701961e8b8151edc48b3f4040c6a0d8bbb831f8c2e6299b3a6604365"
+    },
+    {
+      "sha": "aea153293bcc0e36bfc92349962189cb08e0bc30",
+      "subject": "8342150: Change GetProductInfo_ExportThunk to use trivially constructable param",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "bcd7d843f6ae852288f4cbbc639744083a998605b49981547dfa619c39999129"
+    },
+    {
+      "sha": "d2c206658c127a276acb334a0b9e8ffc802be329",
+      "subject": "8336255: [api] Remove non-CppGC v8::MicrotaskQueue implementation",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "292867e2604531f4300d3e202b5d4ab24afe7ff6ca159a927a7cd7779252dd22"
+    },
+    {
+      "sha": "993fe372e60b412214463893dcc9419804245d97",
+      "subject": "chore: update patches",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "42c4c17fd4f32e90f9bdcfd06329296bbdb1fdff80317b8bf1fde34aefb64c9c"
+    },
+    {
+      "sha": "e88af1b7668fad483e8cb0fe75b24f6ed769069e",
+      "subject": "8340629: [dcheck-to-check] Convert DCHECKs in content/browser/ [21/n]",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "1cd072f021eb30bcde6bf07b094664d78f067e45b270aee721319947540236d1"
+    },
+    {
+      "sha": "95eb659708e21e2563d664bcc5d1a616cac71c50",
+      "subject": "8298520: [ExtensionTracker] Keep track of extension ids",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "277b9aecf7ce55060115e48effa95a9b5d4c766f63e2eeeddec593efa6654da5"
+    },
+    {
+      "sha": "42cb9aef5aff67a1ec51e62c91e7232380b513ee",
+      "subject": "chore: update siso revision",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "624faf0208431d259c649a9cce3c17146efac24ff992367fba6adc68bb7b5087"
+    },
+    {
+      "sha": "cff04e71e901bce336abd20b4333bd17487e5a1c",
+      "subject": "chore: rebase the custom-scheme code cache patch onto upstream's checks",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "64fc84b558c07b612aa12c4fd5923b922f152784a8debb5d57ac1dc10a179c95"
+    },
+    {
+      "sha": "a6836d39229fd44720b2ce13fe99db8084ff3316",
+      "subject": "chore: rebase the custom-scheme code cache patch onto upstream's checks (#53676)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "cb35c2c1f84edd0ed04cfaaa68714e9ae2fd4433f6243f494f3c388740a322cf"
+    },
+    {
+      "sha": "0420db4ffb7e9251a288593e857da8c8c34759f7",
+      "subject": "chore: update patches",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "345065573b318c31e7b23e9b232a3d26377e33a0e93ef498ae0b19b57000f4b1"
+    },
+    {
+      "sha": "f79278e8e9f9114e9152f957c8fc150c6130f446",
+      "subject": "fix: walk out of nested fullscreen WebContents once when handling <esc>",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "fe70651f7980d4cc35237779603c349d195ebe41b9ab13ea8958b63a7a26b54b"
+    },
+    {
+      "sha": "88255cd34753deed84342479e183c1348393e113",
+      "subject": "fix: walk out of nested fullscreen WebContents once when handling <esc> (#53637)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "846f5f267284b0632e3600d1ac0ab568f9e114d4c4556f15a213a57c981f345d"
+    },
+    {
+      "sha": "3ca3e759b6bb4662fc299c92646d24b89cdd65cb",
+      "subject": "fix: fixed lint error",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "af4b5a3a80aadd928483236887477890306ddcb66c58a9a2708020faa4dd6c79"
+    },
+    {
+      "sha": "49305a9db0310ca4689bedc060b5a65da5f4e867",
+      "subject": "fix: fixed lint error",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "4bd9eea1743d7e7fe096fda39b29b37ae805d7427bbb34797e6a78d1852c71e4"
+    },
+    {
+      "sha": "95bbb1a817d3d38d407d28c8cf0bf0b646d41fc1",
+      "subject": "fix: validate protocol scheme names in RegisterSchemesAsPrivileged",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "94a4bd307c89627fe70f291a4387392927780ebf56235a74b5731daa3e539ad4"
+    },
+    {
+      "sha": "96335cd06e9051c318f96fefbe9426bf65445d77",
+      "subject": "fix: validate protocol scheme names in RegisterSchemesAsPrivileged",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "a1b0c0438d0f8f4c3c94b77b54930eeb00e99bf9a86038aaf13783740232e2d0"
+    },
+    {
+      "sha": "268693e3bfcdbd2506c208f360df3c0b71c7a7bf",
+      "subject": "fix: validate protocol scheme names in RegisterSchemesAsPrivileged (#52519)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "5649c820872f04d3f0e967929a5b76d9e96cc9eb79a810b73ae0e576d48115d7"
+    },
+    {
+      "sha": "13a17ac7fe90e64b7ab2ed0b553b9d62abd3961f",
+      "subject": "fix: respect webview zoom mode when embedder zoom changes",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "ae58d0bc65dc5e15e89d070dff0ba33807db1624d12e8ca0b92ca383aff4a8c0"
+    },
+    {
+      "sha": "0f22b9b3c0ef2223021db84c1a7d250cfd33fc2c",
+      "subject": "chore: bump chromium in DEPS to 155.0.8046.0",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "0b9e16f58946dcbf32ae3edaabfc1c2a4f9f41f8ba0dfd4d760697914bf434f1"
+    },
+    {
+      "sha": "b365b454b33dec7fb00d1f496ee8aa293cac4bcc",
+      "subject": "fix: tear down utility-process AI receivers before the isolate",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "27ba759bdf880cda8242c65c565730841d12303dfdee17852971deed18e613e4"
+    },
+    {
+      "sha": "28fd8f38217e3fb7b2e1e9f924ad47ad2dbac71c",
+      "subject": "fix: reject foreign receivers in Destroyable destroy()",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "8896a3a9bc4bb4b7a7b4b78e27350b5a07e9e9a9961b5e54142dcbc637064757"
+    },
+    {
+      "sha": "cce736551ad3cfc8119d5afa5bb8f1a29e0be7a3",
+      "subject": "fix: settle the netLog.stopLogging() promise if the exporter pipe disconnects",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "1d10311b201baea4726b799007e12f583df38b997c0649b8c52ab0418ab46b5d"
+    },
+    {
+      "sha": "6f8a2bb2e22a74e87dc5bc7a1cd4c02eeecd88dd",
+      "subject": "fix: re-check MessagePortMain entanglement after serializing the message",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "241b86d3bd098aab0fd2d54b14f1136c623dc27943cb199d863656f9a363fba1"
+    },
+    {
+      "sha": "16c438b5b08c38b6f769a4344265fe492a1f815b",
+      "subject": "fix: fail a chunked net.request upload that the network stack asks to replay",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "c7494a5a943433973ca4810d167be5c1f217bcb9bcad8387ac92fb7f7dd8431d"
+    },
+    {
+      "sha": "19da02f0b1614285ade0d4bd1db51ebacfab129c",
+      "subject": "fix: keep Menu alive while native code still references its model",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "0ecf22385bf5201a612a38a47a73e5ec066fc99cb99d1bdd5f648cadccfe5570"
+    },
+    {
+      "sha": "ec005645f83ce1889284024669678c4b5882a931",
+      "subject": "fix: release imported shared textures on their owning sequence",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "72810426e2b5ad9dc8acc24149aecfae380d4655837969016a6f7e0aac6e6b24"
+    },
+    {
+      "sha": "b947240bc970ff1b20f498924343446f0933dadf",
+      "subject": "fix: keep gin_helper::Promise on the UI thread in systemPreferences and the MSIX updater",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "55b50f762c9af1489a27ab6dd395788282bd8df85d801b8295fb6bd591d8e8ef"
+    },
+    {
+      "sha": "77a6bed75fd14b8734890284ef48a7a222b200e3",
+      "subject": "fix: adopt a newly committed RenderFrameHost in WebFrameMain::From()",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "71ddc9116a0d266270e8eafa66cb5d3025be5f86936c461cc9247a12093ab0a3"
+    },
+    {
+      "sha": "495a10cd716ff87f3590ea5eede5c8b11b269517",
+      "subject": "fix: look up the RenderFrame after reading webFrame arguments",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "febfb02c444432d792fba3ee8a727ccb0b1ee8506083a644053bdc76bd47827c"
+    },
+    {
+      "sha": "62fe63472d4fc23e41512d47bb4b121f5ab1aed3",
+      "subject": "fix: do not orphan a platform notification created by a re-entrant show()",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "2e67364b8ae4a9bf2b5d2785ee4f021ff5671a1a090095ac2eb989ffb5dcd2b1"
+    },
+    {
+      "sha": "7d68133f446af3b84c61060781aa8492ac7d21c0",
+      "subject": "fix: unregister portal shortcuts on Linux and ignore stale activations",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "4522ec5e73b8c5960f28c56b7c1ab4cffb816c94596b45476eb6d0a8468c44b0"
+    },
+    {
+      "sha": "117b27129910e13fc83232d3b835406c6aa837bb",
+      "subject": "fix: release UtilityProcess wrappers whose child never launches",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "efccced5edbb0b62acf25bde0c2e4719b47bcfed870870f331ac158aa717a4b9"
+    },
+    {
+      "sha": "b2de8253e92dc18e9b3cd0e4e6f700f8b24066e8",
+      "subject": "fix: keep ServiceWorkerMain registry entries owned by the live instance",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "d26a6e114998a37468bca651c461c860d80f75395c0ab1479c2e6e2f8aefc5ca"
+    },
+    {
+      "sha": "b03e55ba9842c54bd54cacbed894151d40468224",
+      "subject": "fix: settle shell.openPath() on Linux",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "8624c4bafda59c83b47f4dd729962aa6abd42d126722616cc5346d87f8db9836"
+    },
+    {
+      "sha": "67f21faeb4f970aa7e82185ca4eb4dee9914d195",
+      "subject": "fix: do not CHECK when emitting a warning from a renderer",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "d91b13888b1f0eb6506745529d2090229afdd31ef39549ac1e8528931837355e"
+    },
+    {
+      "sha": "ded0ce0a4334e74caad8aeac8dfcd19279190e58",
+      "subject": "fix: keep the invoke callback when a handler result cannot be serialized",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "931f2fb67319b15bbe971c0abe5d3fc1a1c670ec5ad019771c52a3fe8205ce3b"
+    },
+    {
+      "sha": "5d045fab8550915e2a6a049809bf86347aa349e0",
+      "subject": "fix: prune DataPipeHolder registry entries on collection",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "e32037be6a72838d3550a49b8a873b0499c4257bf09c49614258d4186797295d"
+    },
+    {
+      "sha": "48b724f60613e6f8c721072371a1fb5f6ba32f2e",
+      "subject": "fix: detach Debugger from its DevToolsAgentHost when it is collected",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "44542e0f27e1356e026c29681fcaa20739e08319b89aa6ed2ec764d40d71de7b"
+    },
+    {
+      "sha": "98f519e55205c3ebed6220611d04e108874f8d8d",
+      "subject": "chore: oxfmt",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "43d0280f1b6f5a5de87e91177f0f9301361599c67c8dc17a4947461beb744971"
+    },
+    {
+      "sha": "42260acba8df81154a6feab8d159a19264804d4c",
+      "subject": "build: keep CI test-shard weights per test job",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "0ab2123250f318e6f9fcd362b8bac9191fd8a32b011015830e133ccffe29c97d"
+    },
+    {
+      "sha": "22de0a3a06cfd3174fc6c59c3810ab5e1c91bf1a",
+      "subject": "fix: report the requesting frame for hid and usb permission checks (42-x-y) (#53736)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "ca221d6580770f8548b3f9bfdb959a00a84e2077d73fb69bab69ba4e69961c01"
+    },
+    {
+      "sha": "5e2e7e7cd089b2b79e33a068882a1b094d7b57eb",
+      "subject": "build: add ai_assistance bundle dep on generated skill files (#53735)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "902d68b0a1101d674aa0ab5d292f7f4617e45de619ec2669ca8f7c2fab3f213d"
+    },
+    {
+      "sha": "c3b8fa836a208151765dd714a2008cde65089d37",
+      "subject": "chore: update patch description",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "f2c149bcebe47dccb3c3b97853911d6d716cd9556535d79d73450cb561ee14c4"
+    },
+    {
+      "sha": "32770bcd04c52a8dfb17ef2942c73c523dacf363",
+      "subject": "build: add ai_assistance bundle dep on generated skill files (#53732)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "9577e202ab73379e79962c0f7637d4e0d574c44627ab38d2f607d2da2273f668"
+    },
+    {
+      "sha": "559c2095f24df7b3a0b0e3ee5f49c610bb0a9770",
+      "subject": "test: split the Squirrel.Mac updater specs and run them serially on x64 (#53728)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "c2e7a18ca6ffc3434bca27a2e9080f354537e9672715f03bef4c695ebf799416"
+    },
+    {
+      "sha": "07e460719c75b2ec5ee4893f7d2192ef31c7b8c2",
+      "subject": "test: split the Squirrel.Mac updater specs and run them serially on x64 (#53729)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "101404578f1ccfb7470a4e4d035c77268279a5764ae8cc75a5af80361627f40e"
+    },
+    {
+      "sha": "9f1fa686e3db88ced2ed9acbb3a30a8fc003f982",
+      "subject": "test: split the Squirrel.Mac updater specs and run them serially on x64 (#53730)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "f30dc22cdf378807c5862bca3fd9c4b3432f88b32318eee15bf120ee00a7a9fc"
+    },
+    {
+      "sha": "16c4536db4500a94dc05faa7775e35ea60b840bb",
+      "subject": "test: run the Squirrel.Mac updater specs off a signed template, split, and serially on x64 (#53731)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "865a1f52065662a85a992960e4a94713a5f5398b13cd7d5d9272f61297e081ef"
+    },
+    {
+      "sha": "70c40ca7d930971612f4dd4561a27901ccd41d26",
+      "subject": "fix: check the sending frame for internal guest, window and reply IPCs (#53724)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "9c68906e3029f0d163604bb56558f0cd2803097cf08e310f8b80f83e2da2b698"
+    },
+    {
+      "sha": "79ceb1eb02ca0038cb55935a77611c3fb6b1464d",
+      "subject": "fix: check the sending frame for internal guest, window and reply IPCs (#53723)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "d33e0d2868df8c18e8d095c7ba8f62a68aa0b41486e7318859be7641d3b23585"
+    },
+    {
+      "sha": "119da8d9746fc7efa9d1b3beff3e6977f6ea80b2",
+      "subject": "chore: enable ThrottleResizeIpc instead of patching NotifyScreenInfoChanged (#53725)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "55fd51a83cb72e96fb856d3d1d53491380d39212a24915d7d7d05f9da4135dc7"
+    },
+    {
+      "sha": "1484b37bc0fc4aceee096d84dbb650a6d3990e9c",
+      "subject": "fix: check the sending frame for internal guest, window and reply IPCs (43-x-y) (#53726)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "9a9125b8986fe70402071980146e70ecd9ae7ffd3601e2c86af66ecf27887842"
+    },
+    {
+      "sha": "65d777e71ffa88cbea1cba6abcf2642be866de4c",
+      "subject": "fix: check the sending frame for internal guest, window and reply IPCs (42-x-y) (#53727)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "76f507b7e93f81150ba246b7095f0faeac24981c45375b2bb4b74e4725604f6c"
+    },
+    {
+      "sha": "b43f3042bba03c8cecaa9b85debfe740f4954b19",
+      "subject": "build: add ai_assistance bundle dep on generated skill files",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "e0952350ca73511a64d463b4da70394f247024202a8e05b85533f039e1760128"
+    },
+    {
+      "sha": "f517bf1583cbbaea2907a0016ac952c09530aa74",
+      "subject": "feat: add ELECTRON_DEBUG_DRAGGABLE_REGIONS debugging aid (#53633)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "24617dda94698e6c79f49eb2b43d99e2bccec27a1b811f3cd73c674fdac57801"
+    },
+    {
+      "sha": "fb5f8e20490298416f6702382ef578c00aebd384",
+      "subject": "feat: add ELECTRON_DEBUG_DRAGGABLE_REGIONS debugging aid (#53627)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "9703b64d0aa9993ef533c0376ac15d87d6e9954de93b5ba728197b3be7f16f45"
+    },
+    {
+      "sha": "9f32d2c85cee614b2bd4965aa98128cca796dc75",
+      "subject": "feat: add ELECTRON_DEBUG_DRAGGABLE_REGIONS debugging aid (#53626)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "23e1239c8988e93c2d0f52ea4f3039596c54ef8955d8496a4e646cb2a83af8e2"
+    },
+    {
+      "sha": "aa2c68aac31d2769467fe0a34ffc408a6b309d93",
+      "subject": "test: don't assume window controls are on the right",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "13dd7971d02a5c18a6d8648303562d43007dcabb8174f94d8bc2bc63d5984b83"
+    },
+    {
+      "sha": "a1f47e1dd6296d6de0d0725fee1abe4954c97d8a",
+      "subject": "test: run the Squirrel.Mac updater specs off a signed template, split, and serially on x64",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "636cd00a151f1c6600ede544477e77c95f625ea36ca114d231091558bd5ab61c"
+    },
+    {
+      "sha": "eda10823e7e5c1bbc084b1725c33489b89a10fe3",
+      "subject": "test: split the Squirrel.Mac updater specs and run them serially on x64 (#53663)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "e67e3046339ed092b196a9e8fb7144eeb8fb017849cf126e029838245f7ed6f9"
+    },
+    {
+      "sha": "1af388cfd7e48e8a963c45d576ce312bc8b0cc07",
+      "subject": "chore: keep data: URLs out of the non-standard scheme origin patch (#53681)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "33376d0e8ec6767103f5bd6002c71722c5c46338ce81fe0885d7cdf7fee1cd2a"
+    },
+    {
+      "sha": "147aaef3bb5fd76aaf3089928faa78caaf0780b4",
+      "subject": "test: split the Squirrel.Mac updater specs and run them serially on x64 (#53663)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "6e7c94d8945eeb0261906dfcccf71778a550469c55ff108cfcb54b8f7a640a1c"
+    },
+    {
+      "sha": "0f6e4fc6e42efab4f8a4858b15bd83a100401f88",
+      "subject": "test: split the Squirrel.Mac updater specs and run them serially on x64 (#53663)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "c56531d6fa760f14009995dc7f352fd914c815ffd85b76e3b28dc81afb98c273"
+    },
+    {
+      "sha": "148a462376c079e2ca0b9a61e29a14f718bf73b2",
+      "subject": "Merge remote-tracking branch 'origin/main' into fix/hang-monitor-power-resume",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "4c98e7bc76830fe224694e704ca8f82529764fb3729539d9549dbee4385d0415"
+    },
+    {
+      "sha": "5f46fcf9a9612670f60e9cd92e4016efea8a3384",
+      "subject": "Merge remote-tracking branch 'origin/main' into refactor/electron-side-small-patches",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "82cb358f344a79572e050b33f0320e405ef42ca8d7231ba6dba915dc215c80e0"
+    },
+    {
+      "sha": "b1be0e0d8ce8b109be4bdd768ffb5c5e2fd06753",
+      "subject": "chore: enable ThrottleResizeIpc instead of patching NotifyScreenInfoChanged (#53668)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "c5d80adc8c62e6a397a7a44e3a46029118d33a88f1b6567be543abc258236689"
+    },
+    {
+      "sha": "8cc20cf659dc3c5240df8a8f5e6771bfb4782e21",
+      "subject": "fix: check the sending frame for internal guest, window and reply IPCs (#53684)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "ea7ec8e4a1b6bfbfb9466609a5ca625a599aca0ade49fa4766373eb288b44449"
+    },
+    {
+      "sha": "079b9b1594ee62c336adc3aa430d4c1cf62bd51e",
+      "subject": "fix: route modifier-click and OpenURLFromTab popups through the window-open policy (#53721)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "7ad41016f6870892637700905ebfe88f8b9d2f5f22b8a4d87e0ebd66f71959a6"
+    },
+    {
+      "sha": "0e6aca0618eeae50a18cfd50548b8688820629ed",
+      "subject": "fix: route modifier-click and OpenURLFromTab popups through the window-open policy (#53718)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "bbb64a5f5a1887c81aef4abcf981d2457aa9164b3333fc52d387288122fdb7ed"
+    },
+    {
+      "sha": "753da960931b1e74f79a5ef6494a3864c1260d0a",
+      "subject": "fix: draw <select> popups into offscreen frames on macOS (#53716)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "fa4cb43f60e7126932a23688c3ec57faa4758f90f56f4051abc21c85e2c25727"
+    },
+    {
+      "sha": "57ab2fc74d2c3e87902349a792ab46869e833aec",
+      "subject": "test: split the Squirrel.Mac updater specs and run them serially on x64 (#53663)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "f6be677ee0f82a284466243b1374635db20b0b8ce57641e13033261e69ee5107"
+    },
+    {
+      "sha": "ead108451134448740431bb3b32b4f5b7058cc48",
+      "subject": "fix: restore the kill ring on non-MAS macOS builds (#53715)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "a08a089bd57cb7aae820f462232ca1ec5f000b73d5bb5efebf77d79461d884d9"
+    },
+    {
+      "sha": "652ef79ac79c6767b31e59b2f28d0d46114645e5",
+      "subject": "fix: route modifier-click and OpenURLFromTab popups through the window-open policy (#53717)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "e5fce04cc28b6326237e557a5032f7df7ab45d223d5c68908dcb256b1155d290"
+    },
+    {
+      "sha": "a86ae4205ba2ba7ae60a6caa9d5d3a44321f2f9b",
+      "subject": "fix: route modifier-click and OpenURLFromTab popups through the window-open policy (#53719)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "c254a8b9bb9b21904508d3d2189859a464034429cbf9f762465c5152da141839"
+    },
+    {
+      "sha": "b6a4d492fa1f7b75f4d8dce18ebdfdb902da135d",
+      "subject": "fix: gate preload and worker Node integration on the creating frame (44-x-y) (#53711)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "4e59e6b2535beb977b6d03524b0765b1cf1ac66fffd8c10b5c08c5505a1194f0"
+    },
+    {
+      "sha": "779cba5f4b91c8885964b1c0b7cf7a785b520a7b",
+      "subject": "fix: restore the kill ring on non-MAS macOS builds (#53714)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "21c8de819b9b5501e0b1fe7669d7fa02292b71a9863ca2f5ceaf947df701a59e"
+    },
+    {
+      "sha": "d024d25650efb9d4867683bb578767363d40ef6a",
+      "subject": "fix: require a registered source id for webContents capture via getUserMedia (#53709)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "363de39027dda2529882207f7f1335be60f506db7d12a37ad4e623950cc99227"
+    },
+    {
+      "sha": "4e7ae3ae5dd43ded4f7ea0c1b83397a1a6c94728",
+      "subject": "fix: require a registered source id for webContents capture via getUserMedia (#53707)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "401455d74aff35a3a8b4aa8f8c390388716022845c785f0c8156598b34c0b19a"
+    },
+    {
+      "sha": "f8600c944b0915978ee6305167ffe435d8831a5c",
+      "subject": "fix: require a registered source id for webContents capture via getUserMedia (#53710)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "7c095d2788173c2efaeca89e2971e4af6b19b6719bf62ee84c1188e15eded3fe"
+    },
+    {
+      "sha": "7ca6e15e85b06a3cd4d3346b5b03912f8557d1f8",
+      "subject": "fix: require a registered source id for webContents capture via getUserMedia (#53708)",
+      "disposition": "source-reviewed-prior-native-pending",
+      "sourceInspectionComplete": true,
+      "diffSha256": "deeb3c8e25343da5355cdd1133cfce4588bcb5aaf2d38e0164f3e4eb3fdd35ba"
+    }
+  ]
+}

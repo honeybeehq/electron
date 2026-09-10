@@ -1,0 +1,41 @@
+{
+  "staging": {
+    "sourceSha": "c3194c25fd7f00888a46d2b4a22b18f6cb23350b",
+    "repairSha": "8c9973ef77e3560a4e22a0295818150e63536b36",
+    "lintStagedVersion": "17.0.8",
+    "red": {
+      "exitCode": 1,
+      "decisiveOutput": "AssertionError: Generated workflow was not staged: .github/workflows/pipeline-segment-electron-build.yml"
+    },
+    "green": {
+      "exitCode": 0,
+      "decisiveOutput": "tests 1; pass 1; fail 0"
+    },
+    "generatorBlob": "8bee23e8bec501c065dca05032c58a9291e0c1a2",
+    "testBlob": "3211b7f69e677ccb267e4cf2ee7078128d7a328e"
+  },
+  "sharding": {
+    "sha": "8d93c43b78f42d0efd5d9c7d9c8c9211232902c9",
+    "exitCode": 0,
+    "checks": [
+      "partition completeness and determinism",
+      "exact/fallback/median weights",
+      "maximum retry duration",
+      "sanitizer/MAS keys",
+      "Wayland exclusion",
+      "finite nonnegative shipped weights"
+    ]
+  },
+  "streaming": {
+    "sha": "532c3159a1c64c71f96ed9b206f59289a1225f2d",
+    "incompatibleVersionExit": 1,
+    "compatibleVersionExit": 0
+  },
+  "rawEvidenceDigests": {
+    "staging-test-red.log": "417bce102dd400600371543114ac6403dd8b28415ca74ef43385cac5e2c6681c",
+    "staging-test-green.log": "ea7f081172d8709254b55a7aa8dd73c5699ee8b54e8ffaab6e298697922065bf",
+    "check-sharding.cjs": "f1a1748d236d199024c541c7efffc9998509928c2c2fe35871890bf309fdf92b",
+    "streaming-check/v3.log": "f2ad235ff339b0fe4bfcd4fbb46b08a478e2c75307629325d7658175a3ba2249",
+    "streaming-check/v1.log": "873196240a025b729bfbbabb601310941235dd87aad2746df9878852f6e633ed"
+  }
+}
