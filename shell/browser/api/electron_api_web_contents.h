@@ -323,6 +323,9 @@ class WebContents final : public ExclusiveAccessContext,
                                        WebFrameMain* frame);
   v8::Local<v8::Promise> DetachFromFrame(v8::Isolate* isolate);
   bool IsAttachedToFrame() const;
+  void SetVisibility(gin_helper::ErrorThrower thrower, const std::string& state);
+  void SetPageFrozen(bool frozen);
+  bool HasActiveMediaCapture() const;
   void AttachToIframe(content::WebContents* embedder_web_contents,
                       std::string embedder_frame_token);
   void DetachFromOuterFrame();

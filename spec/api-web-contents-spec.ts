@@ -410,6 +410,141 @@ describe('webContents module', () => {
       await left;
       await setTimeout(1000);
     });
+
+    describe('setVisibility() and setPageFrozen()', () => {
+      const TICKER =
+        '<script>window.ticks = 0; setInterval(() => { window.ticks++; }, 50);</script>';
+
+      const visibilityOf = async (target: Electron.WebContents) =>
+        await target.executeJavaScript('document.visibilityState');
+
+      it('rejects an unknown visibility state', async () => {
+        const target = await createTarget();
+        expect(() => target.setVisibility('occluded' as any)).to.throw(
+          /must be either 'hidden' or 'visible'/
+        );
+      });
+
+      it('explicitly hides and shows a detached target', async () => {
+        const target = await createTarget();
+        target.setVisibility('visible');
+        await waitUntil(async () => (await visibilityOf(target)) === 'visible');
+        target.setVisibility('hidden');
+        await waitUntil(async () => (await visibilityOf(target)) === 'hidden');
+        target.setVisibility('visible');
+        await waitUntil(async () => (await visibilityOf(target)) === 'visible');
+      });
+
+      it('attachToFrame does not override an explicit hidden state', async () => {
+        const w = await createEmbedder(true);
+        const target = await createTarget();
+        target.setVisibility('hidden');
+        await waitUntil(async () => (await visibilityOf(target)) === 'hidden');
+
+        await target.attachToFrame(frameNamed(w, 'first'));
+        await setTimeout(250);
+        expect(await visibilityOf(target)).to.equal('hidden');
+
+        target.setVisibility('visible');
+        await waitUntil(async () => (await visibilityOf(target)) === 'visible');
+        await target.detachFromFrame();
+      });
+
+      ifit(process.platform !== 'linux')('outer window hide/show does not disturb a parked detached target', async () => {
+        const w = await createEmbedder(true);
+        const target = await createTarget();
+        await target.attachToFrame(frameNamed(w, 'first'));
+        await waitUntil(async () => (await visibilityOf(target)) === 'visible');
+
+        await target.detachFromFrame();
+        target.setVisibility('hidden');
+        await waitUntil(async () => (await visibilityOf(target)) === 'hidden');
+
+        w.hide();
+        await setTimeout(150);
+        w.show();
+        await setTimeout(150);
+        expect(await visibilityOf(target)).to.equal('hidden');
+      });
+
+      it('setPageFrozen hides a visible page first and stops freezable timers', async () => {
+        const target = await createTarget(TICKER);
+        target.setVisibility('visible');
+        await waitUntil(async () => (await target.executeJavaScript('window.ticks')) > 0);
+        const timeOrigin = await target.executeJavaScript('performance.timeOrigin');
+
+        target.setPageFrozen(true);
+        await waitUntil(async () => (await visibilityOf(target)) === 'hidden');
+        // Let in-flight tasks drain, then require a stable counter.
+        await setTimeout(200);
+        const frozenTicks = await target.executeJavaScript('window.ticks');
+        await setTimeout(400);
+        expect(await target.executeJavaScript('window.ticks')).to.equal(frozenTicks);
+
+        target.setPageFrozen(false);
+        expect(await visibilityOf(target)).to.equal('hidden');
+        target.setVisibility('visible');
+        await waitUntil(async () =>
+          (await target.executeJavaScript('window.ticks')) > frozenTicks);
+        expect(await target.executeJavaScript('performance.timeOrigin')).to.equal(timeOrigin);
+      });
+
+      it('hasActiveMediaCapture() reflects live getUserMedia tracks', async () => {
+        const target = await createTarget('<p>media</p>');
+        expect(target.hasActiveMediaCapture()).to.be.false();
+
+        await target.executeJavaScript(`
+          navigator.mediaDevices.getUserMedia({ audio: true })
+            .then((stream) => { window.capturedStream = stream; return true; })
+        `, true);
+        await waitUntil(() => target.hasActiveMediaCapture());
+
+        await target.executeJavaScript(
+          'window.capturedStream.getTracks().forEach((track) => track.stop()); true', true);
+        await waitUntil(() => !target.hasActiveMediaCapture());
+      });
+
+      it('showing a frozen page resumes it', async () => {
+        const target = await createTarget(TICKER);
+        target.setVisibility('visible');
+        await waitUntil(async () => (await target.executeJavaScript('window.ticks')) > 0);
+
+        target.setPageFrozen(true);
+        await setTimeout(200);
+        const frozenTicks = await target.executeJavaScript('window.ticks');
+
+        target.setVisibility('visible');
+        await waitUntil(async () =>
+          (await target.executeJavaScript('window.ticks')) > frozenTicks);
+      });
+
+      it('a frozen target survives detach, thaw, show, and reattach with state intact', async () => {
+        const w = await createEmbedder(true);
+        const target = await createTarget(`<input id="editor">${TICKER}`);
+        await target.attachToFrame(frameNamed(w, 'first'));
+        await waitUntil(async () => (await visibilityOf(target)) === 'visible');
+        await target.executeJavaScript(
+          'document.getElementById("editor").value = "unsaved"; window.marker = "kept";'
+        );
+
+        await target.detachFromFrame();
+        target.setPageFrozen(true);
+        await setTimeout(300);
+        const frozenTicks = await target.executeJavaScript('window.ticks');
+
+        target.setPageFrozen(false);
+        target.setVisibility('visible');
+        await target.attachToFrame(frameNamed(w, 'second'));
+        await waitUntil(async () => (await visibilityOf(target)) === 'visible');
+        await waitUntil(async () =>
+          (await target.executeJavaScript('window.ticks')) > frozenTicks);
+        expect(await target.executeJavaScript('window.marker')).to.equal('kept');
+        expect(
+          await target.executeJavaScript('document.getElementById("editor").value')
+        ).to.equal('unsaved');
+        await target.detachFromFrame();
+      });
+    });
   });
 
   describe('fromDevToolsTargetId()', () => {

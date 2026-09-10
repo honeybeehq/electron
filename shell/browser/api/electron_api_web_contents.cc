@@ -4345,6 +4345,62 @@ bool WebContents::IsAttachedToFrame() const {
   return GetWebContents() && GetWebContents()->GetOuterWebContents();
 }
 
+void WebContents::SetVisibility(gin_helper::ErrorThrower thrower,
+                                const std::string& state) {
+  content::WebContents* target = GetWebContents();
+  if (!target) {
+    thrower.ThrowError(
+        "ERR_WEB_CONTENTS_DESTROYED: target WebContents was destroyed");
+    return;
+  }
+  if (state == "hidden") {
+    target->WasHidden();
+  } else if (state == "visible") {
+    target->WasShown();
+  } else {
+    thrower.ThrowTypeError("state must be either 'hidden' or 'visible'");
+  }
+}
+
+void WebContents::SetPageFrozen(bool frozen) {
+  content::WebContents* target = GetWebContents();
+  if (!target)
+    return;
+  if (frozen) {
+    // Blink's page scheduler rejects freezing a visible page
+    // (PageSchedulerImpl::SetPageFrozen), and the browser-side
+    // WebContentsImpl::SetPageFrozen DCHECKs the same invariant. Hide first,
+    // exactly like CDP Page.setWebLifecycleState's frozen path.
+    if (target->GetVisibility() != content::Visibility::HIDDEN)
+      target->WasHidden();
+    target->SetPageFrozen(true);
+  } else {
+    // Thawing leaves the page hidden; callers sequence an explicit
+    // setVisibility('visible') afterwards. Note that showing a frozen page
+    // also thaws it (PageLifecycleStateManager resets the explicit-freeze
+    // bit when the frame tree becomes visible).
+    target->SetPageFrozen(false);
+  }
+}
+
+bool WebContents::HasActiveMediaCapture() const {
+  content::WebContents* target = GetWebContents();
+  if (!target)
+    return false;
+  // Synchronous truth at call time: kCapturingMediaStream is set while any
+  // frame holds an open capture stream (getUserMedia microphone/camera or
+  // getDisplayMedia), distinct from IsBeingCaptured()'s page capturers.
+  bool capturing = false;
+  target->ForEachRenderFrameHost([&capturing](content::RenderFrameHost* rfh) {
+    if (static_cast<content::RenderFrameHostImpl*>(rfh)->HasMediaStreams(
+            content::RenderFrameHostImpl::MediaStreamType::
+                kCapturingMediaStream)) {
+      capturing = true;
+    }
+  });
+  return capturing;
+}
+
 void WebContents::DidDetachFromFrame(std::string_view reason) {
   if (!frame_attachment_observer_)
     return;
@@ -5247,6 +5303,9 @@ void WebContents::FillObjectTemplate(v8::Isolate* isolate,
       .SetMethod("attachToFrame", &WebContents::AttachToFrame)
       .SetMethod("detachFromFrame", &WebContents::DetachFromFrame)
       .SetMethod("isAttachedToFrame", &WebContents::IsAttachedToFrame)
+      .SetMethod("setVisibility", &WebContents::SetVisibility)
+      .SetMethod("setPageFrozen", &WebContents::SetPageFrozen)
+      .SetMethod("hasActiveMediaCapture", &WebContents::HasActiveMediaCapture)
       .SetMethod("attachToIframe", &WebContents::AttachToIframe)
       .SetMethod("detachFromOuterFrame", &WebContents::DetachFromOuterFrame)
       .SetMethod("isOffscreen", &WebContents::IsOffScreen)
