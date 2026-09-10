@@ -1248,11 +1248,13 @@ behavior (`document.visibilityState` becomes `hidden`, rendering stops, and
 background timer throttling applies).
 
 > [!WARNING]
-> This API is experimental. Visibility set here is a last-write-wins value:
-> `attachToFrame`/`detachFromFrame` never change it, while showing or hiding
-> the owning `BrowserWindow` of an **attached** web contents overwrites it
-> through Chromium's inner-tree propagation. A detached web contents keeps
-> the explicit value until the next `setVisibility` call.
+> This API is experimental. Visibility set here is a last-write-wins value.
+> A detached web contents keeps the explicit value until the next
+> `setVisibility` call; `detachFromFrame` never changes it. `attachToFrame`
+> adopts the placeholder's renderer-side visibility (typically `visible`,
+> even when the embedder window is hidden), and window visibility changes
+> propagate to attached web contents — re-assert the desired state after
+> attaching when it matters.
 
 #### `contents.setPageFrozen(frozen)`
 
