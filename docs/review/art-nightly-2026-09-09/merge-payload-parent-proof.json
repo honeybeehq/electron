@@ -1,0 +1,1951 @@
+[
+  {
+    "sha": "d05d1166c7cf49f27e00c2d3094618dd2d9e75e8",
+    "rows": [
+      {
+        "path": ".claude/skills/chrome-release-verify/SKILL.md",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "DEPS",
+        "payloadOrBlobFromParent": []
+      },
+      {
+        "path": "filenames.auto.gni",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/refactor_unfilter_unresponsive_events.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/revert_remove_the_feature_flag_kdropinputeventswhilepaintholding.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/.patches",
+        "payloadOrBlobFromParent": []
+      },
+      {
+        "path": "patches/node/api_promote_deprecation_of_v8_context_and_v8_object_api_methods.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/api_remove_deprecated_getisolate.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/build_add_gn_build_files.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/build_ensure_native_module_compilation_fails_if_not_using_a_new.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/build_perfetto-sdk.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/chore_disable_deprecation_ftbfs_in_simdjson_header.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/electron_enable_node_startup_snapshot_generation_in_chromium_s_v8.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/fix_add_externalpointertypetag_to_v8_external_api_calls.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/fix_allow_electron_s_linked_bindings_under_the_permission_model.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/node/fix_allow_passing_fileexists_fn_to_legacymainresolve.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/fix_crypto_tests_to_run_with_bssl.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/node/fix_do_not_pass_removed_jspi_v8_flag.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/fix_do_not_resolve_electron_entrypoints.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/fix_ensure_traverseparent_bails_on_resource_path_exit.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/fix_expose_readfilesync_override_for_modules.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/node/fix_expose_the_built-in_electron_module_via_the_esm_loader.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/fix_handle_boringssl_and_openssl_incompatibilities.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/node/fix_preserve_node_symbols_and_vtables_under_thinlto.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/fix_use_a_dedicated_cppheappointertag_for_cppgc_wrappables.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/fix_use_embedder_perfetto_client_when_available.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/inspector_adapt_to_crdtp_dispatchable_api_change.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/inspector_avoid_calling_into_js_from_v8_interrupts.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/node/lib_add_perfetto_support.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/refactor_attach_cppgc_heap_on_v8_isolate_creation.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/src_add_perfetto_trace_agent.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/src_fix_perfetto_build_on_gettracefilepath.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/src_fix_trace_macro_compatibility.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/src_migrate_to_setter_definer_interceptor_callbacks_returning.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/src_stop_using_deprecated_get_setprototypev2_and_holderv2.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/src_stop_using_v8_propertycallbackinfo_t_this.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/support_v8_sandboxed_pointers.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/test_add_regression_test_for_cleanup_hook_uaf.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/v8_prepare_for_migrating_v8_microtaskqueue_to_cppgc.patch",
+        "payloadOrBlobFromParent": [
+          1
+        ]
+      },
+      {
+        "path": "script/gen-spec-weights.js",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "script/spec-weights.json",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "script/split-tests.js",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/api/electron_api_web_contents.cc",
+        "payloadOrBlobFromParent": []
+      },
+      {
+        "path": "shell/browser/extensions/electron_extensions_browser_api_provider.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/common/api/electron_api_testing.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/common/extensions/api/_api_features.json",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "spec/api-web-contents-spec.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "spec/extensions-spec.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "spec/index.js",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "sha": "1fbc162f19ebb4970aa737dfa59b92e288e90594",
+    "rows": [
+      {
+        "path": ".clang-tidy",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": ".github/actions/build-electron/action.yml",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": ".github/actions/fix-sync/action.yml",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": ".github/actions/free-space-macos/action.yml",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": ".github/actions/free-space-macos/wait-for-free-space.sh",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": ".github/actions/install-build-tools/action.yml",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": ".github/actions/upload-build-artifacts/action.yml",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": ".github/dependabot.yml",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": ".github/workflows/issue-template-check.yml",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": ".github/workflows/pgo-generation.yml",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": ".github/workflows/pipeline-electron-build-and-tidy-and-test-and-nan.yml",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": ".github/workflows/pipeline-electron-build-and-tidy-and-test.yml",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": ".github/workflows/pipeline-segment-electron-build.yml",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": ".github/workflows/pipeline-segment-electron-clang-tidy.yml",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": ".github/workflows/pipeline-segment-electron-gn-check.yml",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": ".github/workflows/pipeline-segment-electron-publish.yml",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": ".github/workflows/pipeline-segment-electron-test.yml",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": ".github/workflows/scorecards.yml",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "BUILD.gn",
+        "payloadOrBlobFromParent": []
+      },
+      {
+        "path": "DEPS",
+        "payloadOrBlobFromParent": []
+      },
+      {
+        "path": "build/args/all.gn",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "build/pgo_profiles/linux-arm64.pgo.txt",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "build/pgo_profiles/linux-x64.pgo.txt",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "build/pgo_profiles/macos-arm64.pgo.txt",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "build/pgo_profiles/macos-x64.pgo.txt",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "build/pgo_profiles/v8-builtins.pgo.txt",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "build/pgo_profiles/win-arm64.pgo.txt",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "build/pgo_profiles/win-x64.pgo.txt",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "build/run-clang-tidy-action.sh",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "docs/api/debugger.md",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "docs/api/desktop-capturer.md",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "docs/api/download-item.md",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "docs/api/environment-variables.md",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "docs/api/menu-item.md",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "docs/api/protocol.md",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "docs/api/session.md",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "docs/api/structures/protocol-request.md",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "docs/api/structures/web-preferences.md",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "docs/api/web-contents.md",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "docs/api/web-request.md",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "docs/api/webview-tag.md",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "docs/breaking-changes.md",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "docs/tutorial/custom-window-interactions.md",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "docs/tutorial/macos-dock.md",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "docs/tutorial/multithreading.md",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "docs/tutorial/security.md",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "filenames.gni",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "lib/browser/api/protocol.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "lib/browser/api/web-contents.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "lib/browser/guest-view-manager.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "lib/browser/guest-window-manager.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "lib/browser/init.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "lib/browser/ipc-main-internal-utils.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "lib/browser/rpc-server.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "lib/node/asar-fs-wrapper.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "lib/node/init.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "lib/renderer/init.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "lib/renderer/window-setup.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "lib/utility/init.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "lib/worker/init.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "package.json",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/boringssl/feat_expose_several_extra_cipher_functions.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/.patches",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/add_contentgpuclient_precreatemessageloop_callback.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/add_gin_converter_support_for_arraybufferview.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/add_ui_scopedcliboardwriter_writeunsaferawdata.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/allow_in-process_windows_to_have_different_web_prefs.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/build_disable_llvm_unroll-add-parallel-reductions_on_apple_targets.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/chore_grandfather_in_electron_views_and_delegates.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/chore_partial_revert_of.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/chore_provide_iswebcontentscreationoverridden_with_full_params.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/chore_restore_some_deprecated_wrapper_utility_in_gin.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/crashpad_pid_check.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/desktop_media_list.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/dump_syms.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/extend_apply_webpreferences.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/feat_add_support_for_missing_dialog_features_to_shell_dialogs.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/feat_allow_code_cache_in_custom_schemes.patch",
+        "payloadOrBlobFromParent": []
+      },
+      {
+        "path": "patches/chromium/feat_allow_enabling_extensions_on_custom_protocols.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/feat_enable_passing_exit_code_on_service_process_crash.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/feat_plumb_node_integration_in_worker_through_workersettings.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/fix_constrain_allowuniversalaccessfromfileurls_to_file_origins_in.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/fix_crash_loading_non-standard_schemes_in_iframes.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/fix_disable_enable_resource_allowlist_generation_on_windows.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/fix_fire_menu_popup_start_for_dynamically_created_aria_menus.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/fix_make_macos_text_replacement_work_on_contenteditable.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/fix_on-screen-keyboard_hides_on_input_blur_in_webview.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/fix_register_status_icon_with_unique_d-bus_name_when_owning_one.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/fix_restore_original_resize_performance_on_macos.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/fix_select_the_first_menu_item_when_opened_via_keyboard.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/mas_avoid_private_macos_api_usage.patch.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/refactor_expose_file_system_access_blocklist.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/refactor_unfilter_unresponsive_events.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/render_widget_host_view_mac.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/revert_partial_remove_unused_prehandlemouseevent.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/support_mixed_sandbox_with_zygote.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/web_contents.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/webhid_webusb_key_document_services_on_the_requesting_frame_s_origin.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/webhid_webusb_pass_the_frame_to_canrequestdevicepermission.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/webview_cross_drag.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/webview_fullscreen.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/nan/.patches",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/nan/8236212_api_remove_deprecated_methods_pt_2.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/nan/chore_add_yarnrc_yml_and_yarn_lock_file_to_use_yarn_v4.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/nan/chore_handle_deprecation_of_v8_returnvalue_void_set_local_s.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/nan/chore_handle_removal_of_v8_propertycallbackinfo_t_this.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/nan/fix_add_externalpointertypetag_to_v8_external_api_calls.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/nan/fix_correct_usages_of_v8_returnvalue_void_set_nonempty_for_new.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/nan/fix_deprecation_of_v8_context_and_v8_object_api_methods.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/nan/fix_remove_deprecated_propertycallbackinfo_holder.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/nan/fix_replace_usage_of_removed_writeutf8_with_writeutf8v2.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/nan/fix_support_v8_15_3_and_later.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/nan/remove_accesscontrol_enum_for_v8_14_4_59.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/nan/test_use_v8_version_check_instead_of_node_version_check.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/node/.patches",
+        "payloadOrBlobFromParent": []
+      },
+      {
+        "path": "patches/node/api_remove_deprecated_getisolate.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/build_ensure_native_module_compilation_fails_if_not_using_a_new.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/build_perfetto-sdk.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/build_restore_clang_as_default_compiler_on_macos.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/node/build_restore_macos_deployment_target_to_13_0.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/node/chore_allow_the_node_entrypoint_to_be_a_builtin_module.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/node/ci_ensure_node_tests_set_electron_run_as_node.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/node/electron_enable_node_startup_snapshot_generation_in_chromium_s_v8.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/node/enable_crashpad_linux_node_processes.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/node/expose_get_builtin_module_function.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/node/feat_disable_js_source_phase_imports_by_default.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/node/fix_add_default_values_for_variables_in_common_gypi.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/node/fix_add_externalpointertypetag_to_v8_external_api_calls.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/fix_avoid_external_memory_leak_on_invalid_tls_protocol_versions.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/node/fix_cppgc_initializing_twice.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/node/fix_do_not_pass_removed_jspi_v8_flag.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/fix_do_not_resolve_electron_entrypoints.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/node/fix_remove_deprecated_errno_constants.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/node/fix_use_a_dedicated_cppheappointertag_for_cppgc_wrappables.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/fix_use_embedder_perfetto_client_when_available.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/lib_add_perfetto_support.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/refactor_allow_embedder_overriding_of_internal_fs_calls.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/node/src_add_perfetto_trace_agent.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/src_stop_using_deprecated_get_setprototypev2_and_holderv2.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "patches/node/test_formally_mark_some_tests_as_flaky.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/reclient-configs/.patches",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/reclient-configs/build_on_windows_provide_clang_wrapper_as_toolchain_input.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/reclient-configs/fix_add_python_remote_wrapper.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/reclient-configs/fix_disable_compression_threshold.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/reclient-configs/fix_mark_the_generated_clang_remote_wrapper_executable.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/reclient-configs/fix_temporarily_use_toolchain_inputs_exclusively_instead_of_inputs.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/reclient-configs/reland_mojo_use_large_worker_for_mojom_parser_action.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/webrtc/.patches",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/webrtc/fix_fall_back_to_the_x11_capturer_when_pipewire_fails_to_start.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/webrtc/fix_handle_pipewire_capturer_initialization_and_management.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "script/actions/retry.sh",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "script/gen-clang-tidy-ninja.py",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "script/generate-config-gypi.py",
+        "payloadOrBlobFromParent": []
+      },
+      {
+        "path": "script/nan-spec-runner.js",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "script/node-disabled-tests.json",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "script/node-flaky-tests.json",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "script/node-spec-runner.js",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "script/run-clang-tidy.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "script/spec-weights.json",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/app/environ_linux.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/app/node_main.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/api/electron_api_base_window.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/api/electron_api_clipboard_item.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/api/electron_api_download_item.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/api/electron_api_download_item.h",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/api/electron_api_protocol.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/api/electron_api_safe_storage.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/api/electron_api_safe_storage.h",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/api/electron_api_session.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/api/electron_api_system_preferences.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/api/electron_api_system_preferences.h",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/api/electron_api_system_preferences_mac.mm",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/api/electron_api_system_preferences_win.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/api/electron_api_utility_process.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/api/electron_api_utility_process.h",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/api/electron_api_web_contents.cc",
+        "payloadOrBlobFromParent": []
+      },
+      {
+        "path": "shell/browser/api/electron_api_web_contents.h",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/api/electron_api_web_contents_view.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/api/electron_api_web_frame_main.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/api/electron_api_web_request.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/api/gpuinfo_manager.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/api/ipc_dispatcher.h",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/api/message_port.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/api/message_port.h",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/electron_browser_client.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/electron_browser_context.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/electron_gpu_client.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/electron_gpu_client.h",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/electron_permission_manager.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/electron_web_contents_utility_handler_impl.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/feature_list_mac.mm",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/file_system_access/file_system_access_permission_context.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/file_system_access/file_system_access_permission_context.h",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/file_system_access/file_system_access_permission_context_factory.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/file_system_access/file_system_access_permission_context_factory.h",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/hid/electron_hid_delegate.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/hid/electron_hid_delegate.h",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/native_window.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/native_window.h",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/native_window_mac.mm",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/native_window_views.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/network_hints_handler_impl.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/network_hints_handler_impl.h",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/ui/drag_util.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/ui/draggable_region_debugger.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/ui/draggable_region_debugger.h",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/ui/file_dialog_win.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/usb/electron_usb_delegate.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/usb/electron_usb_delegate.h",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/web_contents_permission_helper.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/web_contents_permission_helper.h",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/web_contents_preferences.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/common/api/electron_api_testing.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/common/api/electron_api_v8_util.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/common/electron_natives_codecache_main.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/common/gin_converters/net_converter.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/common/gin_converters/std_converter.h",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/common/gin_helper/function_template.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/common/gin_helper/function_template.h",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/common/gin_helper/wrappable_pointer_tags.h",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/common/js2c_bundle_ids.h",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/common/node_bindings.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/common/node_bindings.h",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/common/node_includes.h",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/common/node_natives_code_cache.h",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/common/node_util.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/common/node_util.h",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/renderer/electron_render_frame_observer.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/renderer/electron_renderer_client.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/renderer/electron_renderer_client.h",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/renderer/preload_utils.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/renderer/renderer_client_base.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/renderer/renderer_client_base.h",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/services/node/parent_port.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "spec/api-autoupdater-darwin-policy-spec.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "spec/api-autoupdater-darwin-spec.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "spec/api-browser-window-spec.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "spec/api-ipc-spec.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "spec/api-js2c-code-cache-spec.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "spec/api-media-handler-spec.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "spec/api-net-spec.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "spec/api-process-spec.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "spec/api-protocol-spec.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "spec/api-session-spec.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "spec/api-utility-process-spec.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "spec/api-web-contents-spec.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "spec/api-web-request-spec.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "spec/asar-spec.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "spec/chromium-spec.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "spec/cpp-heap-spec.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "spec/fixtures/api/environ-write-race.js",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "spec/fixtures/api/js2c-code-cache/util-child.js",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "spec/fixtures/module/preload-ipc-ping-pong.js",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "spec/fixtures/module/preload-window-open-ping.js",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "spec/lib/autoupdater-darwin-helpers.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "spec/lib/codesign-helpers.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "spec/lib/msix-helpers.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "spec/lib/window-helpers.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "spec/webview-spec.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "typings/internal-ambient.d.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "typings/internal-electron.d.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "yarn.lock",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "sha": "2d07b688c3fe7f64efbae037c4053ba18232b9fb",
+    "rows": [
+      {
+        "path": "patches/chromium/.patches",
+        "payloadOrBlobFromParent": []
+      },
+      {
+        "path": "patches/chromium/cherry-pick-f0d76fefb52c.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/refactor_unfilter_unresponsive_events.patch",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "patches/chromium/revert_remove_the_feature_flag_kdropinputeventswhilepaintholding.patch",
+        "payloadOrBlobFromParent": [
+          1,
+          2
+        ]
+      },
+      {
+        "path": "shell/browser/api/electron_api_web_contents.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "shell/common/api/electron_api_testing.cc",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      },
+      {
+        "path": "spec/api-web-contents-spec.ts",
+        "payloadOrBlobFromParent": [
+          2
+        ]
+      }
+    ]
+  }
+]

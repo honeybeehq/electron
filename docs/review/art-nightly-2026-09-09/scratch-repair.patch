@@ -1,0 +1,41 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Art nightly review <art-nightly@localhost>
+Subject: fix: release scratch pixel unpack buffers on upload errors
+
+Keep cleanup in StateManagerGL so its tracked bindings are invalidated.
+The explicit reset preserves successful deletion before markWorkSubmitted;
+the scope guard also releases the buffer on every early error return.
+
+diff --git a/src/libANGLE/renderer/gl/TextureGL.cpp b/src/libANGLE/renderer/gl/TextureGL.cpp
+--- a/src/libANGLE/renderer/gl/TextureGL.cpp
++++ b/src/libANGLE/renderer/gl/TextureGL.cpp
+@@ -426,6 +426,20 @@
+ 
+     GLuint scratch = 0;
+     functions->genBuffers(1, &scratch);
++    struct ScopedScratchBuffer
++    {
++        StateManagerGL *stateManager;
++        GLuint buffer;
++        ~ScopedScratchBuffer() { reset(); }
++        void reset()
++        {
++            if (buffer != 0)
++            {
++                stateManager->deleteBuffer(buffer);
++                buffer = 0;
++            }
++        }
++    } scopedScratch{stateManager, scratch};
+     stateManager->bindBuffer(gl::BufferBinding::PixelUnpack, scratch);
+     // Regardless of whether the user supplied data (pixels != nullptr), the pixel unpack buffer
+     // must be allocated with the expected amount of data.
+@@ -480,7 +494,7 @@
+         setLevelInfo(context, target, level, 1, levelInfo);
+     }
+ 
+-    stateManager->deleteBuffer(scratch);
++    scopedScratch.reset();
+ 
+     contextGL->markWorkSubmitted();
+     return angle::Result::Continue;

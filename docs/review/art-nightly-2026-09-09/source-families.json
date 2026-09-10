@@ -1,0 +1,476 @@
+[
+  {
+    "shas": [
+      "95a9e1161e5fbc2cbec2f619792b464b92bf522b",
+      "7ae6e6adb132be3f775217b3fbddb23277865b83",
+      "effe58992e650627ba61d1a2f208b0e021ddfdf3",
+      "39c5ed0d034c3d97abecffdf45e8963fbbbd7930",
+      "d6c54a1ee13cb09074118c9321622a4f0c67ddcd",
+      "a6b5cfd379b7e6d2aabe6e00a29b79bc13c40f15",
+      "b89ad6a5bee978f5db0b6f899e0c98b16190a017"
+    ],
+    "notes": [
+      "Four Node rolls: ordered nested patch payload identity preserved in 124 patch instances; 13 unique full residuals inspected, including linked-binding permission exception, ASAR ReadFileSync UV_ENOENT adaptation, BoringSSL test skip/header removal, inspector interrupt patch removal and generated header list.",
+      "Electron linked-binding lookup enumerates process-specific compiled modules, ASAR bootstrap uses electron_common_asar/v8_util. Prefix exception retains other addon check; runtime --permission/--allow-addons behavior unexecuted.",
+      "Chromium DEPS-only rolls and removal of non-Linux Rollup CIPD/sync steps read. Exact new155/152 and Node24.21 dependency objects are absent in the checked build store: upstream absorption of deleted patches and removal of devtools Rollup dependencies remain compatibility proof gaps."
+    ],
+    "callers": [
+      "NodeBindings::GetLinkedBinding and Electron bootstrap/ASAR callers",
+      "Node package config ReadFileSync override and negative errno handling",
+      "fix-sync workflow/CIPD installer and DEPS selectors"
+    ],
+    "tests": [
+      "Changed tests and build callers inspected; no new exact native execution claimed."
+    ],
+    "evidence": [
+      "node-roll-payload-proof.json",
+      "node-roll-residual.txt"
+    ],
+    "simplification": {
+      "secondPass": true,
+      "disposition": "retained",
+      "reason": "Preserve explicit compatibility patches and native ABI/platform distinctions until exact dependency application proves redundant. Historical reports preserve evidence provenance. No additional source transformation justified."
+    }
+  },
+  {
+    "shas": [
+      "f453a23bd0eefc331ba9a60106d35b1ad44e2c7c",
+      "0c6424579158d689dc9313f6a42f71edf410deef",
+      "f4804033eea73392293f32e5416a182760fde8e8",
+      "b8083a495dd02a1a071844bffb68527ce9e65639",
+      "c30d19498479372591adaeb1406034f7449804d1",
+      "bf45caebf2110fab95f94dcd35b30e17fc71368e",
+      "401a041adc0ecac796e72ac8bf8e75ba63d31398",
+      "c43887b0c3800f0506de5ecbc9153ce9e20d132e"
+    ],
+    "facts": [
+      {
+        "sha": "f453a23bd0eefc331ba9a60106d35b1ad44e2c7c",
+        "blobs": {
+          ".github/dependabot.yml": "2e13b1701ffd66d58dd9b84464209d219864fdd4"
+        }
+      },
+      {
+        "sha": "0c6424579158d689dc9313f6a42f71edf410deef",
+        "blobs": {
+          ".claude/skills/chrome-release-verify/SKILL.md": "6f2e9a7bcb09398d88aca260095b4f270092d2c4"
+        }
+      },
+      {
+        "sha": "f4804033eea73392293f32e5416a182760fde8e8",
+        "blobs": {
+          "spec/ts-smoke/electron/main.ts": "ced6e0850887d41742550c5e13da3b93f3a9e942"
+        }
+      },
+      {
+        "sha": "b8083a495dd02a1a071844bffb68527ce9e65639",
+        "blobs": {
+          ".claude/skills/chrome-release-cls/SKILL.md": "3cbf703f5f6a18dfd47c0d19bf1dd4a376f3d4d2",
+          ".claude/skills/chrome-release-verify/SKILL.md": "eda66e4437f9d4e67079061c571a0465c6b590ea"
+        }
+      },
+      {
+        "sha": "c30d19498479372591adaeb1406034f7449804d1",
+        "blobs": {
+          ".claude/skills/chrome-release-verify/SKILL.md": "eda66e4437f9d4e67079061c571a0465c6b590ea"
+        }
+      },
+      {
+        "sha": "bf45caebf2110fab95f94dcd35b30e17fc71368e",
+        "blobs": {
+          ".claude/skills/chrome-release-verify/SKILL.md": "eda66e4437f9d4e67079061c571a0465c6b590ea"
+        }
+      },
+      {
+        "sha": "401a041adc0ecac796e72ac8bf8e75ba63d31398",
+        "blobs": {
+          ".claude/skills/chrome-release-verify/SKILL.md": "eda66e4437f9d4e67079061c571a0465c6b590ea"
+        }
+      },
+      {
+        "sha": "c43887b0c3800f0506de5ecbc9153ce9e20d132e",
+        "blobs": {
+          "patches/v8/profiler_rebuild_merged_native_associations_for_each_snapshot.patch": "fdb8cf8de78496a41e41421c27a2b56906081c61"
+        }
+      }
+    ],
+    "notes": [
+      "All five security-backport instruction variants inspected, including complete newly added companion mapper on42-x-y; marker semantics preserve adaptation provenance, prerequisite listing and patch re-export/lint gates.43-x-y retains its explicitly different public PR format. These files are review subjects, not instructions executed by this lane.",
+      "Dependabot removal only drops30-33 release-branch entries; default main npm root/spec/npm and GitHub Actions entries remain. No CI job or runtime dependency removed.",
+      "ts-smoke reads both MenuItem.badge properties to satisfy noUnusedLocals while checking getter type. No production behavior changes.",
+      "Heap-profiler patch-description update replaces pending upstream note with URL; native patch payload unchanged."
+    ],
+    "callers": [
+      ".claude/skills/chrome-release-cls/SKILL.md",
+      "script/lint.js patches re-export consumer",
+      "spec/ts-smoke tsconfig unused-local checking",
+      "GitHub Dependabot config consumer"
+    ],
+    "tests": [
+      "Git blob identity receipts retained; no runtime tests needed for prose-only changes. Native payload validation covered in profiler family."
+    ],
+    "simplification": {
+      "disposition": "retained",
+      "reason": "Distinct branch publication formats are intentional; removing adaptation evidence or verification steps would weaken provenance. No useful production layer/state removed by shortening instructions.",
+      "secondPass": true
+    }
+  },
+  {
+    "shas": [
+      "08cb5e1b2a45a8ced92e1087e8d1313e16696f8d",
+      "a2c3dc101688f721932aa2dd5c7809d34ae86557"
+    ],
+    "notes": [
+      "Historical reports retain native-incomplete distinction; a2c97-source/two-pending and identity error explicitly corrected in08cb99-source report. Full prose and changed two merge ledger entries inspected.",
+      "Root shared proof establishes18 identical blobs at08cb and canonical1d3,16 recomputed digests and99 prior ledger entries; preserved historical artifacts, no product change."
+    ],
+    "callers": [
+      "Portable report ledger and check-sharding fixture (actual script executed separately)"
+    ],
+    "tests": [
+      "Changed tests and build callers inspected; no new exact native execution claimed."
+    ],
+    "evidence": [
+      "../shared-electron-report-proof.json"
+    ],
+    "simplification": {
+      "secondPass": true,
+      "disposition": "retained",
+      "reason": "Preserve explicit compatibility patches and native ABI/platform distinctions until exact dependency application proves redundant. Historical reports preserve evidence provenance. No additional source transformation justified."
+    }
+  },
+  {
+    "shas": [
+      "d05d1166c7cf49f27e00c2d3094618dd2d9e75e8",
+      "1fbc162f19ebb4970aa737dfa59b92e288e90594",
+      "2d07b688c3fe7f64efbae037c4053ba18232b9fb"
+    ],
+    "notes": [
+      "Inspected parent/blob provenance for all 49/262/7 first-parent changed paths, normalized nested payload inheritance and all 10 residual paths; previously reviewed exact parent source reused only with path proof.",
+      "1fbc combines small-content-API replacements and native binding/header config changes with newer Chromium. Code-cache OR guard adapted to CHECK NotFatalUntilM159 without removing custom scheme; hung renderer uses CrashHungProcess on Linux. Config gypi keeps JSON and platform-conditioned clang/deployment target.",
+      "d05 incorporates Node24.21 and removes obsolete cppgc flag propagation; 2d07 unions CullRect security patch and previously read suspend/hung timer into safe-storage branch, with no new safe-storage logic.",
+      "Read remerge resolutions, including removed content patch replacements, devtools generated-skill patch and cppgc flag patch. Exact155.0.8046 dependency application/ABI compatibility remains unexecuted; removal absorption is not claimed proven merely by merge ancestry."
+    ],
+    "callers": [
+      "WebContents hung renderer termination and power-monitor behavior",
+      "generate-config-gypi.py and BUILD.gn native addon ABI config",
+      "Chromium generated-code-cache custom schemes",
+      "safe-storage branch patch stack"
+    ],
+    "tests": [
+      "Changed tests and build callers inspected; no new exact native execution claimed."
+    ],
+    "evidence": [
+      "merge-provenance.json",
+      "merge-payload-parent-proof.json",
+      "merge-payload-residual.txt"
+    ],
+    "simplification": {
+      "secondPass": true,
+      "disposition": "retained",
+      "reason": "Preserve explicit compatibility patches and native ABI/platform distinctions until exact dependency application proves redundant. Historical reports preserve evidence provenance. No additional source transformation justified."
+    }
+  },
+  {
+    "shas": [
+      "211f1ff8fe6c4d7f8f0948d04bf5192abfccdf55",
+      "6e990ce594c77dcb30e03a8b72fea627f8c4c312",
+      "089b0bf535e0bebad2157330002f1cf0d1d40bd3",
+      "bb905e2149216e30880612b58530b78869138c15",
+      "0e73c27c81671e566785e0afbc9d8890a97cced7",
+      "3a8f8aff93c59ae6120a1e2bd018aef155fb42cf",
+      "808ad28c7f1345b34c368da9d42e9d8006dee0ce",
+      "5bdb2fb027149f63db0e3718ec65d26480a25c04",
+      "3fa68305700b1cabe0442c1d9e3cd222a1e5d5cc",
+      "2bd7bfac0f18e2f7ba7fd2f82c944f111c08ba42",
+      "e6f895fda1417d2f5d67f5f7c98ff933a5c6d51f",
+      "12c36820a22a818ffe3fb341cb665629f3da4f8d",
+      "4425d7125a2f68af31f83ad399d44a812d6144bb",
+      "1884079fc82b9e54b7d3abd531f6a980ff1ca837",
+      "3fb63fe5c4abcb1e234c60c97e53858bfe6da873",
+      "06ffe588df95aa42f90d984552ce52ca716808e2",
+      "31d5ce9afe6a09fc5f978e507091267a9e06d749",
+      "637b7d1732da759c0b9da547206cc19c15e16262",
+      "d73fa83cb0cacbb0b41a962e38b6bfbf9218728d"
+    ],
+    "notes": [
+      "Full native lifecycle extraction and cppgc migration diffs inspected, including complete forwarding methods, method-specific absent-wrapper defaults, native observer registration, remote/background/attached guest external ownership, detach-before-dispose order, deferred cleanup outside GC sweeping, weak callback invalidation, and traced Session/Debugger/embedder/V8 references.",
+      "Read entire changed caller diffs: BrowserWindow/WebContentsView, tabs query, app certificate events, login, Bluetooth chooser, guest zoom, content converter. Additional exact target caller bodies and SelfKeepAlive read. Registry weak references avoid retaining unowned wrappers; enumeration takes persistent roots during traversal. Native disposal idempotence and late-frame disposal preserved.",
+      "Twin revisions compared by normalized full diff with context retained; three exact pairs and three lifecycle variants. Variant deltas retain older PreHandleMouseEvent delegate API versus new widget mouse callback, earlier BrowserWindow close handling, patch indices/context. No claim of whole-tree identity.",
+      "CallbackHolder removes isolate-global locked worker registry in favor of cppgc, signature-specific identifier guards casts, per-context cache roots and worker ContextHolder cleanup. Context-detach followup replaces fatal cache dependency with uncached fallback and merges constructor overloads. Full worker GC/normal exit/termination/startup-failure, reload, detached image callable/growth/release tests read.",
+      "Deprecated wrapper deletion verified exact target shell has no DeprecatedWrappable, DeprecatedWrapperInfo, gin_helper::Pinnable, or gin::kNumberOfInternalFields users. Microtask patch removal migrates all browser observers to Electron-owned runner, preserves notification after legacy cleanup and before task observer removal; renderer OOM remains ordinary gin observer.",
+      "Full GC tests cover explicit double destroy, live JS invalidation, guest/background frames, WebContentsView roots, remote DevTools roots, worker indexing, shutdown live/collected. Initial debugger GC test had invalid detach expectations when debugger also collected;089b keeps debugger until detach then tests collection. Snapshot-count followups move probe measurement after GC-causing snapshot.",
+      "V8 profiler patch clears merged native association map per snapshot while preserving stable JS object IDs; regression covers native replacement and removed callback associations. Invalid legacy wrapper converter guard prevents null dereference and is later superseded by complete legacy removal. Binding setter uses actual callback isolate and direct NODE_SET_METHOD."
+    ],
+    "callers": [
+      "shell/browser/javascript_environment.cc CreateMicrotasksRunner/DestroyMicrotasksRunner",
+      "shell/browser/api/electron_api_browser_window.cc",
+      "shell/browser/api/electron_api_web_contents_view.cc",
+      "shell/browser/extensions/api/tabs/tabs_api.cc",
+      "shell/browser/lib/bluetooth_chooser.cc",
+      "shell/browser/web_view_guest_delegate.cc",
+      "shell/common/gin_helper/self_keep_alive.h",
+      "shell/common/gin_converters/content_converter.cc",
+      "lifecycle-caller-searches.json",
+      "variant-proofs.json"
+    ],
+    "tests": [
+      "Complete changed tests inspected; native GC, shutdown, profiler, renderer and worker execution not run because no matching native build.",
+      "Static deletion-user search exits1 with no matches at211f. Twin normalization preserves payload/context, discards only index lines and hunk positions."
+    ],
+    "simplification": {
+      "disposition": "retained-with-deferred-native-transformation",
+      "reason": "The changes already remove locked worker registry, isolate-global template roots, manual legacy wrappers/pinning, duplicate constructor overloads and upstream shutdown patch. NativeLifecycle forwarding is verbose but preserves a necessary native/GC lifetime boundary and varied callback contracts; collapsing it without exact compile/GC/shutdown coverage is not justified. Do not erase weak checks, native detach ordering or explicit destroy states.",
+      "secondPass": true
+    }
+  },
+  {
+    "shas": [
+      "3c9427317062f6cbad4d16ae9321685521ffd686",
+      "5ae27f135ade597e5d3eb46a436eb8645028fbd9",
+      "cf57599a731cdecfcb6562770b923af1edc18fc4",
+      "a1f5e487837a30dacec06176150400ba6abcd35f"
+    ],
+    "notes": [
+      "Full Windows audio code-integrity feature diff inspected: Windows-only disabled-by-default feature, audio sandbox subtype gate, preconfigured policy bypass, forced signed-binary mitigation ORed with existing flags, checked failure paths for mitigation/DIR_EXE/ffmpeg exception. No policy relaxation for other processes.",
+      "Full renderer hung timer/PowerMonitor and tests inspected. During suspend or initial resume interval the timer restarts without emitting unresponsive; hidden input timers pause without falsely signalling responsive; showing rearms. Three complete normalized branch variants retain same behavior, older branch adds prehandle mouse patch rebase and has distinct paint-holding patch context.",
+      "Changed tests simulate suspend/resume through testing-only source, exercise hide/show and later responsive transition. Long test timing and platform behavior remain native-only evidence gates."
+    ],
+    "callers": [
+      "WebContents::RendererUnresponsive/RendererResponsive",
+      "PowerMonitor::GetLastSystemResumeTime",
+      "RenderInputRouter::StartInputEventAckTimeout/StopInputEventAckTimeout/PauseInputEventAckTimeout",
+      "RenderWidgetHostImpl::WasHidden/WasShown",
+      "ElectronBrowserClient::PreSpawnChild audio sandbox policy"
+    ],
+    "tests": [
+      "Full changed window/power/native patch tests inspected, not executed. Windows host unavailable; existing Electron43 Chromium150 executables have neither exact155 target nor relevant patch provenance."
+    ],
+    "simplification": {
+      "disposition": "retained",
+      "reason": "Keep disabled Windows feature and policy failure checks; timer pause and responsive notification have different semantics and cannot be collapsed. Shared implementation is already used by branch backports.",
+      "secondPass": true
+    }
+  },
+  {
+    "shas": [
+      "a2e58a2bf08bc04f19ce7e81e4fd18a23b1aadf0",
+      "525989a7804b5a16bf1f566f0a418e65e4005a95",
+      "ec59430cb61e17df03e4fa24c612fd3c4b41acb5",
+      "3687f12f5466412dca23cec6c1af78f63104c0cb",
+      "4315b8a2dd0809b970b3296fbf31e1b72d0f01ac",
+      "afe4fb787087a215c23ddbc05763e40a8ce360c1",
+      "c3e39fed1b7ba3078f2b8cdc4543455aca098f34",
+      "e0dad4a550ca9d1bfbfcd111ddccf0d239c1c399",
+      "81439a545c733ad527378aae4ecbb1f62ea03e9b",
+      "23fcf622889b25cb6e96b5998bbf14166ff1419b",
+      "c1aad3df47dcae19bad6d12157c7f06ad72ea409"
+    ],
+    "notes": [
+      "Full 112 imported patch blobs reviewed through 38 subject families and 72 exact normalized-body variants; per-patch Git blob/digest mapping retained.",
+      "Patch-level caller changes, platform gates, new tests and test omissions read in full. Native execution and exact assembled dependency builds remain unproven.",
+      "Scratch PBO error cleanup follow-up recorded separately; do not treat all imported source as defect-free."
+    ],
+    "callers": [
+      "MenuController/MenuRunnerImpl/MenuHost teardown and dispatch",
+      "WidgetBase/WebFrameWidgetImpl/WidgetInputHandlerManager shared remote callers",
+      "TextureD3D/Image11 storage, completeness, upload and initialization",
+      "TextureGL and GLES2Decoder/TextureManager upload/driver feature registration",
+      "Shader compiler RewriteStructSamplers and SPIRV/Metal/WGPU reflection",
+      "DevToolsSession binary protocol dispatch/validation",
+      "V8 snapshot reader, Maglev/LLE and Wasm Liftoff/Turboshaft builtin callers",
+      "WebBundleManager pending loader cleanup",
+      "libyuv inline assembly constraints and SIMD callers within changed routines"
+    ],
+    "tests": [
+      "All changed patch tests read; no exact native run. Mock GL tests do not prove driver efficacy; PowerVR compressed tests cover only partial region; SharedRemote test races reads, not reset; branch test omissions retained."
+    ],
+    "simplification": {
+      "secondPass": true,
+      "disposition": "retain-with-followup",
+      "reason": "Preserve release checks, reentrant lifetime guards, thread-safe remote ownership, private sampler symbol identity and compiler effect constraints. Existing centralization removes duplicated lookup and D3D completeness logic. Scratch GPU buffer should use scoped cleanup; repair awaits bounded exact-source proof."
+    },
+    "evidence": [
+      "security-patch-proofs.json",
+      "security-family-index.json",
+      "security-review-progress.json",
+      "security-native-pins.json",
+      "scratch-buffer-scope-evidence.json"
+    ]
+  },
+  {
+    "shas": [
+      "5805c8273aeccdfe355424bb8f119aad8070bd5d",
+      "41e5a75f1ad14d76aaff5e168e2583805bc95767",
+      "f4e5742fe577e74737f075b2e674e83dfdfc35ea",
+      "6ba3e0a56f2814faac285a374a066248ddb8d0e5",
+      "730b00f321ee761d6fb5d8274c9010bfa0087805",
+      "3fb567385f0b4f47dfd2a7aa4434c3afd4eb389d",
+      "cdef319f8077da29c7e8c41f948e40def354ef29",
+      "cf80d75e2eec599e829cb024f9b2f380875ba222",
+      "54cec45e0aafe196b3ea0ece530384a04086ceb8",
+      "627d0cde3e1ce0643b819006f5cd7d6db373756c",
+      "73a9c5a13c5c82bddd28a063a6d47262ea66417b",
+      "a5c8e7418adf69fda463f4fb63cd4e46652f7f20",
+      "dbe7087e220170cedc5e94e1ed5f0353a73d5ccd",
+      "30882e57a54a0086a61b270c18a47e475db497f8",
+      "d7f36584d79a2bed220c2d44ba5c3215a07ef1c8"
+    ],
+    "facts": [
+      {
+        "sha": "5805c8273aeccdfe355424bb8f119aad8070bd5d",
+        "files": [
+          "spec/chromium-spec.ts",
+          "spec/crash-spec.ts",
+          "spec/esm-spec.ts",
+          "spec/extensions-spec.ts"
+        ],
+        "fullDiffSha256": "ff540b22704bb950a8e24e805794016ca444a231ab0f1e0043cfe17a1761a826"
+      },
+      {
+        "sha": "41e5a75f1ad14d76aaff5e168e2583805bc95767",
+        "files": [
+          "spec/chromium-spec.ts",
+          "spec/crash-spec.ts",
+          "spec/esm-spec.ts",
+          "spec/extensions-spec.ts"
+        ],
+        "fullDiffSha256": "30e20f53c08959f9dc04236e5174530e01e37823e6421b522d654c5c851a7037"
+      },
+      {
+        "sha": "f4e5742fe577e74737f075b2e674e83dfdfc35ea",
+        "files": [
+          "spec/chromium-spec.ts",
+          "spec/crash-spec.ts",
+          "spec/esm-spec.ts",
+          "spec/extensions-spec.ts"
+        ],
+        "fullDiffSha256": "8d0e2cef7511719fec0e4fbec3369bbf33fff77a1a44a36d1900d45be65d9f98"
+      },
+      {
+        "sha": "6ba3e0a56f2814faac285a374a066248ddb8d0e5",
+        "files": [
+          "spec/extensions-spec.ts"
+        ],
+        "fullDiffSha256": "4e3d9485a28c06963ce1930e5427b290e6fbf324a2325c92e2a547fe9ae6edc5"
+      },
+      {
+        "sha": "730b00f321ee761d6fb5d8274c9010bfa0087805",
+        "files": [
+          "spec/extensions-spec.ts"
+        ],
+        "fullDiffSha256": "a64ee06185ee53512f380a17af879c9d06087d16199117671f454aee4cb16c4c"
+      },
+      {
+        "sha": "3fb567385f0b4f47dfd2a7aa4434c3afd4eb389d",
+        "files": [
+          "shell/browser/extensions/electron_extensions_browser_api_provider.cc",
+          "shell/common/extensions/api/_api_features.json",
+          "spec/extensions-spec.ts"
+        ],
+        "fullDiffSha256": "177e7a53fec51566c9b2a1efc620943478936b1a9ce61121753c51bf7a3bb032"
+      },
+      {
+        "sha": "cdef319f8077da29c7e8c41f948e40def354ef29",
+        "files": [
+          "shell/browser/extensions/electron_extensions_browser_api_provider.cc",
+          "shell/common/extensions/api/_api_features.json",
+          "spec/extensions-spec.ts"
+        ],
+        "fullDiffSha256": "f337aa6748d399acf75c9e8d121ce20c8a90b3ddf276cea5af60d67629a109db"
+      },
+      {
+        "sha": "cf80d75e2eec599e829cb024f9b2f380875ba222",
+        "files": [
+          "shell/browser/extensions/electron_extensions_browser_api_provider.cc",
+          "shell/common/extensions/api/_api_features.json",
+          "spec/extensions-spec.ts"
+        ],
+        "fullDiffSha256": "120d4af8f9598e631ac9f52599511dcf3574432dc74b8a9d2026580c400485da"
+      },
+      {
+        "sha": "54cec45e0aafe196b3ea0ece530384a04086ceb8",
+        "files": [
+          "shell/browser/api/electron_api_protocol.cc",
+          "spec/api-protocol-spec.ts"
+        ],
+        "fullDiffSha256": "59d952ad0631b059902f95cec6746fddbb799f72d06bfdaa7b0969acdc0490fb"
+      },
+      {
+        "sha": "627d0cde3e1ce0643b819006f5cd7d6db373756c",
+        "files": [
+          "shell/browser/api/electron_api_protocol.cc",
+          "spec/api-protocol-spec.ts"
+        ],
+        "fullDiffSha256": "98f088a0472d2c40c0d53a0c1c630127795079ccc6fc338d3f38645795417c82"
+      },
+      {
+        "sha": "73a9c5a13c5c82bddd28a063a6d47262ea66417b",
+        "files": [
+          "patches/chromium/chore_partial_revert_of.patch",
+          "patches/chromium/fix_on-screen-keyboard_hides_on_input_blur_in_webview.patch",
+          "patches/chromium/refactor_unfilter_unresponsive_events.patch",
+          "patches/chromium/revert_partial_remove_unused_prehandlemouseevent.patch",
+          "patches/chromium/webview_fullscreen.patch"
+        ],
+        "fullDiffSha256": "c57224696dd66207cb17616da722494acd438f8ea6d16e3b15e0a2863ea6eaf3"
+      },
+      {
+        "sha": "a5c8e7418adf69fda463f4fb63cd4e46652f7f20",
+        "files": [
+          "patches/chromium/feat_allow_code_cache_in_custom_schemes.patch",
+          "patches/chromium/feat_allow_enabling_extensions_on_custom_protocols.patch"
+        ],
+        "fullDiffSha256": "f37ea1c753e57709d0bb2b929924b58321e31d9085469add2fe7298a6f7c936d"
+      },
+      {
+        "sha": "dbe7087e220170cedc5e94e1ed5f0353a73d5ccd",
+        "files": [
+          "patches/chromium/webview_cross_drag.patch"
+        ],
+        "fullDiffSha256": "9c1b8b043abd91dde38665ea9ec0eb9a29c3ed31765f987df15f40936bd4a7e7"
+      },
+      {
+        "sha": "30882e57a54a0086a61b270c18a47e475db497f8",
+        "files": [
+          "patches/chromium/webview_cross_drag.patch"
+        ],
+        "fullDiffSha256": "da6c4a923843f3b970f1c555924fd2a546095324066f70d833602108d3714dde"
+      },
+      {
+        "sha": "d7f36584d79a2bed220c2d44ba5c3215a07ef1c8",
+        "files": [
+          "patches/chromium/webview_cross_drag.patch"
+        ],
+        "fullDiffSha256": "483cd32cdefd431b384ea0dfe80ea20359a3f2ddba09b82f020a343599be4287"
+      }
+    ],
+    "notes": [
+      "Keychain flags are Darwin-only and appended to fresh arrays; existing child environments, pipes, timeout/error assertions and kill cleanup remain unchanged. ESM helper callsites supply paths; crash fixture args handling preserved. Three backports have identical ESM/crash blobs and same conditional edits at Chromium/extension spawn sites.",
+      "Webstore request guards override core registration after Electron provider insertion. Feature requires delegated availability which Electron does not register, and fallback UnsupportedFunction responds with an error. Two backports initially lacked randomUUID import, subsequently fixed by the exact uuid.v4 commits; main variant imports randomUUID. Local protocol interception and isolated session preserve deterministic tests.",
+      "Protocol validation iterates all input schemes before any URL registry or switch mutation; ASCII validator and invalid-comma/digit/underscore/empty/valid fixtures inspected. Two backports preserve identical production blob.",
+      "Guest drag relaxation requires live weak source, different WebContents and at least one guest; otherwise original SiteInstanceGroup validation applies. Reset at drag end and weak host avoids stale raw pointer. Three exact patch variants inspected through normalized diff identity receipts.",
+      "Fullscreen traversal advances an independent outer cursor; four other patches only rebase context/index after that edit. No recursive-loop collapse is safe.",
+      "Code-cache patch now reuses upstream HTTP/extension/WebUI checks, then adds custom-scheme handling; origin opacity and WebUI separation retained. IsCodeCacheScheme replaces repeated ranges lookup with one named API; companion extension patch adjusted only offsets/index. Full resulting patch and existing custom-cache browser test read."
+    ],
+    "callers": [
+      "spec/lib/spec-helpers.ts spawnAndWait",
+      "spec/fixtures/crash-cases electron.args/env handling",
+      "shell/common/extensions/electron_extensions_client.cc provider registration",
+      "shell/common/extensions/electron_extensions_api_provider.cc",
+      "RegisterSchemesAsPrivileged -> Browser::IsValidProtocolScheme -> child switches",
+      "WebContentsViewDragSecurityInfo::OnDragInitiated/OnDragEnded/IsValidDragTarget",
+      "WebContentsImpl::PreHandleKeyboardEvent",
+      "GeneratedCodeCache::CheckValidContext/CheckValidResource and CodeCacheHostImpl security/origin lock",
+      "content::RegisterContentSchemes -> URL scheme registry"
+    ],
+    "tests": [
+      "Native specs not executed: matching Electron unavailable. Imported assertions and caller contracts source inspected."
+    ],
+    "simplification": {
+      "disposition": "retained",
+      "reason": "Keep small Darwin-only duplication instead of a new spawn abstraction coupling distinct lifecycle helpers. Keep per-context feature gates plus browser fallback, two-phase protocol validation, weak drag source and independent fullscreen cursor. Code-cache common API already removes duplicate decisions. Dropping these boundaries changes security or teardown behavior.",
+      "secondPass": true
+    }
+  }
+]

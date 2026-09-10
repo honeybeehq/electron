@@ -1,0 +1,16 @@
+[
+  {
+    "branch": "42",
+    "base": "253eb64e501963b53027ed33b089f0ea0992a485",
+    "helperIdentical": true,
+    "patchApplyToExactHelper": 0,
+    "worktree": "/Users/trmd/.hive/crew/art/reviews/worktrees/electron-2026-09-09-pbo42"
+  },
+  {
+    "branch": "44",
+    "base": "9e304448a95e5cc8bde401ae8e48841b8f7a1a61",
+    "helperIdentical": true,
+    "patchApplyToExactHelper": 0,
+    "worktree": "/Users/trmd/.hive/crew/art/reviews/worktrees/electron-2026-09-09-pbo44"
+  }
+]

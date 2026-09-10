@@ -1,0 +1,30 @@
+{
+  "targetSha": "1d3b4504eb3aee600a408b6b44de49b3a92d68e6",
+  "chromium": {
+    "tag": "154.0.8025.0",
+    "sha": "f041faa4a987d4634ce90a4b08b22b75fc99b670",
+    "reachableTreeObjects": 513809,
+    "missingTreeObjects": 0
+  },
+  "node": {
+    "tag": "v24.19.0",
+    "sha": "cdc1b38d40cb567b7ad0b39c86addf830a0af0ae",
+    "reachableTreeObjects": 43818,
+    "missingTreeObjects": 0
+  },
+  "proof": "native-tree-availability.json; Git rev-list --objects --missing=print SHA --no-walk, lazy fetch disabled",
+  "oneTest": "Existing main spec/api-protocol-spec.ts protocol.registerSchemesAsPrivileged codeCache suite, using exact main test runner and fixtures. This would verify main only; it cannot close cppgc or branch-only security gates.",
+  "isolatedPlan": [
+    "Create Electron worktree reviews/worktrees/electron-2026-09-09-native-main at exact target.",
+    "Prepare separate gclient root and Chromium/Node checkouts from read-only local object stores; use separate dependency checkout and output directories, no shared build changes.",
+    "Resolve exact DEPS transitive repositories and CIPD/GN/clang/SDK pins against local caches before any sync. Existing executed tools are capability evidence, not exact pin proof.",
+    "After root reviews dependency delta, sync only missing pins in isolated root; apply entire exact Electron patch stack; generate Testing output; build Electron and required test artifacts.",
+    "Run one codeCache suite in isolated userData/temp fixtures; capture resolved source/DEPS/output hashes, executable identity and exit status."
+  ],
+  "estimatedEffort": {
+    "disk": "Planning allowance 150\u2013300 GiB independent checkout plus 100\u2013250 GiB Testing output; not measured target sizes. Existing free disk about1.2TiB. APFS clones/object sharing may reduce duplication.",
+    "download": "Chromium and Node source trees need zero downloads for resolved tags. Transitive DEPS/CIPD delta not yet enumerated; no defensible total estimate. Do not authorize bulk sync on the assumption all dependencies are cached.",
+    "build": "Full native build likely several hours on128GiB Studio; no valid incremental reuse guarantee across Chromium150-to154 or generated configs. Estimate only, not benchmark."
+  },
+  "status": "Plan for root review; no bootstrap/sync/config/build mutation executed"
+}

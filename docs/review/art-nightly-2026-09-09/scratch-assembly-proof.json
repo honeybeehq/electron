@@ -1,0 +1,40 @@
+{
+  "head": "c440db52c29668e848f02e374720e15b6025a132",
+  "anglePin": "c5bf49e78850a5335a8fa2a7bfb53b559fbfc927",
+  "path": "src/libANGLE/renderer/gl/TextureGL.cpp",
+  "appliedPatches": [
+    {
+      "patch": "cherry-pick-a17d5224d83f.patch",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    {
+      "patch": "cherry-pick-311c502e88d9.patch",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    {
+      "patch": "cherry-pick-921d48815f19.patch",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    {
+      "patch": "cherry-pick-0e80263dfe75.patch",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    {
+      "patch": "cherry-pick-87f5655006e4.patch",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    {
+      "patch": "cherry-pick-107da744f62a.patch",
+      "exitCode": 0,
+      "stderr": ""
+    }
+  ],
+  "repairPatchApplyCheck": 0,
+  "beforeSha256": "c571d3debaf2150723ac2a2a71bf0101de945257b9e7d59af584520ee2cc51ec",
+  "afterSha256": "3bff13c726b2bd936de024e8d3db03b930e936609a211f3fff74a965654014c5"
+}

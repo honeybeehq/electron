@@ -37,5 +37,13 @@
     "check-sharding.cjs": "f1a1748d236d199024c541c7efffc9998509928c2c2fe35871890bf309fdf92b",
     "streaming-check/v3.log": "f2ad235ff339b0fe4bfcd4fbb46b08a478e2c75307629325d7658175a3ba2249",
     "streaming-check/v1.log": "873196240a025b729bfbbabb601310941235dd87aad2746df9878852f6e633ed"
+  },
+  "scratch": {
+    "releaseCases": 7,
+    "assertionCases": 9,
+    "baselineExit": 1,
+    "repairExit": 0,
+    "nativeRendererVerified": false,
+    "reproduce": "python3 check-scratch.py"
   }
 }

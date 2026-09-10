@@ -1,0 +1,56 @@
+[
+  {
+    "candidate": "e0dad4a550ca9d1bfbfcd111ddccf0d239c1c399",
+    "ref": "refs/remotes/upstream/43-x-y",
+    "head": "c440db52c29668e848f02e374720e15b6025a132",
+    "patch": "patches/angle/cherry-pick-107da744f62a.patch",
+    "candidateBlob": "67bfa705fa721a265d5b9d896ef3f181cb2b5dbb",
+    "headBlob": "67bfa705fa721a265d5b9d896ef3f181cb2b5dbb",
+    "equal": true
+  },
+  {
+    "candidate": "81439a545c733ad527378aae4ecbb1f62ea03e9b",
+    "ref": "refs/remotes/upstream/42-x-y",
+    "head": "253eb64e501963b53027ed33b089f0ea0992a485",
+    "patch": "patches/angle/cherry-pick-107da744f62a.patch",
+    "candidateBlob": "640ab20567dc59a92e71d862f42786e9f5553084",
+    "headBlob": "640ab20567dc59a92e71d862f42786e9f5553084",
+    "equal": true
+  },
+  {
+    "candidate": "23fcf622889b25cb6e96b5998bbf14166ff1419b",
+    "ref": "refs/heads/art/electron-staging-repair-20260909",
+    "head": "8c9973ef77e3560a4e22a0295818150e63536b36",
+    "patch": "patches/angle/cherry-pick-fca5efdfef.patch",
+    "candidateBlob": "f9811f2705432e329cec9198e7e416f98dd12f51",
+    "headBlob": "f9811f2705432e329cec9198e7e416f98dd12f51",
+    "equal": true
+  },
+  {
+    "candidate": "23fcf622889b25cb6e96b5998bbf14166ff1419b",
+    "ref": "refs/remotes/upstream/44-x-y",
+    "head": "9e304448a95e5cc8bde401ae8e48841b8f7a1a61",
+    "patch": "patches/angle/cherry-pick-fca5efdfef.patch",
+    "candidateBlob": "f9811f2705432e329cec9198e7e416f98dd12f51",
+    "headBlob": "f9811f2705432e329cec9198e7e416f98dd12f51",
+    "equal": true
+  },
+  {
+    "candidate": "23fcf622889b25cb6e96b5998bbf14166ff1419b",
+    "ref": "refs/remotes/upstream/roller/chromium/44-x-y",
+    "head": "b89ad6a5bee978f5db0b6f899e0c98b16190a017",
+    "patch": "patches/angle/cherry-pick-fca5efdfef.patch",
+    "candidateBlob": "f9811f2705432e329cec9198e7e416f98dd12f51",
+    "headBlob": "f9811f2705432e329cec9198e7e416f98dd12f51",
+    "equal": true
+  },
+  {
+    "candidate": "23fcf622889b25cb6e96b5998bbf14166ff1419b",
+    "ref": "refs/remotes/upstream/trop/44-x-y-bp-fix-don-t-expose-chrome-webstoreprivate-to-web-pages-1788958809169",
+    "head": "6ba3e0a56f2814faac285a374a066248ddb8d0e5",
+    "patch": "patches/angle/cherry-pick-fca5efdfef.patch",
+    "candidateBlob": "f9811f2705432e329cec9198e7e416f98dd12f51",
+    "headBlob": "f9811f2705432e329cec9198e7e416f98dd12f51",
+    "equal": true
+  }
+]

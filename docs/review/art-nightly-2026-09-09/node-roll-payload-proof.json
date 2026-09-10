@@ -1,0 +1,946 @@
+[
+  {
+    "sha": "7ae6e6adb132be3f775217b3fbddb23277865b83",
+    "files": [
+      {
+        "path": "DEPS",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "66aa36669018c5e51930a3aa73a991411ee23138f61e4acc6309dddcfe328b0e",
+        "afterSha256": "24aaf65b58dec5f3a63e303d5d783b324b1e7773b766b9554154ff255b04f908"
+      },
+      {
+        "path": "filenames.auto.gni",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "4cac3e040c66bc0d16ec0485e2b9fdd1857336471c3e76acd244446822dc1249",
+        "afterSha256": "6f1919c58ced06c78ec358aea269649935bcbcc33cb60951c49b21c0728a7ac1"
+      },
+      {
+        "path": "patches/node/.patches",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "1280e691b2c5890b20763447449e1c5e9b0d545126264348bf7a3dc4667fd965",
+        "afterSha256": "e785938f42e9b4a44841751587dc59ce0907501662c2216f5f662cb4987ab98b"
+      },
+      {
+        "path": "patches/node/api_promote_deprecation_of_v8_context_and_v8_object_api_methods.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "077a9ad843815261282cfc538f626842f258801953a616707fa9bcc82af36e4a",
+        "afterSha256": "d03aa89c2c65c36aeed82b9c769a50217ccd1ae63ab3cf836a69b5b1e4d28df6"
+      },
+      {
+        "path": "patches/node/api_remove_deprecated_getisolate.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "c5e05ab74675acb2112822fc64218aef73c87d48ff8c8c3b0ce5905f0cd44b16",
+        "afterSha256": "de506385b4e8a41405dd8d595592994b65a43ffbec79712f60e4914f9d3839d0"
+      },
+      {
+        "path": "patches/node/build_add_gn_build_files.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "1adb92478c6a0c921e1c4cf4c41c53a97ce61408e3cfc2b6a350a3b6f98f7db3",
+        "afterSha256": "6208ad9865059e7e92d8b26e3821d7b884c45fe9c8d12d42ae3a7ba53286bbac"
+      },
+      {
+        "path": "patches/node/build_ensure_native_module_compilation_fails_if_not_using_a_new.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "a45b059a67972dd58c7a59a350ac28d32f92af5bf6573354f1e8da439a430994",
+        "afterSha256": "a7d18ebaf99496c118f2465339676e40a227cdcefcfd3ba98bd369788075244d"
+      },
+      {
+        "path": "patches/node/build_perfetto-sdk.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "52953ef867c0addcdeac020fd7dc2f1b3613cb8db5652050c903a10568a9c3f1",
+        "afterSha256": "8bb752ac8e326929d805561b2c375d68e6600f10b2012345902e78543c2020ca"
+      },
+      {
+        "path": "patches/node/chore_disable_deprecation_ftbfs_in_simdjson_header.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "0a1853cddefd19e19d24c8384a4d09733feda3eba03c28cb4f6b9b8e61687c85",
+        "afterSha256": "0979a08de995ca2e3f2688cfe62638270109012649939ec5c762ddf3ac4027d6"
+      },
+      {
+        "path": "patches/node/electron_enable_node_startup_snapshot_generation_in_chromium_s_v8.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "d421b7d0473426d9cb64aaf27c8db83a4179c76f7663c2337668a6e1cd7aa476",
+        "afterSha256": "6310efd701ca00c8a0eb5640a0c7e3af866f238fbfee31cf62562946b812c774"
+      },
+      {
+        "path": "patches/node/fix_add_externalpointertypetag_to_v8_external_api_calls.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "d1c3b39cb5ae1a96debe1c9b73e926e82b8e3a594af50798a1b7ff3cd6f3cc7b",
+        "afterSha256": "a01ba3bb7e69d343bd44901fe5ae53af8ff87ad31b279f7ae8f6a370e6269e21"
+      },
+      {
+        "path": "patches/node/fix_allow_electron_s_linked_bindings_under_the_permission_model.patch",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "afterSha256": "0a09e95fed038b81dcce5848f146ea94f21b0914e8d642a8d6e8302aed11b4b9"
+      },
+      {
+        "path": "patches/node/fix_allow_passing_fileexists_fn_to_legacymainresolve.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "a648dd66c1e1d9e165d4809e90982c95182ff0929f4db220ebf4b8f33d73dce5",
+        "afterSha256": "7ed6d48bec6275cee3ef5b83c35c16410985cf85a00fe8df6c117cf20d70e398"
+      },
+      {
+        "path": "patches/node/fix_crypto_tests_to_run_with_bssl.patch",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "3a94422e50fcc9748052e17b6c79898f423b71b8cbbd9d8fefedafd557deeb2a",
+        "afterSha256": "7f04bf1ea26c47af93757bed28a83a134f9b9b38f9afa6adc19c49f678966fb0"
+      },
+      {
+        "path": "patches/node/fix_do_not_pass_removed_jspi_v8_flag.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "1a0f23da9bccf77567971bea6e53a6d67ca27d3d60d44282b2a8495dc75e7958",
+        "afterSha256": "79688e4154c23dc98d1aa04230786d9eaaa79ed8a98d6e6a84f3296b62657bd3"
+      },
+      {
+        "path": "patches/node/fix_do_not_resolve_electron_entrypoints.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "566b6d081f09911eeca0b6495551c41778300742c171d4e9737864cc066727e2",
+        "afterSha256": "ba965e5ab6beeb921da62f64b742df0f0f4824da15b9545dbeb3141c5b6f3655"
+      },
+      {
+        "path": "patches/node/fix_ensure_traverseparent_bails_on_resource_path_exit.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "1f0c41c9d6f6c0f7029532e7d03bf5817451ed9ccdcccd4e1890d9876008ee3e",
+        "afterSha256": "739d12dd8e452cc027413045925f2409ab2deb23f06a2ecadfad446a7da22028"
+      },
+      {
+        "path": "patches/node/fix_expose_readfilesync_override_for_modules.patch",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "1644185af3b7f651b3ec5cdf10c266ce4a7d14bb6931e7b15f58d17077c363d9",
+        "afterSha256": "9590fd2341099c979b06df5d89c518f73353eb6e42c3ec0defc38967803fff33"
+      },
+      {
+        "path": "patches/node/fix_expose_the_built-in_electron_module_via_the_esm_loader.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "10170313a4fc05ba940f68bc75bed12d05ba7a9ae2b0739db9b560d9555b301c",
+        "afterSha256": "e9ca6f432bf2a2e24ac35c28e871927aa984aef4fd044c84feef25b1ea004b77"
+      },
+      {
+        "path": "patches/node/fix_handle_boringssl_and_openssl_incompatibilities.patch",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "0e414ee196f5476daf5f4bf11a4bc4ff90af22c9d50f7319c958dd5bcf9ee99a",
+        "afterSha256": "0ce8d43020db68c8c4ca23fc12162606d3cd833c421ef7061d9d67cc225c002b"
+      },
+      {
+        "path": "patches/node/fix_preserve_node_symbols_and_vtables_under_thinlto.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "fbf58d7fd0e5eae03e46077f6405c732c0fb69bcb29bb0b5cda86f8ee0223d9a",
+        "afterSha256": "29175379a9b525e79130e078f9612950bc8b486ed0431317d06fd12e361e76d7"
+      },
+      {
+        "path": "patches/node/fix_use_a_dedicated_cppheappointertag_for_cppgc_wrappables.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "d13cb01fd781e1ddccd5dc3d7c5d69b2a8d0a7185b25e91b7913935e8ab1ce88",
+        "afterSha256": "c1048665b9f3ec2f15bc7d3a7a2c81a316d8a15e246b5fe3b7cb393a92c13e89"
+      },
+      {
+        "path": "patches/node/fix_use_embedder_perfetto_client_when_available.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "b09be72f79c98c472b160ddb9f4fe3cde722361db750e1b90e3b38c8176f7952",
+        "afterSha256": "c5aafdb93ec49f7c3fcbc5d3846975eec1cb3e00897d89a6ea0d92b1f9e57bac"
+      },
+      {
+        "path": "patches/node/inspector_adapt_to_crdtp_dispatchable_api_change.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "e0ab61d94cf4efb41c4e1e34225a4df025d777bf3f0f522714eb13fdfba00ed5",
+        "afterSha256": "4ea262503785ae4f0d8af959b034e41a7be87dcb7c6c9463d6d369aed4d56593"
+      },
+      {
+        "path": "patches/node/inspector_avoid_calling_into_js_from_v8_interrupts.patch",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "71b04f3899f77ae1f320a41eb9ceb299ca84923a5638de86166584f7b9a7d5b8",
+        "afterSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "patches/node/lib_add_perfetto_support.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "b6f4e918877afcf276d507f7d11f0467ba128bb268651be0cdb30177d903cb70",
+        "afterSha256": "4d83c512a048da5923153d0019b9a4b63af71dd39725be4620acc03015092605"
+      },
+      {
+        "path": "patches/node/refactor_attach_cppgc_heap_on_v8_isolate_creation.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "30cf93f8d4e4c70d354e9d5db40696c284996c0c18eb33c3e7552c1862157f31",
+        "afterSha256": "d960460ca6bc55eefc338ea9cd54593e76b18ff885cb77827498279c88d0c171"
+      },
+      {
+        "path": "patches/node/src_add_perfetto_trace_agent.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "1f9363d056d430501caad25fed91be21735cfa162b4959b4424be64ef6993450",
+        "afterSha256": "29ba3b388a4ade152804da02bd184046121af31ba5cc249d34e5dd08765e6884"
+      },
+      {
+        "path": "patches/node/src_fix_perfetto_build_on_gettracefilepath.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "008434ddd4c46d5b75a27e3688ff50cbe2f1b66989a6e8a09f2409a529342feb",
+        "afterSha256": "a097c17a4e66e845c0c45cd31f670a42027bd6d9e88fb63c677568b283e26fa0"
+      },
+      {
+        "path": "patches/node/src_fix_trace_macro_compatibility.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "2810114f0a2d752397a3d446f43928fd0ff03c2c50fccb50680a9352dcef2556",
+        "afterSha256": "6c9cf24ca8e086f257d3faa842bb81749ca74b19a7653e4491a8f5db6aff81e7"
+      },
+      {
+        "path": "patches/node/src_migrate_to_setter_definer_interceptor_callbacks_returning.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "3d8b5516260a8415a03d5606e3c7ca33957fb2df3eb9b200cb8a319475dc2f41",
+        "afterSha256": "25f4924576705255242215e8f3f49a634d0485d99a020c248ebcd7272eb1b596"
+      },
+      {
+        "path": "patches/node/src_stop_using_deprecated_get_setprototypev2_and_holderv2.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "309c04215f991b65c7444dedc2881bdad3d60522cde5d72d6a1c464a9917e6d9",
+        "afterSha256": "b84e142528673318addfd746ae6dc87544467bc4462a59b5bfb7326d83518c39"
+      },
+      {
+        "path": "patches/node/src_stop_using_v8_propertycallbackinfo_t_this.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "1d4412813de2dc9f347717a1e65d53b767a68d93274774e0b57cf40ec6eee7d9",
+        "afterSha256": "61bab48b97941edb81d63dd1dc3274a9a017f8015e20b100789abc05480ff7aa"
+      },
+      {
+        "path": "patches/node/support_v8_sandboxed_pointers.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "2ec35046d10cc652cb7b635481459b9ae8b4bc00bc493c07f53f529d0f4fcea8",
+        "afterSha256": "f55269140b6ce77870e08a16f407cbca7046e6d5d0f0241721c1951144caeb41"
+      },
+      {
+        "path": "patches/node/test_add_regression_test_for_cleanup_hook_uaf.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "cd0b96834c6ab60ee315873098d33c02f3c2d508b803afb761760c7ae93552e7",
+        "afterSha256": "3f34d5a5ed282f69dd826c7374f9fc5b3ed786e03fbb4e481e1ca46d84130535"
+      },
+      {
+        "path": "patches/node/v8_prepare_for_migrating_v8_microtaskqueue_to_cppgc.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "1a9199ca164ea478569a54202c60f0aaa35f5c321452f8c887267942389feff9",
+        "afterSha256": "50469c64387a652cad615dd47589ae61e88ce3ffb960466f5bdcf1fc2755df15"
+      },
+      {
+        "path": "patches/node/v8_propagate_v8_cppgc_microtask_queue_flag_to_common_gypi.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "2373fc652d10001cc0fe886cd7cd83203d2da4a1798a7ada6b7698fe3e6161aa",
+        "afterSha256": "cb7abb9934670e6f053fc7edf07bf28b26122c5873805da05b70d4361cf5366b"
+      }
+    ]
+  },
+  {
+    "sha": "effe58992e650627ba61d1a2f208b0e021ddfdf3",
+    "files": [
+      {
+        "path": "DEPS",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "4e085aab8814858a185f375dcff128be228e6d0a88e05a15ad79a75942a084d6",
+        "afterSha256": "93b0e36fc4dbd9e3b6565311a34d5385388124e14e6b719381045575b4960946"
+      },
+      {
+        "path": "filenames.auto.gni",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "ecaea5451384836a636b5e76158d7d7d6789fe0b33e93e26ecdc7766feecaf00",
+        "afterSha256": "acf3a71fb695d3ed1e880a0fba5c582c5996d47996c643da81871402d0b0c623"
+      },
+      {
+        "path": "patches/node/.patches",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "298353df02e4e38bc49cc399e7c53f90885eae55733597f5bd59ee08cf62fc44",
+        "afterSha256": "47b69075c91991b172155440b7dfc592ea5827324e0c7b0a8b9d95673fd1b7a1"
+      },
+      {
+        "path": "patches/node/api_promote_deprecation_of_v8_context_and_v8_object_api_methods.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "417fda829a9b2a61d3664a4279d7cf52cdee41324d59a509c747dc061668b50a",
+        "afterSha256": "c5f3828b3900a508b48b8e502995601be0f14e74365119d8d75dbbdb7a47b37f"
+      },
+      {
+        "path": "patches/node/api_remove_deprecated_getisolate.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "1f5fefcb43e755181c3883b26bb5c993b1d7caa519af090156aa8e6e22f316c7",
+        "afterSha256": "4cdcff90f117d9a3e09f6cb07f94b5d63f52931fb75cba94a9b8a83a522c1cbc"
+      },
+      {
+        "path": "patches/node/build_add_gn_build_files.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "1adb92478c6a0c921e1c4cf4c41c53a97ce61408e3cfc2b6a350a3b6f98f7db3",
+        "afterSha256": "6208ad9865059e7e92d8b26e3821d7b884c45fe9c8d12d42ae3a7ba53286bbac"
+      },
+      {
+        "path": "patches/node/build_ensure_native_module_compilation_fails_if_not_using_a_new.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "dac2357dec6d7b288dfe47784f932eb6adaf1eb4dca7ed32e7ddd0cc856aac9f",
+        "afterSha256": "7f22614347f5255bc495663b20358005ad20098b9f27c6f953fc85144bf3e120"
+      },
+      {
+        "path": "patches/node/build_perfetto-sdk.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "bf7b63963e82763f63f052e6d6304d25cb077e7c034e82a06081d6f68185d69f",
+        "afterSha256": "57aace18f32dfb8ab8b26ee712cb3240f898c9aa9dc7c43cd20dc3f24ff589ce"
+      },
+      {
+        "path": "patches/node/chore_disable_deprecation_ftbfs_in_simdjson_header.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "0a1853cddefd19e19d24c8384a4d09733feda3eba03c28cb4f6b9b8e61687c85",
+        "afterSha256": "0979a08de995ca2e3f2688cfe62638270109012649939ec5c762ddf3ac4027d6"
+      },
+      {
+        "path": "patches/node/electron_enable_node_startup_snapshot_generation_in_chromium_s_v8.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "095dec18d98102cccbedfaf217822de0cfa5f7aaccd9daf89886cc42d5efda26",
+        "afterSha256": "a9e89e898de042d444a29e69cdff77528dfaf2eb2467e4023044448427548620"
+      },
+      {
+        "path": "patches/node/expose_get_builtin_module_function.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "6871734dffcc60f84936e5932e8b5bdda239b3a28c5ed1e2c390014b50d36dd3",
+        "afterSha256": "622580f031ae15856863fb3f53c435a64b54fa038b23faca0d4ddcf487430ba3"
+      },
+      {
+        "path": "patches/node/feat_disable_js_source_phase_imports_by_default.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "e0efe794d651e55db0c9fa957ac2efb8a7f326b28d35b5ae13b07764652d7806",
+        "afterSha256": "95a244bd89068f6b6cbbb8af491d7b113c96f5a7b5950c5663f4008632f038e2"
+      },
+      {
+        "path": "patches/node/fix_add_externalpointertypetag_to_v8_external_api_calls.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "85ebbc98de6c511d1824aa2fb9a6bde9add34f97dca3b14e2afc15fa163216a9",
+        "afterSha256": "882c3b5203e41fbbd3eb9a70a08639bd15a26523ca80f697598ea799c9970f53"
+      },
+      {
+        "path": "patches/node/fix_allow_electron_s_linked_bindings_under_the_permission_model.patch",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "afterSha256": "40d80b453eeb636366b7d36cccba498ec956cf269bf49cc6c837373e8a2991fc"
+      },
+      {
+        "path": "patches/node/fix_allow_passing_fileexists_fn_to_legacymainresolve.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "021da6ffe3824d99cde26d3e6c04f0d712e45b7df1ee46822be0e80e2ab76613",
+        "afterSha256": "1f351decffa68e02af4c9707ddfca9142c904c96d4a93344ce3692250bd0f749"
+      },
+      {
+        "path": "patches/node/fix_avoid_external_memory_leak_on_invalid_tls_protocol_versions.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "f6f806e63316fa42fe3b16ec6e7d9f904fe777bed40dce385662e04ed796ebad",
+        "afterSha256": "d1642053d1b794b89d18409f5e84cf8c4462d9cbba5d0e6a99550c50c8f39a0f"
+      },
+      {
+        "path": "patches/node/fix_cppgc_initializing_twice.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "c49a129aefaf75d61c35c68420009b7381f776ab7d25445f94b28fd3f09b7609",
+        "afterSha256": "8be81ac37ebfaf5878c370fe027a751d0710f353ad0821bc3b94af86f49a418d"
+      },
+      {
+        "path": "patches/node/fix_crypto_tests_to_run_with_bssl.patch",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "3a94422e50fcc9748052e17b6c79898f423b71b8cbbd9d8fefedafd557deeb2a",
+        "afterSha256": "7f04bf1ea26c47af93757bed28a83a134f9b9b38f9afa6adc19c49f678966fb0"
+      },
+      {
+        "path": "patches/node/fix_do_not_pass_removed_jspi_v8_flag.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "a407974dd1f9e405aa4f44b75e50e3fed8814f0fd08a5560a99baf9a2c1612d1",
+        "afterSha256": "cf70f50183ccac0c3c0357b59ac028a17af6a54cc741bdf8476160d44c801371"
+      },
+      {
+        "path": "patches/node/fix_do_not_resolve_electron_entrypoints.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "566b6d081f09911eeca0b6495551c41778300742c171d4e9737864cc066727e2",
+        "afterSha256": "ba965e5ab6beeb921da62f64b742df0f0f4824da15b9545dbeb3141c5b6f3655"
+      },
+      {
+        "path": "patches/node/fix_ensure_traverseparent_bails_on_resource_path_exit.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "1f0c41c9d6f6c0f7029532e7d03bf5817451ed9ccdcccd4e1890d9876008ee3e",
+        "afterSha256": "739d12dd8e452cc027413045925f2409ab2deb23f06a2ecadfad446a7da22028"
+      },
+      {
+        "path": "patches/node/fix_expose_readfilesync_override_for_modules.patch",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "1644185af3b7f651b3ec5cdf10c266ce4a7d14bb6931e7b15f58d17077c363d9",
+        "afterSha256": "9590fd2341099c979b06df5d89c518f73353eb6e42c3ec0defc38967803fff33"
+      },
+      {
+        "path": "patches/node/fix_expose_the_built-in_electron_module_via_the_esm_loader.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "ea95ab9ea1d56b3f56707af288535ace7041927b08e719b01238e8df28224b78",
+        "afterSha256": "bb44e73f646654a0948da2a24d0471efa64ac00ac9e90baa36af4c79875683c4"
+      },
+      {
+        "path": "patches/node/fix_handle_boringssl_and_openssl_incompatibilities.patch",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "0e414ee196f5476daf5f4bf11a4bc4ff90af22c9d50f7319c958dd5bcf9ee99a",
+        "afterSha256": "0ce8d43020db68c8c4ca23fc12162606d3cd833c421ef7061d9d67cc225c002b"
+      },
+      {
+        "path": "patches/node/fix_preserve_node_symbols_and_vtables_under_thinlto.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "632033eadd3257cd3d0f52862539b8f331632bff320f3416d92f6aa82ab04472",
+        "afterSha256": "c4fe7d14adccc931dfbf4e49f8dfaf9028c825955a3c254dac0003b082d08ba8"
+      },
+      {
+        "path": "patches/node/fix_remove_deprecated_errno_constants.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "0b841de8022895961ac1309b76ceef98df3b8a3e15c62c04f799169077158afd",
+        "afterSha256": "5813be251b5f9e0ad2333bba8a279c5bac9c644d5afe0ac6f91fee72cbb2db03"
+      },
+      {
+        "path": "patches/node/fix_suppress_nodiscard_warning_for_copy_options_operator.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "727e89acdfe89a3e682583833858a08a55da73a655af03a7e925f0fba99fc081",
+        "afterSha256": "5ddb1e0d737e6fe089979e4f8b21df5a82ad3da1b1b3ca0f569434549fa25820"
+      },
+      {
+        "path": "patches/node/fix_use_a_dedicated_cppheappointertag_for_cppgc_wrappables.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "5bdd58fde437d550a1e84b59162c92dbeb1b078194555341bb247330182df61e",
+        "afterSha256": "301e8c8a0b36830aa4217fcce19dda0370047e14945e034b42a8be629f7cfa87"
+      },
+      {
+        "path": "patches/node/fix_use_embedder_perfetto_client_when_available.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "7e95fe53c9b7e69be1ed6a10073dc8eb7e64d9a5c9f59485b80bcf5877e4e3a7",
+        "afterSha256": "f678a7b79e8b9a643f7e440b63bddac534bdbb0b355ecb8d6608f3c8cd8ae47c"
+      },
+      {
+        "path": "patches/node/inspector_adapt_to_crdtp_dispatchable_api_change.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "e0ab61d94cf4efb41c4e1e34225a4df025d777bf3f0f522714eb13fdfba00ed5",
+        "afterSha256": "4ea262503785ae4f0d8af959b034e41a7be87dcb7c6c9463d6d369aed4d56593"
+      },
+      {
+        "path": "patches/node/lib_add_perfetto_support.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "b8b23630502a77e4d26353bdf27f3f7cd03b191eafc8f2da1fda17d213317874",
+        "afterSha256": "d7ecdd6f3c5477c7fbc91b9770c7189208afa6ef915a08b84623ec65569fd8f1"
+      },
+      {
+        "path": "patches/node/refactor_attach_cppgc_heap_on_v8_isolate_creation.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "30cf93f8d4e4c70d354e9d5db40696c284996c0c18eb33c3e7552c1862157f31",
+        "afterSha256": "d960460ca6bc55eefc338ea9cd54593e76b18ff885cb77827498279c88d0c171"
+      },
+      {
+        "path": "patches/node/src_add_perfetto_trace_agent.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "85c9eb556d8995735fef2d4f6e84ad79d516006e83972e8954181f940714a4a7",
+        "afterSha256": "e8d49422737d07ca609d8f88abe6ce439c8a9fe0ac5b36652a79d2b25efc33db"
+      },
+      {
+        "path": "patches/node/src_fix_perfetto_build_on_gettracefilepath.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "008434ddd4c46d5b75a27e3688ff50cbe2f1b66989a6e8a09f2409a529342feb",
+        "afterSha256": "a097c17a4e66e845c0c45cd31f670a42027bd6d9e88fb63c677568b283e26fa0"
+      },
+      {
+        "path": "patches/node/src_fix_trace_macro_compatibility.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "ccf3a4ee6ad73360602a0258563e7254c897d4a3a53886ca9c7bd775c1497207",
+        "afterSha256": "4282c48ba12bcbb2d90f1f1082f8c048b5c50bf9139158ab1d051bf88208736b"
+      },
+      {
+        "path": "patches/node/src_stop_using_deprecated_get_setprototypev2_and_holderv2.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "b98fd4405bcc3b88f59597b79ee7ad94360d4479eab0fa8e8bd7d9c4d7010747",
+        "afterSha256": "4c5dbff767ff0223f65b3539436a6ce63fbf104a0f7bbecf1aa1499b7fd68d66"
+      },
+      {
+        "path": "patches/node/src_stop_using_v8_propertycallbackinfo_t_this.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "1ade3cde737e1d65e370d9e601309c4cf73abd1e70bfbd1c8948040f1dffc9df",
+        "afterSha256": "53063ff6d351a62c7576c47d1a3ee17fc2b6f77f6e779d942f66a8c876f0bfa4"
+      },
+      {
+        "path": "patches/node/support_v8_sandboxed_pointers.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "2ec35046d10cc652cb7b635481459b9ae8b4bc00bc493c07f53f529d0f4fcea8",
+        "afterSha256": "f55269140b6ce77870e08a16f407cbca7046e6d5d0f0241721c1951144caeb41"
+      },
+      {
+        "path": "patches/node/test_add_regression_test_for_cleanup_hook_uaf.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "cd0b96834c6ab60ee315873098d33c02f3c2d508b803afb761760c7ae93552e7",
+        "afterSha256": "3f34d5a5ed282f69dd826c7374f9fc5b3ed786e03fbb4e481e1ca46d84130535"
+      },
+      {
+        "path": "patches/node/v8_prepare_for_migrating_v8_microtaskqueue_to_cppgc.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "bab6a99193eab7789e2d0a588a154e95d5693776a36d176050fdb0b95e909338",
+        "afterSha256": "f4ae7c2dd481e6b91c3cc72e8802dc5ea4a16187deb03f60d78c48bf3c950b24"
+      },
+      {
+        "path": "patches/node/v8_propagate_v8_cppgc_microtask_queue_flag_to_common_gypi.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "e4ce130a5c9ed29e75e580d0fe2f50f68b93da3a5a72ee1fb4d155f99a0cd047",
+        "afterSha256": "2a679c0f6aeeb4c8e731ccfa1736e33ab6f625dc9089cbcbbbad38f3d78ca158"
+      }
+    ]
+  },
+  {
+    "sha": "39c5ed0d034c3d97abecffdf45e8963fbbbd7930",
+    "files": [
+      {
+        "path": "DEPS",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "6bec093dd52ef7ae02e7684291c6e60129ec866cd3e4ccd6c2ae45d5ba4bb2f4",
+        "afterSha256": "d2024a66a591c75067a9d8187f6449419cd6bdf07cfe925298218cb446494244"
+      },
+      {
+        "path": "filenames.auto.gni",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "df08835f9628838c669e8de428f0c3741a589b415dc33c676a6f681ebd28cb36",
+        "afterSha256": "68b6549aea9d0424160d0c762ea01ec69c199195f7e4b8dc8cee7343c8b3e26f"
+      },
+      {
+        "path": "patches/node/.patches",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "ec024a178f7e4653230ba5649c95b571dd27122952586fb5fd8dff1671125d7c",
+        "afterSha256": "b538dbca7ee9840a9fe88665a4a3add69ded16ff6c69b775e6adf87b8653805d"
+      },
+      {
+        "path": "patches/node/api_promote_deprecation_of_v8_context_and_v8_object_api_methods.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "417fda829a9b2a61d3664a4279d7cf52cdee41324d59a509c747dc061668b50a",
+        "afterSha256": "c5f3828b3900a508b48b8e502995601be0f14e74365119d8d75dbbdb7a47b37f"
+      },
+      {
+        "path": "patches/node/api_remove_deprecated_getisolate.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "1f5fefcb43e755181c3883b26bb5c993b1d7caa519af090156aa8e6e22f316c7",
+        "afterSha256": "4cdcff90f117d9a3e09f6cb07f94b5d63f52931fb75cba94a9b8a83a522c1cbc"
+      },
+      {
+        "path": "patches/node/build_add_gn_build_files.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "1adb92478c6a0c921e1c4cf4c41c53a97ce61408e3cfc2b6a350a3b6f98f7db3",
+        "afterSha256": "6208ad9865059e7e92d8b26e3821d7b884c45fe9c8d12d42ae3a7ba53286bbac"
+      },
+      {
+        "path": "patches/node/build_ensure_native_module_compilation_fails_if_not_using_a_new.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "dac2357dec6d7b288dfe47784f932eb6adaf1eb4dca7ed32e7ddd0cc856aac9f",
+        "afterSha256": "7f22614347f5255bc495663b20358005ad20098b9f27c6f953fc85144bf3e120"
+      },
+      {
+        "path": "patches/node/build_perfetto-sdk.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "ff2595b5b42f821ef3dc004f8c8c27868053b8231278829580cbeb02a3538e10",
+        "afterSha256": "aaab9c9e4be37a9d467c6bd9da529ba7242beadbb318e14667d7784ae8442b91"
+      },
+      {
+        "path": "patches/node/chore_allow_the_node_entrypoint_to_be_a_builtin_module.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "b257fe0504de9eba325e4666fc991e3a19417070611726f306196c939ad1a99c",
+        "afterSha256": "e70b7adfc63850204cc0b462a77038f1bc49f241466d783197323d54da240a4a"
+      },
+      {
+        "path": "patches/node/chore_disable_deprecation_ftbfs_in_simdjson_header.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "0a1853cddefd19e19d24c8384a4d09733feda3eba03c28cb4f6b9b8e61687c85",
+        "afterSha256": "0979a08de995ca2e3f2688cfe62638270109012649939ec5c762ddf3ac4027d6"
+      },
+      {
+        "path": "patches/node/electron_enable_node_startup_snapshot_generation_in_chromium_s_v8.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "c78251db5c31895fff05473ac45a86e9274b8e355c0669b2c5cd5574bf4be35e",
+        "afterSha256": "e69f471fcdec349b053961794dbcebbae0aa808d9bfc8838dd16e29069dbf96e"
+      },
+      {
+        "path": "patches/node/expose_get_builtin_module_function.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "6871734dffcc60f84936e5932e8b5bdda239b3a28c5ed1e2c390014b50d36dd3",
+        "afterSha256": "622580f031ae15856863fb3f53c435a64b54fa038b23faca0d4ddcf487430ba3"
+      },
+      {
+        "path": "patches/node/feat_disable_js_source_phase_imports_by_default.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "e0efe794d651e55db0c9fa957ac2efb8a7f326b28d35b5ae13b07764652d7806",
+        "afterSha256": "95a244bd89068f6b6cbbb8af491d7b113c96f5a7b5950c5663f4008632f038e2"
+      },
+      {
+        "path": "patches/node/fix_add_externalpointertypetag_to_v8_external_api_calls.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "85ebbc98de6c511d1824aa2fb9a6bde9add34f97dca3b14e2afc15fa163216a9",
+        "afterSha256": "882c3b5203e41fbbd3eb9a70a08639bd15a26523ca80f697598ea799c9970f53"
+      },
+      {
+        "path": "patches/node/fix_allow_electron_s_linked_bindings_under_the_permission_model.patch",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "afterSha256": "40d80b453eeb636366b7d36cccba498ec956cf269bf49cc6c837373e8a2991fc"
+      },
+      {
+        "path": "patches/node/fix_allow_passing_fileexists_fn_to_legacymainresolve.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "021da6ffe3824d99cde26d3e6c04f0d712e45b7df1ee46822be0e80e2ab76613",
+        "afterSha256": "1f351decffa68e02af4c9707ddfca9142c904c96d4a93344ce3692250bd0f749"
+      },
+      {
+        "path": "patches/node/fix_avoid_external_memory_leak_on_invalid_tls_protocol_versions.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "f6f806e63316fa42fe3b16ec6e7d9f904fe777bed40dce385662e04ed796ebad",
+        "afterSha256": "d1642053d1b794b89d18409f5e84cf8c4462d9cbba5d0e6a99550c50c8f39a0f"
+      },
+      {
+        "path": "patches/node/fix_cppgc_initializing_twice.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "c49a129aefaf75d61c35c68420009b7381f776ab7d25445f94b28fd3f09b7609",
+        "afterSha256": "8be81ac37ebfaf5878c370fe027a751d0710f353ad0821bc3b94af86f49a418d"
+      },
+      {
+        "path": "patches/node/fix_crypto_tests_to_run_with_bssl.patch",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "3a94422e50fcc9748052e17b6c79898f423b71b8cbbd9d8fefedafd557deeb2a",
+        "afterSha256": "7f04bf1ea26c47af93757bed28a83a134f9b9b38f9afa6adc19c49f678966fb0"
+      },
+      {
+        "path": "patches/node/fix_do_not_pass_removed_jspi_v8_flag.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "a407974dd1f9e405aa4f44b75e50e3fed8814f0fd08a5560a99baf9a2c1612d1",
+        "afterSha256": "cf70f50183ccac0c3c0357b59ac028a17af6a54cc741bdf8476160d44c801371"
+      },
+      {
+        "path": "patches/node/fix_do_not_resolve_electron_entrypoints.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "e1cc9ce7e730afc76a9b22da588e4c814f8df17a5ac2ece5c6d22c7eaa3c6bde",
+        "afterSha256": "0004c84fd7d04da60b15d49022d9c7117cd7299427530b1ba68a8279a1f3a504"
+      },
+      {
+        "path": "patches/node/fix_ensure_traverseparent_bails_on_resource_path_exit.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "1f0c41c9d6f6c0f7029532e7d03bf5817451ed9ccdcccd4e1890d9876008ee3e",
+        "afterSha256": "739d12dd8e452cc027413045925f2409ab2deb23f06a2ecadfad446a7da22028"
+      },
+      {
+        "path": "patches/node/fix_expose_readfilesync_override_for_modules.patch",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "1644185af3b7f651b3ec5cdf10c266ce4a7d14bb6931e7b15f58d17077c363d9",
+        "afterSha256": "9590fd2341099c979b06df5d89c518f73353eb6e42c3ec0defc38967803fff33"
+      },
+      {
+        "path": "patches/node/fix_expose_the_built-in_electron_module_via_the_esm_loader.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "ea95ab9ea1d56b3f56707af288535ace7041927b08e719b01238e8df28224b78",
+        "afterSha256": "bb44e73f646654a0948da2a24d0471efa64ac00ac9e90baa36af4c79875683c4"
+      },
+      {
+        "path": "patches/node/fix_handle_boringssl_and_openssl_incompatibilities.patch",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "0e414ee196f5476daf5f4bf11a4bc4ff90af22c9d50f7319c958dd5bcf9ee99a",
+        "afterSha256": "0ce8d43020db68c8c4ca23fc12162606d3cd833c421ef7061d9d67cc225c002b"
+      },
+      {
+        "path": "patches/node/fix_preserve_node_symbols_and_vtables_under_thinlto.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "632033eadd3257cd3d0f52862539b8f331632bff320f3416d92f6aa82ab04472",
+        "afterSha256": "c4fe7d14adccc931dfbf4e49f8dfaf9028c825955a3c254dac0003b082d08ba8"
+      },
+      {
+        "path": "patches/node/fix_remove_deprecated_errno_constants.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "0b841de8022895961ac1309b76ceef98df3b8a3e15c62c04f799169077158afd",
+        "afterSha256": "5813be251b5f9e0ad2333bba8a279c5bac9c644d5afe0ac6f91fee72cbb2db03"
+      },
+      {
+        "path": "patches/node/fix_suppress_nodiscard_warning_for_copy_options_operator.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "727e89acdfe89a3e682583833858a08a55da73a655af03a7e925f0fba99fc081",
+        "afterSha256": "5ddb1e0d737e6fe089979e4f8b21df5a82ad3da1b1b3ca0f569434549fa25820"
+      },
+      {
+        "path": "patches/node/fix_use_embedder_perfetto_client_when_available.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "7c94ccee5e7712b3c74bd704c59989c3b0d7b7992a1cd356850acc04ccc841d6",
+        "afterSha256": "13589cdc7ec8b0ac7ac789a885f83503df5b00d3279a5ddeba80dc669c69587c"
+      },
+      {
+        "path": "patches/node/inspector_adapt_to_crdtp_dispatchable_api_change.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "e0ab61d94cf4efb41c4e1e34225a4df025d777bf3f0f522714eb13fdfba00ed5",
+        "afterSha256": "4ea262503785ae4f0d8af959b034e41a7be87dcb7c6c9463d6d369aed4d56593"
+      },
+      {
+        "path": "patches/node/lib_add_perfetto_support.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "816098251e36e795826d5970d71227490b31ffdd2c876e809bf2962c5ec44081",
+        "afterSha256": "9c78e2aa0bf149ab42c0149e1df71072527b0ec40a5a326cdc5bfe0eabd48df7"
+      },
+      {
+        "path": "patches/node/refactor_attach_cppgc_heap_on_v8_isolate_creation.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "30cf93f8d4e4c70d354e9d5db40696c284996c0c18eb33c3e7552c1862157f31",
+        "afterSha256": "d960460ca6bc55eefc338ea9cd54593e76b18ff885cb77827498279c88d0c171"
+      },
+      {
+        "path": "patches/node/src_add_perfetto_trace_agent.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "3a99265aeb309dc0e5171aeae31869ee98d808d0a602dedc8b5e90653bab61af",
+        "afterSha256": "42a49f43153b66ec6484b59c9addc064adcebd8f4f484f6c2f93cfd7bfea0d75"
+      },
+      {
+        "path": "patches/node/src_fix_perfetto_build_on_gettracefilepath.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "008434ddd4c46d5b75a27e3688ff50cbe2f1b66989a6e8a09f2409a529342feb",
+        "afterSha256": "a097c17a4e66e845c0c45cd31f670a42027bd6d9e88fb63c677568b283e26fa0"
+      },
+      {
+        "path": "patches/node/src_fix_trace_macro_compatibility.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "ccf3a4ee6ad73360602a0258563e7254c897d4a3a53886ca9c7bd775c1497207",
+        "afterSha256": "4282c48ba12bcbb2d90f1f1082f8c048b5c50bf9139158ab1d051bf88208736b"
+      },
+      {
+        "path": "patches/node/src_stop_using_v8_propertycallbackinfo_t_this.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "1ade3cde737e1d65e370d9e601309c4cf73abd1e70bfbd1c8948040f1dffc9df",
+        "afterSha256": "53063ff6d351a62c7576c47d1a3ee17fc2b6f77f6e779d942f66a8c876f0bfa4"
+      },
+      {
+        "path": "patches/node/support_v8_sandboxed_pointers.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "2ec35046d10cc652cb7b635481459b9ae8b4bc00bc493c07f53f529d0f4fcea8",
+        "afterSha256": "f55269140b6ce77870e08a16f407cbca7046e6d5d0f0241721c1951144caeb41"
+      },
+      {
+        "path": "patches/node/test_add_regression_test_for_cleanup_hook_uaf.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "575b5a6ca613e7909fd3467b49ff53585edad7a20d2e79572bfc45597aca22e6",
+        "afterSha256": "654d396ae7c21b4bc2b016ef520d8ddb3cac14f773853af85dc31e951d6da238"
+      },
+      {
+        "path": "patches/node/test_formally_mark_some_tests_as_flaky.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "9f2577d276aeac7faa3f077340e70cb2eb77f55e41c7aa686abcabadec2bc6e6",
+        "afterSha256": "bfe080380882251414e4418d3776f2f007e0eab37cf2bdb01e5c09dd46d3a709"
+      }
+    ]
+  },
+  {
+    "sha": "d6c54a1ee13cb09074118c9321622a4f0c67ddcd",
+    "files": [
+      {
+        "path": "DEPS",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "a1bfdb0c4f0c47cb9fd96a3650908615b19c25ca0d05f5296fbf3ef7509fb704",
+        "afterSha256": "68494b1bebe2d33d812b5c270fd885e38f410d782e4d3773f902f8673c89d4ea"
+      },
+      {
+        "path": "filenames.auto.gni",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "4cac3e040c66bc0d16ec0485e2b9fdd1857336471c3e76acd244446822dc1249",
+        "afterSha256": "6f1919c58ced06c78ec358aea269649935bcbcc33cb60951c49b21c0728a7ac1"
+      },
+      {
+        "path": "patches/node/.patches",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "1280e691b2c5890b20763447449e1c5e9b0d545126264348bf7a3dc4667fd965",
+        "afterSha256": "e785938f42e9b4a44841751587dc59ce0907501662c2216f5f662cb4987ab98b"
+      },
+      {
+        "path": "patches/node/api_promote_deprecation_of_v8_context_and_v8_object_api_methods.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "077a9ad843815261282cfc538f626842f258801953a616707fa9bcc82af36e4a",
+        "afterSha256": "d03aa89c2c65c36aeed82b9c769a50217ccd1ae63ab3cf836a69b5b1e4d28df6"
+      },
+      {
+        "path": "patches/node/api_remove_deprecated_getisolate.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "c5e05ab74675acb2112822fc64218aef73c87d48ff8c8c3b0ce5905f0cd44b16",
+        "afterSha256": "de506385b4e8a41405dd8d595592994b65a43ffbec79712f60e4914f9d3839d0"
+      },
+      {
+        "path": "patches/node/build_add_gn_build_files.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "1adb92478c6a0c921e1c4cf4c41c53a97ce61408e3cfc2b6a350a3b6f98f7db3",
+        "afterSha256": "6208ad9865059e7e92d8b26e3821d7b884c45fe9c8d12d42ae3a7ba53286bbac"
+      },
+      {
+        "path": "patches/node/build_ensure_native_module_compilation_fails_if_not_using_a_new.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "a45b059a67972dd58c7a59a350ac28d32f92af5bf6573354f1e8da439a430994",
+        "afterSha256": "a7d18ebaf99496c118f2465339676e40a227cdcefcfd3ba98bd369788075244d"
+      },
+      {
+        "path": "patches/node/build_perfetto-sdk.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "52953ef867c0addcdeac020fd7dc2f1b3613cb8db5652050c903a10568a9c3f1",
+        "afterSha256": "8bb752ac8e326929d805561b2c375d68e6600f10b2012345902e78543c2020ca"
+      },
+      {
+        "path": "patches/node/chore_disable_deprecation_ftbfs_in_simdjson_header.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "0a1853cddefd19e19d24c8384a4d09733feda3eba03c28cb4f6b9b8e61687c85",
+        "afterSha256": "0979a08de995ca2e3f2688cfe62638270109012649939ec5c762ddf3ac4027d6"
+      },
+      {
+        "path": "patches/node/electron_enable_node_startup_snapshot_generation_in_chromium_s_v8.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "d421b7d0473426d9cb64aaf27c8db83a4179c76f7663c2337668a6e1cd7aa476",
+        "afterSha256": "6310efd701ca00c8a0eb5640a0c7e3af866f238fbfee31cf62562946b812c774"
+      },
+      {
+        "path": "patches/node/fix_add_externalpointertypetag_to_v8_external_api_calls.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "d1c3b39cb5ae1a96debe1c9b73e926e82b8e3a594af50798a1b7ff3cd6f3cc7b",
+        "afterSha256": "a01ba3bb7e69d343bd44901fe5ae53af8ff87ad31b279f7ae8f6a370e6269e21"
+      },
+      {
+        "path": "patches/node/fix_allow_electron_s_linked_bindings_under_the_permission_model.patch",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "afterSha256": "0a09e95fed038b81dcce5848f146ea94f21b0914e8d642a8d6e8302aed11b4b9"
+      },
+      {
+        "path": "patches/node/fix_allow_passing_fileexists_fn_to_legacymainresolve.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "021da6ffe3824d99cde26d3e6c04f0d712e45b7df1ee46822be0e80e2ab76613",
+        "afterSha256": "1f351decffa68e02af4c9707ddfca9142c904c96d4a93344ce3692250bd0f749"
+      },
+      {
+        "path": "patches/node/fix_crypto_tests_to_run_with_bssl.patch",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "3a94422e50fcc9748052e17b6c79898f423b71b8cbbd9d8fefedafd557deeb2a",
+        "afterSha256": "7f04bf1ea26c47af93757bed28a83a134f9b9b38f9afa6adc19c49f678966fb0"
+      },
+      {
+        "path": "patches/node/fix_do_not_pass_removed_jspi_v8_flag.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "1a0f23da9bccf77567971bea6e53a6d67ca27d3d60d44282b2a8495dc75e7958",
+        "afterSha256": "79688e4154c23dc98d1aa04230786d9eaaa79ed8a98d6e6a84f3296b62657bd3"
+      },
+      {
+        "path": "patches/node/fix_do_not_resolve_electron_entrypoints.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "566b6d081f09911eeca0b6495551c41778300742c171d4e9737864cc066727e2",
+        "afterSha256": "ba965e5ab6beeb921da62f64b742df0f0f4824da15b9545dbeb3141c5b6f3655"
+      },
+      {
+        "path": "patches/node/fix_ensure_traverseparent_bails_on_resource_path_exit.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "1f0c41c9d6f6c0f7029532e7d03bf5817451ed9ccdcccd4e1890d9876008ee3e",
+        "afterSha256": "739d12dd8e452cc027413045925f2409ab2deb23f06a2ecadfad446a7da22028"
+      },
+      {
+        "path": "patches/node/fix_expose_readfilesync_override_for_modules.patch",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "1644185af3b7f651b3ec5cdf10c266ce4a7d14bb6931e7b15f58d17077c363d9",
+        "afterSha256": "9590fd2341099c979b06df5d89c518f73353eb6e42c3ec0defc38967803fff33"
+      },
+      {
+        "path": "patches/node/fix_expose_the_built-in_electron_module_via_the_esm_loader.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "ea95ab9ea1d56b3f56707af288535ace7041927b08e719b01238e8df28224b78",
+        "afterSha256": "bb44e73f646654a0948da2a24d0471efa64ac00ac9e90baa36af4c79875683c4"
+      },
+      {
+        "path": "patches/node/fix_handle_boringssl_and_openssl_incompatibilities.patch",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "0e414ee196f5476daf5f4bf11a4bc4ff90af22c9d50f7319c958dd5bcf9ee99a",
+        "afterSha256": "0ce8d43020db68c8c4ca23fc12162606d3cd833c421ef7061d9d67cc225c002b"
+      },
+      {
+        "path": "patches/node/fix_preserve_node_symbols_and_vtables_under_thinlto.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "fbf58d7fd0e5eae03e46077f6405c732c0fb69bcb29bb0b5cda86f8ee0223d9a",
+        "afterSha256": "29175379a9b525e79130e078f9612950bc8b486ed0431317d06fd12e361e76d7"
+      },
+      {
+        "path": "patches/node/fix_use_a_dedicated_cppheappointertag_for_cppgc_wrappables.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "d13cb01fd781e1ddccd5dc3d7c5d69b2a8d0a7185b25e91b7913935e8ab1ce88",
+        "afterSha256": "c1048665b9f3ec2f15bc7d3a7a2c81a316d8a15e246b5fe3b7cb393a92c13e89"
+      },
+      {
+        "path": "patches/node/fix_use_embedder_perfetto_client_when_available.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "b09be72f79c98c472b160ddb9f4fe3cde722361db750e1b90e3b38c8176f7952",
+        "afterSha256": "c5aafdb93ec49f7c3fcbc5d3846975eec1cb3e00897d89a6ea0d92b1f9e57bac"
+      },
+      {
+        "path": "patches/node/inspector_adapt_to_crdtp_dispatchable_api_change.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "e0ab61d94cf4efb41c4e1e34225a4df025d777bf3f0f522714eb13fdfba00ed5",
+        "afterSha256": "4ea262503785ae4f0d8af959b034e41a7be87dcb7c6c9463d6d369aed4d56593"
+      },
+      {
+        "path": "patches/node/inspector_avoid_calling_into_js_from_v8_interrupts.patch",
+        "sameOrderedPatchPayload": false,
+        "beforeSha256": "71b04f3899f77ae1f320a41eb9ceb299ca84923a5638de86166584f7b9a7d5b8",
+        "afterSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "patches/node/lib_add_perfetto_support.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "b6f4e918877afcf276d507f7d11f0467ba128bb268651be0cdb30177d903cb70",
+        "afterSha256": "4d83c512a048da5923153d0019b9a4b63af71dd39725be4620acc03015092605"
+      },
+      {
+        "path": "patches/node/refactor_attach_cppgc_heap_on_v8_isolate_creation.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "30cf93f8d4e4c70d354e9d5db40696c284996c0c18eb33c3e7552c1862157f31",
+        "afterSha256": "d960460ca6bc55eefc338ea9cd54593e76b18ff885cb77827498279c88d0c171"
+      },
+      {
+        "path": "patches/node/src_add_perfetto_trace_agent.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "1f9363d056d430501caad25fed91be21735cfa162b4959b4424be64ef6993450",
+        "afterSha256": "29ba3b388a4ade152804da02bd184046121af31ba5cc249d34e5dd08765e6884"
+      },
+      {
+        "path": "patches/node/src_fix_perfetto_build_on_gettracefilepath.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "008434ddd4c46d5b75a27e3688ff50cbe2f1b66989a6e8a09f2409a529342feb",
+        "afterSha256": "a097c17a4e66e845c0c45cd31f670a42027bd6d9e88fb63c677568b283e26fa0"
+      },
+      {
+        "path": "patches/node/src_fix_trace_macro_compatibility.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "2810114f0a2d752397a3d446f43928fd0ff03c2c50fccb50680a9352dcef2556",
+        "afterSha256": "6c9cf24ca8e086f257d3faa842bb81749ca74b19a7653e4491a8f5db6aff81e7"
+      },
+      {
+        "path": "patches/node/src_migrate_to_setter_definer_interceptor_callbacks_returning.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "3d8b5516260a8415a03d5606e3c7ca33957fb2df3eb9b200cb8a319475dc2f41",
+        "afterSha256": "25f4924576705255242215e8f3f49a634d0485d99a020c248ebcd7272eb1b596"
+      },
+      {
+        "path": "patches/node/src_stop_using_deprecated_get_setprototypev2_and_holderv2.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "309c04215f991b65c7444dedc2881bdad3d60522cde5d72d6a1c464a9917e6d9",
+        "afterSha256": "b84e142528673318addfd746ae6dc87544467bc4462a59b5bfb7326d83518c39"
+      },
+      {
+        "path": "patches/node/src_stop_using_v8_propertycallbackinfo_t_this.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "1d4412813de2dc9f347717a1e65d53b767a68d93274774e0b57cf40ec6eee7d9",
+        "afterSha256": "61bab48b97941edb81d63dd1dc3274a9a017f8015e20b100789abc05480ff7aa"
+      },
+      {
+        "path": "patches/node/support_v8_sandboxed_pointers.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "2ec35046d10cc652cb7b635481459b9ae8b4bc00bc493c07f53f529d0f4fcea8",
+        "afterSha256": "f55269140b6ce77870e08a16f407cbca7046e6d5d0f0241721c1951144caeb41"
+      },
+      {
+        "path": "patches/node/test_add_regression_test_for_cleanup_hook_uaf.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "cd0b96834c6ab60ee315873098d33c02f3c2d508b803afb761760c7ae93552e7",
+        "afterSha256": "3f34d5a5ed282f69dd826c7374f9fc5b3ed786e03fbb4e481e1ca46d84130535"
+      },
+      {
+        "path": "patches/node/v8_prepare_for_migrating_v8_microtaskqueue_to_cppgc.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "1a9199ca164ea478569a54202c60f0aaa35f5c321452f8c887267942389feff9",
+        "afterSha256": "50469c64387a652cad615dd47589ae61e88ce3ffb960466f5bdcf1fc2755df15"
+      },
+      {
+        "path": "patches/node/v8_propagate_v8_cppgc_microtask_queue_flag_to_common_gypi.patch",
+        "sameOrderedPatchPayload": true,
+        "beforeSha256": "2373fc652d10001cc0fe886cd7cd83203d2da4a1798a7ada6b7698fe3e6161aa",
+        "afterSha256": "cb7abb9934670e6f053fc7edf07bf28b26122c5873805da05b70d4361cf5366b"
+      }
+    ]
+  }
+]

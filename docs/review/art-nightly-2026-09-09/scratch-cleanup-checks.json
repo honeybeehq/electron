@@ -1,0 +1,74 @@
+[
+  {
+    "mode": "release",
+    "version": "red",
+    "compileCommand": [
+      "clang++",
+      "-std=c++20",
+      "-include",
+      "initializer_list",
+      "/Users/trmd/.hive/crew/art/reviews/2026-09-09/electron-evidence/scratch-cleanup-check.cc",
+      "-o",
+      "/Users/trmd/.hive/crew/art/reviews/2026-09-09/electron-evidence/scratch-release-red"
+    ],
+    "compileExit": 0,
+    "runExit": 1,
+    "caseCount": 7,
+    "log": "scratch-release-red.log"
+  },
+  {
+    "mode": "release",
+    "version": "green",
+    "compileCommand": [
+      "clang++",
+      "-std=c++20",
+      "-include",
+      "initializer_list",
+      "-DFUNCTION_FILE=\"scratch-fixed-function.inc\"",
+      "/Users/trmd/.hive/crew/art/reviews/2026-09-09/electron-evidence/scratch-cleanup-check.cc",
+      "-o",
+      "/Users/trmd/.hive/crew/art/reviews/2026-09-09/electron-evidence/scratch-release-green"
+    ],
+    "compileExit": 0,
+    "runExit": 0,
+    "caseCount": 7,
+    "log": "scratch-release-green.log"
+  },
+  {
+    "mode": "asserts",
+    "version": "red",
+    "compileCommand": [
+      "clang++",
+      "-std=c++20",
+      "-include",
+      "initializer_list",
+      "-DANGLE_ENABLE_ASSERTS",
+      "/Users/trmd/.hive/crew/art/reviews/2026-09-09/electron-evidence/scratch-cleanup-check.cc",
+      "-o",
+      "/Users/trmd/.hive/crew/art/reviews/2026-09-09/electron-evidence/scratch-asserts-red"
+    ],
+    "compileExit": 0,
+    "runExit": 1,
+    "caseCount": 9,
+    "log": "scratch-asserts-red.log"
+  },
+  {
+    "mode": "asserts",
+    "version": "green",
+    "compileCommand": [
+      "clang++",
+      "-std=c++20",
+      "-include",
+      "initializer_list",
+      "-DANGLE_ENABLE_ASSERTS",
+      "-DFUNCTION_FILE=\"scratch-fixed-function.inc\"",
+      "/Users/trmd/.hive/crew/art/reviews/2026-09-09/electron-evidence/scratch-cleanup-check.cc",
+      "-o",
+      "/Users/trmd/.hive/crew/art/reviews/2026-09-09/electron-evidence/scratch-asserts-green"
+    ],
+    "compileExit": 0,
+    "runExit": 0,
+    "caseCount": 9,
+    "log": "scratch-asserts-green.log"
+  }
+]
