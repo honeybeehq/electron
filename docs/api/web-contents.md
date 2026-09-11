@@ -1272,6 +1272,32 @@ hides it first; a frozen page stops running its freezable task queues
 > receive the document `resume` event, although `freeze`,
 > `visibilitychange`, timers, media, and workers behave as specified.
 
+#### `contents.lockBackgroundVisibility()`
+
+Hides this web contents and locks it hidden. While locked, **no** path can make
+it visible: outer-window show/occlusion propagation to an attached web
+contents, the placeholder frame becoming rendered on `attachToFrame` or layout,
+a direct `setVisibility('visible')` (which throws `ERR_VISIBILITY_LOCKED`), or a
+capture of the outer window. `setPageFrozen()` remains usable, and a frozen
+locked web contents stays frozen through all of those events. Idempotent.
+
+> [!WARNING]
+> This API is experimental. Capturing the **locked** web contents itself with
+> `capturePage` keeps Chromium's capture semantics (the page renders for the
+> capture and a frozen page is resumed); do not capture locked web contents.
+
+#### `contents.unlockBackgroundVisibility(state)`
+
+* `state` string - Can be `hidden` or `visible`.
+
+Clears the lock. `visible` shows the web contents immediately (thaw with
+`setPageFrozen(false)` first if it was frozen, then unlock, then attach);
+`hidden` leaves it hidden but lets outer propagation apply again.
+
+#### `contents.isBackgroundVisibilityLocked()`
+
+Returns `boolean` - Whether `lockBackgroundVisibility()` is in effect.
+
 #### `contents.hasActiveMediaCapture()`
 
 Returns `boolean` - Whether any frame in this web contents currently holds an
