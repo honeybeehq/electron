@@ -326,6 +326,10 @@ class WebContents final : public ExclusiveAccessContext,
   void SetVisibility(gin_helper::ErrorThrower thrower, const std::string& state);
   void SetPageFrozen(bool frozen);
   bool HasActiveMediaCapture() const;
+  void LockBackgroundVisibility(gin_helper::ErrorThrower thrower);
+  void UnlockBackgroundVisibility(gin_helper::ErrorThrower thrower,
+                                  const std::string& state);
+  bool IsBackgroundVisibilityLocked() const;
   void AttachToIframe(content::WebContents* embedder_web_contents,
                       std::string embedder_frame_token);
   void DetachFromOuterFrame();

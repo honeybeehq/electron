@@ -562,6 +562,102 @@ describe('webContents module', () => {
         await waitUntil(async () => (await ticksOf(target)) > frozenTicks);
       });
 
+      describe('lockBackgroundVisibility()', () => {
+        it('is feature-detectable and validates arguments', async () => {
+          const target = await createTarget();
+          expect(typeof target.lockBackgroundVisibility).to.equal('function');
+          expect(() => target.unlockBackgroundVisibility('occluded' as any)).to.throw(
+            /must be either 'hidden' or 'visible'/
+          );
+          target.close();
+          await once(target, 'destroyed');
+          expect(() => target.lockBackgroundVisibility()).to.throw(/destroyed/);
+        });
+
+        it('hides, locks, and refuses setVisibility(visible) while locked', async () => {
+          const target = await createTarget();
+          target.setVisibility('visible');
+          await waitUntil(async () => (await visibilityOf(target)) === 'visible');
+          target.lockBackgroundVisibility();
+          expect(target.isBackgroundVisibilityLocked()).to.be.true();
+          await waitUntil(async () => (await visibilityOf(target)) === 'hidden');
+          expect(() => target.setVisibility('visible')).to.throw(/ERR_VISIBILITY_LOCKED/);
+          target.setVisibility('hidden');
+          expect(await visibilityOf(target)).to.equal('hidden');
+          target.unlockBackgroundVisibility('visible');
+          expect(target.isBackgroundVisibilityLocked()).to.be.false();
+          await waitUntil(async () => (await visibilityOf(target)) === 'visible');
+        });
+
+        it('keeps an attached target hidden through attach, outer capture, and window show', async () => {
+          const w = await createEmbedder(true);
+          const target = await createTarget();
+          target.lockBackgroundVisibility();
+          await waitUntil(async () => (await visibilityOf(target)) === 'hidden');
+
+          await target.attachToFrame(frameNamed(w, 'first'));
+          await setTimeout(250);
+          expect(await visibilityOf(target)).to.equal('hidden');
+
+          await w.webContents.capturePage({ x: 0, y: 0, width: 4, height: 4 });
+          await setTimeout(150);
+          expect(await visibilityOf(target)).to.equal('hidden');
+
+          w.hide();
+          await setTimeout(150);
+          w.show();
+          await setTimeout(250);
+          expect(await visibilityOf(target)).to.equal('hidden');
+          expect(target.isAttachedToFrame()).to.be.true();
+
+          target.unlockBackgroundVisibility('visible');
+          await waitUntil(async () => (await visibilityOf(target)) === 'visible');
+          await target.detachFromFrame();
+        });
+
+        it('keeps a frozen locked target frozen through an outer capture', async () => {
+          const w = await createEmbedder(true);
+          const target = await createTarget(TICKER);
+          await target.attachToFrame(frameNamed(w, 'first'));
+          await waitUntil(async () => (await ticksOf(target)) > 0);
+
+          target.lockBackgroundVisibility();
+          target.setPageFrozen(true);
+          await setTimeout(300);
+          const frozenTicks = await ticksOf(target);
+
+          await w.webContents.capturePage({ x: 0, y: 0, width: 4, height: 4 });
+          await setTimeout(400);
+          expect(await ticksOf(target)).to.equal(frozenTicks);
+          expect(await visibilityOf(target)).to.equal('hidden');
+
+          target.setPageFrozen(false);
+          target.unlockBackgroundVisibility('visible');
+          await waitUntil(async () => (await ticksOf(target)) > frozenTicks);
+          await target.detachFromFrame();
+        });
+
+        it('survives detach and reattach while locked, then follows the outer after unlock(hidden)', async () => {
+          const w = await createEmbedder(true);
+          const target = await createTarget();
+          await target.attachToFrame(frameNamed(w, 'first'));
+          target.lockBackgroundVisibility();
+          await target.detachFromFrame();
+          await target.attachToFrame(frameNamed(w, 'second'));
+          await setTimeout(250);
+          expect(await visibilityOf(target)).to.equal('hidden');
+
+          target.unlockBackgroundVisibility('hidden');
+          expect(await visibilityOf(target)).to.equal('hidden');
+          // Outer propagation applies again: hide/show the window shows it.
+          w.hide();
+          await setTimeout(150);
+          w.show();
+          await waitUntil(async () => (await visibilityOf(target)) === 'visible');
+          await target.detachFromFrame();
+        });
+      });
+
       it('a frozen target survives detach, thaw, show, and reattach with state intact', async () => {
         const w = await createEmbedder(true);
         const target = await createTarget(`<input id="editor">${TICKER}`);

@@ -1,0 +1,74 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Tormod Haugland <tormod.haugland@gmail.com>
+Date: Fri, 11 Sep 2026 15:22:35 +0200
+Subject: feat: background visibility lock for embedded web contents
+
+While locked, every visibility update reaching
+WebContentsImpl::UpdateVisibilityAndNotifyPageAndView is coerced to HIDDEN:
+outer WebContents propagation, frame-proxy visibility on attach/layout,
+direct WasShown(), and capturer re-application. Cleared only through
+SetBackgroundVisibilityLocked(false). Used by Apiary's retained embedded
+browser guests so an inactive guest can never be shown or thawed by the
+embedder window's show/occlusion/capture activity.
+
+diff --git a/content/browser/web_contents/web_contents_impl.cc b/content/browser/web_contents/web_contents_impl.cc
+index 4e4c2ff6427a5a2d501494230bfbaff1c70a96fb..fa5ace42f02e0638218cb2f891269209ec39d140 100644
+--- a/content/browser/web_contents/web_contents_impl.cc
++++ b/content/browser/web_contents/web_contents_impl.cc
+@@ -3047,6 +3047,12 @@ void WebContentsImpl::WasHidden() {
+   UpdateVisibilityAndNotifyPageAndView(Visibility::HIDDEN);
+ }
+ 
++void WebContentsImpl::SetBackgroundVisibilityLocked(bool locked) {
++  TRACE_EVENT1("content", "WebContentsImpl::SetBackgroundVisibilityLocked",
++               "locked", locked);
++  background_visibility_locked_ = locked;
++}
++
+ bool WebContentsImpl::HasRecentInteraction() {
+   if (last_interaction_time_.is_null()) {
+     return false;
+@@ -5097,6 +5103,13 @@ void WebContentsImpl::UpdateVisibilityAndNotifyPageAndView(
+     bool is_activity) {
+   DCHECK(!IsBeingDestroyed());
+ 
++  // Apiary: an embedder-locked WebContents never becomes visible through any
++  // path (outer propagation, frame-proxy visibility, WasShown, capture).
++  if (background_visibility_locked_ && new_visibility != Visibility::HIDDEN) {
++    new_visibility = Visibility::HIDDEN;
++    is_activity = false;
++  }
++
+   PageVisibilityState page_visibility =
+       CalculatePageVisibilityState(new_visibility);
+ 
+diff --git a/content/browser/web_contents/web_contents_impl.h b/content/browser/web_contents/web_contents_impl.h
+index bc7baf6cd7b7fb6bd4e3dcfba34f213aeb92e82a..749b77f82273ce8dd9a08d1f529ea11a38ccccdb 100644
+--- a/content/browser/web_contents/web_contents_impl.h
++++ b/content/browser/web_contents/web_contents_impl.h
+@@ -289,6 +289,15 @@ class CONTENT_EXPORT WebContentsImpl
+   // visibility of renderer-side objects.
+   void SetVisibilityAndNotifyObservers(Visibility visibility);
+ 
++  // Apiary (surface embedding): while locked, every visibility update that
++  // reaches UpdateVisibilityAndNotifyPageAndView is coerced to HIDDEN — outer
++  // WebContents propagation, frame-proxy visibility on attach/layout, direct
++  // WasShown(), and capturer re-application. Cleared only through this setter.
++  void SetBackgroundVisibilityLocked(bool locked);
++  bool IsBackgroundVisibilityLocked() const {
++    return background_visibility_locked_;
++  }
++
+   // Notify observers that the web contents has been focused.
+   void NotifyWebContentsFocused(RenderWidgetHost* render_widget_host);
+ 
+@@ -2435,6 +2444,9 @@ class CONTENT_EXPORT WebContentsImpl
+   // UpdateWebContentsVisibility(), WasShown(), WasHidden(), WasOccluded().
+   Visibility visibility_ = Visibility::VISIBLE;
+ 
++  // See SetBackgroundVisibilityLocked().
++  bool background_visibility_locked_ = false;
++
+   // Whether there has been a call to UpdateWebContentsVisibility(VISIBLE).
+   bool did_first_set_visible_ = false;
+ 

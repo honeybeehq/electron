@@ -4353,13 +4353,57 @@ void WebContents::SetVisibility(gin_helper::ErrorThrower thrower,
         "ERR_WEB_CONTENTS_DESTROYED: target WebContents was destroyed");
     return;
   }
+  auto* impl = static_cast<content::WebContentsImpl*>(target);
   if (state == "hidden") {
     target->WasHidden();
   } else if (state == "visible") {
+    if (impl->IsBackgroundVisibilityLocked()) {
+      thrower.ThrowError(
+          "ERR_VISIBILITY_LOCKED: background visibility is locked; call "
+          "unlockBackgroundVisibility('visible') instead");
+      return;
+    }
     target->WasShown();
   } else {
     thrower.ThrowTypeError("state must be either 'hidden' or 'visible'");
   }
+}
+
+void WebContents::LockBackgroundVisibility(gin_helper::ErrorThrower thrower) {
+  content::WebContents* target = GetWebContents();
+  if (!target) {
+    thrower.ThrowError(
+        "ERR_WEB_CONTENTS_DESTROYED: target WebContents was destroyed");
+    return;
+  }
+  auto* impl = static_cast<content::WebContentsImpl*>(target);
+  // Hide first so the coerced state and the actual state agree immediately.
+  target->WasHidden();
+  impl->SetBackgroundVisibilityLocked(true);
+}
+
+void WebContents::UnlockBackgroundVisibility(gin_helper::ErrorThrower thrower,
+                                             const std::string& state) {
+  content::WebContents* target = GetWebContents();
+  if (!target) {
+    thrower.ThrowError(
+        "ERR_WEB_CONTENTS_DESTROYED: target WebContents was destroyed");
+    return;
+  }
+  if (state != "hidden" && state != "visible") {
+    thrower.ThrowTypeError("state must be either 'hidden' or 'visible'");
+    return;
+  }
+  auto* impl = static_cast<content::WebContentsImpl*>(target);
+  impl->SetBackgroundVisibilityLocked(false);
+  if (state == "visible")
+    target->WasShown();
+}
+
+bool WebContents::IsBackgroundVisibilityLocked() const {
+  content::WebContents* target = GetWebContents();
+  return target && static_cast<content::WebContentsImpl*>(target)
+                       ->IsBackgroundVisibilityLocked();
 }
 
 void WebContents::SetPageFrozen(bool frozen) {
@@ -5306,6 +5350,12 @@ void WebContents::FillObjectTemplate(v8::Isolate* isolate,
       .SetMethod("setVisibility", &WebContents::SetVisibility)
       .SetMethod("setPageFrozen", &WebContents::SetPageFrozen)
       .SetMethod("hasActiveMediaCapture", &WebContents::HasActiveMediaCapture)
+      .SetMethod("lockBackgroundVisibility",
+                 &WebContents::LockBackgroundVisibility)
+      .SetMethod("unlockBackgroundVisibility",
+                 &WebContents::UnlockBackgroundVisibility)
+      .SetMethod("isBackgroundVisibilityLocked",
+                 &WebContents::IsBackgroundVisibilityLocked)
       .SetMethod("attachToIframe", &WebContents::AttachToIframe)
       .SetMethod("detachFromOuterFrame", &WebContents::DetachFromOuterFrame)
       .SetMethod("isOffscreen", &WebContents::IsOffScreen)
