@@ -60,6 +60,14 @@ xvfb-run -a ../out/Testing/electron spec --ozone-platform=x11 \
   --files=spec/api-web-contents-spec.ts --grep='app-owned frame attachments|classic webview detach'
 ```
 
+On Linux, a `Testing` build's deliberate renderer-crash test can hang in
+Chromium's development-only stack dumper: its `alarm(2)` call is denied by the
+renderer sandbox. If the log ends in a seccomp failure for that syscall, rerun
+with `--disable-in-process-stack-traces`; keep the sandbox enabled. This passed
+all 25 applicable frame/lifecycle specs on 2026-09-16 (three existing Linux
+skips). The official release profile disables that dumper by default and must
+pass the suite without this testing workaround before publication.
+
 ## Release contract
 
 Stage `electron-v43.4.1-linux-x64.zip` and, when verified,
