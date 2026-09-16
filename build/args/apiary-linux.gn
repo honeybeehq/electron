@@ -1,0 +1,5 @@
+# Linux release profile for the Apiary 43.4.1 surface-embedding fork.
+# Fork tags include -apiary.N; that must never change the npm/runtime version.
+import("//electron/build/args/release.gn")
+target_os = "linux"
+override_electron_version = "43.4.1"
