@@ -32,9 +32,9 @@ install Xvfb and use its X11 display. Do not disable the sandbox in the build re
 e --config=apiary-linux-support sync
 e --config=apiary-linux-support build --no-remote --target electron:electron_dist_zip
 cd /path/to/new-tree/src/electron
-xvfb-run -a ../out/Testing/electron --ozone-platform=x11 script/apiary/smoke.cjs 43.4.1
+xvfb-run -a ../out/Testing/electron script/apiary/smoke.cjs 43.4.1 --ozone-platform=x11
 ELECTRON_OUT_DIR=Testing xvfb-run -a node script/spec-runner.js --runners=main \
-  --files=api-web-contents-spec.ts --grep='app-owned frame attachments|classic webview detach'
+  --files=spec/api-web-contents-spec.ts --grep='app-owned frame attachments|classic webview detach'
 python3 -B -m unittest discover -s script/apiary -p 'test_*.py'
 python3 script/apiary/stage_linux_dist.py ../out/Testing/dist.zip \
   --version 43.4.1 --arch x64 --output /path/to/new-linux-assets
@@ -47,6 +47,18 @@ the upstream zip manifest, verifies the internal version and ELF architecture,
 checks executable permissions and CRCs, and copies the standard Electron archive
 unchanged. It refuses an existing staging directory. Supported staging targets
 are x64 and arm64; arm64 needs its own native verification before publication.
+
+Keep native Electron switches after the smoke script and its version argument:
+Electron retains switches in `process.argv`, so putting them before the script
+shifts the smoke's positional version argument. The spec runner's `--files`
+paths are relative to the Electron repository, including the `spec/` prefix.
+For these frame/lifecycle-only tests, a builder without the general runner's
+Python D-Bus mocks can run the same specs directly:
+
+```sh
+xvfb-run -a ../out/Testing/electron spec --ozone-platform=x11 \
+  --files=spec/api-web-contents-spec.ts --grep='app-owned frame attachments|classic webview detach'
+```
 
 ## Release contract
 
