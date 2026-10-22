@@ -155,7 +155,7 @@ describe('webContents module', () => {
           return false;
         }
       });
-      expect(frame, `missing frame ${name}`).to.not.be.undefined();
+      expect(frame, `missing frame ${name}`).not.toBeUndefined();
       return frame!;
     };
 
@@ -172,19 +172,19 @@ describe('webContents module', () => {
       await target.attachToFrame(frameNamed(w, 'first'));
 
       const [, attachedFrame] = await attached;
-      expect(webContents.fromFrame(attachedFrame)).to.equal(w.webContents);
-      expect(target.isAttachedToFrame()).to.be.true();
-      expect(target.hostWebContents).to.equal(w.webContents);
+      expect(webContents.fromFrame(attachedFrame)).toBe(w.webContents);
+      expect(target.isAttachedToFrame()).toBe(true);
+      expect(target.hostWebContents).toBe(w.webContents);
 
       const detached = once(target, 'did-detach-from-frame') as Promise<[Electron.Event, string]>;
       await target.detachFromFrame();
       const [, reason] = await detached;
-      expect(reason).to.equal('explicit');
-      expect(target.isAttachedToFrame()).to.be.false();
-      expect(await target.executeJavaScript('document.getElementById("state").textContent')).to.equal('preserved');
+      expect(reason).toBe('explicit');
+      expect(target.isAttachedToFrame()).toBe(false);
+      expect(await target.executeJavaScript('document.getElementById("state").textContent')).toBe('preserved');
 
       await target.attachToFrame(frameNamed(w, 'second'));
-      expect(target.isAttachedToFrame()).to.be.true();
+      expect(target.isAttachedToFrame()).toBe(true);
       await target.detachFromFrame();
     });
 
@@ -203,9 +203,9 @@ describe('webContents module', () => {
       `);
 
       const [, reason] = await detached;
-      expect(reason).to.equal('frame-destroyed');
-      expect(target.isDestroyed()).to.be.false();
-      expect(target.isAttachedToFrame()).to.be.false();
+      expect(reason).toBe('frame-destroyed');
+      expect(target.isDestroyed()).toBe(false);
+      expect(target.isAttachedToFrame()).toBe(false);
       await waitUntil(() => originalFrame.isDestroyed());
 
       await w.webContents.executeJavaScript(`
@@ -216,35 +216,29 @@ describe('webContents module', () => {
         })
       `);
       const recreatedFrame = frameNamed(w, 'first');
-      expect(recreatedFrame.frameToken).to.not.equal(originalFrameToken);
+      expect(recreatedFrame.frameToken).not.toBe(originalFrameToken);
 
       await target.attachToFrame(recreatedFrame);
-      expect(target.isAttachedToFrame()).to.be.true();
-      expect(await target.executeJavaScript('document.body.textContent')).to.equal('survivor');
+      expect(target.isAttachedToFrame()).toBe(true);
+      expect(await target.executeJavaScript('document.body.textContent')).toBe('survivor');
     });
 
     it('rejects main, destroyed, navigated, and self-owned frames', async () => {
       const w = await createEmbedder();
       const target = await createTarget();
 
-      await expect(target.attachToFrame(w.webContents.mainFrame)).to.eventually.be.rejectedWith(
-        Error,
-        /^ERR_FRAME_IS_MAIN_FRAME:/
+      await expect(target.attachToFrame(w.webContents.mainFrame)).rejects.toThrow(/^ERR_FRAME_IS_MAIN_FRAME:/
       );
-      await expect(target.attachToFrame(frameNamed(w, 'navigated'))).to.eventually.be.rejectedWith(
-        Error,
-        /^ERR_FRAME_NOT_ATTACHABLE:/
+      await expect(target.attachToFrame(frameNamed(w, 'navigated'))).rejects.toThrow(/^ERR_FRAME_NOT_ATTACHABLE:/
       );
 
       const destroyedFrame = frameNamed(w, 'first');
       await w.webContents.executeJavaScript('document.querySelector(\'iframe[name="first"]\').remove()');
       await waitUntil(() => destroyedFrame.isDestroyed());
-      await expect(target.attachToFrame(destroyedFrame)).to.eventually.be.rejectedWith(Error, /^ERR_FRAME_NOT_FOUND:/);
+      await expect(target.attachToFrame(destroyedFrame)).rejects.toThrow(/^ERR_FRAME_NOT_FOUND:/);
 
       await target.loadURL(`data:text/html,${encodeURIComponent('<iframe name="self" src="about:blank"></iframe>')}`);
-      await expect(target.attachToFrame(target.mainFrame.frames[0]!)).to.eventually.be.rejectedWith(
-        Error,
-        /^ERR_FRAME_NOT_ATTACHABLE:/
+      await expect(target.attachToFrame(target.mainFrame.frames[0]!)).rejects.toThrow(/^ERR_FRAME_NOT_ATTACHABLE:/
       );
     });
 
@@ -256,19 +250,13 @@ describe('webContents module', () => {
       const attached = once(target, 'did-attach-to-frame') as Promise<[Electron.Event, Electron.WebFrameMain]>;
       const firstAttach = target.attachToFrame(firstFrame);
 
-      await expect(target.attachToFrame(frameNamed(w, 'second'))).to.eventually.be.rejectedWith(
-        Error,
-        /^ERR_WEB_CONTENTS_ALREADY_ATTACHED:/
+      await expect(target.attachToFrame(frameNamed(w, 'second'))).rejects.toThrow(/^ERR_WEB_CONTENTS_ALREADY_ATTACHED:/
       );
       await firstAttach;
       const [, occupiedFrame] = await attached;
-      await expect(target.attachToFrame(frameNamed(w, 'second'))).to.eventually.be.rejectedWith(
-        Error,
-        /^ERR_WEB_CONTENTS_ALREADY_ATTACHED:/
+      await expect(target.attachToFrame(frameNamed(w, 'second'))).rejects.toThrow(/^ERR_WEB_CONTENTS_ALREADY_ATTACHED:/
       );
-      await expect(secondTarget.attachToFrame(occupiedFrame)).to.eventually.be.rejectedWith(
-        Error,
-        /^ERR_FRAME_NOT_ATTACHABLE:/
+      await expect(secondTarget.attachToFrame(occupiedFrame)).rejects.toThrow(/^ERR_FRAME_NOT_ATTACHABLE:/
       );
     });
 
@@ -281,10 +269,10 @@ describe('webContents module', () => {
       w.destroy();
 
       const [, reason] = await detached;
-      expect(reason).to.equal('embedder-destroyed');
-      expect(target.isDestroyed()).to.be.false();
-      expect(target.isAttachedToFrame()).to.be.false();
-      expect(await target.executeJavaScript('document.body.textContent')).to.equal('still-alive');
+      expect(reason).toBe('embedder-destroyed');
+      expect(target.isDestroyed()).toBe(false);
+      expect(target.isAttachedToFrame()).toBe(false);
+      expect(await target.executeJavaScript('document.body.textContent')).toBe('still-alive');
     });
 
     it('detaches safely when the target is destroyed', async () => {
@@ -296,8 +284,8 @@ describe('webContents module', () => {
       target.destroy();
       await destroyed;
 
-      expect(w.isDestroyed()).to.be.false();
-      expect(await w.webContents.executeJavaScript('document.body.childElementCount')).to.be.greaterThan(0);
+      expect(w.isDestroyed()).toBe(false);
+      expect(await w.webContents.executeJavaScript('document.body.childElementCount')).toBeGreaterThan(0);
     });
 
     it('keeps the attachment across an inner renderer crash and reload', async () => {
@@ -309,11 +297,11 @@ describe('webContents module', () => {
       target.forcefullyCrashRenderer();
       await crashed;
 
-      expect(target.isAttachedToFrame()).to.be.true();
+      expect(target.isAttachedToFrame()).toBe(true);
       const loaded = once(target, 'did-finish-load');
       target.reload();
       await loaded;
-      expect(target.isAttachedToFrame()).to.be.true();
+      expect(target.isAttachedToFrame()).toBe(true);
     });
 
     it('routes focus and keyboard input without calling the child-frame Focus implementation', async () => {
@@ -351,7 +339,7 @@ describe('webContents module', () => {
 
       await target.executeJavaScript('window.open("https://example.test/frame-popup"); true');
 
-      expect(await handled).to.equal('https://example.test/frame-popup');
+      expect(await handled).toBe('https://example.test/frame-popup');
     });
 
     it('inherits outer zoom and stops following it after detach', async () => {
@@ -361,11 +349,11 @@ describe('webContents module', () => {
       target.setZoomLevel(0);
 
       await target.attachToFrame(frameNamed(w, 'first'));
-      expect(target.getZoomLevel()).to.be.closeTo(1.25, 0.001);
+      expect(target.getZoomLevel()).toBeCloseTo(1.25, 3);
 
       await target.detachFromFrame();
       w.webContents.setZoomLevel(2);
-      expect(target.getZoomLevel()).to.be.closeTo(1.25, 0.001);
+      expect(target.getZoomLevel()).toBeCloseTo(1.25, 3);
     });
 
     it('rejects docked DevTools and forces detached DevTools while attached', async () => {
@@ -375,9 +363,7 @@ describe('webContents module', () => {
       target.openDevTools({ mode: 'right', activate: false });
       await dockedOpened;
 
-      await expect(target.attachToFrame(frameNamed(w, 'first'))).to.eventually.be.rejectedWith(
-        Error,
-        /^ERR_DEVTOOLS_DOCKED:/
+      await expect(target.attachToFrame(frameNamed(w, 'first'))).rejects.toThrow(/^ERR_DEVTOOLS_DOCKED:/
       );
 
       const closed = once(target, 'devtools-closed');
@@ -388,7 +374,7 @@ describe('webContents module', () => {
       const detachedOpened = once(target, 'devtools-opened');
       target.openDevTools({ mode: 'bottom', activate: false });
       await detachedOpened;
-      expect(target.devToolsWebContents?.getURL()).not.to.contain('can_dock=true');
+      expect(target.devToolsWebContents?.getURL()).not.toContain('can_dock=true');
     });
 
     ifit(process.platform !== 'linux')('propagates visibility through the Chromium inner tree', async () => {
@@ -411,7 +397,7 @@ describe('webContents module', () => {
       w.hide();
       await setTimeout(100);
 
-      expect(await target.executeJavaScript('document.visibilityState')).to.equal('visible');
+      expect(await target.executeJavaScript('document.visibilityState')).toBe('visible');
     });
 
     ifit(process.platform !== 'darwin')('propagates HTML fullscreen state to the outer WebContents', async () => {
@@ -441,7 +427,7 @@ describe('webContents module', () => {
         try {
           const { result, exceptionDetails } = await target.debugger.sendCommand(
             'Runtime.evaluate', { expression, returnByValue: true });
-          expect(exceptionDetails).to.be.undefined();
+          expect(exceptionDetails).toBeUndefined();
           return result.value;
         } finally {
           if (!attached) target.debugger.detach();
@@ -456,7 +442,7 @@ describe('webContents module', () => {
 
       it('rejects an unknown visibility state', async () => {
         const target = await createTarget();
-        expect(() => target.setVisibility('occluded' as any)).to.throw(
+        expect(() => target.setVisibility('occluded' as any)).toThrow(
           /must be either 'hidden' or 'visible'/
         );
       });
@@ -488,7 +474,7 @@ describe('webContents module', () => {
         await target.detachFromFrame();
         target.setVisibility('hidden');
         await setTimeout(250);
-        expect(await visibilityOf(target)).to.equal('hidden');
+        expect(await visibilityOf(target)).toBe('hidden');
       });
 
       ifit(process.platform !== 'linux')('outer window hide/show does not disturb a parked detached target', async () => {
@@ -505,7 +491,7 @@ describe('webContents module', () => {
         await setTimeout(150);
         w.show();
         await setTimeout(150);
-        expect(await visibilityOf(target)).to.equal('hidden');
+        expect(await visibilityOf(target)).toBe('hidden');
       });
 
       it('setPageFrozen hides a visible page first and stops freezable timers', async () => {
@@ -520,13 +506,13 @@ describe('webContents module', () => {
         await setTimeout(200);
         const frozenTicks = await ticksOf(target);
         await setTimeout(400);
-        expect(await ticksOf(target)).to.equal(frozenTicks);
+        expect(await ticksOf(target)).toBe(frozenTicks);
 
         target.setPageFrozen(false);
-        expect(await visibilityOf(target)).to.equal('hidden');
+        expect(await visibilityOf(target)).toBe('hidden');
         target.setVisibility('visible');
         await waitUntil(async () => (await ticksOf(target)) > frozenTicks);
-        expect(await evalInPage(target, 'performance.timeOrigin')).to.equal(timeOrigin);
+        expect(await evalInPage(target, 'performance.timeOrigin')).toBe(timeOrigin);
       });
 
       it('hasActiveMediaCapture() reflects live getUserMedia tracks', async () => {
@@ -543,7 +529,7 @@ describe('webContents module', () => {
         });
         try {
           await target.loadURL(`http://127.0.0.1:${port}/`);
-          expect(target.hasActiveMediaCapture()).to.be.false();
+          expect(target.hasActiveMediaCapture()).toBe(false);
 
           await target.executeJavaScript(`
             navigator.mediaDevices.getUserMedia({ audio: true })
@@ -575,13 +561,13 @@ describe('webContents module', () => {
       describe('lockBackgroundVisibility()', () => {
         it('is feature-detectable and validates arguments', async () => {
           const target = await createTarget();
-          expect(typeof target.lockBackgroundVisibility).to.equal('function');
-          expect(() => target.unlockBackgroundVisibility('occluded' as any)).to.throw(
+          expect(typeof target.lockBackgroundVisibility).toBe('function');
+          expect(() => target.unlockBackgroundVisibility('occluded' as any)).toThrow(
             /must be either 'hidden' or 'visible'/
           );
           target.close();
           await once(target, 'destroyed');
-          expect(() => target.lockBackgroundVisibility()).to.throw(/destroyed/);
+          expect(() => target.lockBackgroundVisibility()).toThrow(/destroyed/);
         });
 
         it('hides, locks, and refuses setVisibility(visible) while locked', async () => {
@@ -589,13 +575,13 @@ describe('webContents module', () => {
           target.setVisibility('visible');
           await waitUntil(async () => (await visibilityOf(target)) === 'visible');
           target.lockBackgroundVisibility();
-          expect(target.isBackgroundVisibilityLocked()).to.be.true();
+          expect(target.isBackgroundVisibilityLocked()).toBe(true);
           await waitUntil(async () => (await visibilityOf(target)) === 'hidden');
-          expect(() => target.setVisibility('visible')).to.throw(/ERR_VISIBILITY_LOCKED/);
+          expect(() => target.setVisibility('visible')).toThrow(/ERR_VISIBILITY_LOCKED/);
           target.setVisibility('hidden');
-          expect(await visibilityOf(target)).to.equal('hidden');
+          expect(await visibilityOf(target)).toBe('hidden');
           target.unlockBackgroundVisibility('visible');
-          expect(target.isBackgroundVisibilityLocked()).to.be.false();
+          expect(target.isBackgroundVisibilityLocked()).toBe(false);
           await waitUntil(async () => (await visibilityOf(target)) === 'visible');
         });
 
@@ -607,18 +593,18 @@ describe('webContents module', () => {
 
           await target.attachToFrame(frameNamed(w, 'first'));
           await setTimeout(250);
-          expect(await visibilityOf(target)).to.equal('hidden');
+          expect(await visibilityOf(target)).toBe('hidden');
 
           await w.webContents.capturePage({ x: 0, y: 0, width: 4, height: 4 });
           await setTimeout(150);
-          expect(await visibilityOf(target)).to.equal('hidden');
+          expect(await visibilityOf(target)).toBe('hidden');
 
           w.hide();
           await setTimeout(150);
           w.show();
           await setTimeout(250);
-          expect(await visibilityOf(target)).to.equal('hidden');
-          expect(target.isAttachedToFrame()).to.be.true();
+          expect(await visibilityOf(target)).toBe('hidden');
+          expect(target.isAttachedToFrame()).toBe(true);
 
           target.unlockBackgroundVisibility('visible');
           await waitUntil(async () => (await visibilityOf(target)) === 'visible');
@@ -638,8 +624,8 @@ describe('webContents module', () => {
 
           await w.webContents.capturePage({ x: 0, y: 0, width: 4, height: 4 });
           await setTimeout(400);
-          expect(await ticksOf(target)).to.equal(frozenTicks);
-          expect(await visibilityOf(target)).to.equal('hidden');
+          expect(await ticksOf(target)).toBe(frozenTicks);
+          expect(await visibilityOf(target)).toBe('hidden');
 
           target.setPageFrozen(false);
           target.unlockBackgroundVisibility('visible');
@@ -655,10 +641,10 @@ describe('webContents module', () => {
           await target.detachFromFrame();
           await target.attachToFrame(frameNamed(w, 'second'));
           await setTimeout(250);
-          expect(await visibilityOf(target)).to.equal('hidden');
+          expect(await visibilityOf(target)).toBe('hidden');
 
           target.unlockBackgroundVisibility('hidden');
-          expect(await visibilityOf(target)).to.equal('hidden');
+          expect(await visibilityOf(target)).toBe('hidden');
           // Outer propagation applies again: hide/show the window shows it.
           w.hide();
           await setTimeout(150);
@@ -687,10 +673,10 @@ describe('webContents module', () => {
         await target.attachToFrame(frameNamed(w, 'second'));
         await waitUntil(async () => (await visibilityOf(target)) === 'visible');
         await waitUntil(async () => (await ticksOf(target)) > frozenTicks);
-        expect(await evalInPage(target, 'window.marker')).to.equal('kept');
+        expect(await evalInPage(target, 'window.marker')).toBe('kept');
         expect(
           await evalInPage(target, 'document.getElementById("editor").value')
-        ).to.equal('unsaved');
+        ).toBe('unsaved');
         await target.detachFromFrame();
       });
     });
