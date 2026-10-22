@@ -227,10 +227,8 @@ describe('webContents module', () => {
       const w = await createEmbedder();
       const target = await createTarget();
 
-      await expect(target.attachToFrame(w.webContents.mainFrame)).rejects.toThrow(/^ERR_FRAME_IS_MAIN_FRAME:/
-      );
-      await expect(target.attachToFrame(frameNamed(w, 'navigated'))).rejects.toThrow(/^ERR_FRAME_NOT_ATTACHABLE:/
-      );
+      await expect(target.attachToFrame(w.webContents.mainFrame)).rejects.toThrow(/^ERR_FRAME_IS_MAIN_FRAME:/);
+      await expect(target.attachToFrame(frameNamed(w, 'navigated'))).rejects.toThrow(/^ERR_FRAME_NOT_ATTACHABLE:/);
 
       const destroyedFrame = frameNamed(w, 'first');
       await w.webContents.executeJavaScript('document.querySelector(\'iframe[name="first"]\').remove()');
@@ -238,8 +236,7 @@ describe('webContents module', () => {
       await expect(target.attachToFrame(destroyedFrame)).rejects.toThrow(/^ERR_FRAME_NOT_FOUND:/);
 
       await target.loadURL(`data:text/html,${encodeURIComponent('<iframe name="self" src="about:blank"></iframe>')}`);
-      await expect(target.attachToFrame(target.mainFrame.frames[0]!)).rejects.toThrow(/^ERR_FRAME_NOT_ATTACHABLE:/
-      );
+      await expect(target.attachToFrame(target.mainFrame.frames[0]!)).rejects.toThrow(/^ERR_FRAME_NOT_ATTACHABLE:/);
     });
 
     it('rejects pending, attached, and occupied-host double attaches', async () => {
@@ -250,14 +247,15 @@ describe('webContents module', () => {
       const attached = once(target, 'did-attach-to-frame') as Promise<[Electron.Event, Electron.WebFrameMain]>;
       const firstAttach = target.attachToFrame(firstFrame);
 
-      await expect(target.attachToFrame(frameNamed(w, 'second'))).rejects.toThrow(/^ERR_WEB_CONTENTS_ALREADY_ATTACHED:/
+      await expect(target.attachToFrame(frameNamed(w, 'second'))).rejects.toThrow(
+        /^ERR_WEB_CONTENTS_ALREADY_ATTACHED:/
       );
       await firstAttach;
       const [, occupiedFrame] = await attached;
-      await expect(target.attachToFrame(frameNamed(w, 'second'))).rejects.toThrow(/^ERR_WEB_CONTENTS_ALREADY_ATTACHED:/
+      await expect(target.attachToFrame(frameNamed(w, 'second'))).rejects.toThrow(
+        /^ERR_WEB_CONTENTS_ALREADY_ATTACHED:/
       );
-      await expect(secondTarget.attachToFrame(occupiedFrame)).rejects.toThrow(/^ERR_FRAME_NOT_ATTACHABLE:/
-      );
+      await expect(secondTarget.attachToFrame(occupiedFrame)).rejects.toThrow(/^ERR_FRAME_NOT_ATTACHABLE:/);
     });
 
     it('survives embedder destruction and reports the detach reason', async () => {
@@ -349,11 +347,11 @@ describe('webContents module', () => {
       target.setZoomLevel(0);
 
       await target.attachToFrame(frameNamed(w, 'first'));
-      expect(target.getZoomLevel()).toBeCloseTo(1.25, 3);
+      expect(Math.abs(target.getZoomLevel() - 1.25)).toBeLessThanOrEqual(0.001);
 
       await target.detachFromFrame();
       w.webContents.setZoomLevel(2);
-      expect(target.getZoomLevel()).toBeCloseTo(1.25, 3);
+      expect(Math.abs(target.getZoomLevel() - 1.25)).toBeLessThanOrEqual(0.001);
     });
 
     it('rejects docked DevTools and forces detached DevTools while attached', async () => {
@@ -363,8 +361,7 @@ describe('webContents module', () => {
       target.openDevTools({ mode: 'right', activate: false });
       await dockedOpened;
 
-      await expect(target.attachToFrame(frameNamed(w, 'first'))).rejects.toThrow(/^ERR_DEVTOOLS_DOCKED:/
-      );
+      await expect(target.attachToFrame(frameNamed(w, 'first'))).rejects.toThrow(/^ERR_DEVTOOLS_DOCKED:/);
 
       const closed = once(target, 'devtools-closed');
       target.closeDevTools();
@@ -416,8 +413,7 @@ describe('webContents module', () => {
     });
 
     describe('setVisibility() and setPageFrozen()', () => {
-      const TICKER =
-        '<script>window.ticks = 0; setInterval(() => { window.ticks++; }, 50);</script>';
+      const TICKER = '<script>window.ticks = 0; setInterval(() => { window.ticks++; }, 50);</script>';
 
       // Frozen pages queue executeJavaScript until thaw; CDP Runtime.evaluate
       // rides the inspector task queue and works in every lifecycle state.
@@ -425,8 +421,10 @@ describe('webContents module', () => {
         const attached = target.debugger.isAttached();
         if (!attached) target.debugger.attach('1.3');
         try {
-          const { result, exceptionDetails } = await target.debugger.sendCommand(
-            'Runtime.evaluate', { expression, returnByValue: true });
+          const { result, exceptionDetails } = await target.debugger.sendCommand('Runtime.evaluate', {
+            expression,
+            returnByValue: true
+          });
           expect(exceptionDetails).toBeUndefined();
           return result.value;
         } finally {
@@ -434,17 +432,13 @@ describe('webContents module', () => {
         }
       };
 
-      const visibilityOf = async (target: Electron.WebContents) =>
-        await evalInPage(target, 'document.visibilityState');
+      const visibilityOf = async (target: Electron.WebContents) => await evalInPage(target, 'document.visibilityState');
 
-      const ticksOf = async (target: Electron.WebContents) =>
-        await evalInPage(target, 'window.ticks');
+      const ticksOf = async (target: Electron.WebContents) => await evalInPage(target, 'window.ticks');
 
       it('rejects an unknown visibility state', async () => {
         const target = await createTarget();
-        expect(() => target.setVisibility('occluded' as any)).toThrow(
-          /must be either 'hidden' or 'visible'/
-        );
+        expect(() => target.setVisibility('occluded' as any)).toThrow(/must be either 'hidden' or 'visible'/);
       });
 
       it('explicitly hides and shows a detached target', async () => {
@@ -477,22 +471,25 @@ describe('webContents module', () => {
         expect(await visibilityOf(target)).toBe('hidden');
       });
 
-      ifit(process.platform !== 'linux')('outer window hide/show does not disturb a parked detached target', async () => {
-        const w = await createEmbedder(true);
-        const target = await createTarget();
-        await target.attachToFrame(frameNamed(w, 'first'));
-        await waitUntil(async () => (await visibilityOf(target)) === 'visible');
+      ifit(process.platform !== 'linux')(
+        'outer window hide/show does not disturb a parked detached target',
+        async () => {
+          const w = await createEmbedder(true);
+          const target = await createTarget();
+          await target.attachToFrame(frameNamed(w, 'first'));
+          await waitUntil(async () => (await visibilityOf(target)) === 'visible');
 
-        await target.detachFromFrame();
-        target.setVisibility('hidden');
-        await waitUntil(async () => (await visibilityOf(target)) === 'hidden');
+          await target.detachFromFrame();
+          target.setVisibility('hidden');
+          await waitUntil(async () => (await visibilityOf(target)) === 'hidden');
 
-        w.hide();
-        await setTimeout(150);
-        w.show();
-        await setTimeout(150);
-        expect(await visibilityOf(target)).toBe('hidden');
-      });
+          w.hide();
+          await setTimeout(150);
+          w.show();
+          await setTimeout(150);
+          expect(await visibilityOf(target)).toBe('hidden');
+        }
+      );
 
       it('setPageFrozen hides a visible page first and stops freezable timers', async () => {
         const target = await createTarget(TICKER);
@@ -531,14 +528,19 @@ describe('webContents module', () => {
           await target.loadURL(`http://127.0.0.1:${port}/`);
           expect(target.hasActiveMediaCapture()).toBe(false);
 
-          await target.executeJavaScript(`
+          await target.executeJavaScript(
+            `
             navigator.mediaDevices.getUserMedia({ audio: true })
               .then((stream) => { window.capturedStream = stream; return true; })
-          `, true);
+          `,
+            true
+          );
           await waitUntil(() => target.hasActiveMediaCapture());
 
           await target.executeJavaScript(
-            'window.capturedStream.getTracks().forEach((track) => track.stop()); true', true);
+            'window.capturedStream.getTracks().forEach((track) => track.stop()); true',
+            true
+          );
           await waitUntil(() => !target.hasActiveMediaCapture());
         } finally {
           server.close();
@@ -659,9 +661,7 @@ describe('webContents module', () => {
         const target = await createTarget(`<input id="editor">${TICKER}`);
         await target.attachToFrame(frameNamed(w, 'first'));
         await waitUntil(async () => (await visibilityOf(target)) === 'visible');
-        await target.executeJavaScript(
-          'document.getElementById("editor").value = "unsaved"; window.marker = "kept";'
-        );
+        await target.executeJavaScript('document.getElementById("editor").value = "unsaved"; window.marker = "kept";');
 
         await target.detachFromFrame();
         target.setPageFrozen(true);
@@ -674,9 +674,7 @@ describe('webContents module', () => {
         await waitUntil(async () => (await visibilityOf(target)) === 'visible');
         await waitUntil(async () => (await ticksOf(target)) > frozenTicks);
         expect(await evalInPage(target, 'window.marker')).toBe('kept');
-        expect(
-          await evalInPage(target, 'document.getElementById("editor").value')
-        ).toBe('unsaved');
+        expect(await evalInPage(target, 'document.getElementById("editor").value')).toBe('unsaved');
         await target.detachFromFrame();
       });
     });
